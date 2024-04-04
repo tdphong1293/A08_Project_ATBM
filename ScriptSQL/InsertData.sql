@@ -94,10 +94,10 @@ insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
     values('GV000017', 'Phạm Viết Minh', 'Nam', to_date('08-12-1989', 'DD/MM/YYYY'), 500000, '0123456763', 'Giảng viên', 'BMCNPM');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000018', 'Nguyễn Thị Phương Ngọc', to_date('Nữ', '17-12-1997', 'DD/MM/YYYY'), 500000, '0123456762', 'Giảng viên', 'BMCNPM');
+    values('GV000018', 'Nguyễn Thị Phương Ngọc', 'Nữ', to_date('17-12-1997', 'DD/MM/YYYY'), 500000, '0123456762', 'Giảng viên', 'BMCNPM');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000019', 'Nguyễn Hữu Thanh Phong', to_date('Nam', '17-11-1997', 'DD/MM/YYYY'), 500000, '0123456761', 'Giảng viên', 'BMCNPM');
+    values('GV000019', 'Nguyễn Hữu Thanh Phong', 'Nam', to_date('17-11-1997', 'DD/MM/YYYY'), 500000, '0123456761', 'Giảng viên', 'BMCNPM');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
     values('GV000020', 'Trần Quang Toàn', 'Nam', to_date('05-11-1978', 'DD/MM/YYYY'), 500000, '0123456760', 'Giảng viên', 'BMCNPM');

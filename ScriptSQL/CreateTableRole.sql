@@ -1,11 +1,17 @@
-drop table ĐANGKY delete cascade;
-drop table PHANCONG delete cascade;
-drop table KHMO delete cascade;
-drop table HOCPHAN delete cascade;
-drop table SINHVIEN delete cascade;
-drop table NHANSU delete cascade;
-drop table ĐONVI delete cascade;
+drop table DANGKY cascade constraints;
+drop table PHANCONG cascade constraints;
+drop table KHMO cascade constraints;
+drop table HOCPHAN cascade constraints;
+drop table SINHVIEN cascade constraints;
+drop table NHANSU cascade constraints;
+drop table DONVI cascade constraints;
 
+drop role NhanVienCoBan;
+drop role GiangVien;
+drop role GiaoVu;
+drop role TruongDonVi;
+drop role TruongKhoa;
+drop role SinhVien; 
 --Tạo bảng--
 create table NHANSU (
     MANV char(9) primary key,
@@ -80,26 +86,26 @@ create table DANGKY (
 
 --Ràng buộc khóa ngoại--
 alter table NHANSU add constraint 
-    FK_NHANSU_DONVI foreign key (MADV) references to DONVI(MADV);
+    FK_NHANSU_DONVI foreign key (MADV) references DONVI(MADV);
 
 alter table DONVI add constraint
-    FK_DONVI_NHANSU foreign key (TRGDV) references to NHANSU(MANV);
+    FK_DONVI_NHANSU foreign key (TRGDV) references NHANSU(MANV);
     
 alter table HOCPHAN add constraint
-    FK_HOCPHAN_DONVI foreign key (MADV) references to DONVI(MADV);
+    FK_HOCPHAN_DONVI foreign key (MADV) references DONVI(MADV);
 
 alter table KHMO add constraint 
-    FK_KHMO_HOCPHAN foreign key (MAHP) references to HOCPHAN(MAHP);
+    FK_KHMO_HOCPHAN foreign key (MAHP) references HOCPHAN(MAHP);
     
 alter table PHANCONG add constraint
-    FK_PHANCONG_NHANSU foreign key (MAGV) references to NHANSU(MAGV);
+    FK_PHANCONG_NHANSU foreign key (MAGV) references NHANSU(MANV);
 alter table PHANCONG add constraint    
-    FK_PHANCONG_KHMO foreign key (MAHP, HK, NAM, MACT) references to KHMO(MAHP, HK, NAM, MACT);
+    FK_PHANCONG_KHMO foreign key (MAHP, HK, NAM, MACT) references KHMO(MAHP, HK, NAM, MACT);
 
 alter table DANGKY add constraint
-    FK_DANGKY_SINHVIEN foreign key (MASV) references to SINHVIEN(MASV);
+    FK_DANGKY_SINHVIEN foreign key (MASV) references  SINHVIEN(MASV);
 alter table DANGKY add constraint
-    FK_DANGKY_PHANCONG foreign key (MAGV, MAHP, HK, NAM, MACT) references to PHANCONG(MAGV, MAHP, HK, NAM, MACT);
+    FK_DANGKY_PHANCONG foreign key (MAGV, MAHP, HK, NAM, MACT) references PHANCONG(MAGV, MAHP, HK, NAM, MACT);
 
 --Tạo vai trò--
 create role NhanVienCoBan;

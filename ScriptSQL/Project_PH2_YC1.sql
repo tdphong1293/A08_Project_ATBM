@@ -9,7 +9,7 @@ as
 create or replace view uv_NhanVienCoBan_SINHVIEN
 as
     select *
-    from NHANVIEN
+    from SINHVIEN
     with check option;
     
 create or replace view uv_NhanVienCoBan_DONVI
@@ -30,20 +30,20 @@ as
     from KHMO
     with check option;
     
-grant select on uv_NhanVienCoBan_NHANSU to NhanVienCoBan;
-grant update(DT) on uv_NhanVienCoBan_NHANSU to NhanVienCoBan;
+grant select, update(DT) on uv_NhanVienCoBan_NHANSU to NhanVienCoBan;
 grant select on uv_NhanVienCoBan_SINHVIEN to NhanVienCoBan;
 grant select on uv_NhanVienCoBan_DONVI to NhanVienCoBan;
 grant select on uv_NhanVienCoBan_HOCPHAN to NhanVienCoBan;
 grant select on uv_NhanVienCoBan_KHMO to NhanVienCoBan;
 
 --CS2--
-grant select on uv_NhanVienCoBan_NHANSU to GiangVien;
-grant update(DT) on uv_NhanVienCoBan_NHANSU to GiangVien;
-grant select on uv_NhanVienCoBan_SINHVIEN to GiangVien;
-grant select on uv_NhanVienCoBan_DONVI to GiangVien;
-grant select on uv_NhanVienCoBan_HOCPHAN to GiangVien;
-grant select on uv_NhanVienCoBan_KHMO to GiangVien;
+--grant select, update(DT) on uv_NhanVienCoBan_NHANSU to GiangVien;
+--grant select on uv_NhanVienCoBan_SINHVIEN to GiangVien;
+--grant select on uv_NhanVienCoBan_DONVI to GiangVien;
+--grant select on uv_NhanVienCoBan_HOCPHAN to GiangVien;
+--grant select on uv_NhanVienCoBan_KHMO to GiangVien;
+
+grant NhanVienCoBan to GiangVien;
 
 create or replace view uv_GiangVien_PHANCONG
 as
@@ -61,7 +61,7 @@ as
     with check option;
     
 create or replace trigger utrig_GiangVien_DANGKY
-instead of update of DIEMTH, DIEMQT, DIEMCK, DIEMTK on uv_GiangVien_DANGKY
+instead of update on uv_GiangVien_DANGKY
 for each row
 begin
     update DANGKY 
@@ -77,12 +77,17 @@ grant select on uv_GiangVien_PHANCONG to GiangVien;
 grant select, update(DIEMTH, DIEMQT, DIEMCK, DIEMTK) on uv_GiangVien_DANGKY to GiangVien;
 
 --CS3--
-grant select on uv_NhanVienCoBan_NHANSU to GiaoVu;
-grant update(DT) on uv_NhanVienCoBan_NHANSU to GiaoVu;
-grant select, insert, update on uv_NhanVienCoBan_SINHVIEN to GiaoVu;
-grant select, insert, update on uv_NhanVienCoBan_DONVI to GiaoVu;
-grant select, insert, update on uv_NhanVienCoBan_HOCPHAN to GiaoVu;
-grant select, insert, update on uv_NhanVienCoBan_KHMO to GiaoVu;
+--grant select, update(DT) on uv_NhanVienCoBan_NHANSU to GiaoVu;
+--grant select, insert, update on uv_NhanVienCoBan_SINHVIEN to GiaoVu;
+--grant select, insert, update on uv_NhanVienCoBan_DONVI to GiaoVu;
+--grant select, insert, update on uv_NhanVienCoBan_HOCPHAN to GiaoVu;
+--grant select, insert, update on uv_NhanVienCoBan_KHMO to GiaoVu;
+
+grant NhanVienCoBan to GiaoVu;
+grant insert, update on uv_NhanVienCoBan_SINHVIEN to GiaoVu;
+grant insert, update on uv_NhanVienCoBan_DONVI to GiaoVu;
+grant insert, update on uv_NhanVienCoBan_HOCPHAN to GiaoVu;
+grant insert, update on uv_NhanVienCoBan_KHMO to GiaoVu;
 
 create or replace view uv_GiaoVu_PHANCONG
 as
@@ -141,7 +146,7 @@ begin
     if (trunc(sysdate) between v_start_date and v_start_date + interval '14' day) then
         if (inserting) then
             insert into DANGKY values (:new.MASV, :new.MAGV, :new.MAHP, :new.HK, :new.NAM, :new.MACT, :new.DIEMTH, :new.DIEMQT, :new.DIEMCK, :new.DIEMTK);
-        elsif (deleteing) then
+        elsif (deleting) then
             delete from DANGKY 
             where MASV = :old.MASV 
             and MAGV = :old.MAGV 
@@ -158,14 +163,15 @@ grant select, update on uv_GiaoVu_PHANCONG to GiaoVu;
 grant insert, delete on uv_GiaoVu_DANGKY to GiaoVu;
 
 --CS4--
-grant select on uv_NhanVienCoBan_NHANSU to TruongDonVi;
-grant update(DT) on uv_NhanVienCoBan_NHANSU to TruongDonVi;
-grant select on uv_NhanVienCoBan_SINHVIEN to TruongDonVi;
-grant select on uv_NhanVienCoBan_DONVI to TruongDonVi;
-grant select on uv_NhanVienCoBan_HOCPHAN to TruongDonVi;
-grant select on uv_NhanVienCoBan_KHMO to TruongDonVi;
-grant select on uv_GiangVien_PHANCONG to TruongDonVi;
-grant select, update(DIEMTH, DIEMQT, DIEMCK, DIEMTK) on uv_GiangVien_DANGKY to TruongDonVi;
+--grant select, update(DT) on uv_NhanVienCoBan_NHANSU to TruongDonVi;
+--grant select on uv_NhanVienCoBan_SINHVIEN to TruongDonVi;
+--grant select on uv_NhanVienCoBan_DONVI to TruongDonVi;
+--grant select on uv_NhanVienCoBan_HOCPHAN to TruongDonVi;
+--grant select on uv_NhanVienCoBan_KHMO to TruongDonVi;
+--grant select on uv_GiangVien_PHANCONG to TruongDonVi;
+--grant select, update(DIEMTH, DIEMQT, DIEMCK, DIEMTK) on uv_GiangVien_DANGKY to TruongDonVi;
+
+grant GiangVien to TruongDonVi;
 
 create or replace view uv_TruongDonVi_PHANCONG
 as
@@ -218,14 +224,15 @@ end;
 grant select, insert, update, delete on uv_TruongDonVi_PHANCONG to TruongDonVi;
 
 --CS5--
-grant select on uv_NhanVienCoBan_NHANSU to TruongKhoa;
-grant update(DT) on uv_NhanVienCoBan_NHANSU to TruongKhoa;
-grant select on uv_NhanVienCoBan_SINHVIEN to TruongKhoa;
-grant select on uv_NhanVienCoBan_DONVI to TruongKhoa;
-grant select on uv_NhanVienCoBan_HOCPHAN to TruongKhoa;
-grant select on uv_NhanVienCoBan_KHMO to TruongKhoa;
-grant select on uv_GiangVien_PHANCONG to TruongKhoa;
-grant select, update(DIEMTH, DIEMQT, DIEMCK, DIEMTK) on uv_GiangVien_DANGKY to TruongKhoa;
+--grant select, update(DT) on uv_NhanVienCoBan_NHANSU to TruongKhoa;
+--grant select on uv_NhanVienCoBan_SINHVIEN to TruongKhoa;
+--grant select on uv_NhanVienCoBan_DONVI to TruongKhoa;
+--grant select on uv_NhanVienCoBan_HOCPHAN to TruongKhoa;
+--grant select on uv_NhanVienCoBan_KHMO to TruongKhoa;
+--grant select on uv_GiangVien_PHANCONG to TruongKhoa;
+--grant select, update(DIEMTH, DIEMQT, DIEMCK, DIEMTK) on uv_GiangVien_DANGKY to TruongKhoa;
+
+grant GiangVien to TruongKhoa;
 
 create or replace view uv_TruongKhoa_PHANCONG
 as
@@ -279,7 +286,7 @@ as
     from NHANSU
     with check option;
 
-grant insert, update, delete on uv_TruongKhoa_PHANCONG to TruongKhoa;
+grant select, insert, update, delete on uv_TruongKhoa_PHANCONG to TruongKhoa;
 grant select, insert, update, delete on uv_TruongKhoa_NHANSU to TruongKhoa;
 grant select on uv_GiaoVu_DANGKY to TruongKhoa;
 
@@ -418,9 +425,10 @@ begin
         policy_name => 'pc4',
         function_schema => 'OLS_ADMIN',
         policy_function => 'pc4_SinhVien_DANGKY',
-        statement_types => 'select'
+        statement_types => 'select, update',
+        update_check => true
     );
 end;
 /
 
-grant select on DANGKY to SinhVien;
+grant select, update(MASV, MAGV, MAHP, HK, NAM, MACT) on DANGKY to SinhVien;
