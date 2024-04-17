@@ -1,3 +1,4 @@
+-- Tạo user nhân viên
 create or replace procedure sp_CreateUserNV
 authid current_user
 as
@@ -21,6 +22,7 @@ begin
 end;
 /
 
+-- Tạo user sinh viên
 create or replace procedure sp_CreateUserSV
 authid current_user
 as
@@ -44,6 +46,7 @@ begin
 end;
 /
 
+-- Thêm role tương ứng cho user nhân viên
 create or replace procedure sp_AddRoleNV
     (strrole varchar2, loainv nvarchar2)
 authid current_user
@@ -68,6 +71,7 @@ begin
 end;
 /
 
+-- Thêm role SinhVien cho user sinh viên
 create or replace procedure sp_AddRoleSV
 authid current_user
 as
@@ -91,6 +95,7 @@ begin
 end;
 /
 
+--Xóa user nhân viên
 create or replace procedure sp_dropNV
 authid current_user
 as
@@ -114,6 +119,7 @@ begin
 end;
 /
 
+-- Xóa user sinh viên
 create or replace procedure sp_dropSV
 authid current_user
 as
@@ -137,6 +143,7 @@ begin
 end;
 /
 
+-- Chạy procedure tạo user, thêm role user
 exec sp_dropNV;
 exec sp_dropSV;
 
@@ -148,3 +155,12 @@ exec sp_AddRoleNV('rl_GiaoVu', N'Giáo vụ');
 exec sp_AddRoleNV('rl_TruongDonVi', N'Trưởng đơn vị');
 exec sp_AddRoleNV('rl_TruongKhoa', N'Trưởng khoa');
 exec sp_AddRoleSV;
+
+-- Insert nội dung và gán nhán dữ liệu của bảng thông báo
+create or replace procedure Insert_ThongBao
+    (v_noidung in varchar2, v_label in varchar2)
+as
+begin
+    insert into THONGBAO values (v_noidung, char_to_label('thongbao_policy', v_label));
+end;
+/

@@ -1,7 +1,9 @@
+-- Tạo bảng THONGBAO
 create table THONGBAO(
-    NoiDung nvarchar2(4000)
+    NoiDung nvarchar2(2000)
 );
 
+-- Tạo chính sách OLS
 begin
     sa_sysdba.create_policy(
         policy_name => 'thongbao_policy',
@@ -10,8 +12,20 @@ begin
 end;
 /
 
+-- Kích hoạt chính sách
 exec sa_sysdba.enable_policy('thongbao_policy');
 
+-- Cho phép user OLS_ADMIN quyền để quản lý chính sách OLS
+begin
+    sa_user_admin.set_user_privs(
+        policy_name => 'thongbao_policy',
+        user_name => 'OLS_ADMIN',
+        privileges => 'FULL,PROFILE_ACCESS'
+    );
+end;
+/
+
+-- Tạo các thành phần của nhãn
 exec sa_components.create_level('thongbao_policy', 20, 'SV', 'Sinh Vien');
 exec sa_components.create_level('thongbao_policy', 40, 'NV', 'Nhan Vien');
 exec sa_components.create_level('thongbao_policy', 60, 'GVU', 'Giao Vu');
@@ -28,3 +42,39 @@ exec sa_components.create_compartment('thongbao_policy', 600, 'MMT', 'Mang May T
 
 exec sa_components.create_group('thongbao_policy', 100, 'CS1', 'Co So 1');
 exec sa_components.create_group('thongbao_policy', 200, 'CS2', 'Co So 2');
+
+-- Kiểm tra các thành phần của nhãn
+select * from dba_sa_levels;
+select * from dba_sa_compartments;
+select * from dba_sa_groups;
+
+-- Áp dụng chính sách OLS lên bảng THONGBAO
+begin 
+    sa_policy_admin.apply_table_policy(
+        policy_name => 'thongbao_policy',
+        schema_name => 'OLS_ADMIN',
+        table_name => 'THONGBAO',
+        table_options => 'NO_CONTROL'
+    );
+end;
+/
+
+--a) gán nhãn cho người dùng là Trưởng khoa có thể đọc được toàn bộ thông báo.
+begin
+    sa_user_admin.set_user_labels(
+        policy_name => 'thongbao_policy',
+        user_name => 'TRKHOA001',
+        max_read_label => 'TK:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2'
+    );
+end;
+/
+
+--b) user label: 'TDV:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2'
+--c) user label: 'GVU:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2'
+--d) data label t1: 'TDV'
+--e) data label t2: 'SV:HTTT:CS1'
+--f) data label t3: 'TDV:KHMT:CS1'
+--g) data label t4: 'TDV:KHTM:CS1,CS2'
+--h1) dữ liệu được phát tán đến mỗi giảng viên thuộc bộ môn HTTT ở cả 2 cơ sở, data label t5: 'GV:HTTT'
+--h2) dữ liệu được phát tán đến mỗi người trong trường không kể cơ sở, data label t6: 'SV'
+--h3) dữ liệu được phát tán đến mỗi nhân viên trong của trường ở cơ sở 2, data label t7: 'NV:CS2'

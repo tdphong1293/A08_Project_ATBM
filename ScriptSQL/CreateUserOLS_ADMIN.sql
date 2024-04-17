@@ -11,16 +11,16 @@ end;
 shutdown immediate; 
 startup; 
 
+---> Mở account lbacsys
+alter user lbacsys identified by lbacsys account unlock container=all;
 ---> Mở PDB nếu chưa mở
 alter pluggable database A08_ProjectATBM open read write; 
 ---> CHUYỂN QUA PDB 
 alter session set container = A08_ProjectATBM; 
 show con_name; 
-
+show user;
 
 --Tạo user OLS_ADMIN ở PDB 
-alter user lbacsys identified by lbacsys account unlock container=all;
-
 create user OLS_ADMIN identified by 123 container = current;
 grant connect, resource, DBA to OLS_ADMIN;
 grant unlimited tablespace to OLS_ADMIN;
