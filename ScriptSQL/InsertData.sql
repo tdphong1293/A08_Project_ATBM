@@ -8,351 +8,352 @@ insert into DONVI (MADV, TENDV) values('BMMMTVVT', 'Bộ môn MMT và Viễn th�
  
 -- Nhập liệu Nhân viên cơ bản
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('NVCB0001', N'Lưu Trung Hiếu', N'Nam', to_date('21-01-1972', 'DD/MM/YYYY'), 500000, '0123456789', N'Nhân viên cơ bản', 'VPK');
+    values('NVCB00001', N'Lưu Trung Hiếu', N'Nam', to_date('21-01-1972', 'DD/MM/YYYY'), 500000, '0123456789', N'Nhân viên cơ bản', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('NVCB0002', N'Trần Ngọc Quế', N'Nữ', to_date('20-01-1975', 'DD/MM/YYYY'), 500000, '0123456788', N'Nhân viên cơ bản', 'VPK');
+    values('NVCB00002', N'Trần Ngọc Quế', N'Nữ', to_date('20-01-1975', 'DD/MM/YYYY'), 500000, '0123456788', N'Nhân viên cơ bản', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('NVCB0003', N'Phạm Đình Nhân', N'Nam', to_date('20-09-1973', 'DD/MM/YYYY'), 500000, '0123456787', N'Nhân viên cơ bản', 'VPK');
+    values('NVCB00003', N'Phạm Đình Nhân', N'Nam', to_date('20-09-1973', 'DD/MM/YYYY'), 500000, '0123456787', N'Nhân viên cơ bản', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('NVCB0004', N'Thi Thanh Chương', N'Nam', to_date('05-02-1977', 'DD/MM/YYYY'), 500000, '0123456786', N'Nhân viên cơ bản', 'VPK');
+    values('NVCB00004', N'Thi Thanh Chương', N'Nam', to_date('05-02-1977', 'DD/MM/YYYY'), 500000, '0123456786', N'Nhân viên cơ bản', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('NVCB0005', N'Trần Trung Hải', N'Nam', to_date('28-05-1989', 'DD/MM/YYYY'), 500000, '0123456785', N'Nhân viên cơ bản', 'VPK');
+    values('NVCB00005', N'Trần Trung Hải', N'Nam', to_date('28-05-1989', 'DD/MM/YYYY'), 500000, '0123456785', N'Nhân viên cơ bản', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('NVCB0006', N'Lưu Minh Tiến', N'Nam', to_date('26-07-1989', 'DD/MM/YYYY'), 500000, '0123456784', N'Nhân viên cơ bản', 'VPK');
+    values('NVCB00006', N'Lưu Minh Tiến', N'Nam', to_date('26-07-1989', 'DD/MM/YYYY'), 500000, '0123456784', N'Nhân viên cơ bản', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('NVCB0007', N'Hồ Xuân Ước', N'Nam', to_date('06-10-1999', 'DD/MM/YYYY'), 500000, '0123456783', N'Nhân viên cơ bản', 'VPK');
+    values('NVCB00007', N'Hồ Xuân Ước', N'Nam', to_date('06-10-1999', 'DD/MM/YYYY'), 500000, '0123456783', N'Nhân viên cơ bản', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('NVCB0008', N'Nguyễn Cảnh Thọ', N'Nam', to_date('14-01-1990', 'DD/MM/YYYY'), 500000, '0123456782', N'Nhân viên cơ bản', 'VPK');
+    values('NVCB00008', N'Nguyễn Cảnh Thọ', N'Nam', to_date('14-01-1990', 'DD/MM/YYYY'), 500000, '0123456782', N'Nhân viên cơ bản', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('NVCB0009', N'Vũ Văn Hoàng', N'Nam', to_date('14-02-1981', 'DD/MM/YYYY'), 500000, '0123456781', N'Nhân viên cơ bản', 'VPK');
+    values('NVCB00009', N'Vũ Văn Hoàng', N'Nam', to_date('14-02-1981', 'DD/MM/YYYY'), 500000, '0123456781', N'Nhân viên cơ bản', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('NVCB0010', N'Nguyễn Giao Ban', N'Nữ', to_date('18-03-1980', 'DD/MM/YYYY'), 500000, '0123456780', N'Nhân viên cơ bản', 'VPK');
+    values('NVCB00010', N'Nguyễn Giao Ban', N'Nữ', to_date('18-03-1980', 'DD/MM/YYYY'), 500000, '0123456780', N'Nhân viên cơ bản', 'VPK');
     
 
 -- Nhập liệu Giảng viên
 -- BMHTTT
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000001', N'Vương Trường An', N'Nam', to_date('02-06-1973', 'DD/MM/YYYY'), 500000, '0123456779', N'Giảng viên', 'BMHTTT');
+    values('GV0000001', N'Vương Trường An', N'Nam', to_date('02-06-1973', 'DD/MM/YYYY'), 500000, '0123456779', N'Giảng viên', 'BMHTTT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000002', N'Đỗ Văn Khánh', N'Nam', to_date('21-11-1980', 'DD/MM/YYYY'), 500000, '0123456778', N'Giảng viên', 'BMHTTT');
+    values('GV0000002', N'Đỗ Văn Khánh', N'Nam', to_date('21-11-1980', 'DD/MM/YYYY'), 500000, '0123456778', N'Giảng viên', 'BMHTTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000003', N'Nguyễn Trọng Khôi', N'Nam', to_date('30-01-1970', 'DD/MM/YYYY'), 500000, '0123456777', N'Giảng viên', 'BMHTTT');
+    values('GV0000003', N'Nguyễn Trọng Khôi', N'Nam', to_date('30-01-1970', 'DD/MM/YYYY'), 500000, '0123456777', N'Giảng viên', 'BMHTTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000004', N'Lê Thị Thảo Minh', N'Nữ', to_date('13-03-1989', 'DD/MM/YYYY'), 500000, '0123456776', N'Giảng viên', 'BMHTTT');
+    values('GV0000004', N'Lê Thị Thảo Minh', N'Nữ', to_date('13-03-1989', 'DD/MM/YYYY'), 500000, '0123456776', N'Giảng viên', 'BMHTTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000005', N'Nguyễn Văn Tuệ', N'Nam', to_date('26-10-1996', 'DD/MM/YYYY'), 500000, '0123456775', N'Giảng viên', 'BMHTTT');
+    values('GV0000005', N'Nguyễn Văn Tuệ', N'Nam', to_date('26-10-1996', 'DD/MM/YYYY'), 500000, '0123456775', N'Giảng viên', 'BMHTTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000006', N'Trịnh Thị Ngọc Huế', N'Nữ', to_date('10-12-1989', 'DD/MM/YYYY'), 500000, '0123456774', N'Giảng viên', 'BMHTTT');
+    values('GV0000006', N'Trịnh Thị Ngọc Huế', N'Nữ', to_date('10-12-1989', 'DD/MM/YYYY'), 500000, '0123456774', N'Giảng viên', 'BMHTTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000007', N'Hoàng Anh Sơn', N'Nam', to_date('08-03-1974', 'DD/MM/YYYY'), 500000, '0123456773', N'Giảng viên', 'BMHTTT');
+    values('GV0000007', N'Hoàng Anh Sơn', N'Nam', to_date('08-03-1974', 'DD/MM/YYYY'), 500000, '0123456773', N'Giảng viên', 'BMHTTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000008', N'Lê Trường Trung', N'Nam', to_date('18-02-1987', 'DD/MM/YYYY'), 500000, '0123456772', N'Giảng viên', 'BMHTTT');
+    values('GV0000008', N'Lê Trường Trung', N'Nam', to_date('18-02-1987', 'DD/MM/YYYY'), 500000, '0123456772', N'Giảng viên', 'BMHTTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000009', N'Nguyễn Thị Kim Thoa', N'Nữ', to_date('19-08-1971', 'DD/MM/YYYY'), 500000, '0123456771', N'Giảng viên', 'BMHTTT');
+    values('GV0000009', N'Nguyễn Thị Kim Thoa', N'Nữ', to_date('19-08-1971', 'DD/MM/YYYY'), 500000, '0123456771', N'Giảng viên', 'BMHTTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000010', N'Trần Thị Thanh Viết', N'Nữ', to_date('20-06-1984', 'DD/MM/YYYY'), 500000, '0123456770', N'Giảng viên', 'BMHTTT');
+    values('GV0000010', N'Trần Thị Thanh Viết', N'Nữ', to_date('20-06-1984', 'DD/MM/YYYY'), 500000, '0123456770', N'Giảng viên', 'BMHTTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000011', N'Phan Thành Nam', N'Nam', to_date('06-10-1985', 'DD/MM/YYYY'), 500000, '0123456769', N'Giảng viên', 'BMHTTT');
+    values('GV0000011', N'Phan Thành Nam', N'Nam', to_date('06-10-1985', 'DD/MM/YYYY'), 500000, '0123456769', N'Giảng viên', 'BMHTTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000012', N'Trần Hải Thành', N'Nam', to_date('24-07-1985', 'DD/MM/YYYY'), 500000, '0123456768', N'Giảng viên', 'BMHTTT');
+    values('GV0000012', N'Trần Hải Thành', N'Nam', to_date('24-07-1985', 'DD/MM/YYYY'), 500000, '0123456768', N'Giảng viên', 'BMHTTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000013', N'Phan Ngọc Thảo', N'Nữ', to_date('11-11-1998', 'DD/MM/YYYY'), 500000, '0123456767', N'Giảng viên', 'BMHTTT');
+    values('GV0000013', N'Phan Ngọc Thảo', N'Nữ', to_date('11-11-1998', 'DD/MM/YYYY'), 500000, '0123456767', N'Giảng viên', 'BMHTTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000014', N'Vũ Văn Hoàng', N'Nam', to_date('31-12-1988', 'DD/MM/YYYY'), 500000, '0123456766', N'Giảng viên', 'BMHTTT');
+    values('GV0000014', N'Vũ Văn Hoàng', N'Nam', to_date('31-12-1988', 'DD/MM/YYYY'), 500000, '0123456766', N'Giảng viên', 'BMHTTT');
 
 
 -- BMCNPM
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000015', N'Đinh Thị Mỹ Quỳnh', N'Nữ', to_date('11-01-1975', 'DD/MM/YYYY'), 500000, '0123456765', N'Giảng viên', 'BMCNPM');
+    values('GV0000015', N'Đinh Thị Mỹ Quỳnh', N'Nữ', to_date('11-01-1975', 'DD/MM/YYYY'), 500000, '0123456765', N'Giảng viên', 'BMCNPM');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000016', N'Dương Đức Toàn', N'Nam', to_date('08-01-1988', 'DD/MM/YYYY'), 500000, '0123456764', N'Giảng viên', 'BMCNPM');
+    values('GV0000016', N'Dương Đức Toàn', N'Nam', to_date('08-01-1988', 'DD/MM/YYYY'), 500000, '0123456764', N'Giảng viên', 'BMCNPM');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000017', N'Phạm Viết Minh', N'Nam', to_date('08-12-1989', 'DD/MM/YYYY'), 500000, '0123456763', N'Giảng viên', 'BMCNPM');
+    values('GV0000017', N'Phạm Viết Minh', N'Nam', to_date('08-12-1989', 'DD/MM/YYYY'), 500000, '0123456763', N'Giảng viên', 'BMCNPM');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000018', N'Nguyễn Thị Phương Ngọc', N'Nữ', to_date('17-12-1997', 'DD/MM/YYYY'), 500000, '0123456762', N'Giảng viên', 'BMCNPM');
+    values('GV0000018', N'Nguyễn Thị Phương Ngọc', N'Nữ', to_date('17-12-1997', 'DD/MM/YYYY'), 500000, '0123456762', N'Giảng viên', 'BMCNPM');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000019', N'Nguyễn Hữu Thanh Phong', N'Nam', to_date('17-11-1997', 'DD/MM/YYYY'), 500000, '0123456761', N'Giảng viên', 'BMCNPM');
+    values('GV0000019', N'Nguyễn Hữu Thanh Phong', N'Nam', to_date('17-11-1997', 'DD/MM/YYYY'), 500000, '0123456761', N'Giảng viên', 'BMCNPM');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000020', N'Trần Quang Toàn', N'Nam', to_date('05-11-1978', 'DD/MM/YYYY'), 500000, '0123456760', N'Giảng viên', 'BMCNPM');
+    values('GV0000020', N'Trần Quang Toàn', N'Nam', to_date('05-11-1978', 'DD/MM/YYYY'), 500000, '0123456760', N'Giảng viên', 'BMCNPM');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000021', N'Lê Kim Tỵ', N'Nữ', to_date('22-01-1972', 'DD/MM/YYYY'), 500000, '0123456759', N'Giảng viên', 'BMCNPM');
+    values('GV0000021', N'Lê Kim Tỵ', N'Nữ', to_date('22-01-1972', 'DD/MM/YYYY'), 500000, '0123456759', N'Giảng viên', 'BMCNPM');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000022', N'Trần Thị Thanh Viết', N'Nữ', to_date('19-01-1976', 'DD/MM/YYYY'), 500000, '0123456758', N'Giảng viên', 'BMCNPM');
+    values('GV0000022', N'Trần Thị Thanh Viết', N'Nữ', to_date('19-01-1976', 'DD/MM/YYYY'), 500000, '0123456758', N'Giảng viên', 'BMCNPM');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000023', N'Trương Hoàng Phong', N'Nam', to_date('08-05-1995', 'DD/MM/YYYY'), 500000, '0123456757', N'Giảng viên', 'BMCNPM');
+    values('GV0000023', N'Trương Hoàng Phong', N'Nam', to_date('08-05-1995', 'DD/MM/YYYY'), 500000, '0123456757', N'Giảng viên', 'BMCNPM');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000024', N'Vũ Văn Cường', N'Nam', to_date('13-11-1982', 'DD/MM/YYYY'), 500000, '0123456756', N'Giảng viên', 'BMCNPM');
+    values('GV0000024', N'Vũ Văn Cường', N'Nam', to_date('13-11-1982', 'DD/MM/YYYY'), 500000, '0123456756', N'Giảng viên', 'BMCNPM');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000025', N'Trần Đình Trung', N'Nam', to_date('24-11-1984', 'DD/MM/YYYY'), 500000, '0123456755', N'Giảng viên', 'BMCNPM');
+    values('GV0000025', N'Trần Đình Trung', N'Nam', to_date('24-11-1984', 'DD/MM/YYYY'), 500000, '0123456755', N'Giảng viên', 'BMCNPM');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000026', N'Dương Việt Hoàng', N'Nam', to_date('03-07-1984', 'DD/MM/YYYY'), 500000, '0123456754', N'Giảng viên', 'BMCNPM');
+    values('GV0000026', N'Dương Việt Hoàng', N'Nam', to_date('03-07-1984', 'DD/MM/YYYY'), 500000, '0123456754', N'Giảng viên', 'BMCNPM');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000027', N'Nguyễn Thị Hồng Trinh', N'Nữ', to_date('17-09-1972', 'DD/MM/YYYY'), 500000, '0123456753', N'Giảng viên', 'BMCNPM');
+    values('GV0000027', N'Nguyễn Thị Hồng Trinh', N'Nữ', to_date('17-09-1972', 'DD/MM/YYYY'), 500000, '0123456753', N'Giảng viên', 'BMCNPM');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000028', N'Nguyễn Mạnh Thời', N'Nam', to_date('01-08-1981', 'DD/MM/YYYY'), 500000, '0123456752', N'Giảng viên', 'BMCNPM');
+    values('GV0000028', N'Nguyễn Mạnh Thời', N'Nam', to_date('01-08-1981', 'DD/MM/YYYY'), 500000, '0123456752', N'Giảng viên', 'BMCNPM');
 
 
 -- BMKHMT
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000029', N'Vương Trường Trương', N'Nam', to_date('09-01-1981', 'DD/MM/YYYY'), 500000, '0123456751', N'Giảng viên', 'BMKHMT');
+    values('GV0000029', N'Vương Trường Trương', N'Nam', to_date('09-01-1981', 'DD/MM/YYYY'), 500000, '0123456751', N'Giảng viên', 'BMKHMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000030', N'Lê Quang Vỹ', N'Nam', to_date('03-07-1985', 'DD/MM/YYYY'), 500000, '0123456750', N'Giảng viên', 'BMKHMT');
+    values('GV0000030', N'Lê Quang Vỹ', N'Nam', to_date('03-07-1985', 'DD/MM/YYYY'), 500000, '0123456750', N'Giảng viên', 'BMKHMT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000031', N'Phan Ngọc Thảo', N'Nữ', to_date('17-09-1992', 'DD/MM/YYYY'), 500000, '0123456749', N'Giảng viên', 'BMKHMT');
+    values('GV0000031', N'Phan Ngọc Thảo', N'Nữ', to_date('17-09-1992', 'DD/MM/YYYY'), 500000, '0123456749', N'Giảng viên', 'BMKHMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000032', N'Hoàng Mai Loan', N'Nữ', to_date('29-04-1975', 'DD/MM/YYYY'), 500000, '0123456748', N'Giảng viên', 'BMKHMT');
+    values('GV0000032', N'Hoàng Mai Loan', N'Nữ', to_date('29-04-1975', 'DD/MM/YYYY'), 500000, '0123456748', N'Giảng viên', 'BMKHMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000033', N'Đỗ Văn Khánh', N'Nam', to_date('11-12-1985', 'DD/MM/YYYY'), 500000, '0123456747', N'Giảng viên', 'BMKHMT');
+    values('GV0000033', N'Đỗ Văn Khánh', N'Nam', to_date('11-12-1985', 'DD/MM/YYYY'), 500000, '0123456747', N'Giảng viên', 'BMKHMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000034', N'Huỳnh Anh Tấn', N'Nam', to_date('03-12-1980', 'DD/MM/YYYY'), 500000, '0123456746', N'Giảng viên', 'BMKHMT');
+    values('GV0000034', N'Huỳnh Anh Tấn', N'Nam', to_date('03-12-1980', 'DD/MM/YYYY'), 500000, '0123456746', N'Giảng viên', 'BMKHMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000035', N'Vương Trường Anh', N'Nam', to_date('01-05-1974', 'DD/MM/YYYY'), 500000, '0123456745', N'Giảng viên', 'BMKHMT');
+    values('GV0000035', N'Vương Trường Anh', N'Nam', to_date('01-05-1974', 'DD/MM/YYYY'), 500000, '0123456745', N'Giảng viên', 'BMKHMT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000036', N'Phạm Hoàng Quân', N'Nam', to_date('20-12-1975', 'DD/MM/YYYY'), 500000, '0123456744', N'Giảng viên', 'BMKHMT');
+    values('GV0000036', N'Phạm Hoàng Quân', N'Nam', to_date('20-12-1975', 'DD/MM/YYYY'), 500000, '0123456744', N'Giảng viên', 'BMKHMT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000037', N'Phan Thị Ngọc Thảo', N'Nữ', to_date('17-08-1992', 'DD/MM/YYYY'), 500000, '0123456743', N'Giảng viên', 'BMKHMT');
+    values('GV0000037', N'Phan Thị Ngọc Thảo', N'Nữ', to_date('17-08-1992', 'DD/MM/YYYY'), 500000, '0123456743', N'Giảng viên', 'BMKHMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000038', N'Hoàng Thị Mai Loan', N'Nữ', to_date('29-05-1975', 'DD/MM/YYYY'), 500000, '0123456742', N'Giảng viên', 'BMKHMT');
+    values('GV0000038', N'Hoàng Thị Mai Loan', N'Nữ', to_date('29-05-1975', 'DD/MM/YYYY'), 500000, '0123456742', N'Giảng viên', 'BMKHMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000039', N'Đỗ Nam Khánh', N'Nam', to_date('11-05-1985', 'DD/MM/YYYY'), 500000, '0123456741', N'Giảng viên', 'BMKHMT');
+    values('GV0000039', N'Đỗ Nam Khánh', N'Nam', to_date('11-05-1985', 'DD/MM/YYYY'), 500000, '0123456741', N'Giảng viên', 'BMKHMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000040', N'Huỳnh Anh Tuấn', N'Nam', to_date('03-10-1980', 'DD/MM/YYYY'), 500000, '0123456740', N'Giảng viên', 'BMKHMT');
+    values('GV0000040', N'Huỳnh Anh Tuấn', N'Nam', to_date('03-10-1980', 'DD/MM/YYYY'), 500000, '0123456740', N'Giảng viên', 'BMKHMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000041', N'Vương Quang Anh', N'Nam', to_date('01-07-1974', 'DD/MM/YYYY'), 500000, '0123456739', N'Giảng viên', 'BMKHMT');
+    values('GV0000041', N'Vương Quang Anh', N'Nam', to_date('01-07-1974', 'DD/MM/YYYY'), 500000, '0123456739', N'Giảng viên', 'BMKHMT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000042', N'Phạm Minh Quân', N'Nam', to_date('20-08-1975', 'DD/MM/YYYY'), 500000, '0123456738', N'Giảng viên', 'BMKHMT');
+    values('GV0000042', N'Phạm Minh Quân', N'Nam', to_date('20-08-1975', 'DD/MM/YYYY'), 500000, '0123456738', N'Giảng viên', 'BMKHMT');
     
     
 -- BMCNTT
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000043', N'Nguyễn Trọng Thiên', N'Nam', to_date('03-12-1974', 'DD/MM/YYYY'), 500000, '0123456737', N'Giảng viên', 'BMCNTT');
+    values('GV0000043', N'Nguyễn Trọng Thiên', N'Nam', to_date('03-12-1974', 'DD/MM/YYYY'), 500000, '0123456737', N'Giảng viên', 'BMCNTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000044', N'Thái Hoàng Nhân', N'Nam', to_date('24-11-1988', 'DD/MM/YYYY'), 500000, '0123456736', N'Giảng viên', 'BMCNTT');
+    values('GV0000044', N'Thái Hoàng Nhân', N'Nam', to_date('24-11-1988', 'DD/MM/YYYY'), 500000, '0123456736', N'Giảng viên', 'BMCNTT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000045', N'Đặng Bảo Toàn', N'Nam', to_date('14-04-1983', 'DD/MM/YYYY'), 500000, '0123456735', N'Giảng viên', 'BMCNTT');
+    values('GV0000045', N'Đặng Bảo Toàn', N'Nam', to_date('14-04-1983', 'DD/MM/YYYY'), 500000, '0123456735', N'Giảng viên', 'BMCNTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000046', N'Chung Mạnh Quỳnh', N'Nữ', to_date('18-12-1996', 'DD/MM/YYYY'), 500000, '0123456734', N'Giảng viên', 'BMCNTT');
+    values('GV0000046', N'Chung Mạnh Quỳnh', N'Nữ', to_date('18-12-1996', 'DD/MM/YYYY'), 500000, '0123456734', N'Giảng viên', 'BMCNTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000047', N'Phạm Hữu Tín', N'Nam', to_date('27-04-1977', 'DD/MM/YYYY'), 500000, '0123456733', N'Giảng viên', 'BMCNTT');
+    values('GV0000047', N'Phạm Hữu Tín', N'Nam', to_date('27-04-1977', 'DD/MM/YYYY'), 500000, '0123456733', N'Giảng viên', 'BMCNTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000048', N'Huỳnh Lê Song Tấn', N'Nam', to_date('29-01-1974', 'DD/MM/YYYY'), 500000, '0123456732', N'Giảng viên', 'BMCNTT');
+    values('GV0000048', N'Huỳnh Lê Song Tấn', N'Nam', to_date('29-01-1974', 'DD/MM/YYYY'), 500000, '0123456732', N'Giảng viên', 'BMCNTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000049', N'Đoàn Đại Dương', N'Nam', to_date('21-05-1979', 'DD/MM/YYYY'), 500000, '0123456731', N'Giảng viên', 'BMCNTT');
+    values('GV0000049', N'Đoàn Đại Dương', N'Nam', to_date('21-05-1979', 'DD/MM/YYYY'), 500000, '0123456731', N'Giảng viên', 'BMCNTT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000050', N'Nguyễn Trương Quốc Anh', N'Nam', to_date('13-02-1982', 'DD/MM/YYYY'), 500000, '0123456730', N'Giảng viên', 'BMCNTT');
+    values('GV0000050', N'Nguyễn Trương Quốc Anh', N'Nam', to_date('13-02-1982', 'DD/MM/YYYY'), 500000, '0123456730', N'Giảng viên', 'BMCNTT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000051', N'Trương Bình Duy', N'Nam', to_date('24-11-1974', 'DD/MM/YYYY'), 500000, '0123456729', N'Giảng viên', 'BMCNTT');
+    values('GV0000051', N'Trương Bình Duy', N'Nam', to_date('24-11-1974', 'DD/MM/YYYY'), 500000, '0123456729', N'Giảng viên', 'BMCNTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000052', N'Đặng Dương Duy Anh', N'Nam', to_date('26-12-1997', 'DD/MM/YYYY'), 500000, '0123456728', N'Giảng viên', 'BMCNTT');
+    values('GV0000052', N'Đặng Dương Duy Anh', N'Nam', to_date('26-12-1997', 'DD/MM/YYYY'), 500000, '0123456728', N'Giảng viên', 'BMCNTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000053', N'Trương Bảo Tâm', N'Nữ', to_date('18-05-1996', 'DD/MM/YYYY'), 500000, '0123456727', N'Giảng viên', 'BMCNTT');
+    values('GV0000053', N'Trương Bảo Tâm', N'Nữ', to_date('18-05-1996', 'DD/MM/YYYY'), 500000, '0123456727', N'Giảng viên', 'BMCNTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000054', N'Lê Phan Bảo Quyết', N'Nam', to_date('05-04-1990', 'DD/MM/YYYY'), 500000, '0123456726', N'Giảng viên', 'BMCNTT');
+    values('GV0000054', N'Lê Phan Bảo Quyết', N'Nam', to_date('05-04-1990', 'DD/MM/YYYY'), 500000, '0123456726', N'Giảng viên', 'BMCNTT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000055', N'Trần Huỳnh Tiến Đạt', N'Nam', to_date('12-02-1974', 'DD/MM/YYYY'), 500000, '0123456725', N'Giảng viên', 'BMCNTT');
+    values('GV0000055', N'Trần Huỳnh Tiến Đạt', N'Nam', to_date('12-02-1974', 'DD/MM/YYYY'), 500000, '0123456725', N'Giảng viên', 'BMCNTT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000056', N'Trần Hải Thiên Ân', N'Nam', to_date('29-12-1974', 'DD/MM/YYYY'), 500000, '0123456724', N'Giảng viên', 'BMCNTT');
+    values('GV0000056', N'Trần Hải Thiên Ân', N'Nam', to_date('29-12-1974', 'DD/MM/YYYY'), 500000, '0123456724', N'Giảng viên', 'BMCNTT');
     
 
 -- BMTGMT
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000057', N'Nguyễn Thị Kim Ánh', N'Nữ', to_date('19-06-1993', 'DD/MM/YYYY'), 500000, '0123456723', N'Giảng viên', 'BMTGMT');
+    values('GV0000057', N'Nguyễn Thị Kim Ánh', N'Nữ', to_date('19-06-1993', 'DD/MM/YYYY'), 500000, '0123456723', N'Giảng viên', 'BMTGMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000058', N'Trương Tấn Huy', N'Nam', to_date('01-03-1988', 'DD/MM/YYYY'), 500000, '0123456722', N'Giảng viên', 'BMTGMT');
+    values('GV0000058', N'Trương Tấn Huy', N'Nam', to_date('01-03-1988', 'DD/MM/YYYY'), 500000, '0123456722', N'Giảng viên', 'BMTGMT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000059', N'Lê Văn Hưởng', N'Nam', to_date('08-09-1992', 'DD/MM/YYYY'), 500000, '0123456721', N'Giảng viên', 'BMTGMT');
+    values('GV0000059', N'Lê Văn Hưởng', N'Nam', to_date('08-09-1992', 'DD/MM/YYYY'), 500000, '0123456721', N'Giảng viên', 'BMTGMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000060', N'Hoàng Anh Sơn', N'Nam', to_date('20-03-1983', 'DD/MM/YYYY'), 500000, '0123456720', N'Giảng viên', 'BMTGMT');
+    values('GV0000060', N'Hoàng Anh Sơn', N'Nam', to_date('20-03-1983', 'DD/MM/YYYY'), 500000, '0123456720', N'Giảng viên', 'BMTGMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000061', N'Đinh Quốc Tuấn', N'Nam', to_date('05-06-1981', 'DD/MM/YYYY'), 500000, '0123456719', N'Giảng viên', 'BMTGMT');
+    values('GV0000061', N'Đinh Quốc Tuấn', N'Nam', to_date('05-06-1981', 'DD/MM/YYYY'), 500000, '0123456719', N'Giảng viên', 'BMTGMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000062', N'Nguyễn Giao Bản', N'Nam', to_date('03-12-1977', 'DD/MM/YYYY'), 500000, '0123456718', N'Giảng viên', 'BMTGMT');
+    values('GV0000062', N'Nguyễn Giao Bản', N'Nam', to_date('03-12-1977', 'DD/MM/YYYY'), 500000, '0123456718', N'Giảng viên', 'BMTGMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000063', N'Nguyễn Tấn Diện', N'Nam', to_date('09-11-1985', 'DD/MM/YYYY'), 500000, '0123456717', N'Giảng viên', 'BMTGMT');
+    values('GV0000063', N'Nguyễn Tấn Diện', N'Nam', to_date('09-11-1985', 'DD/MM/YYYY'), 500000, '0123456717', N'Giảng viên', 'BMTGMT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000064', N'Trần Thị Bích Ngọc', N'Nữ', to_date('19-12-1996', 'DD/MM/YYYY'), 500000, '0123456716', N'Giảng viên', 'BMTGMT');
+    values('GV0000064', N'Trần Thị Bích Ngọc', N'Nữ', to_date('19-12-1996', 'DD/MM/YYYY'), 500000, '0123456716', N'Giảng viên', 'BMTGMT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000065', N'Trần Thị Soan', N'Nữ', to_date('17-09-1990', 'DD/MM/YYYY'), 500000, '0123456715', N'Giảng viên', 'BMTGMT');
+    values('GV0000065', N'Trần Thị Soan', N'Nữ', to_date('17-09-1990', 'DD/MM/YYYY'), 500000, '0123456715', N'Giảng viên', 'BMTGMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000066', N'Trương Ngọc Tâm', N'Nữ', to_date('14-05-1982', 'DD/MM/YYYY'), 500000, '0123456714', N'Giảng viên', 'BMTGMT');
+    values('GV0000066', N'Trương Ngọc Tâm', N'Nữ', to_date('14-05-1982', 'DD/MM/YYYY'), 500000, '0123456714', N'Giảng viên', 'BMTGMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000067', N'Phan Thành Nam', N'Nam', to_date('29-09-1982', 'DD/MM/YYYY'), 500000, '0123456713', N'Giảng viên', 'BMTGMT');
+    values('GV0000067', N'Phan Thành Nam', N'Nam', to_date('29-09-1982', 'DD/MM/YYYY'), 500000, '0123456713', N'Giảng viên', 'BMTGMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000068', N'Nguyễn Trương Quốc Anh', N'Nam', to_date('26-03-1970', 'DD/MM/YYYY'), 500000, '0123456712', N'Giảng viên', 'BMTGMT');
+    values('GV0000068', N'Nguyễn Trương Quốc Anh', N'Nam', to_date('26-03-1970', 'DD/MM/YYYY'), 500000, '0123456712', N'Giảng viên', 'BMTGMT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000069', N'Ngô Minh Thông', N'Nam', to_date('25-10-1991', 'DD/MM/YYYY'), 500000, '0123456711', N'Giảng viên', 'BMTGMT');
+    values('GV0000069', N'Ngô Minh Thông', N'Nam', to_date('25-10-1991', 'DD/MM/YYYY'), 500000, '0123456711', N'Giảng viên', 'BMTGMT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000070', N'Phạm Ngọc Thảo', N'Nữ', to_date('24-04-1986', 'DD/MM/YYYY'), 500000, '0123456710', N'Giảng viên', 'BMTGMT');
+    values('GV0000070', N'Phạm Ngọc Thảo', N'Nữ', to_date('24-04-1986', 'DD/MM/YYYY'), 500000, '0123456710', N'Giảng viên', 'BMTGMT');
     
 
 -- BMMMTVVT
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000071', N'Nguyễn Duy Thuận', N'Nam', to_date('07-06-1996', 'DD/MM/YYYY'), 500000, '0123456709', N'Giảng viên', 'BMMMTVVT');
+    values('GV0000071', N'Nguyễn Duy Thuận', N'Nam', to_date('07-06-1996', 'DD/MM/YYYY'), 500000, '0123456709', N'Giảng viên', 'BMMMTVVT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000072', N'Phan Huỳnh Minh Duy', N'Nam', to_date('16-10-1970', 'DD/MM/YYYY'), 500000, '0123456708', N'Giảng viên', 'BMMMTVVT');
+    values('GV0000072', N'Phan Huỳnh Minh Duy', N'Nam', to_date('16-10-1970', 'DD/MM/YYYY'), 500000, '0123456708', N'Giảng viên', 'BMMMTVVT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000073', N'Võ Thị Hoài Linh', N'Nữ', to_date('18-07-1973', 'DD/MM/YYYY'), 500000, '0123456707', N'Giảng viên', 'BMMMTVVT');
+    values('GV0000073', N'Võ Thị Hoài Linh', N'Nữ', to_date('18-07-1973', 'DD/MM/YYYY'), 500000, '0123456707', N'Giảng viên', 'BMMMTVVT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000074', N'Trịnh Quốc Huy', N'Nam', to_date('06-12-1971', 'DD/MM/YYYY'), 500000, '0123456706', N'Giảng viên', 'BMMMTVVT');
+    values('GV0000074', N'Trịnh Quốc Huy', N'Nam', to_date('06-12-1971', 'DD/MM/YYYY'), 500000, '0123456706', N'Giảng viên', 'BMMMTVVT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000075', N'Vũ Quốc Thể', N'Nam', to_date('19-09-1974', 'DD/MM/YYYY'), 500000, '0123456705', N'Giảng viên', 'BMMMTVVT');
+    values('GV0000075', N'Vũ Quốc Thể', N'Nam', to_date('19-09-1974', 'DD/MM/YYYY'), 500000, '0123456705', N'Giảng viên', 'BMMMTVVT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000076', N'Đặng Anh Minh', N'Nam', to_date('24-05-1989', 'DD/MM/YYYY'), 500000, '0123456704', N'Giảng viên', 'BMMMTVVT');
+    values('GV0000076', N'Đặng Anh Minh', N'Nam', to_date('24-05-1989', 'DD/MM/YYYY'), 500000, '0123456704', N'Giảng viên', 'BMMMTVVT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000077', N'Đoàn Hương Quân', N'Nữ', to_date('19-03-1982', 'DD/MM/YYYY'), 500000, '0123456703', N'Giảng viên', 'BMMMTVVT');
+    values('GV0000077', N'Đoàn Hương Quân', N'Nữ', to_date('19-03-1982', 'DD/MM/YYYY'), 500000, '0123456703', N'Giảng viên', 'BMMMTVVT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000078', N'Đinh Thị Mỹ Quỳnh', N'Nữ', to_date('02-02-1990', 'DD/MM/YYYY'), 500000, '0123456702', N'Giảng viên', 'BMMMTVVT');
+    values('GV0000078', N'Đinh Thị Mỹ Quỳnh', N'Nữ', to_date('02-02-1990', 'DD/MM/YYYY'), 500000, '0123456702', N'Giảng viên', 'BMMMTVVT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000079', N'Lê Hà Phương Anh', N'Nữ', to_date('03-11-1995', 'DD/MM/YYYY'), 500000, '0123456701', N'Giảng viên', 'BMMMTVVT');
+    values('GV0000079', N'Lê Hà Phương Anh', N'Nữ', to_date('03-11-1995', 'DD/MM/YYYY'), 500000, '0123456701', N'Giảng viên', 'BMMMTVVT');
 
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GV000080', N'Nguyễn Vũ Hoài Dương', N'Nam', to_date('06-01-1996', 'DD/MM/YYYY'), 500000, '0123456700', N'Giảng viên', 'BMMMTVVT');
+    values('GV0000080', N'Nguyễn Vũ Hoài Dương', N'Nam', to_date('06-01-1996', 'DD/MM/YYYY'), 500000, '0123456700', N'Giảng viên', 'BMMMTVVT');
     
     
 -- Nhập liệu Giáo vụ
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GIAOVU01', N'Đinh Thị Mỹ Quỳnh', N'Nữ', to_date('21-04-1974', 'DD/MM/YYYY'), 500000, '0123456699', N'Giáo vụ', 'VPK');
+    values('GIAOVU001', N'Đinh Thị Mỹ Quỳnh', N'Nữ', to_date('21-04-1974', 'DD/MM/YYYY'), 500000, '0123456699', N'Giáo vụ', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GIAOVU02', N'Nguyễn Thị Ngọc Giàu', N'Nữ', to_date('02-04-1992', 'DD/MM/YYYY'), 500000, '0123456698', N'Giáo vụ', 'VPK');
+    values('GIAOVU002', N'Nguyễn Thị Ngọc Giàu', N'Nữ', to_date('02-04-1992', 'DD/MM/YYYY'), 500000, '0123456698', N'Giáo vụ', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GIAOVU03', N'Nguyễn Minh Khuê', N'Nữ', to_date('25-11-1990', 'DD/MM/YYYY'), 500000, '0123456697', N'Giáo vụ', 'VPK');
+    values('GIAOVU003', N'Nguyễn Minh Khuê', N'Nữ', to_date('25-11-1990', 'DD/MM/YYYY'), 500000, '0123456697', N'Giáo vụ', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GIAOVU04', N'Vũ Phúc Bảo', N'Nam', to_date('23-12-1990', 'DD/MM/YYYY'), 500000, '0123456696', N'Giáo vụ', 'VPK');
+    values('GIAOVU004', N'Vũ Phúc Bảo', N'Nam', to_date('23-12-1990', 'DD/MM/YYYY'), 500000, '0123456696', N'Giáo vụ', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GIAOVU05', N'Lê Thanh Chung', N'Nam', to_date('30-12-1978', 'DD/MM/YYYY'), 500000, '0123456695', N'Giáo vụ', 'VPK');
+    values('GIAOVU005', N'Lê Thanh Chung', N'Nam', to_date('30-12-1978', 'DD/MM/YYYY'), 500000, '0123456695', N'Giáo vụ', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GIAOVU06', N'Phạm Huỳnh Đăng Huy', N'Nam', to_date('23-11-1973', 'DD/MM/YYYY'), 500000, '0123456694', N'Giáo vụ', 'VPK');
+    values('GIAOVU006', N'Phạm Huỳnh Đăng Huy', N'Nam', to_date('23-11-1973', 'DD/MM/YYYY'), 500000, '0123456694', N'Giáo vụ', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GIAOVU07', N'Nguyễn Trọng Thiên', N'Nam', to_date('14-09-1985', 'DD/MM/YYYY'), 500000, '0123456693', N'Giáo vụ', 'VPK');
+    values('GIAOVU007', N'Nguyễn Trọng Thiên', N'Nam', to_date('14-09-1985', 'DD/MM/YYYY'), 500000, '0123456693', N'Giáo vụ', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GIAOVU08', N'Hoàng Xuân Ngọc', N'Nữ', to_date('03-07-1992', 'DD/MM/YYYY'), 500000, '0123456692', N'Giáo vụ', 'VPK');
+    values('GIAOVU008', N'Hoàng Xuân Ngọc', N'Nữ', to_date('03-07-1992', 'DD/MM/YYYY'), 500000, '0123456692', N'Giáo vụ', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GIAOVU09', N'Võ Nguyễn Hữu Nhân', N'Nam', to_date('16-06-1995', 'DD/MM/YYYY'), 500000, '0123456691', N'Giáo vụ', 'VPK');
+    values('GIAOVU009', N'Võ Nguyễn Hữu Nhân', N'Nam', to_date('16-06-1995', 'DD/MM/YYYY'), 500000, '0123456691', N'Giáo vụ', 'VPK');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('GIAOVU10', N'Phạm Duy Hạnh', N'Nam', to_date('26-11-1993', 'DD/MM/YYYY'), 500000, '0123456690', N'Giáo vụ', 'VPK');
+    values('GIAOVU010', N'Phạm Duy Hạnh', N'Nam', to_date('26-11-1993', 'DD/MM/YYYY'), 500000, '0123456690', N'Giáo vụ', 'VPK');
 
 
 -- Nhập liệu Trưởng Đơn vị
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('TRGDV001', N'Phạm Nguyễn Cương', N'Nam', to_date('01-02-1980', 'DD/MM/YYYY'), 500000, '0123456689', N'Trưởng đơn vị', 'BMHTTT');
+    values('TRGDV0001', N'Phạm Nguyễn Cương', N'Nam', to_date('01-02-1980', 'DD/MM/YYYY'), 500000, '0123456689', N'Trưởng đơn vị', 'BMHTTT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('TRGDV002', N'Nguyễn Văn Vũ', N'Nam', to_date('01-04-1970', 'DD/MM/YYYY'), 500000, '0123456688', N'Trưởng đơn vị', 'BMCNPM');
+    values('TRGDV0002', N'Nguyễn Văn Vũ', N'Nam', to_date('01-04-1970', 'DD/MM/YYYY'), 500000, '0123456688', N'Trưởng đơn vị', 'BMCNPM');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('TRGDV003', N'Lê Hoài Bắc', N'Nam', to_date('01-03-1950', 'DD/MM/YYYY'), 500000, '0123456687', N'Trưởng đơn vị', 'BMKHMT');
+    values('TRGDV0003', N'Lê Hoài Bắc', N'Nam', to_date('01-03-1950', 'DD/MM/YYYY'), 500000, '0123456687', N'Trưởng đơn vị', 'BMKHMT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('TRGDV004', N'Hồng Trần Thoang', N'Nam', to_date('01-06-1990', 'DD/MM/YYYY'), 500000, '0123456686', N'Trưởng đơn vị', 'BMCNTT');
+    values('TRGDV0004', N'Hồng Trần Thoang', N'Nam', to_date('01-06-1990', 'DD/MM/YYYY'), 500000, '0123456686', N'Trưởng đơn vị', 'BMCNTT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('TRGDV005', N'Lý Quốc Ngọc', N'Nam', to_date('01-07-1970', 'DD/MM/YYYY'), 500000, '0123456685', N'Trưởng đơn vị', 'BMTGMT');
+    values('TRGDV0005', N'Lý Quốc Ngọc', N'Nam', to_date('01-07-1970', 'DD/MM/YYYY'), 500000, '0123456685', N'Trưởng đơn vị', 'BMTGMT');
     
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('TRGDV006', N'Trần Trung Dũng', N'Nam', to_date('01-08-1990', 'DD/MM/YYYY'), 500000, '0123456684', N'Trưởng đơn vị', 'BMMMTVVT');
+    values('TRGDV0006', N'Trần Trung Dũng', N'Nam', to_date('01-08-1990', 'DD/MM/YYYY'), 500000, '0123456684', N'Trưởng đơn vị', 'BMMMTVVT');
     
 -- Nhập liệu Trưởng khoa
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('TRKHOA01', N'Đinh Bá Tiến', N'Nam', to_date('01-09-1985', 'DD/MM/YYYY'), 500000, '0123456683', N'Trưởng khoa', 'BMKHMT');
+    values('TRKHOA001', N'Đinh Bá Tiến', N'Nam', to_date('01-09-1985', 'DD/MM/YYYY'), 500000, '0123456683', N'Trưởng khoa', 'BMKHMT');
 
 -- Thêm trưởng đơn vị
-update DONVI set TRGDV = 'TRGDV001' where MADV = 'BMHTTT';
-update DONVI set TRGDV = 'TRGDV002' where MADV = 'BMCNPM';
-update DONVI set TRGDV = 'TRGDV003' where MADV = 'BMKHMT';
-update DONVI set TRGDV = 'TRGDV004' where MADV = 'BMCNTT';
-update DONVI set TRGDV = 'TRGDV005' where MADV = 'BMTGMT';
-update DONVI set TRGDV = 'TRGDV006' where MADV = 'BMMMTVVT';
+update DONVI set TRGDV = 'TRGDV0001' where MADV = 'BMHTTT';
+update DONVI set TRGDV = 'TRGDV0002' where MADV = 'BMCNPM';
+update DONVI set TRGDV = 'TRGDV0003' where MADV = 'BMKHMT';
+update DONVI set TRGDV = 'TRGDV0004' where MADV = 'BMCNTT';
+update DONVI set TRGDV = 'TRGDV0005' where MADV = 'BMTGMT';
+update DONVI set TRGDV = 'TRGDV0006' where MADV = 'BMMMTVVT';
+commit;
 
 -- Thêm Sinh Viên
 insert into SINHVIEN (MASV, HOTEN, PHAI, NGSINH, DCHI, DT, MACT, MANGANH, SOTCTL, DTBTL) values (N'SV0002585', N'Elena Proctor', N'Nữ ', to_date('2005-03-12', 'YYYY-MM-DD'), N'285 New St.', N'0696569522', N'CQ   ', N'MMT      ', 99, 6.1407789393052354);

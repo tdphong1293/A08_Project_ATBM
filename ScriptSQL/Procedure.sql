@@ -51,7 +51,7 @@ as
     cursor cur is (
         select MANV
         from NHANSU
-        where MANV in (select username from all_users) and VAITRO = N'''' || to_nchar(loainv) || ''''
+        where MANV in (select username from all_users) and VAITRO = loainv
     );
     strsql varchar2(1000);
     usr varchar2(100);
@@ -60,9 +60,8 @@ begin
     loop
         fetch cur into usr;
         exit when cur%notfound;
-        dbms_output.put_line(usr);
+
         strsql := 'grant '|| strrole || ' to ' || usr;
-        dbms_output.put_line(strsql);
         execute immediate (strsql);
     end loop;
     close cur;
@@ -85,18 +84,67 @@ begin
         fetch cur into usr;
         exit when cur%notfound;
         
-        strsql := 'grant SinhVien to ' || usr;
+        strsql := 'grant rl_SinhVien to ' || usr;
         execute immediate (strsql);
     end loop;
     close cur;
 end;
 /
 
+create or replace procedure sp_dropNV
+authid current_user
+as
+    cursor cur is (
+        select MANV
+        from NHANSU
+        where MANV in (select username from all_users)
+    );
+    strsql varchar2(1000);
+    usr varchar2(100);
+begin  
+    open cur;
+    loop
+        fetch cur into usr;
+        exit when cur%notfound;
+        
+        strsql := 'drop user ' || usr;
+        execute immediate (strsql);
+    end loop;
+    close cur;
+end;
+/
+
+create or replace procedure sp_dropSV
+authid current_user
+as
+    cursor cur is (
+        select MASV
+        from SINHVIEN
+        where MASV in (select username from all_users)
+    );
+    strsql varchar2(1000);
+    usr varchar2(100);
+begin  
+    open cur;
+    loop
+        fetch cur into usr;
+        exit when cur%notfound;
+        
+        strsql := 'drop user ' || usr;
+        execute immediate (strsql);
+    end loop;
+    close cur;
+end;
+/
+
+exec sp_dropNV;
+exec sp_dropSV;
+
 exec sp_CreateUserNV;
 exec sp_createUserSV;
-exec sp_AddRoleNV('NhanVienCoBan', N'Nhân viên cơ bản');
-exec sp_AddRoleNV('GiangVien', N'Giảng viên');
-exec sp_AddRoleNV('GiaoVu', N'Giáo vụ');
-exec sp_AddRoleNV('TruongDonVi', N'Trưởng đơn vị');
-exec sp_AddRoleNV('TruongKhoa', N'Trưởng khoa');
+exec sp_AddRoleNV('rl_NhanVienCoBan', N'Nhân viên cơ bản');
+exec sp_AddRoleNV('rl_GiangVien', N'Giảng viên');
+exec sp_AddRoleNV('rl_GiaoVu', N'Giáo vụ');
+exec sp_AddRoleNV('rl_TruongDonVi', N'Trưởng đơn vị');
+exec sp_AddRoleNV('rl_TruongKhoa', N'Trưởng khoa');
 exec sp_AddRoleSV;

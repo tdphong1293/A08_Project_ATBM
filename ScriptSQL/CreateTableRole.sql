@@ -6,12 +6,12 @@ drop table SINHVIEN cascade constraints;
 drop table NHANSU cascade constraints;
 drop table DONVI cascade constraints;
 
-drop role NhanVienCoBan;
-drop role GiangVien;
-drop role GiaoVu;
-drop role TruongDonVi;
-drop role TruongKhoa;
-drop role SinhVien; 
+drop role rl_NhanVienCoBan;
+drop role rl_GiangVien;
+drop role rl_GiaoVu;
+drop role rl_TruongDonVi;
+drop role rl_TruongKhoa;
+drop role rl_SinhVien; 
 --Tạo bảng--
 create table NHANSU (
     MANV char(9) primary key,
@@ -108,17 +108,9 @@ alter table DANGKY add constraint
     FK_DANGKY_PHANCONG foreign key (MAGV, MAHP, HK, NAM, MACT) references PHANCONG(MAGV, MAHP, HK, NAM, MACT);
 
 --Tạo vai trò--
-create role NhanVienCoBan;
-create role GiangVien;
-create role GiaoVu;
-create role TruongDonVi;
-create role TruongKhoa;
-create role SinhVien;
-
-
-
-
-
-
-
-
+create role rl_NhanVienCoBan;
+create role rl_GiangVien;
+create role rl_GiaoVu;
+create role rl_TruongDonVi;
+create role rl_TruongKhoa;
+create role rl_SinhVien;
