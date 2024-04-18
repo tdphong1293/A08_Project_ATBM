@@ -1,10 +1,10 @@
-insert into DONVI (MADV, TENDV) values('VPK', 'Văn phòng khoa');
-insert into DONVI (MADV, TENDV) values('BMHTTT', 'Bộ môn HTTT');
-insert into DONVI (MADV, TENDV) values('BMCNPM', 'Bộ môn CNPM');
-insert into DONVI (MADV, TENDV) values('BMKHMT', 'Bộ môn KHMT');
-insert into DONVI (MADV, TENDV) values('BMCNTT', 'Bộ môn CNTT');
-insert into DONVI (MADV, TENDV) values('BMTGMT', 'Bộ môn TGMT');
-insert into DONVI (MADV, TENDV) values('BMMMTVVT', 'Bộ môn MMT và Viễn thông');
+insert into DONVI (MADV, TENDV) values('VPK', N'Văn phòng khoa');
+insert into DONVI (MADV, TENDV) values('BMHTTT', N'Bộ môn HTTT');
+insert into DONVI (MADV, TENDV) values('BMCNPM', N'Bộ môn CNPM');
+insert into DONVI (MADV, TENDV) values('BMKHMT', N'Bộ môn KHMT');
+insert into DONVI (MADV, TENDV) values('BMCNTT', N'Bộ môn CNTT');
+insert into DONVI (MADV, TENDV) values('BMTGMT', N'Bộ môn TGMT');
+insert into DONVI (MADV, TENDV) values('BMMMTVVT', N'Bộ môn MMT và Viễn thông');
  
 -- Nhập liệu Nhân viên cơ bản
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
@@ -344,7 +344,7 @@ insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
     
 -- Nhập liệu Trưởng khoa
 insert into NHANSU(MANV, HOTEN, PHAI, NGSINH, PHUCAP, DT, VAITRO, MADV)
-    values('TRKHOA001', N'Đinh Bá Tiến', N'Nam', to_date('01-09-1985', 'DD/MM/YYYY'), 500000, '0123456683', N'Trưởng khoa', 'BMKHMT');
+    values('TRKHOA001', N'Đinh Bá Tiến', N'Nam', to_date('01-09-1985', 'DD/MM/YYYY'), 500000, '0123456683', N'Trưởng khoa', 'VPK');
 
 -- Thêm trưởng đơn vị
 update DONVI set TRGDV = 'TRGDV0001' where MADV = 'BMHTTT';
@@ -353,6 +353,7 @@ update DONVI set TRGDV = 'TRGDV0003' where MADV = 'BMKHMT';
 update DONVI set TRGDV = 'TRGDV0004' where MADV = 'BMCNTT';
 update DONVI set TRGDV = 'TRGDV0005' where MADV = 'BMTGMT';
 update DONVI set TRGDV = 'TRGDV0006' where MADV = 'BMMMTVVT';
+update DONVI set TRGDV = 'TRKHOA001' where MADV = 'VPK';
 commit;
 
 -- Thêm Sinh Viên
