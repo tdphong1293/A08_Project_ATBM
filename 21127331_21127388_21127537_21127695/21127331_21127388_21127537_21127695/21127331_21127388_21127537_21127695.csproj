@@ -115,6 +115,12 @@
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGiangVien.Designer.cs">
+      <DependentUpon>FormGiangVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,11 +169,11 @@
     <Compile Include="FormTaoUser.Designer.cs">
       <DependentUpon>FormTaoUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="FromNhanVienCoBan.cs">
+    <Compile Include="FormNhanVienCoBan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FromNhanVienCoBan.Designer.cs">
-      <DependentUpon>FromNhanVienCoBan.cs</DependentUpon>
+    <Compile Include="FormNhanVienCoBan.Designer.cs">
+      <DependentUpon>FormNhanVienCoBan.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGiangVien.resx">
+      <DependentUpon>FormGiangVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLy.resx">
       <DependentUpon>FormQuanLy.cs</DependentUpon>
@@ -204,8 +213,8 @@
     <EmbeddedResource Include="FormTaoUser.resx">
       <DependentUpon>FormTaoUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FromNhanVienCoBan.resx">
-      <DependentUpon>FromNhanVienCoBan.cs</DependentUpon>
+    <EmbeddedResource Include="FormNhanVienCoBan.resx">
+      <DependentUpon>FormNhanVienCoBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
