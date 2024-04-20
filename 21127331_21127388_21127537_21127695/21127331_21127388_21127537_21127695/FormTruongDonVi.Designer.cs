@@ -1,6 +1,6 @@
 ﻿namespace _21127331_21127388_21127537_21127695
 {
-    partial class FormNhanVienCoBan
+    partial class FormTruongDonVi
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.tc_FormNhanVienCoBan = new System.Windows.Forms.TabControl();
+            this.tc_FormTruongDonVi = new System.Windows.Forms.TabControl();
             this.tb_canhan = new System.Windows.Forms.TabPage();
             this.btn_thongbao = new System.Windows.Forms.Button();
-            this.pn_thongbao = new System.Windows.Forms.Panel();
-            this.dtgv_thongbao = new System.Windows.Forms.DataGridView();
             this.lb_dienthoai_nv = new System.Windows.Forms.Label();
             this.lb_madv_nv = new System.Windows.Forms.Label();
             this.lb_vaitro_nv = new System.Windows.Forms.Label();
@@ -111,11 +108,10 @@
             this.lb_timkiem_khmo = new System.Windows.Forms.Label();
             this.txt_timkiem_khmo = new System.Windows.Forms.TextBox();
             this.dtgv_khmo = new System.Windows.Forms.DataGridView();
-            this.thongbaotimer = new System.Windows.Forms.Timer(this.components);
-            this.tc_FormNhanVienCoBan.SuspendLayout();
+            this.pn_thongbao = new System.Windows.Forms.Panel();
+            this.dtgv_thongbao = new System.Windows.Forms.DataGridView();
+            this.tc_FormTruongDonVi.SuspendLayout();
             this.tb_canhan.SuspendLayout();
-            this.pn_thongbao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv_thongbao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_nhanvien)).BeginInit();
             this.tp_sinhvien.SuspendLayout();
             this.status_sinhvien.SuspendLayout();
@@ -127,22 +123,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_hocphan)).BeginInit();
             this.tp_khoahocmo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_khmo)).BeginInit();
+            this.pn_thongbao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_thongbao)).BeginInit();
             this.SuspendLayout();
             // 
-            // tc_FormNhanVienCoBan
+            // tc_FormTruongDonVi
             // 
-            this.tc_FormNhanVienCoBan.Controls.Add(this.tb_canhan);
-            this.tc_FormNhanVienCoBan.Controls.Add(this.tp_sinhvien);
-            this.tc_FormNhanVienCoBan.Controls.Add(this.tp_donvi);
-            this.tc_FormNhanVienCoBan.Controls.Add(this.tb_hocphan);
-            this.tc_FormNhanVienCoBan.Controls.Add(this.tp_khoahocmo);
-            this.tc_FormNhanVienCoBan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tc_FormNhanVienCoBan.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tc_FormNhanVienCoBan.Location = new System.Drawing.Point(0, 0);
-            this.tc_FormNhanVienCoBan.Name = "tc_FormNhanVienCoBan";
-            this.tc_FormNhanVienCoBan.SelectedIndex = 0;
-            this.tc_FormNhanVienCoBan.Size = new System.Drawing.Size(1264, 681);
-            this.tc_FormNhanVienCoBan.TabIndex = 5;
+            this.tc_FormTruongDonVi.Controls.Add(this.tb_canhan);
+            this.tc_FormTruongDonVi.Controls.Add(this.tp_sinhvien);
+            this.tc_FormTruongDonVi.Controls.Add(this.tp_donvi);
+            this.tc_FormTruongDonVi.Controls.Add(this.tb_hocphan);
+            this.tc_FormTruongDonVi.Controls.Add(this.tp_khoahocmo);
+            this.tc_FormTruongDonVi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tc_FormTruongDonVi.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tc_FormTruongDonVi.Location = new System.Drawing.Point(0, 0);
+            this.tc_FormTruongDonVi.Name = "tc_FormTruongDonVi";
+            this.tc_FormTruongDonVi.SelectedIndex = 0;
+            this.tc_FormTruongDonVi.Size = new System.Drawing.Size(1264, 681);
+            this.tc_FormTruongDonVi.TabIndex = 6;
             // 
             // tb_canhan
             // 
@@ -190,28 +188,6 @@
             this.btn_thongbao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_thongbao.UseVisualStyleBackColor = true;
             this.btn_thongbao.Click += new System.EventHandler(this.btn_thongbao_Click);
-            // 
-            // pn_thongbao
-            // 
-            this.pn_thongbao.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.pn_thongbao.Controls.Add(this.dtgv_thongbao);
-            this.pn_thongbao.Location = new System.Drawing.Point(941, 47);
-            this.pn_thongbao.Name = "pn_thongbao";
-            this.pn_thongbao.Size = new System.Drawing.Size(307, 350);
-            this.pn_thongbao.TabIndex = 58;
-            // 
-            // dtgv_thongbao
-            // 
-            this.dtgv_thongbao.AllowUserToAddRows = false;
-            this.dtgv_thongbao.AllowUserToDeleteRows = false;
-            this.dtgv_thongbao.BackgroundColor = System.Drawing.Color.PaleTurquoise;
-            this.dtgv_thongbao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_thongbao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgv_thongbao.Location = new System.Drawing.Point(0, 0);
-            this.dtgv_thongbao.Name = "dtgv_thongbao";
-            this.dtgv_thongbao.ReadOnly = true;
-            this.dtgv_thongbao.Size = new System.Drawing.Size(307, 350);
-            this.dtgv_thongbao.TabIndex = 0;
             // 
             // lb_dienthoai_nv
             // 
@@ -295,6 +271,7 @@
             // 
             // txt_manv
             // 
+            this.txt_manv.Enabled = false;
             this.txt_manv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_manv.Location = new System.Drawing.Point(285, 162);
             this.txt_manv.Name = "txt_manv";
@@ -305,6 +282,7 @@
             // 
             // txt_madv_nv
             // 
+            this.txt_madv_nv.Enabled = false;
             this.txt_madv_nv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_madv_nv.Location = new System.Drawing.Point(285, 462);
             this.txt_madv_nv.Name = "txt_madv_nv";
@@ -315,6 +293,7 @@
             // 
             // txt_phucap_nv
             // 
+            this.txt_phucap_nv.Enabled = false;
             this.txt_phucap_nv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_phucap_nv.Location = new System.Drawing.Point(285, 362);
             this.txt_phucap_nv.Name = "txt_phucap_nv";
@@ -325,6 +304,7 @@
             // 
             // txt_vaitro_nv
             // 
+            this.txt_vaitro_nv.Enabled = false;
             this.txt_vaitro_nv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_vaitro_nv.Location = new System.Drawing.Point(772, 362);
             this.txt_vaitro_nv.Name = "txt_vaitro_nv";
@@ -344,6 +324,7 @@
             // 
             // txt_ngaysinh_nv
             // 
+            this.txt_ngaysinh_nv.Enabled = false;
             this.txt_ngaysinh_nv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ngaysinh_nv.Location = new System.Drawing.Point(772, 262);
             this.txt_ngaysinh_nv.Name = "txt_ngaysinh_nv";
@@ -354,6 +335,7 @@
             // 
             // txt_gioitinh_nv
             // 
+            this.txt_gioitinh_nv.Enabled = false;
             this.txt_gioitinh_nv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_gioitinh_nv.Location = new System.Drawing.Point(285, 262);
             this.txt_gioitinh_nv.Name = "txt_gioitinh_nv";
@@ -364,6 +346,7 @@
             // 
             // txt_hoten_nv
             // 
+            this.txt_hoten_nv.Enabled = false;
             this.txt_hoten_nv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_hoten_nv.Location = new System.Drawing.Point(772, 162);
             this.txt_hoten_nv.Name = "txt_hoten_nv";
@@ -687,6 +670,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 86);
             this.dataGridView1.Name = "dataGridView1";
@@ -1026,23 +1010,41 @@
             this.dtgv_khmo.Size = new System.Drawing.Size(1240, 562);
             this.dtgv_khmo.TabIndex = 20;
             // 
-            // thongbaotimer
+            // pn_thongbao
             // 
-            this.thongbaotimer.Tick += new System.EventHandler(this.thongbaotimer_Tick);
+            this.pn_thongbao.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.pn_thongbao.Controls.Add(this.dtgv_thongbao);
+            this.pn_thongbao.Location = new System.Drawing.Point(941, 47);
+            this.pn_thongbao.Name = "pn_thongbao";
+            this.pn_thongbao.Size = new System.Drawing.Size(307, 350);
+            this.pn_thongbao.TabIndex = 58;
+            this.pn_thongbao.Visible = false;
             // 
-            // FormNhanVienCoBan
+            // dtgv_thongbao
+            // 
+            this.dtgv_thongbao.AllowUserToAddRows = false;
+            this.dtgv_thongbao.AllowUserToDeleteRows = false;
+            this.dtgv_thongbao.BackgroundColor = System.Drawing.Color.LightCyan;
+            this.dtgv_thongbao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_thongbao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgv_thongbao.Location = new System.Drawing.Point(0, 0);
+            this.dtgv_thongbao.Name = "dtgv_thongbao";
+            this.dtgv_thongbao.ReadOnly = true;
+            this.dtgv_thongbao.Size = new System.Drawing.Size(307, 350);
+            this.dtgv_thongbao.TabIndex = 0;
+            this.dtgv_thongbao.Visible = false;
+            // 
+            // FormTruongDonVi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.tc_FormNhanVienCoBan);
-            this.Name = "FormNhanVienCoBan";
-            this.Text = "FormNhanVienCoBan";
-            this.tc_FormNhanVienCoBan.ResumeLayout(false);
+            this.Controls.Add(this.tc_FormTruongDonVi);
+            this.Name = "FormTruongDonVi";
+            this.Text = "FormTruongDonVi";
+            this.tc_FormTruongDonVi.ResumeLayout(false);
             this.tb_canhan.ResumeLayout(false);
             this.tb_canhan.PerformLayout();
-            this.pn_thongbao.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv_thongbao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_nhanvien)).EndInit();
             this.tp_sinhvien.ResumeLayout(false);
             this.tp_sinhvien.PerformLayout();
@@ -1060,19 +1062,17 @@
             this.tp_khoahocmo.ResumeLayout(false);
             this.tp_khoahocmo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_khmo)).EndInit();
+            this.pn_thongbao.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_thongbao)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tc_FormNhanVienCoBan;
+        private System.Windows.Forms.TabControl tc_FormTruongDonVi;
         private System.Windows.Forms.TabPage tb_canhan;
-        private System.Windows.Forms.TabPage tp_sinhvien;
-        private System.Windows.Forms.TabPage tp_donvi;
-        private System.Windows.Forms.TabPage tb_hocphan;
-        private System.Windows.Forms.TabPage tp_khoahocmo;
-        private System.Windows.Forms.Label lb_canhan;
+        private System.Windows.Forms.Button btn_thongbao;
         private System.Windows.Forms.Label lb_dienthoai_nv;
         private System.Windows.Forms.Label lb_madv_nv;
         private System.Windows.Forms.Label lb_vaitro_nv;
@@ -1091,22 +1091,10 @@
         private System.Windows.Forms.TextBox txt_hoten_nv;
         private System.Windows.Forms.Button btn_luudt;
         private System.Windows.Forms.PictureBox pb_nhanvien;
-        private System.Windows.Forms.Panel pn_thongbao;
-        private System.Windows.Forms.Timer thongbaotimer;
-        private System.Windows.Forms.Button btn_thongbao;
-        private System.Windows.Forms.Label lb_tctl_sv;
-        private System.Windows.Forms.Label lb_manganh_sv;
-        private System.Windows.Forms.Label lb_mact_sv;
-        private System.Windows.Forms.Label lb_dienthoai_sv;
-        private System.Windows.Forms.Label lb_diachi_sv;
-        private System.Windows.Forms.Label lb_ngaysinh_sv;
-        private System.Windows.Forms.Label lb_gioitinh_sv;
-        private System.Windows.Forms.Label lb_hoten_sv;
-        private System.Windows.Forms.Label lb_masv;
-        private System.Windows.Forms.Label lb_tịmkiemsinhvien;
-        private System.Windows.Forms.TextBox txt_timkiemsinhvien;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label lb_dtbtl_sv;
+        private System.Windows.Forms.Label lb_canhan;
+        private System.Windows.Forms.TabPage tp_sinhvien;
+        private System.Windows.Forms.StatusStrip status_sinhvien;
+        private System.Windows.Forms.ToolStripStatusLabel statuslabel_sinhvien;
         private System.Windows.Forms.TextBox txt_dtbtl_sv;
         private System.Windows.Forms.TextBox txt_diachi_sv;
         private System.Windows.Forms.TextBox txt_tctl_sv;
@@ -1117,13 +1105,26 @@
         private System.Windows.Forms.TextBox txt_hoten_sv;
         private System.Windows.Forms.TextBox txt_dienthoai__sv;
         private System.Windows.Forms.TextBox txt_masv;
+        private System.Windows.Forms.Label lb_dtbtl_sv;
+        private System.Windows.Forms.Label lb_tctl_sv;
+        private System.Windows.Forms.Label lb_manganh_sv;
+        private System.Windows.Forms.Label lb_mact_sv;
+        private System.Windows.Forms.Label lb_dienthoai_sv;
+        private System.Windows.Forms.Label lb_diachi_sv;
+        private System.Windows.Forms.Label lb_ngaysinh_sv;
+        private System.Windows.Forms.Label lb_gioitinh_sv;
+        private System.Windows.Forms.Label lb_hoten_sv;
+        private System.Windows.Forms.Label lb_masv;
         private System.Windows.Forms.Label lb_sinhvien;
-        private System.Windows.Forms.StatusStrip status_sinhvien;
-        private System.Windows.Forms.ToolStripStatusLabel statuslabel_sinhvien;
+        private System.Windows.Forms.Label lb_tịmkiemsinhvien;
+        private System.Windows.Forms.TextBox txt_timkiemsinhvien;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TabPage tp_donvi;
         private System.Windows.Forms.Label lb_donvi;
         private System.Windows.Forms.Label lb_timkiem_dv;
         private System.Windows.Forms.TextBox txt_timkiem_dv;
         private System.Windows.Forms.DataGridView dtgv_donvi;
+        private System.Windows.Forms.TabPage tb_hocphan;
         private System.Windows.Forms.StatusStrip status_hocphan;
         private System.Windows.Forms.ToolStripStatusLabel statuslabel_hocphan;
         private System.Windows.Forms.TextBox txt_stth_hp;
@@ -1144,10 +1145,12 @@
         private System.Windows.Forms.Label lb_timkiem_hp;
         private System.Windows.Forms.TextBox txt_timkiem_hp;
         private System.Windows.Forms.DataGridView dtgv_hocphan;
+        private System.Windows.Forms.TabPage tp_khoahocmo;
         private System.Windows.Forms.Label lb_khmo;
         private System.Windows.Forms.Label lb_timkiem_khmo;
         private System.Windows.Forms.TextBox txt_timkiem_khmo;
         private System.Windows.Forms.DataGridView dtgv_khmo;
+        private System.Windows.Forms.Panel pn_thongbao;
         private System.Windows.Forms.DataGridView dtgv_thongbao;
     }
 }

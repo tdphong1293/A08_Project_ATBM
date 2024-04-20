@@ -121,6 +121,12 @@
     <Compile Include="FormQuanLy.Designer.cs">
       <DependentUpon>FormQuanLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTruongDonVi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTruongDonVi.Designer.cs">
+      <DependentUpon>FormTruongDonVi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormXoaRole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLy.resx">
       <DependentUpon>FormQuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTruongDonVi.resx">
+      <DependentUpon>FormTruongDonVi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormXoaRole.resx">
       <DependentUpon>FormXoaRole.cs</DependentUpon>
