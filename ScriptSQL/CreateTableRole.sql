@@ -31,8 +31,8 @@ create table SINHVIEN (
     NGSINH date,
     DCHI nvarchar2(100),
     DT char(10),
-    MACT char(5) check (MACT in ('CLC', 'CQ', 'CTTT', 'VP')),
-    MANGANH char(9), 
+    MACT varchar2(5) check (MACT in ('CLC', 'CQ', 'CTTT', 'VP')),
+    MANGANH varchar2(9), 
     SOTCTL int,
     DTBTL float
 );
@@ -57,7 +57,7 @@ create table KHMO (
     MAHP char(9),
     HK int check (HK > 0 and HK <= 3),
     NAM date,
-    MACT char(5) check (MACT in ('CLC', 'CQ', 'CTTT', 'VP')),
+    MACT varchar2(5) check (MACT in ('CLC', 'CQ', 'CTTT', 'VP')),
     constraint PK_KHMO primary key (MAHP, HK, NAM, MACT)
 );
 
@@ -66,7 +66,7 @@ create table PHANCONG (
     MAHP char(9),
     HK int,
     NAM date,
-    MACT char(5),
+    MACT varchar2(5),
     constraint PK_PHANCONG primary key (MAGV, MAHP, HK, NAM, MACT)
 );
 

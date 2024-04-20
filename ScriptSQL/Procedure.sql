@@ -164,3 +164,109 @@ begin
     insert into THONGBAO values (v_noidung, char_to_label('thongbao_policy', v_label));
 end;
 /
+
+-- Gán nhãn cho sinh viên
+create or replace procedure SetLabelSV
+authid current_user
+as
+    cursor cur is (
+        select MASV, MANGANH
+        from SINHVIEN
+        where MASV in (select username from all_users)
+    );
+    usr varchar2(100);
+    nganh varchar2(100);
+    v_label varchar2(1000);
+begin
+    open cur;
+    loop
+        fetch cur into usr, nganh;
+        exit when cur%notfound;
+        
+        if (nganh = 'CNTT') then
+            v_label := 'SV:CNTT';
+        elsif (nganh = 'HTTT') then
+            v_label := 'SV:HTTT';
+        elsif (nganh = 'CNPM') then
+            v_label := 'SV:CNPM';
+        elsif (nganh = 'KHMT') then
+            v_label := 'SV:KHMT';
+        elsif (nganh = 'TGMT') then
+            v_label := 'SV:TGMT';
+        elsif (nganh = 'MMT') then
+            v_label := 'SV:MMT';
+        else
+            v_label := 'SV';
+        end if;
+        
+        usr := '''' || usr || '''';
+        v_label := '''' || v_label || '''';
+        
+        begin
+            sa_user_admin.set_user_labels('thongbao_policy', usr, v_label);
+        end;
+        
+    end loop;
+    close cur;
+end;
+/
+
+-- Gán nhãn cho nhân viên
+create or replace procedure SetLabelNV
+authid current_user
+as
+    cursor cur is (
+        select MANV, MADV
+        from NHANSU
+        where MANV in (select username from all_users)
+    );
+    usr varchar2(100);
+    donvi varchar2(100);
+    v_label varchar2(1000);
+begin
+    open cur;
+    loop
+        fetch cur into usr, donvi;
+        exit when cur%notfound;
+        
+        if (usr like 'NVCB%') then
+            v_label := 'NV';
+        elsif (usr like 'GV%') then
+            v_label := 'GV';
+        elsif (usr like 'GIAOVU%') then
+            v_label := 'GVU';
+        elsif (usr like 'TRGDV%') then
+            v_label := 'TDV';
+        elsif (usr like 'TRKHOA%') then
+            v_label := 'TK';
+        else
+            v_label := 'NV';
+        end if;
+        
+        if (donvi = 'BMCNTT') then
+            v_label := v_label || ':CNTT';
+        elsif (donvi = 'BMHTTT') then
+            v_label := v_label || ':HTTT';
+        elsif (donvi = 'BMCNPM') then
+            v_label := v_label || ':CNPM';
+        elsif (donvi = 'BMKHMT') then
+            v_label := v_label || ':KHMT';
+        elsif (donvi = 'BMTGMT') then
+            v_label := v_label || ':TGMT';
+        elsif (donvi = 'BMMMTVVT') then
+            v_label := v_label || ':MMT';
+        elsif (donvi = 'VPK') then
+            v_label := v_label || ':CNTT,HTTT,CNPM,KHMT,TGMT,MMT';
+        end if;
+        
+        usr := '''' || usr || '''';
+        v_label := '''' || v_label || '''';
+
+        begin
+            sa_user_admin.set_user_labels('thongbao_policy', usr, v_label);
+        end;
+        
+    end loop;
+    close cur;
+end;
+/

@@ -54,7 +54,7 @@ begin
         policy_name => 'thongbao_policy',
         schema_name => 'OLS_ADMIN',
         table_name => 'THONGBAO',
-        table_options => 'NO_CONTROL'
+        table_options => 'READ_CONTROL'
     );
 end;
 /
