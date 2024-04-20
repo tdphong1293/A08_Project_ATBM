@@ -14,23 +14,23 @@ drop role rl_TruongKhoa;
 drop role rl_SinhVien; 
 --Tạo bảng--
 create table NHANSU (
-    MANV char(9) primary key,
+    MANV varchar2(9) primary key,
     HOTEN nvarchar2(100),
     PHAI nchar(3),
     NGSINH date,
     PHUCAP float,
-    DT char(10),
+    DT varchar2(10),
     VAITRO nvarchar2(100),
-    MADV char(9)
+    MADV varchar2(9)
 );
 
 create table SINHVIEN (
-    MASV char(9) primary key,
+    MASV varchar2(9) primary key,
     HOTEN nvarchar2(100),
     PHAI nchar(3),
     NGSINH date,
     DCHI nvarchar2(100),
-    DT char(10),
+    DT varchar2(10),
     MACT varchar2(5) check (MACT in ('CLC', 'CQ', 'CTTT', 'VP')),
     MANGANH varchar2(9), 
     SOTCTL int,
@@ -38,23 +38,23 @@ create table SINHVIEN (
 );
 
 create table DONVI (
-    MADV char(9) primary key,
+    MADV varchar2(9) primary key,
     TENDV nvarchar2(100),
-    TRGDV char(9)
+    TRGDV varchar2(9)
 );
 
 create table HOCPHAN (
-    MAHP char(9) primary key,
+    MAHP varchar2(9) primary key,
     TENHP nvarchar2(100),
     SOTC int,
     STLT int,
     STTH int,
     SOSVTD int,
-    MADV char(9)
+    MADV varchar2(9)
 );
 
 create table KHMO (
-    MAHP char(9),
+    MAHP varchar2(9),
     HK int check (HK > 0 and HK <= 3),
     NAM date,
     MACT varchar2(5) check (MACT in ('CLC', 'CQ', 'CTTT', 'VP')),
@@ -62,8 +62,8 @@ create table KHMO (
 );
 
 create table PHANCONG (
-    MAGV char(9),
-    MAHP char(9),
+    MAGV varchar2(9),
+    MAHP varchar2(9),
     HK int,
     NAM date,
     MACT varchar2(5),
@@ -71,12 +71,12 @@ create table PHANCONG (
 );
 
 create table DANGKY (
-    MASV char(9),
-    MAGV char(9),
-    MAHP char(9),
+    MASV varchar2(9),
+    MAGV varchar2(9),
+    MAHP varchar2(9),
     HK int,
     NAM date,
-    MACT char(5),
+    MACT varchar2(5),
     DIEMTH float check (DIEMTH > 0 and DIEMTH <= 10),
     DIEMQT float check (DIEMQT > 0 and DIEMQT <= 10),
     DIEMCK float check (DIEMCK > 0 and DIEMCK <= 10),

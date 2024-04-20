@@ -1,3 +1,12 @@
+drop procedure sp_dropNV;
+drop procedure sp_dropSV;
+drop procedure sp_CreateUserNV;
+drop procedure sp_createUserSV;
+drop procedure sp_AddRoleNV;
+drop procedure sp_AddRoleSV;
+drop procedure sp_SetLabelNV;
+drop procedure sp_SetLabelSV;
+
 -- Tạo user nhân viên
 create or replace procedure sp_CreateUserNV
 authid current_user
@@ -16,6 +25,9 @@ begin
         exit when cur%notfound;
         
         strsql := 'create user ' || usr || ' identified by ' || usr;
+        execute immediate (strsql);
+        
+        strsql := 'grant create session to ' || usr;
         execute immediate (strsql);
     end loop;
     close cur;
@@ -40,6 +52,9 @@ begin
         exit when cur%notfound;
         
         strsql := 'create user ' || usr || ' identified by ' || usr;
+        execute immediate (strsql);
+        
+        strsql := 'grant create session to ' || usr;
         execute immediate (strsql);
     end loop;
     close cur;
@@ -143,21 +158,8 @@ begin
 end;
 /
 
--- Chạy procedure tạo user, thêm role user
-exec sp_dropNV;
-exec sp_dropSV;
-
-exec sp_CreateUserNV;
-exec sp_createUserSV;
-exec sp_AddRoleNV('rl_NhanVienCoBan', N'Nhân viên cơ bản');
-exec sp_AddRoleNV('rl_GiangVien', N'Giảng viên');
-exec sp_AddRoleNV('rl_GiaoVu', N'Giáo vụ');
-exec sp_AddRoleNV('rl_TruongDonVi', N'Trưởng đơn vị');
-exec sp_AddRoleNV('rl_TruongKhoa', N'Trưởng khoa');
-exec sp_AddRoleSV;
-
 -- Insert nội dung và gán nhán dữ liệu của bảng thông báo
-create or replace procedure Insert_ThongBao
+create or replace procedure sp_Insert_ThongBao
     (v_noidung in varchar2, v_label in varchar2)
 as
 begin
@@ -166,7 +168,7 @@ end;
 /
 
 -- Gán nhãn cho sinh viên
-create or replace procedure SetLabelSV
+create or replace procedure sp_SetLabelSV
 authid current_user
 as
     cursor cur is (
@@ -199,9 +201,6 @@ begin
             v_label := 'SV';
         end if;
         
-        usr := '''' || usr || '''';
-        v_label := '''' || v_label || '''';
-        
         begin
             sa_user_admin.set_user_labels('thongbao_policy', usr, v_label);
         end;
@@ -212,7 +211,7 @@ end;
 /
 
 -- Gán nhãn cho nhân viên
-create or replace procedure SetLabelNV
+create or replace procedure sp_SetLabelNV
 authid current_user
 as
     cursor cur is (
@@ -259,9 +258,6 @@ begin
             v_label := v_label || ':CNTT,HTTT,CNPM,KHMT,TGMT,MMT';
         end if;
         
-        usr := '''' || usr || '''';
-        v_label := '''' || v_label || '''';
-
         begin
             sa_user_admin.set_user_labels('thongbao_policy', usr, v_label);
         end;
@@ -270,3 +266,20 @@ begin
     close cur;
 end;
 /
+
+-- Chạy procedure tạo user, thêm role user
+exec sp_dropNV;
+exec sp_dropSV;
+
+exec sp_CreateUserNV;
+exec sp_createUserSV;
+
+exec sp_AddRoleNV('rl_NhanVienCoBan', N'Nhân viên cơ bản');
+exec sp_AddRoleNV('rl_GiangVien', N'Giảng viên');
+exec sp_AddRoleNV('rl_GiaoVu', N'Giáo vụ');
+exec sp_AddRoleNV('rl_TruongDonVi', N'Trưởng đơn vị');
+exec sp_AddRoleNV('rl_TruongKhoa', N'Trưởng khoa');
+exec sp_AddRoleSV;
+
+exec sp_SetLabelNV;
+exec sp_SetLabelSV;
