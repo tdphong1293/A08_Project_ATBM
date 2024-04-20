@@ -16,7 +16,7 @@ namespace _21127331_21127388_21127537_21127695
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormGiangVien());
+            Application.Run(new FormTruongDonVi());
         }
     }
 }
