@@ -173,7 +173,7 @@ grant insert, delete on uv_GiaoVu_DANGKY to GiaoVu;
 
 grant GiangVien to TruongDonVi;
 
-create or replace view uv_TruongDonVi_PHANCONG
+create or replace view uv_TruongDonVi_PHANCONG          
 as
     select PC.*
     from PHANCONG PC, HOCPHAN HP, DONVI DV
