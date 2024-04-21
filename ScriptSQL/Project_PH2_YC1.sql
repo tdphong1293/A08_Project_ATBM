@@ -30,11 +30,11 @@ as
     from KHMO
     with check option;
     
-grant select, update(DT) on uv_NhanVienCoBan_NHANSU to NhanVienCoBan;
-grant select on uv_NhanVienCoBan_SINHVIEN to NhanVienCoBan;
-grant select on uv_NhanVienCoBan_DONVI to NhanVienCoBan;
-grant select on uv_NhanVienCoBan_HOCPHAN to NhanVienCoBan;
-grant select on uv_NhanVienCoBan_KHMO to NhanVienCoBan;
+grant select, update(DT) on uv_NhanVienCoBan_NHANSU to rl_NhanVienCoBan;
+grant select on uv_NhanVienCoBan_SINHVIEN to rl_NhanVienCoBan;
+grant select on uv_NhanVienCoBan_DONVI to rl_NhanVienCoBan;
+grant select on uv_NhanVienCoBan_HOCPHAN to rl_NhanVienCoBan;
+grant select on uv_NhanVienCoBan_KHMO to rl_NhanVienCoBan;
 
 --CS2--
 --grant select, update(DT) on uv_NhanVienCoBan_NHANSU to GiangVien;
@@ -43,7 +43,7 @@ grant select on uv_NhanVienCoBan_KHMO to NhanVienCoBan;
 --grant select on uv_NhanVienCoBan_HOCPHAN to GiangVien;
 --grant select on uv_NhanVienCoBan_KHMO to GiangVien;
 
-grant NhanVienCoBan to GiangVien;
+grant rl_NhanVienCoBan to rl_GiangVien;
 
 create or replace view uv_GiangVien_PHANCONG
 as
@@ -73,8 +73,8 @@ begin
 end;
 /
 
-grant select on uv_GiangVien_PHANCONG to GiangVien;
-grant select, update(DIEMTH, DIEMQT, DIEMCK, DIEMTK) on uv_GiangVien_DANGKY to GiangVien;
+grant select on uv_GiangVien_PHANCONG to rl_GiangVien;
+grant select, update(DIEMTH, DIEMQT, DIEMCK, DIEMTK) on uv_GiangVien_DANGKY to rl_GiangVien;
 
 --CS3--
 --grant select, update(DT) on uv_NhanVienCoBan_NHANSU to GiaoVu;
@@ -83,11 +83,11 @@ grant select, update(DIEMTH, DIEMQT, DIEMCK, DIEMTK) on uv_GiangVien_DANGKY to G
 --grant select, insert, update on uv_NhanVienCoBan_HOCPHAN to GiaoVu;
 --grant select, insert, update on uv_NhanVienCoBan_KHMO to GiaoVu;
 
-grant NhanVienCoBan to GiaoVu;
-grant insert, update on uv_NhanVienCoBan_SINHVIEN to GiaoVu;
-grant insert, update on uv_NhanVienCoBan_DONVI to GiaoVu;
-grant insert, update on uv_NhanVienCoBan_HOCPHAN to GiaoVu;
-grant insert, update on uv_NhanVienCoBan_KHMO to GiaoVu;
+grant rl_NhanVienCoBan to rl_GiaoVu;
+grant insert, update on uv_NhanVienCoBan_SINHVIEN to rl_GiaoVu;
+grant insert, update on uv_NhanVienCoBan_DONVI to rl_GiaoVu;
+grant insert, update on uv_NhanVienCoBan_HOCPHAN to rl_GiaoVu;
+grant insert, update on uv_NhanVienCoBan_KHMO to rl_GiaoVu;
 
 create or replace view uv_GiaoVu_PHANCONG
 as
@@ -159,8 +159,8 @@ begin
 end;
 /
 
-grant select, update on uv_GiaoVu_PHANCONG to GiaoVu;
-grant insert, delete on uv_GiaoVu_DANGKY to GiaoVu;
+grant select, update on uv_GiaoVu_PHANCONG to rl_GiaoVu;
+grant insert, delete on uv_GiaoVu_DANGKY to rl_GiaoVu;
 
 --CS4--
 --grant select, update(DT) on uv_NhanVienCoBan_NHANSU to TruongDonVi;
@@ -171,7 +171,7 @@ grant insert, delete on uv_GiaoVu_DANGKY to GiaoVu;
 --grant select on uv_GiangVien_PHANCONG to TruongDonVi;
 --grant select, update(DIEMTH, DIEMQT, DIEMCK, DIEMTK) on uv_GiangVien_DANGKY to TruongDonVi;
 
-grant GiangVien to TruongDonVi;
+grant rl_GiangVien to rl_TruongDonVi;
 
 create or replace view uv_TruongDonVi_PHANCONG          
 as
@@ -221,7 +221,7 @@ begin
 end;
 /
 
-grant select, insert, update, delete on uv_TruongDonVi_PHANCONG to TruongDonVi;
+grant select, insert, update, delete on uv_TruongDonVi_PHANCONG to rl_TruongDonVi;
 
 --CS5--
 --grant select, update(DT) on uv_NhanVienCoBan_NHANSU to TruongKhoa;
@@ -232,7 +232,7 @@ grant select, insert, update, delete on uv_TruongDonVi_PHANCONG to TruongDonVi;
 --grant select on uv_GiangVien_PHANCONG to TruongKhoa;
 --grant select, update(DIEMTH, DIEMQT, DIEMCK, DIEMTK) on uv_GiangVien_DANGKY to TruongKhoa;
 
-grant GiangVien to TruongKhoa;
+grant rl_GiangVien to rl_TruongKhoa;
 
 create or replace view uv_TruongKhoa_PHANCONG
 as
@@ -286,19 +286,44 @@ as
     from NHANSU
     with check option;
 
-grant select, insert, update, delete on uv_TruongKhoa_PHANCONG to TruongKhoa;
-grant select, insert, update, delete on uv_TruongKhoa_NHANSU to TruongKhoa;
-grant select on uv_GiaoVu_DANGKY to TruongKhoa;
+grant select, insert, update, delete on uv_TruongKhoa_PHANCONG to rl_TruongKhoa;
+grant select, insert, update, delete on uv_TruongKhoa_NHANSU to rl_TruongKhoa;
+grant select on uv_GiaoVu_DANGKY to rl_TruongKhoa;
 
 --CS6--
 create or replace function pc1_SinhVien_SINHVIEN
     (p_schema varchar2, p_obj varchar2)
 return varchar2
 as
-    usr varchar2(10);
+    usr varchar2(10) := sys_context('userenv', 'session_user');
+    cursor cur is (
+        select granted_role
+        from DBA_ROLE_PRIVS
+        where grantee = usr
+    );
+    usrrole varchar2(100);
+    type role_tab is table of varchar2(100);
+    roles role_tab := role_tab();
 begin
-    usr := sys_context('userenv', 'session_user');
-    return 'MASV = ''' || usr || '''';
+    if (sys_context('userenv', 'session_user') = 'OLS_ADMIN') then
+        return '';
+    end if;    
+
+    open cur;
+    loop
+        fetch cur into usrrole;
+        exit when cur%notfound;
+        
+        roles.extend;
+        roles(roles.count) := usrrole;
+    end loop;
+    close cur;
+    
+    if 'RL_SINHVIEN' member of roles then
+        return 'MASV = ''' || usr || '''';
+    else 
+        return '';
+    end if;    
 end;
 /
 
@@ -315,13 +340,18 @@ begin
 end;
 /
 
-grant select, update(DCHI, DT) on SINHVIEN to SinhVien;
+grant select, update(DCHI, DT) on SINHVIEN to rl_SinhVien;
 
 create or replace function pc2_SinhVien_KHMO
     (p_schema varchar2, p_obj varchar2)
 return varchar2
 as
-    cursor cur is (
+    cursor cur1 is (
+        select granted_role
+        from DBA_ROLE_PRIVS
+        where grantee = sys_context('userenv', 'session_user')
+    );
+    cursor cur2 is (
         select distinct KH.MAHP
         from KHMO KH, SINHVIEN SV
         where KH.MACT = SV.MACT
@@ -329,19 +359,34 @@ as
     );
     v_mahp varchar2(10);
     strsql varchar2(1000);
+    type role_tab is table of varchar2(100);
+    roles role_tab := role_tab();
 begin
-    open cur;
-    loop
-        fetch cur into v_mahp;
-        exit when cur%notfound;
-        
-        if (strsql is not null) then
-            strsql := strsql || ',';
-        end if; 
-        strsql := strsql || '''' || v_mahp || ''''; 
+    if (sys_context('userenv', 'session_user') = 'OLS_ADMIN') then
+        return '';
+    end if; 
+
+    for res in cur1 loop
+        roles.extend;
+        roles(roles.count) := res.granted_role;
     end loop;
-    close cur;
-    return 'MAHP in (' || strsql || ')';
+    
+    if 'RL_SINHVIEN' member of roles then
+        open cur2;
+        loop
+            fetch cur2 into v_mahp;
+            exit when cur2%notfound;
+            
+            if (strsql is not null) then
+                strsql := strsql || ',';
+            end if; 
+            strsql := strsql || '''' || v_mahp || ''''; 
+        end loop;
+        close cur2;
+        return 'MAHP in (' || strsql || ')';   
+    else 
+        return '';
+    end if;   
 end;
 /
 
@@ -357,7 +402,7 @@ begin
 end;
 /
 
-grant select on KHMO to SinhVien;
+grant select on KHMO to rl_SinhVien;
 
 create or replace function pc3_SinhVien_DANGKY
     (p_schema varchar2, p_obj varchar2)
@@ -368,6 +413,10 @@ as
     v_start_date date;
     strsql varchar2(1000);
 begin
+    if (sys_context('userenv', 'session_user') = 'OLS_ADMIN') then
+        return '';
+    end if;
+
     usr := sys_context('userenv', 'session_user');
 
     if (extract(month from sysdate) between 1 and 4) then
@@ -405,7 +454,7 @@ begin
 end;
 /
 
-grant insert, delete on DANGKY to SinhVien;
+grant insert, delete on DANGKY to rl_SinhVien;
 
 create or replace function pc4_SinhVien_DANGKY
     (p_schema varchar2, p_obj varchar2)
@@ -413,6 +462,10 @@ return varchar2
 as
     usr varchar2(10);
 begin
+    if (sys_context('userenv', 'session_user') = 'OLS_ADMIN') then
+        return '';
+    end if;
+
     usr := sys_context('userenv', 'session_user');
     return 'MASV = ''' || usr || '''';
 end;
@@ -431,4 +484,4 @@ begin
 end;
 /
 
-grant select, update(MASV, MAGV, MAHP, HK, NAM, MACT) on DANGKY to SinhVien;
+grant select, update(MASV, MAGV, MAHP, HK, NAM, MACT) on DANGKY to rl_SinhVien;
