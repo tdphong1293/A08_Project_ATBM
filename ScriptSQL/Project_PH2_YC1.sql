@@ -352,13 +352,10 @@ as
         where grantee = sys_context('userenv', 'session_user')
     );
     cursor cur2 is (
-        select distinct KH.MAHP
-        from KHMO KH, SINHVIEN SV
-        where KH.MACT = SV.MACT
-        and SV.MASV = sys_context('userenv', 'session_user')
+        select MACT
+        from SINHVIEN
     );
-    v_mahp varchar2(10);
-    strsql varchar2(1000);
+    v_mact varchar2(10);
     type role_tab is table of varchar2(100);
     roles role_tab := role_tab();
 begin
@@ -373,17 +370,9 @@ begin
     
     if 'RL_SINHVIEN' member of roles then
         open cur2;
-        loop
-            fetch cur2 into v_mahp;
-            exit when cur2%notfound;
-            
-            if (strsql is not null) then
-                strsql := strsql || ',';
-            end if; 
-            strsql := strsql || '''' || v_mahp || ''''; 
-        end loop;
+        fetch cur2 into v_mact;
         close cur2;
-        return 'MAHP in (' || strsql || ')';   
+        return 'MACT = ' || '''' || v_mact || '''';   
     else 
         return '';
     end if;   
