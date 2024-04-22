@@ -91,7 +91,7 @@ grant insert, update on uv_NhanVienCoBan_KHMO to rl_GiaoVu;
 
 create or replace view uv_GiaoVu_PHANCONG
 as
-    select MAGV, MAHP, HK, extract(year from NAM) as NAM, MACT
+    select *
     from PHANCONG
     with check option;
     
@@ -125,8 +125,8 @@ end;
 
 create or replace view uv_GiaoVu_DANGKY
 as
-    select DK.MASV, DK.MAGV, DK.MAHP, DK.HK, extract(year from DK.NAM) as NAM, DK.MACT, DK.DIEMTH, DK.DIEMQT, DK.DIEMCK, DK.DIEMTK
-    from DANGKY DK
+    select *
+    from DANGKY
     with check option;
     
 create or replace trigger utrig_GiaoVu_DANGKY
@@ -175,7 +175,7 @@ grant rl_GiangVien to rl_TruongDonVi;
 
 create or replace view uv_TruongDonVi_PHANCONG
 as
-    select PC.MAGV, PC.MAHP, PC.HK, extract(year from PC.NAM) as NAM, PC.MACT
+    select PC.*
     from PHANCONG PC, HOCPHAN HP, DONVI DV
     where PC.MAHP = HP.MAHP
     and HP.MADV = DV.MADV
@@ -236,7 +236,7 @@ grant rl_GiangVien to rl_TruongKhoa;
 
 create or replace view uv_TruongKhoa_PHANCONG
 as
-    select MAGV, MAHP, HK, extract(year from NAM) as NAM, MACT
+    select *
     from PHANCONG
     with check option;
     
