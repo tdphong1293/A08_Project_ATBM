@@ -15,6 +15,7 @@
         {
             if (disposing && (components != null))
             {
+                searchsv.Dispose();
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -29,6 +30,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tc_FormNhanVienCoBan = new System.Windows.Forms.TabControl();
             this.tb_canhan = new System.Windows.Forms.TabPage();
             this.btn_quayve_nv = new System.Windows.Forms.Button();
@@ -81,7 +83,7 @@
             this.lb_sinhvien = new System.Windows.Forms.Label();
             this.lb_tịmkiemsinhvien = new System.Windows.Forms.Label();
             this.txt_timkiemsinhvien = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgv_sinhvien = new System.Windows.Forms.DataGridView();
             this.tp_donvi = new System.Windows.Forms.TabPage();
             this.lb_donvi = new System.Windows.Forms.Label();
             this.lb_timkiem_dv = new System.Windows.Forms.Label();
@@ -121,7 +123,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_nhanvien)).BeginInit();
             this.tp_sinhvien.SuspendLayout();
             this.status_sinhvien.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_sinhvien)).BeginInit();
             this.tp_donvi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_donvi)).BeginInit();
             this.tb_hocphan.SuspendLayout();
@@ -238,22 +240,36 @@
             // 
             this.pn_thongbao.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.pn_thongbao.Controls.Add(this.dtgv_thongbao);
-            this.pn_thongbao.Location = new System.Drawing.Point(941, 47);
+            this.pn_thongbao.Location = new System.Drawing.Point(839, 47);
             this.pn_thongbao.Name = "pn_thongbao";
-            this.pn_thongbao.Size = new System.Drawing.Size(307, 350);
+            this.pn_thongbao.Size = new System.Drawing.Size(409, 350);
             this.pn_thongbao.TabIndex = 58;
             // 
             // dtgv_thongbao
             // 
             this.dtgv_thongbao.AllowUserToAddRows = false;
             this.dtgv_thongbao.AllowUserToDeleteRows = false;
+            this.dtgv_thongbao.AllowUserToOrderColumns = true;
             this.dtgv_thongbao.BackgroundColor = System.Drawing.Color.PaleTurquoise;
+            this.dtgv_thongbao.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgv_thongbao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_thongbao.ColumnHeadersVisible = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv_thongbao.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgv_thongbao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgv_thongbao.Location = new System.Drawing.Point(0, 0);
+            this.dtgv_thongbao.MultiSelect = false;
             this.dtgv_thongbao.Name = "dtgv_thongbao";
             this.dtgv_thongbao.ReadOnly = true;
-            this.dtgv_thongbao.Size = new System.Drawing.Size(307, 350);
+            this.dtgv_thongbao.RowHeadersVisible = false;
+            this.dtgv_thongbao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dtgv_thongbao.Size = new System.Drawing.Size(409, 350);
             this.dtgv_thongbao.TabIndex = 0;
             // 
             // lb_dienthoai_nv
@@ -466,7 +482,7 @@
             this.tp_sinhvien.Controls.Add(this.lb_sinhvien);
             this.tp_sinhvien.Controls.Add(this.lb_tịmkiemsinhvien);
             this.tp_sinhvien.Controls.Add(this.txt_timkiemsinhvien);
-            this.tp_sinhvien.Controls.Add(this.dataGridView1);
+            this.tp_sinhvien.Controls.Add(this.dtgv_sinhvien);
             this.tp_sinhvien.Location = new System.Drawing.Point(4, 26);
             this.tp_sinhvien.Name = "tp_sinhvien";
             this.tp_sinhvien.Padding = new System.Windows.Forms.Padding(3);
@@ -494,7 +510,7 @@
             // txt_dtbtl_sv
             // 
             this.txt_dtbtl_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_dtbtl_sv.Location = new System.Drawing.Point(923, 518);
+            this.txt_dtbtl_sv.Location = new System.Drawing.Point(923, 572);
             this.txt_dtbtl_sv.Name = "txt_dtbtl_sv";
             this.txt_dtbtl_sv.ReadOnly = true;
             this.txt_dtbtl_sv.Size = new System.Drawing.Size(309, 27);
@@ -514,7 +530,7 @@
             // txt_tctl_sv
             // 
             this.txt_tctl_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tctl_sv.Location = new System.Drawing.Point(923, 572);
+            this.txt_tctl_sv.Location = new System.Drawing.Point(923, 518);
             this.txt_tctl_sv.Name = "txt_tctl_sv";
             this.txt_tctl_sv.ReadOnly = true;
             this.txt_tctl_sv.Size = new System.Drawing.Size(309, 27);
@@ -718,14 +734,24 @@
             this.txt_timkiemsinhvien.Name = "txt_timkiemsinhvien";
             this.txt_timkiemsinhvien.Size = new System.Drawing.Size(262, 27);
             this.txt_timkiemsinhvien.TabIndex = 2;
+            this.txt_timkiemsinhvien.TextChanged += new System.EventHandler(this.txt_timkiemsinhvien_TextChanged);
             // 
-            // dataGridView1
+            // dtgv_sinhvien
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 86);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(711, 533);
-            this.dataGridView1.TabIndex = 0;
+            this.dtgv_sinhvien.AllowUserToAddRows = false;
+            this.dtgv_sinhvien.AllowUserToDeleteRows = false;
+            this.dtgv_sinhvien.AllowUserToOrderColumns = true;
+            this.dtgv_sinhvien.AllowUserToResizeRows = false;
+            this.dtgv_sinhvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_sinhvien.Location = new System.Drawing.Point(6, 86);
+            this.dtgv_sinhvien.MultiSelect = false;
+            this.dtgv_sinhvien.Name = "dtgv_sinhvien";
+            this.dtgv_sinhvien.ReadOnly = true;
+            this.dtgv_sinhvien.RowHeadersVisible = false;
+            this.dtgv_sinhvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dtgv_sinhvien.Size = new System.Drawing.Size(711, 533);
+            this.dtgv_sinhvien.TabIndex = 0;
+            this.dtgv_sinhvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_sinhvien_CellClick);
             // 
             // tp_donvi
             // 
@@ -769,16 +795,21 @@
             this.txt_timkiem_dv.Name = "txt_timkiem_dv";
             this.txt_timkiem_dv.Size = new System.Drawing.Size(262, 27);
             this.txt_timkiem_dv.TabIndex = 3;
+            this.txt_timkiem_dv.TextChanged += new System.EventHandler(this.txt_timkiem_dv_TextChanged);
             // 
             // dtgv_donvi
             // 
             this.dtgv_donvi.AllowUserToAddRows = false;
             this.dtgv_donvi.AllowUserToDeleteRows = false;
             this.dtgv_donvi.AllowUserToOrderColumns = true;
+            this.dtgv_donvi.AllowUserToResizeRows = false;
             this.dtgv_donvi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_donvi.Location = new System.Drawing.Point(6, 79);
+            this.dtgv_donvi.MultiSelect = false;
             this.dtgv_donvi.Name = "dtgv_donvi";
             this.dtgv_donvi.ReadOnly = true;
+            this.dtgv_donvi.RowHeadersVisible = false;
+            this.dtgv_donvi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dtgv_donvi.Size = new System.Drawing.Size(1240, 562);
             this.dtgv_donvi.TabIndex = 15;
             // 
@@ -996,14 +1027,24 @@
             this.txt_timkiem_hp.Name = "txt_timkiem_hp";
             this.txt_timkiem_hp.Size = new System.Drawing.Size(262, 27);
             this.txt_timkiem_hp.TabIndex = 16;
+            this.txt_timkiem_hp.TextChanged += new System.EventHandler(this.txt_timkiem_hp_TextChanged);
             // 
             // dtgv_hocphan
             // 
+            this.dtgv_hocphan.AllowUserToAddRows = false;
+            this.dtgv_hocphan.AllowUserToDeleteRows = false;
+            this.dtgv_hocphan.AllowUserToOrderColumns = true;
+            this.dtgv_hocphan.AllowUserToResizeRows = false;
             this.dtgv_hocphan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_hocphan.Location = new System.Drawing.Point(6, 86);
+            this.dtgv_hocphan.MultiSelect = false;
             this.dtgv_hocphan.Name = "dtgv_hocphan";
+            this.dtgv_hocphan.ReadOnly = true;
+            this.dtgv_hocphan.RowHeadersVisible = false;
+            this.dtgv_hocphan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dtgv_hocphan.Size = new System.Drawing.Size(711, 533);
             this.dtgv_hocphan.TabIndex = 15;
+            this.dtgv_hocphan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_hocphan_CellClick);
             // 
             // tp_khoahocmo
             // 
@@ -1047,16 +1088,21 @@
             this.txt_timkiem_khmo.Name = "txt_timkiem_khmo";
             this.txt_timkiem_khmo.Size = new System.Drawing.Size(262, 27);
             this.txt_timkiem_khmo.TabIndex = 19;
+            this.txt_timkiem_khmo.TextChanged += new System.EventHandler(this.txt_timkiem_khmo_TextChanged);
             // 
             // dtgv_khmo
             // 
             this.dtgv_khmo.AllowUserToAddRows = false;
             this.dtgv_khmo.AllowUserToDeleteRows = false;
             this.dtgv_khmo.AllowUserToOrderColumns = true;
+            this.dtgv_khmo.AllowUserToResizeRows = false;
             this.dtgv_khmo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_khmo.Location = new System.Drawing.Point(6, 79);
+            this.dtgv_khmo.MultiSelect = false;
             this.dtgv_khmo.Name = "dtgv_khmo";
             this.dtgv_khmo.ReadOnly = true;
+            this.dtgv_khmo.RowHeadersVisible = false;
+            this.dtgv_khmo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dtgv_khmo.Size = new System.Drawing.Size(1240, 562);
             this.dtgv_khmo.TabIndex = 20;
             // 
@@ -1082,7 +1128,7 @@
             this.tp_sinhvien.PerformLayout();
             this.status_sinhvien.ResumeLayout(false);
             this.status_sinhvien.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_sinhvien)).EndInit();
             this.tp_donvi.ResumeLayout(false);
             this.tp_donvi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_donvi)).EndInit();
@@ -1138,7 +1184,7 @@
         private System.Windows.Forms.Label lb_masv;
         private System.Windows.Forms.Label lb_tịmkiemsinhvien;
         private System.Windows.Forms.TextBox txt_timkiemsinhvien;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgv_sinhvien;
         private System.Windows.Forms.Label lb_dtbtl_sv;
         private System.Windows.Forms.TextBox txt_dtbtl_sv;
         private System.Windows.Forms.TextBox txt_diachi_sv;

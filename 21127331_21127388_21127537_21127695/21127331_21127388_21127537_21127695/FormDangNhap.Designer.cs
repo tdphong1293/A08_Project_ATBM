@@ -86,9 +86,9 @@
             "Giáo vụ",
             "Trưởng đơn vị",
             "Trưởng khoa"});
-            this.cb_dangnhap_vaitro.Location = new System.Drawing.Point(582, 195);
+            this.cb_dangnhap_vaitro.Location = new System.Drawing.Point(563, 195);
             this.cb_dangnhap_vaitro.Name = "cb_dangnhap_vaitro";
-            this.cb_dangnhap_vaitro.Size = new System.Drawing.Size(133, 28);
+            this.cb_dangnhap_vaitro.Size = new System.Drawing.Size(152, 28);
             this.cb_dangnhap_vaitro.TabIndex = 3;
             // 
             // btn_dangnhap
