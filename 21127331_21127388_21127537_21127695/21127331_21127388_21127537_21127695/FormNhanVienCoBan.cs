@@ -336,7 +336,7 @@ namespace _21127331_21127388_21127537_21127695
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = dtgv_sinhvien.Rows[e.RowIndex];
+                DataGridViewRow row = dtgv_hocphan.Rows[e.RowIndex];
                 txt_mahp.Text = row.Cells["MAHP"].Value.ToString();
                 txt_tenhp.Text = row.Cells["TENHP"].Value.ToString();
                 txt_sotc_hp.Text = row.Cells["SOTC"].Value.ToString();
