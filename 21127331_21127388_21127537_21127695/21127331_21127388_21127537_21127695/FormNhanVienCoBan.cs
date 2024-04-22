@@ -344,11 +344,11 @@ namespace _21127331_21127388_21127537_21127695
                 txt_stth_hp.Text = row.Cells["STTH"].Value.ToString();
                 txt_svtd_hp.Text = row.Cells["SOSVTD"].Value.ToString();
                 txt_madv_hp.Text = row.Cells["MADV"].Value.ToString();
-                statuslabel_sinhvien.Text = "Đã chọn hocphan " + txt_mahp.Text;
+                statuslabel_hocphan.Text = "Đã chọn học phần " + txt_mahp.Text;
             }
             else
             {
-                statuslabel_hocphan.Text = "Chưa chọn sinh viên nào";
+                statuslabel_hocphan.Text = "Chưa chọn học phần nào";
                 txt_mahp.Text = "";
                 txt_tenhp.Text = "";
                 txt_sotc_hp.Text = "";
@@ -396,6 +396,5 @@ namespace _21127331_21127388_21127537_21127695
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

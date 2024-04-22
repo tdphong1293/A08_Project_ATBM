@@ -16,6 +16,9 @@
             if (disposing && (components != null))
             {
                 searchsv.Dispose();
+                searchdv.Dispose();
+                searchhp.Dispose();
+                searchkhmo.Dispose();
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -354,6 +357,7 @@
             // 
             // txt_manv
             // 
+            this.txt_manv.Enabled = false;
             this.txt_manv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_manv.Location = new System.Drawing.Point(285, 162);
             this.txt_manv.Name = "txt_manv";
@@ -364,6 +368,7 @@
             // 
             // txt_madv_nv
             // 
+            this.txt_madv_nv.Enabled = false;
             this.txt_madv_nv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_madv_nv.Location = new System.Drawing.Point(285, 462);
             this.txt_madv_nv.Name = "txt_madv_nv";
@@ -374,6 +379,7 @@
             // 
             // txt_phucap_nv
             // 
+            this.txt_phucap_nv.Enabled = false;
             this.txt_phucap_nv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_phucap_nv.Location = new System.Drawing.Point(285, 362);
             this.txt_phucap_nv.Name = "txt_phucap_nv";
@@ -384,6 +390,7 @@
             // 
             // txt_vaitro_nv
             // 
+            this.txt_vaitro_nv.Enabled = false;
             this.txt_vaitro_nv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_vaitro_nv.Location = new System.Drawing.Point(772, 362);
             this.txt_vaitro_nv.Name = "txt_vaitro_nv";
@@ -394,6 +401,7 @@
             // 
             // txt_dienthoai_nv
             // 
+            this.txt_dienthoai_nv.Enabled = false;
             this.txt_dienthoai_nv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_dienthoai_nv.Location = new System.Drawing.Point(772, 462);
             this.txt_dienthoai_nv.Name = "txt_dienthoai_nv";
@@ -404,6 +412,7 @@
             // 
             // txt_ngaysinh_nv
             // 
+            this.txt_ngaysinh_nv.Enabled = false;
             this.txt_ngaysinh_nv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ngaysinh_nv.Location = new System.Drawing.Point(772, 262);
             this.txt_ngaysinh_nv.Name = "txt_ngaysinh_nv";
@@ -414,6 +423,7 @@
             // 
             // txt_gioitinh_nv
             // 
+            this.txt_gioitinh_nv.Enabled = false;
             this.txt_gioitinh_nv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_gioitinh_nv.Location = new System.Drawing.Point(285, 262);
             this.txt_gioitinh_nv.Name = "txt_gioitinh_nv";
@@ -424,6 +434,7 @@
             // 
             // txt_hoten_nv
             // 
+            this.txt_hoten_nv.Enabled = false;
             this.txt_hoten_nv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_hoten_nv.Location = new System.Drawing.Point(772, 162);
             this.txt_hoten_nv.Name = "txt_hoten_nv";
@@ -509,6 +520,7 @@
             // 
             // txt_dtbtl_sv
             // 
+            this.txt_dtbtl_sv.Enabled = false;
             this.txt_dtbtl_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_dtbtl_sv.Location = new System.Drawing.Point(923, 572);
             this.txt_dtbtl_sv.Name = "txt_dtbtl_sv";
@@ -519,6 +531,7 @@
             // 
             // txt_diachi_sv
             // 
+            this.txt_diachi_sv.Enabled = false;
             this.txt_diachi_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_diachi_sv.Location = new System.Drawing.Point(923, 302);
             this.txt_diachi_sv.Name = "txt_diachi_sv";
@@ -529,6 +542,7 @@
             // 
             // txt_tctl_sv
             // 
+            this.txt_tctl_sv.Enabled = false;
             this.txt_tctl_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tctl_sv.Location = new System.Drawing.Point(923, 518);
             this.txt_tctl_sv.Name = "txt_tctl_sv";
@@ -539,6 +553,7 @@
             // 
             // txt_ngaysinh_sv
             // 
+            this.txt_ngaysinh_sv.Enabled = false;
             this.txt_ngaysinh_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ngaysinh_sv.Location = new System.Drawing.Point(923, 248);
             this.txt_ngaysinh_sv.Name = "txt_ngaysinh_sv";
@@ -549,6 +564,7 @@
             // 
             // txt_manganh_sv
             // 
+            this.txt_manganh_sv.Enabled = false;
             this.txt_manganh_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_manganh_sv.Location = new System.Drawing.Point(923, 464);
             this.txt_manganh_sv.Name = "txt_manganh_sv";
@@ -559,6 +575,7 @@
             // 
             // txt_gioitinh_sv
             // 
+            this.txt_gioitinh_sv.Enabled = false;
             this.txt_gioitinh_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_gioitinh_sv.Location = new System.Drawing.Point(923, 194);
             this.txt_gioitinh_sv.Name = "txt_gioitinh_sv";
@@ -569,6 +586,7 @@
             // 
             // txt_mact_sv
             // 
+            this.txt_mact_sv.Enabled = false;
             this.txt_mact_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_mact_sv.Location = new System.Drawing.Point(923, 410);
             this.txt_mact_sv.Name = "txt_mact_sv";
@@ -579,6 +597,7 @@
             // 
             // txt_hoten_sv
             // 
+            this.txt_hoten_sv.Enabled = false;
             this.txt_hoten_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_hoten_sv.Location = new System.Drawing.Point(923, 140);
             this.txt_hoten_sv.Name = "txt_hoten_sv";
@@ -589,6 +608,7 @@
             // 
             // txt_dienthoai_sv
             // 
+            this.txt_dienthoai_sv.Enabled = false;
             this.txt_dienthoai_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_dienthoai_sv.Location = new System.Drawing.Point(923, 356);
             this.txt_dienthoai_sv.Name = "txt_dienthoai_sv";
@@ -599,6 +619,7 @@
             // 
             // txt_masv
             // 
+            this.txt_masv.Enabled = false;
             this.txt_masv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_masv.Location = new System.Drawing.Point(923, 86);
             this.txt_masv.Name = "txt_masv";
@@ -862,6 +883,7 @@
             // 
             // txt_stth_hp
             // 
+            this.txt_stth_hp.Enabled = false;
             this.txt_stth_hp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_stth_hp.Location = new System.Drawing.Point(923, 386);
             this.txt_stth_hp.Name = "txt_stth_hp";
@@ -872,6 +894,7 @@
             // 
             // txt_stlt_hp
             // 
+            this.txt_stlt_hp.Enabled = false;
             this.txt_stlt_hp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_stlt_hp.Location = new System.Drawing.Point(923, 311);
             this.txt_stlt_hp.Name = "txt_stlt_hp";
@@ -882,6 +905,7 @@
             // 
             // txt_sotc_hp
             // 
+            this.txt_sotc_hp.Enabled = false;
             this.txt_sotc_hp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_sotc_hp.Location = new System.Drawing.Point(923, 236);
             this.txt_sotc_hp.Name = "txt_sotc_hp";
@@ -892,6 +916,7 @@
             // 
             // txt_madv_hp
             // 
+            this.txt_madv_hp.Enabled = false;
             this.txt_madv_hp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_madv_hp.Location = new System.Drawing.Point(923, 536);
             this.txt_madv_hp.Name = "txt_madv_hp";
@@ -902,6 +927,7 @@
             // 
             // txt_tenhp
             // 
+            this.txt_tenhp.Enabled = false;
             this.txt_tenhp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tenhp.Location = new System.Drawing.Point(923, 161);
             this.txt_tenhp.Name = "txt_tenhp";
@@ -912,6 +938,7 @@
             // 
             // txt_svtd_hp
             // 
+            this.txt_svtd_hp.Enabled = false;
             this.txt_svtd_hp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_svtd_hp.Location = new System.Drawing.Point(923, 461);
             this.txt_svtd_hp.Name = "txt_svtd_hp";
@@ -922,6 +949,7 @@
             // 
             // txt_mahp
             // 
+            this.txt_mahp.Enabled = false;
             this.txt_mahp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_mahp.Location = new System.Drawing.Point(923, 86);
             this.txt_mahp.Name = "txt_mahp";
