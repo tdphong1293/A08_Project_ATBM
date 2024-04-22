@@ -396,5 +396,14 @@ namespace _21127331_21127388_21127537_21127695
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btn_DangXuat_Click(object sender, EventArgs e)
+        {
+            conn.Close();
+            this.Hide();
+            FormDangNhap formDN = new FormDangNhap();
+            formDN.ShowDialog();
+            this.Close();
+        }
     }
 }

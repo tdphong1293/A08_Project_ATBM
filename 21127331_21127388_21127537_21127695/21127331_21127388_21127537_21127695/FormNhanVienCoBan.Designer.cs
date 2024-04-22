@@ -33,7 +33,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tc_FormNhanVienCoBan = new System.Windows.Forms.TabControl();
             this.tb_canhan = new System.Windows.Forms.TabPage();
             this.btn_quayve_nv = new System.Windows.Forms.Button();
@@ -119,6 +119,7 @@
             this.txt_timkiem_khmo = new System.Windows.Forms.TextBox();
             this.dtgv_khmo = new System.Windows.Forms.DataGridView();
             this.thongbaotimer = new System.Windows.Forms.Timer(this.components);
+            this.btn_DangXuat = new System.Windows.Forms.Button();
             this.tc_FormNhanVienCoBan.SuspendLayout();
             this.tb_canhan.SuspendLayout();
             this.pn_thongbao.SuspendLayout();
@@ -143,9 +144,9 @@
             this.tc_FormNhanVienCoBan.Controls.Add(this.tp_donvi);
             this.tc_FormNhanVienCoBan.Controls.Add(this.tb_hocphan);
             this.tc_FormNhanVienCoBan.Controls.Add(this.tp_khoahocmo);
-            this.tc_FormNhanVienCoBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tc_FormNhanVienCoBan.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tc_FormNhanVienCoBan.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tc_FormNhanVienCoBan.Location = new System.Drawing.Point(0, 0);
+            this.tc_FormNhanVienCoBan.Location = new System.Drawing.Point(0, 24);
             this.tc_FormNhanVienCoBan.Name = "tc_FormNhanVienCoBan";
             this.tc_FormNhanVienCoBan.SelectedIndex = 0;
             this.tc_FormNhanVienCoBan.Size = new System.Drawing.Size(1264, 681);
@@ -257,14 +258,14 @@
             this.dtgv_thongbao.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgv_thongbao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_thongbao.ColumnHeadersVisible = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgv_thongbao.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv_thongbao.DefaultCellStyle = dataGridViewCellStyle6;
             this.dtgv_thongbao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgv_thongbao.Location = new System.Drawing.Point(0, 0);
             this.dtgv_thongbao.MultiSelect = false;
@@ -1138,11 +1139,24 @@
             // 
             this.thongbaotimer.Tick += new System.EventHandler(this.thongbaotimer_Tick);
             // 
+            // btn_DangXuat
+            // 
+            this.btn_DangXuat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DangXuat.ForeColor = System.Drawing.Color.Red;
+            this.btn_DangXuat.Location = new System.Drawing.Point(1162, 10);
+            this.btn_DangXuat.Name = "btn_DangXuat";
+            this.btn_DangXuat.Size = new System.Drawing.Size(98, 34);
+            this.btn_DangXuat.TabIndex = 62;
+            this.btn_DangXuat.Text = "Đăng xuất";
+            this.btn_DangXuat.UseVisualStyleBackColor = true;
+            this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
+            // 
             // FormNhanVienCoBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1264, 705);
+            this.Controls.Add(this.btn_DangXuat);
             this.Controls.Add(this.tc_FormNhanVienCoBan);
             this.Name = "FormNhanVienCoBan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1260,5 +1274,6 @@
         private System.Windows.Forms.Button btn_quayve_nv;
         private System.Windows.Forms.Button btn_chinhsua_nv;
         private System.Windows.Forms.Button btn_luudt_nv;
+        private System.Windows.Forms.Button btn_DangXuat;
     }
 }

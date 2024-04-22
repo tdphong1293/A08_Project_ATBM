@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +13,19 @@ namespace _21127331_21127388_21127537_21127695
 {
     public partial class FormTruongDonVi : Form
     {
+        private OracleConnection conn = FormDangNhap.conn;
         private string SDT_cu;
         private string diemth, diemqt, diemck, diemtk;
 
         public FormTruongDonVi()
         {
             InitializeComponent();
-            SDT_cu = txt_dienthoai_tdv.Text;
+            SDT_cu = txt_dienthoai_nv.Text;
             diemth = txt_diemth_dk.Text;
             diemqt = txt_diemqt_dk.Text;
             diemck = txt_diemck_dk.Text;
             diemtk = txt_diemtk_dk.Text;
+            Load_thongtincanhan();
         }
 
         private void btn_thongbao_Click(object sender, EventArgs e)
@@ -34,11 +37,11 @@ namespace _21127331_21127388_21127537_21127695
         private void btn_ChinhSua_Click(object sender, EventArgs e)
         {
             btn_ChinhSua.Visible = false;
-            txt_dienthoai_tdv.Enabled = true;
-            txt_dienthoai_tdv.ReadOnly = false;
-            txt_dienthoai_tdv.SelectionStart = 0;
-            txt_dienthoai_tdv.SelectionLength = txt_dienthoai_tdv.Text.Length;
-            txt_dienthoai_tdv.Focus();
+            txt_dienthoai_nv.Enabled = true;
+            txt_dienthoai_nv.ReadOnly = false;
+            txt_dienthoai_nv.SelectionStart = 0;
+            txt_dienthoai_nv.SelectionLength = txt_dienthoai_nv.Text.Length;
+            txt_dienthoai_nv.Focus();
             btn_luudt.Visible = true;
             btn_QuayVe.Visible = true;
         }
@@ -114,23 +117,45 @@ namespace _21127331_21127388_21127537_21127695
         private void btn_QuayVe_Click(object sender, EventArgs e)
         {
             btn_ChinhSua.Visible = true;
-            txt_dienthoai_tdv.Text = SDT_cu;
-            txt_dienthoai_tdv.Enabled = false;
-            txt_dienthoai_tdv.ReadOnly = true;
+            txt_dienthoai_nv.Text = SDT_cu;
+            txt_dienthoai_nv.Enabled = false;
+            txt_dienthoai_nv.ReadOnly = true;
             btn_luudt.Visible = false;
             btn_QuayVe.Visible = false;
         }
 
         private void btn_luudt_Click(object sender, EventArgs e)
         {
-            btn_ChinhSua.Visible = true;
-            SDT_cu = txt_dienthoai_tdv.Text;
-            txt_dienthoai_tdv.Enabled = false;
-            txt_dienthoai_tdv.ReadOnly = true;
-            btn_luudt.Visible = false;
-            btn_QuayVe.Visible = false;
-        }
+            if (string.IsNullOrEmpty(txt_dienthoai_nv.Text))
+            {
+                MessageBox.Show("Số điện thoại không được để trống");
+            }
+            else
+            {
 
+                try
+                {
+                    string query = "update OLS_ADMIN.uv_NhanVienCoBan_NHANSU set DT = :sdt";
+                    using (OracleCommand cmd = new OracleCommand(query, conn))
+                    {
+                        cmd.Parameters.Add(":sdt", txt_dienthoai_nv.Text);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (OracleException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                btn_ChinhSua.Visible = true;
+                SDT_cu = txt_dienthoai_nv.Text;
+                txt_dienthoai_nv.Enabled = false;
+                txt_dienthoai_nv.ReadOnly = true;
+                btn_luudt.Visible = false;
+                btn_QuayVe.Visible = false;
+
+            }    
+        }
 
 
         private void btn_ThemPC_Click(object sender, EventArgs e)
@@ -138,5 +163,45 @@ namespace _21127331_21127388_21127537_21127695
             Form_TruongDonVi_ThemPC form_TruongDonVi_ThemPC = new Form_TruongDonVi_ThemPC();
             form_TruongDonVi_ThemPC.ShowDialog();
         }
+
+
+        private void Load_thongtincanhan()
+        {
+            try
+            {
+                string query = "select * from OLS_ADMIN.uv_NhanVienCoBan_NHANSU";
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            txt_manv.Text = reader["MANV"].ToString();
+                            txt_hoten_nv.Text = reader["HOTEN"].ToString();
+                            txt_gioitinh_nv.Text = reader["PHAI"].ToString();
+                            txt_ngaysinh_nv.Text = DateTime.Parse(reader["NGSINH"].ToString()).ToString("dd/MM/yyyy");
+                            txt_phucap_nv.Text = reader["PHUCAP"].ToString();
+                            txt_vaitro_nv.Text = reader["VAITRO"].ToString();
+                            txt_madv_nv.Text = reader["MADV"].ToString();
+                            txt_dienthoai_nv.Text = reader["DT"].ToString();
+                        }
+                    }
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_DangXuat_Click(object sender, EventArgs e)
+        {
+            conn.Close();
+            this.Hide();
+            FormDangNhap formDN = new FormDangNhap();
+            formDN.ShowDialog();
+            this.Close();
+        }
+
     }
 }

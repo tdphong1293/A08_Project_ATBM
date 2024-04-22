@@ -4,7 +4,8 @@ create table THONGBAO(
     NgayTao date default trunc(sysdate)
 );
 
-grant select on THONGBAO to rl_SinhVien, rl_NhanVienCoBan, rl_GiangVien, rl_GiaoVu, rl_TruongDonVi, rl_TruongKhoa
+
+grant select on THONGBAO to rl_SinhVien, rl_NhanVienCoBan, rl_GiangVien, rl_GiaoVu, rl_TruongDonVi, rl_TruongKhoa;
 
 -- Tạo chính sách OLS
 begin
