@@ -1,3 +1,12 @@
+---> Mở account lbacsys
+alter user lbacsys identified by lbacsys account unlock container=all;
+---> Mở PDB nếu chưa mở
+alter pluggable database A08_ProjectATBM open read write; 
+---> CHUYỂN QUA PDB 
+alter session set container = A08_ProjectATBM; 
+show con_name; 
+show user;
+
 select value from v$option where parameter = 'Oracle Label Security'; -- kiểm tra enable
 select status from dba_ols_status where name = 'OLS_CONFIGURE_STATUS'; -- kiểm tra đăng ký
 
@@ -10,15 +19,6 @@ end;
 ---> KHỞI ĐỘNG LẠI 
 shutdown immediate; 
 startup; 
-
----> Mở account lbacsys
-alter user lbacsys identified by lbacsys account unlock container=all;
----> Mở PDB nếu chưa mở
-alter pluggable database A08_ProjectATBM open read write; 
----> CHUYỂN QUA PDB 
-alter session set container = A08_ProjectATBM; 
-show con_name; 
-show user;
 
 --Tạo user OLS_ADMIN ở PDB 
 create user OLS_ADMIN identified by 123 container = current;

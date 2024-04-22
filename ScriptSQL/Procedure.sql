@@ -160,10 +160,12 @@ end;
 
 -- Insert nội dung và gán nhán dữ liệu của bảng thông báo
 create or replace procedure sp_Insert_ThongBao
-    (v_noidung in varchar2, v_label in varchar2)
+    (v_noidung in nvarchar2, v_label in varchar2)
+authid current_user    
 as
 begin
-    insert into THONGBAO values (v_noidung, char_to_label('thongbao_policy', v_label));
+    insert into THONGBAO (NoiDung, thongbao_label) values (to_nchar(v_noidung), char_to_label('thongbao_policy', v_label));
+    commit;
 end;
 /
 
