@@ -79,11 +79,16 @@
             this.cb_dangnhap_vaitro.FormattingEnabled = true;
             this.cb_dangnhap_vaitro.Items.AddRange(new object[] {
             "SYSDBA",
-            "ADMIN (DBA)",
-            "default"});
-            this.cb_dangnhap_vaitro.Location = new System.Drawing.Point(597, 195);
+            "ADMIN",
+            "Sinh viên",
+            "Nhân viên cơ bản",
+            "Giảng viên",
+            "Giáo vụ",
+            "Trưởng đơn vị",
+            "Trưởng khoa"});
+            this.cb_dangnhap_vaitro.Location = new System.Drawing.Point(582, 195);
             this.cb_dangnhap_vaitro.Name = "cb_dangnhap_vaitro";
-            this.cb_dangnhap_vaitro.Size = new System.Drawing.Size(118, 28);
+            this.cb_dangnhap_vaitro.Size = new System.Drawing.Size(133, 28);
             this.cb_dangnhap_vaitro.TabIndex = 3;
             // 
             // btn_dangnhap
