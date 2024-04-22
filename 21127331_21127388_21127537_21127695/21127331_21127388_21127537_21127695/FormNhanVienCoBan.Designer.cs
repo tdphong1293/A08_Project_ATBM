@@ -1117,6 +1117,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.tc_FormNhanVienCoBan);
             this.Name = "FormNhanVienCoBan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormNhanVienCoBan";
             this.tc_FormNhanVienCoBan.ResumeLayout(false);
             this.tb_canhan.ResumeLayout(false);
