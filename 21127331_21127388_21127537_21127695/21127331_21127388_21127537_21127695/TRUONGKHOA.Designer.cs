@@ -38,776 +38,783 @@ namespace _21127331_21127388_21127537_21127695
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            button1 = new Button();
-            panel1 = new Panel();
-            tabPage10 = new TabPage();
-            dataGridView8 = new DataGridView();
-            label19 = new Label();
-            comboBox8 = new ComboBox();
-            tabPage2 = new TabPage();
-            tabControl3 = new TabControl();
-            tabPage7 = new TabPage();
-            dataGridView5 = new DataGridView();
-            label6 = new Label();
-            textBox5 = new TextBox();
-            tabPage8 = new TabPage();
-            label7 = new Label();
-            dataGridView6 = new DataGridView();
-            comboBox1 = new ComboBox();
-            textBox6 = new TextBox();
-            label11 = new Label();
-            label12 = new Label();
-            comboBox2 = new ComboBox();
-            tabPage9 = new TabPage();
-            button3 = new Button();
-            button2 = new Button();
-            label17 = new Label();
-            comboBox7 = new ComboBox();
-            textBox8 = new TextBox();
-            textBox7 = new TextBox();
-            label16 = new Label();
-            label13 = new Label();
-            comboBox5 = new ComboBox();
-            label14 = new Label();
-            label15 = new Label();
-            comboBox6 = new ComboBox();
-            dataGridView7 = new DataGridView();
-            tabPage1 = new TabPage();
-            tabControl2 = new TabControl();
-            tabPage3 = new TabPage();
-            dataGridView1 = new DataGridView();
-            label3 = new Label();
-            textBox1 = new TextBox();
-            tabPage4 = new TabPage();
-            dataGridView2 = new DataGridView();
-            label4 = new Label();
-            textBox2 = new TextBox();
-            tabPage5 = new TabPage();
-            dataGridView3 = new DataGridView();
-            label5 = new Label();
-            textBox3 = new TextBox();
-            tabPage6 = new TabPage();
-            label8 = new Label();
-            comboBox3 = new ComboBox();
-            label9 = new Label();
-            comboBox4 = new ComboBox();
-            dataGridView4 = new DataGridView();
-            label10 = new Label();
-            textBox4 = new TextBox();
-            tabControl1 = new TabControl();
-            panel1.SuspendLayout();
-            tabPage10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView8).BeginInit();
-            tabPage2.SuspendLayout();
-            tabControl3.SuspendLayout();
-            tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
-            tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView6).BeginInit();
-            tabPage9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView7).BeginInit();
-            tabPage1.SuspendLayout();
-            tabControl2.SuspendLayout();
-            tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
-            tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
-            tabControl1.SuspendLayout();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.dataGridView8 = new System.Windows.Forms.DataGridView();
+            this.label19 = new System.Windows.Forms.Label();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.panel1.SuspendLayout();
+            this.tabPage10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(17, 17);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(82, 32);
-            label1.TabIndex = 0;
-            label1.Text = "Hello!";
-            label1.Click += label1_Click;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(8, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Hello!";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(100, 17);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(59, 32);
-            label2.TabIndex = 1;
-            label2.Text = "Kiet";
-            label2.Click += label2_Click;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(46, 7);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Kiet";
             // 
             // button1
             // 
-            button1.Location = new Point(1310, 10);
-            button1.Margin = new Padding(4);
-            button1.Name = "button1";
-            button1.Size = new Size(146, 44);
-            button1.TabIndex = 2;
-            button1.Text = "Log out";
-            button1.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(605, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(67, 18);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Log out";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
-            panel1.BackColor = Color.MidnightBlue;
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(button1);
-            panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1474, 68);
-            panel1.TabIndex = 4;
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(680, 28);
+            this.panel1.TabIndex = 4;
             // 
             // tabPage10
             // 
-            tabPage10.Controls.Add(dataGridView8);
-            tabPage10.Controls.Add(label19);
-            tabPage10.Controls.Add(comboBox8);
-            tabPage10.Location = new Point(8, 83);
-            tabPage10.Name = "tabPage10";
-            tabPage10.Size = new Size(1455, 702);
-            tabPage10.TabIndex = 3;
-            tabPage10.Text = "TRA CỨU CSDL";
-            tabPage10.UseVisualStyleBackColor = true;
+            this.tabPage10.Controls.Add(this.dataGridView8);
+            this.tabPage10.Controls.Add(this.label19);
+            this.tabPage10.Controls.Add(this.comboBox8);
+            this.tabPage10.Location = new System.Drawing.Point(4, 60);
+            this.tabPage10.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Size = new System.Drawing.Size(671, 258);
+            this.tabPage10.TabIndex = 3;
+            this.tabPage10.Text = "TRA CỨU CSDL";
+            this.tabPage10.UseVisualStyleBackColor = true;
             // 
             // dataGridView8
             // 
-            dataGridView8.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView8.Location = new Point(-8, 63);
-            dataGridView8.Name = "dataGridView8";
-            dataGridView8.RowHeadersWidth = 82;
-            dataGridView8.Size = new Size(1471, 684);
-            dataGridView8.TabIndex = 3;
+            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView8.Location = new System.Drawing.Point(-4, 26);
+            this.dataGridView8.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dataGridView8.Name = "dataGridView8";
+            this.dataGridView8.RowHeadersWidth = 82;
+            this.dataGridView8.Size = new System.Drawing.Size(679, 278);
+            this.dataGridView8.TabIndex = 3;
             // 
             // label19
             // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label19.Location = new Point(0, 14);
-            label19.Name = "label19";
-            label19.Size = new Size(122, 32);
-            label19.TabIndex = 2;
-            label19.Text = "QUAN HỆ";
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(0, 6);
+            this.label19.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(60, 15);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "QUAN HỆ";
             // 
             // comboBox8
             // 
-            comboBox8.FormattingEnabled = true;
-            comboBox8.Location = new Point(141, 11);
-            comboBox8.Name = "comboBox8";
-            comboBox8.Size = new Size(242, 45);
-            comboBox8.TabIndex = 0;
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(65, 4);
+            this.comboBox8.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(114, 25);
+            this.comboBox8.TabIndex = 0;
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(tabControl3);
-            tabPage2.Location = new Point(8, 83);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1455, 702);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "QUẢN LÝ GIẢNG DẠY";
-            tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Controls.Add(this.tabControl3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 60);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPage2.Size = new System.Drawing.Size(671, 258);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "QUẢN LÝ GIẢNG DẠY";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabControl3
             // 
-            tabControl3.Appearance = TabAppearance.Buttons;
-            tabControl3.Controls.Add(tabPage7);
-            tabControl3.Controls.Add(tabPage8);
-            tabControl3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tabControl3.Location = new Point(-8, 0);
-            tabControl3.Margin = new Padding(4);
-            tabControl3.Name = "tabControl3";
-            tabControl3.SelectedIndex = 0;
-            tabControl3.Size = new Size(1470, 732);
-            tabControl3.TabIndex = 6;
+            this.tabControl3.Appearance = System.Windows.Forms.TabAppearance.Buttons;
+            this.tabControl3.Controls.Add(this.tabPage7);
+            this.tabControl3.Controls.Add(this.tabPage8);
+            this.tabControl3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl3.Location = new System.Drawing.Point(-4, 0);
+            this.tabControl3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.SelectedIndex = 0;
+            this.tabControl3.Size = new System.Drawing.Size(678, 297);
+            this.tabControl3.TabIndex = 6;
             // 
             // tabPage7
             // 
-            tabPage7.Controls.Add(dataGridView5);
-            tabPage7.Controls.Add(label6);
-            tabPage7.Controls.Add(textBox5);
-            tabPage7.Location = new Point(4, 44);
-            tabPage7.Margin = new Padding(4);
-            tabPage7.Name = "tabPage7";
-            tabPage7.Padding = new Padding(4);
-            tabPage7.Size = new Size(1462, 684);
-            tabPage7.TabIndex = 0;
-            tabPage7.Text = "LỊCH PHÂN CÔNG";
-            tabPage7.UseVisualStyleBackColor = true;
+            this.tabPage7.Controls.Add(this.dataGridView5);
+            this.tabPage7.Controls.Add(this.label6);
+            this.tabPage7.Controls.Add(this.textBox5);
+            this.tabPage7.Location = new System.Drawing.Point(4, 27);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage7.Size = new System.Drawing.Size(670, 266);
+            this.tabPage7.TabIndex = 0;
+            this.tabPage7.Text = "LỊCH PHÂN CÔNG";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // dataGridView5
             // 
-            dataGridView5.AllowUserToDeleteRows = false;
-            dataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView5.Location = new Point(0, 83);
-            dataGridView5.Margin = new Padding(4);
-            dataGridView5.Name = "dataGridView5";
-            dataGridView5.RowHeadersWidth = 62;
-            dataGridView5.Size = new Size(1460, 657);
-            dataGridView5.TabIndex = 3;
+            this.dataGridView5.AllowUserToDeleteRows = false;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Location = new System.Drawing.Point(0, 34);
+            this.dataGridView5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RowHeadersWidth = 62;
+            this.dataGridView5.Size = new System.Drawing.Size(674, 267);
+            this.dataGridView5.TabIndex = 3;
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(9, 23);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(188, 32);
-            label6.TabIndex = 2;
-            label6.Text = "MÃ HỌC PHẦN";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(4, 9);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 15);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "MÃ HỌC PHẦN";
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(195, 23);
-            textBox5.Margin = new Padding(4);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(194, 39);
-            textBox5.TabIndex = 0;
+            this.textBox5.Location = new System.Drawing.Point(90, 9);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(92, 23);
+            this.textBox5.TabIndex = 0;
             // 
             // tabPage8
             // 
-            tabPage8.Controls.Add(label7);
-            tabPage8.Controls.Add(dataGridView6);
-            tabPage8.Controls.Add(comboBox1);
-            tabPage8.Controls.Add(textBox6);
-            tabPage8.Controls.Add(label11);
-            tabPage8.Controls.Add(label12);
-            tabPage8.Controls.Add(comboBox2);
-            tabPage8.Location = new Point(4, 44);
-            tabPage8.Margin = new Padding(4);
-            tabPage8.Name = "tabPage8";
-            tabPage8.Padding = new Padding(4);
-            tabPage8.Size = new Size(1462, 684);
-            tabPage8.TabIndex = 1;
-            tabPage8.Text = "QUẢN LÝ LỚP HỌC PHẦN";
-            tabPage8.UseVisualStyleBackColor = true;
+            this.tabPage8.Controls.Add(this.label7);
+            this.tabPage8.Controls.Add(this.dataGridView6);
+            this.tabPage8.Controls.Add(this.comboBox1);
+            this.tabPage8.Controls.Add(this.textBox6);
+            this.tabPage8.Controls.Add(this.label11);
+            this.tabPage8.Controls.Add(this.label12);
+            this.tabPage8.Controls.Add(this.comboBox2);
+            this.tabPage8.Location = new System.Drawing.Point(4, 27);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage8.Size = new System.Drawing.Size(670, 266);
+            this.tabPage8.TabIndex = 1;
+            this.tabPage8.Text = "QUẢN LÝ LỚP HỌC PHẦN";
+            this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(739, 23);
-            label7.Margin = new Padding(4, 0, 4, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(116, 32);
-            label7.TabIndex = 26;
-            label7.Text = "Năm học";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(341, 9);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 15);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Năm học";
             // 
             // dataGridView6
             // 
-            dataGridView6.AllowUserToDeleteRows = false;
-            dataGridView6.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView6.Location = new Point(-5, 79);
-            dataGridView6.Margin = new Padding(4);
-            dataGridView6.Name = "dataGridView6";
-            dataGridView6.RowHeadersWidth = 62;
-            dataGridView6.Size = new Size(1460, 657);
-            dataGridView6.TabIndex = 6;
+            this.dataGridView6.AllowUserToDeleteRows = false;
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(-2, 32);
+            this.dataGridView6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.RowHeadersWidth = 62;
+            this.dataGridView6.Size = new System.Drawing.Size(674, 267);
+            this.dataGridView6.TabIndex = 6;
             // 
             // comboBox1
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(856, 19);
-            comboBox1.Margin = new Padding(4);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(235, 40);
-            comboBox1.TabIndex = 25;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(395, 8);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(111, 23);
+            this.comboBox1.TabIndex = 25;
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(106, 19);
-            textBox6.Margin = new Padding(4);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(194, 39);
-            textBox6.TabIndex = 21;
+            this.textBox6.Location = new System.Drawing.Point(49, 8);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(92, 23);
+            this.textBox6.TabIndex = 21;
             // 
             // label11
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(356, 23);
-            label11.Margin = new Padding(4, 0, 4, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(86, 32);
-            label11.TabIndex = 24;
-            label11.Text = "Học kì";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(164, 9);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(42, 15);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Học kì";
             // 
             // label12
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(13, 23);
-            label12.Margin = new Padding(4, 0, 4, 0);
-            label12.Name = "label12";
-            label12.Size = new Size(90, 32);
-            label12.TabIndex = 22;
-            label12.Text = "Mã HP";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 9);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(43, 15);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Mã HP";
             // 
             // comboBox2
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(445, 19);
-            comboBox2.Margin = new Padding(4);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(235, 40);
-            comboBox2.TabIndex = 23;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(205, 8);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(111, 23);
+            this.comboBox2.TabIndex = 23;
             // 
             // tabPage9
             // 
-            tabPage9.Controls.Add(button3);
-            tabPage9.Controls.Add(button2);
-            tabPage9.Controls.Add(label17);
-            tabPage9.Controls.Add(comboBox7);
-            tabPage9.Controls.Add(textBox8);
-            tabPage9.Controls.Add(textBox7);
-            tabPage9.Controls.Add(label16);
-            tabPage9.Controls.Add(label13);
-            tabPage9.Controls.Add(comboBox5);
-            tabPage9.Controls.Add(label14);
-            tabPage9.Controls.Add(label15);
-            tabPage9.Controls.Add(comboBox6);
-            tabPage9.Controls.Add(dataGridView7);
-            tabPage9.Location = new Point(8, 83);
-            tabPage9.Name = "tabPage9";
-            tabPage9.Size = new Size(1455, 702);
-            tabPage9.TabIndex = 2;
-            tabPage9.Text = "QUẢN LÝ PHÂN CÔNG";
-            tabPage9.UseVisualStyleBackColor = true;
+            this.tabPage9.Controls.Add(this.button3);
+            this.tabPage9.Controls.Add(this.button2);
+            this.tabPage9.Controls.Add(this.label17);
+            this.tabPage9.Controls.Add(this.comboBox7);
+            this.tabPage9.Controls.Add(this.textBox8);
+            this.tabPage9.Controls.Add(this.textBox7);
+            this.tabPage9.Controls.Add(this.label16);
+            this.tabPage9.Controls.Add(this.label13);
+            this.tabPage9.Controls.Add(this.comboBox5);
+            this.tabPage9.Controls.Add(this.label14);
+            this.tabPage9.Controls.Add(this.label15);
+            this.tabPage9.Controls.Add(this.comboBox6);
+            this.tabPage9.Controls.Add(this.dataGridView7);
+            this.tabPage9.Location = new System.Drawing.Point(4, 60);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(671, 258);
+            this.tabPage9.TabIndex = 2;
+            this.tabPage9.Text = "QUẢN LÝ PHÂN CÔNG";
+            this.tabPage9.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            button3.ForeColor = Color.Red;
-            button3.Location = new Point(1272, 540);
-            button3.Margin = new Padding(4);
-            button3.Name = "button3";
-            button3.Size = new Size(176, 107);
-            button3.TabIndex = 37;
-            button3.Text = "XÓA";
-            button3.UseVisualStyleBackColor = true;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.button3.ForeColor = System.Drawing.Color.Red;
+            this.button3.Location = new System.Drawing.Point(587, 219);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(81, 43);
+            this.button3.TabIndex = 37;
+            this.button3.Text = "XÓA";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            button2.Location = new Point(1070, 540);
-            button2.Margin = new Padding(4);
-            button2.Name = "button2";
-            button2.Size = new Size(176, 107);
-            button2.TabIndex = 3;
-            button2.Text = "THÊM/CẬP NHẬT";
-            button2.UseVisualStyleBackColor = true;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.button2.Location = new System.Drawing.Point(494, 219);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(81, 43);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "THÊM/CẬP NHẬT";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // label17
             // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label17.Location = new Point(1070, 413);
-            label17.Margin = new Padding(4, 0, 4, 0);
-            label17.Name = "label17";
-            label17.Size = new Size(90, 32);
-            label17.TabIndex = 36;
-            label17.Text = "MÃ CT";
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label17.Location = new System.Drawing.Point(494, 168);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(43, 15);
+            this.label17.TabIndex = 36;
+            this.label17.Text = "MÃ CT";
             // 
             // comboBox7
             // 
-            comboBox7.FormattingEnabled = true;
-            comboBox7.Location = new Point(1213, 410);
-            comboBox7.Margin = new Padding(4);
-            comboBox7.Name = "comboBox7";
-            comboBox7.Size = new Size(235, 45);
-            comboBox7.TabIndex = 35;
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(560, 167);
+            this.comboBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(111, 25);
+            this.comboBox7.TabIndex = 35;
             // 
             // textBox8
             // 
-            textBox8.Location = new Point(1213, 63);
-            textBox8.Margin = new Padding(4);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(235, 43);
-            textBox8.TabIndex = 33;
+            this.textBox8.Location = new System.Drawing.Point(560, 26);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(111, 25);
+            this.textBox8.TabIndex = 33;
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(1213, 144);
-            textBox7.Margin = new Padding(4);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(235, 43);
-            textBox7.TabIndex = 27;
+            this.textBox7.Location = new System.Drawing.Point(560, 58);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(111, 25);
+            this.textBox7.TabIndex = 27;
             // 
             // label16
             // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label16.Location = new Point(1070, 67);
-            label16.Margin = new Padding(4, 0, 4, 0);
-            label16.Name = "label16";
-            label16.Size = new Size(90, 32);
-            label16.TabIndex = 34;
-            label16.Text = "Mã HP";
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label16.Location = new System.Drawing.Point(494, 27);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(43, 15);
+            this.label16.TabIndex = 34;
+            this.label16.Text = "Mã HP";
             // 
             // label13
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label13.Location = new Point(1070, 325);
-            label13.Margin = new Padding(4, 0, 4, 0);
-            label13.Name = "label13";
-            label13.Size = new Size(116, 32);
-            label13.TabIndex = 32;
-            label13.Text = "Năm học";
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(494, 132);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(56, 15);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Năm học";
             // 
             // comboBox5
             // 
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(1213, 322);
-            comboBox5.Margin = new Padding(4);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(235, 45);
-            comboBox5.TabIndex = 31;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(560, 131);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(111, 25);
+            this.comboBox5.TabIndex = 31;
             // 
             // label14
             // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label14.Location = new Point(1070, 235);
-            label14.Margin = new Padding(4, 0, 4, 0);
-            label14.Name = "label14";
-            label14.Size = new Size(86, 32);
-            label14.TabIndex = 30;
-            label14.Text = "Học kì";
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label14.Location = new System.Drawing.Point(494, 95);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(42, 15);
+            this.label14.TabIndex = 30;
+            this.label14.Text = "Học kì";
             // 
             // label15
             // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label15.Location = new Point(1070, 148);
-            label15.Margin = new Padding(4, 0, 4, 0);
-            label15.Name = "label15";
-            label15.Size = new Size(90, 32);
-            label15.TabIndex = 28;
-            label15.Text = "Mã GV";
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label15.Location = new System.Drawing.Point(494, 60);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(44, 15);
+            this.label15.TabIndex = 28;
+            this.label15.Text = "Mã GV";
             // 
             // comboBox6
             // 
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(1213, 235);
-            comboBox6.Margin = new Padding(4);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(235, 45);
-            comboBox6.TabIndex = 29;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(560, 95);
+            this.comboBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(111, 25);
+            this.comboBox6.TabIndex = 29;
             // 
             // dataGridView7
             // 
-            dataGridView7.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView7.Location = new Point(-8, 0);
-            dataGridView7.Name = "dataGridView7";
-            dataGridView7.RowHeadersWidth = 82;
-            dataGridView7.Size = new Size(1055, 739);
-            dataGridView7.TabIndex = 0;
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Location = new System.Drawing.Point(-4, 0);
+            this.dataGridView7.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.RowHeadersWidth = 82;
+            this.dataGridView7.Size = new System.Drawing.Size(487, 300);
+            this.dataGridView7.TabIndex = 0;
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(tabControl2);
-            tabPage1.Location = new Point(8, 83);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1455, 702);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "TRA CỨU THÔNG TIN";
-            tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Controls.Add(this.tabControl2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 60);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPage1.Size = new System.Drawing.Size(671, 258);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "TRA CỨU THÔNG TIN";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabControl2
             // 
-            tabControl2.Appearance = TabAppearance.Buttons;
-            tabControl2.Controls.Add(tabPage3);
-            tabControl2.Controls.Add(tabPage4);
-            tabControl2.Controls.Add(tabPage5);
-            tabControl2.Controls.Add(tabPage6);
-            tabControl2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tabControl2.Location = new Point(-8, 0);
-            tabControl2.Margin = new Padding(4);
-            tabControl2.Name = "tabControl2";
-            tabControl2.SelectedIndex = 0;
-            tabControl2.Size = new Size(1470, 732);
-            tabControl2.TabIndex = 6;
+            this.tabControl2.Appearance = System.Windows.Forms.TabAppearance.Buttons;
+            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Controls.Add(this.tabPage5);
+            this.tabControl2.Controls.Add(this.tabPage6);
+            this.tabControl2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl2.Location = new System.Drawing.Point(-4, 0);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(678, 297);
+            this.tabControl2.TabIndex = 6;
             // 
             // tabPage3
             // 
-            tabPage3.Controls.Add(dataGridView1);
-            tabPage3.Controls.Add(label3);
-            tabPage3.Controls.Add(textBox1);
-            tabPage3.Location = new Point(4, 44);
-            tabPage3.Margin = new Padding(4);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(4);
-            tabPage3.Size = new Size(1462, 684);
-            tabPage3.TabIndex = 0;
-            tabPage3.Text = "SINH VIÊN";
-            tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 27);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Size = new System.Drawing.Size(670, 266);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "SINH VIÊN";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 83);
-            dataGridView1.Margin = new Padding(4);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1460, 657);
-            dataGridView1.TabIndex = 3;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 34);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(674, 267);
+            this.dataGridView1.TabIndex = 3;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(12, 24);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(79, 32);
-            label3.TabIndex = 2;
-            label3.Text = "MSSV";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 10);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 15);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "MSSV";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(96, 16);
-            textBox1.Margin = new Padding(4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(194, 39);
-            textBox1.TabIndex = 0;
-            textBox1.TextChanged += textBox1_TextChanged;
+            this.textBox1.Location = new System.Drawing.Point(44, 6);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(92, 23);
+            this.textBox1.TabIndex = 0;
             // 
             // tabPage4
             // 
-            tabPage4.Controls.Add(dataGridView2);
-            tabPage4.Controls.Add(label4);
-            tabPage4.Controls.Add(textBox2);
-            tabPage4.Location = new Point(4, 44);
-            tabPage4.Margin = new Padding(4);
-            tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(4);
-            tabPage4.Size = new Size(1462, 684);
-            tabPage4.TabIndex = 1;
-            tabPage4.Text = "ĐƠN VỊ";
-            tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Controls.Add(this.dataGridView2);
+            this.tabPage4.Controls.Add(this.label4);
+            this.tabPage4.Controls.Add(this.textBox2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 27);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Size = new System.Drawing.Size(670, 266);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "ĐƠN VỊ";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
-            dataGridView2.AllowUserToDeleteRows = false;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(-5, 79);
-            dataGridView2.Margin = new Padding(4);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 62;
-            dataGridView2.Size = new Size(1460, 657);
-            dataGridView2.TabIndex = 6;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(-2, 32);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.Size = new System.Drawing.Size(674, 267);
+            this.dataGridView2.TabIndex = 6;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(9, 12);
-            label4.Margin = new Padding(4, 0, 4, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(136, 32);
-            label4.TabIndex = 5;
-            label4.Text = "Tên Đơn vị";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(4, 5);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 15);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Tên Đơn vị";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(136, 8);
-            textBox2.Margin = new Padding(4);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(194, 39);
-            textBox2.TabIndex = 4;
+            this.textBox2.Location = new System.Drawing.Point(75, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(92, 23);
+            this.textBox2.TabIndex = 4;
             // 
             // tabPage5
             // 
-            tabPage5.Controls.Add(dataGridView3);
-            tabPage5.Controls.Add(label5);
-            tabPage5.Controls.Add(textBox3);
-            tabPage5.Location = new Point(4, 44);
-            tabPage5.Margin = new Padding(4);
-            tabPage5.Name = "tabPage5";
-            tabPage5.Size = new Size(1462, 684);
-            tabPage5.TabIndex = 2;
-            tabPage5.Text = "HỌC PHẦN";
-            tabPage5.UseVisualStyleBackColor = true;
+            this.tabPage5.Controls.Add(this.dataGridView3);
+            this.tabPage5.Controls.Add(this.label5);
+            this.tabPage5.Controls.Add(this.textBox3);
+            this.tabPage5.Location = new System.Drawing.Point(4, 27);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(670, 266);
+            this.tabPage5.TabIndex = 2;
+            this.tabPage5.Text = "HỌC PHẦN";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // dataGridView3
             // 
-            dataGridView3.AllowUserToDeleteRows = false;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(0, 77);
-            dataGridView3.Margin = new Padding(4);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersWidth = 62;
-            dataGridView3.Size = new Size(1455, 658);
-            dataGridView3.TabIndex = 9;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 31);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 62;
+            this.dataGridView3.Size = new System.Drawing.Size(672, 267);
+            this.dataGridView3.TabIndex = 9;
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(6, 14);
-            label5.Margin = new Padding(4, 0, 4, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(90, 32);
-            label5.TabIndex = 8;
-            label5.Text = "Mã HP";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 6);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 15);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Mã HP";
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(99, 10);
-            textBox3.Margin = new Padding(4);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(194, 39);
-            textBox3.TabIndex = 7;
+            this.textBox3.Location = new System.Drawing.Point(46, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(92, 23);
+            this.textBox3.TabIndex = 7;
             // 
             // tabPage6
             // 
-            tabPage6.Controls.Add(label8);
-            tabPage6.Controls.Add(comboBox3);
-            tabPage6.Controls.Add(label9);
-            tabPage6.Controls.Add(comboBox4);
-            tabPage6.Controls.Add(dataGridView4);
-            tabPage6.Controls.Add(label10);
-            tabPage6.Controls.Add(textBox4);
-            tabPage6.Location = new Point(4, 44);
-            tabPage6.Margin = new Padding(4);
-            tabPage6.Name = "tabPage6";
-            tabPage6.Size = new Size(1462, 684);
-            tabPage6.TabIndex = 3;
-            tabPage6.Text = "KẾ HOẠCH MỞ";
-            tabPage6.UseVisualStyleBackColor = true;
+            this.tabPage6.Controls.Add(this.label8);
+            this.tabPage6.Controls.Add(this.comboBox3);
+            this.tabPage6.Controls.Add(this.label9);
+            this.tabPage6.Controls.Add(this.comboBox4);
+            this.tabPage6.Controls.Add(this.dataGridView4);
+            this.tabPage6.Controls.Add(this.label10);
+            this.tabPage6.Controls.Add(this.textBox4);
+            this.tabPage6.Location = new System.Drawing.Point(4, 27);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(670, 266);
+            this.tabPage6.TabIndex = 3;
+            this.tabPage6.Text = "KẾ HOẠCH MỞ";
+            this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(736, 17);
-            label8.Margin = new Padding(4, 0, 4, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(116, 32);
-            label8.TabIndex = 20;
-            label8.Text = "Năm học";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(340, 7);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(56, 15);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Năm học";
             // 
             // comboBox3
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(868, 14);
-            comboBox3.Margin = new Padding(4);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(235, 40);
-            comboBox3.TabIndex = 19;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(401, 6);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(111, 23);
+            this.comboBox3.TabIndex = 19;
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(353, 17);
-            label9.Margin = new Padding(4, 0, 4, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(86, 32);
-            label9.TabIndex = 18;
-            label9.Text = "Học kì";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(163, 7);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 15);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Học kì";
             // 
             // comboBox4
             // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(452, 13);
-            comboBox4.Margin = new Padding(4);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(235, 40);
-            comboBox4.TabIndex = 17;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(209, 5);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(111, 23);
+            this.comboBox4.TabIndex = 17;
             // 
             // dataGridView4
             // 
-            dataGridView4.AllowUserToDeleteRows = false;
-            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView4.Location = new Point(-5, 73);
-            dataGridView4.Margin = new Padding(4);
-            dataGridView4.Name = "dataGridView4";
-            dataGridView4.RowHeadersWidth = 62;
-            dataGridView4.Size = new Size(1459, 659);
-            dataGridView4.TabIndex = 16;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(-2, 30);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersWidth = 62;
+            this.dataGridView4.Size = new System.Drawing.Size(673, 268);
+            this.dataGridView4.TabIndex = 16;
             // 
             // label10
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(10, 17);
-            label10.Margin = new Padding(4, 0, 4, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(90, 32);
-            label10.TabIndex = 15;
-            label10.Text = "Mã HP";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(5, 7);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 15);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Mã HP";
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(114, 13);
-            textBox4.Margin = new Padding(4);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(194, 39);
-            textBox4.TabIndex = 14;
+            this.textBox4.Location = new System.Drawing.Point(53, 5);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(92, 23);
+            this.textBox4.TabIndex = 14;
             // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage9);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage10);
-            tabControl1.Font = new Font("Segoe UI Semibold", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tabControl1.Location = new Point(0, 61);
-            tabControl1.Name = "tabControl1";
-            tabControl1.Padding = new Point(20, 20);
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1471, 793);
-            tabControl1.TabIndex = 5;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage9);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage10);
+            this.tabControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(0, 25);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Padding = new System.Drawing.Point(20, 20);
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(679, 322);
+            this.tabControl1.TabIndex = 5;
             // 
             // TRUONGKHOA
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1472, 851);
-            Controls.Add(tabControl1);
-            Controls.Add(panel1);
-            Margin = new Padding(4);
-            Name = "TRUONGKHOA";
-            Text = "ROLE TRUONG KHOA";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            tabPage10.ResumeLayout(false);
-            tabPage10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView8).EndInit();
-            tabPage2.ResumeLayout(false);
-            tabControl3.ResumeLayout(false);
-            tabPage7.ResumeLayout(false);
-            tabPage7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
-            tabPage8.ResumeLayout(false);
-            tabPage8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView6).EndInit();
-            tabPage9.ResumeLayout(false);
-            tabPage9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView7).EndInit();
-            tabPage1.ResumeLayout(false);
-            tabControl2.ResumeLayout(false);
-            tabPage3.ResumeLayout(false);
-            tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tabPage4.ResumeLayout(false);
-            tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            tabPage5.ResumeLayout(false);
-            tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
-            tabPage6.ResumeLayout(false);
-            tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
-            tabControl1.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(679, 346);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "TRUONGKHOA";
+            this.Text = "ROLE TRUONG KHOA";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tabPage10.ResumeLayout(false);
+            this.tabPage10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

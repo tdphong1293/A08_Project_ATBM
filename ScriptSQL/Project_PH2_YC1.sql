@@ -246,8 +246,7 @@ for each row
 declare
     v_count number;
 begin
-    select count(*)
-    into v_count
+    select count(*)into v_count
     from HOCPHAN HP, DONVI DV
     where :new.MAHP = HP.MAHP
     and HP.MADV = DV.MADV
