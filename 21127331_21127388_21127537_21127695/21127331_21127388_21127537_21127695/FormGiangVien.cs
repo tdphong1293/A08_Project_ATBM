@@ -575,6 +575,8 @@ namespace _21127331_21127388_21127537_21127695
             searchdk.Start();
         }
 
+        
+
         private void searchdk_Tick(object sender, EventArgs e)
         {
             searchdk.Stop();
@@ -643,6 +645,15 @@ namespace _21127331_21127388_21127537_21127695
                 txt_diemck_dk.Text = "";
                 txt_diemtk_dk.Text = "";
             }
+        }
+
+        private void btn_DangXuat_Click(object sender, EventArgs e)
+        {
+            conn.Close();
+            this.Hide();
+            FormDangNhap formDN = new FormDangNhap();
+            formDN.ShowDialog();
+            this.Close();
         }
     }
 }

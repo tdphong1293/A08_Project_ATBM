@@ -17,7 +17,7 @@ namespace _21127331_21127388_21127537_21127695
         private OracleConnection conn = FormDangNhap.conn;
         private string SDT_cu;
         private string diemth, diemqt, diemck, diemtk;
-        public static System.Timers.Timer searchSV_Timer, searchDV_Timer;
+        public static System.Timers.Timer searchSV_Timer, searchDV_Timer, searchHP_Timer;
 
         public FormTruongDonVi()
         {
@@ -30,6 +30,7 @@ namespace _21127331_21127388_21127537_21127695
             Load_thongtincanhan();
             SearchAndReloadDSSV("");
             SearchAndReloadDSDV("");
+            SearchAndReloadDSHP("");
 
             searchSV_Timer = new System.Timers.Timer();
             searchSV_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
@@ -39,10 +40,15 @@ namespace _21127331_21127388_21127537_21127695
             searchDV_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
             searchDV_Timer.Elapsed += searchDV_Event;
 
+            searchHP_Timer = new System.Timers.Timer();
+            searchHP_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
+            searchHP_Timer.Elapsed += searchHP_Event;
 
 
             dtgv_DSSinhVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgv_donvi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgv_hocphan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
 
         }
 
@@ -58,6 +64,12 @@ namespace _21127331_21127388_21127537_21127695
             searchDV_Timer.Start();
         }
 
+        private void txt_timkiem_hp_TextChanged(object sender, EventArgs e)
+        {
+            searchHP_Timer.Stop();
+            searchHP_Timer.Start();
+        }
+
         private void searchSV_Event(Object source, ElapsedEventArgs e)
         {
             searchSV_Timer.Stop();
@@ -68,6 +80,12 @@ namespace _21127331_21127388_21127537_21127695
         {
             searchDV_Timer.Stop();
             this.Invoke(new Action(() => SearchAndReloadDSDV(txt_timkiem_dv.Text)));
+        }
+
+        private void searchHP_Event(Object source, ElapsedEventArgs e)
+        {
+            searchHP_Timer.Stop();
+            this.Invoke(new Action(() => SearchAndReloadDSHP(txt_timkiem_hp.Text)));
         }
 
         private void SearchAndReloadDSSV(string searchText)
@@ -91,11 +109,11 @@ namespace _21127331_21127388_21127537_21127695
                     txt_dtbtl_sv.Text = "";
                 }    
                 else
-                    query = "select * from OLS_ADMIN.uv_NhanVienCoBan_SINHVIEN where UPPER(HOTEN) like  UPPER(:unicodeText) or MASV = :searchText";
+                    query = "select * from OLS_ADMIN.uv_NhanVienCoBan_SINHVIEN where UPPER(HOTEN) like  UPPER(:unicodeText) or MASV like :searchText";
                 using (OracleCommand cmd = new OracleCommand(query, conn))
                 {
                     cmd.Parameters.Add(":unicodeText", OracleDbType.NVarchar2, "%" + searchText + "%", ParameterDirection.Input);
-                    cmd.Parameters.Add(":searchText", searchText);
+                    cmd.Parameters.Add(":searchText", OracleDbType.NVarchar2, "%" + searchText + "%", ParameterDirection.Input);
                     using (OracleDataReader reader = cmd.ExecuteReader())
                     {
                         DataTable dataTable = new DataTable();
@@ -118,11 +136,11 @@ namespace _21127331_21127388_21127537_21127695
                 if (string.IsNullOrEmpty(searchText))
                     query = "select * from OLS_ADMIN.uv_TruongDonVi_DONVI";
                 else
-                    query = "select * from OLS_ADMIN.uv_TruongDonVi_DONVI where UPPER(TENDV) like UPPER(:unicodeText) or MADV = :searchText";
+                    query = "select * from OLS_ADMIN.uv_TruongDonVi_DONVI where UPPER(TENDV) like UPPER(:unicodeText) or MADV like :searchText";
                 using (OracleCommand cmd = new OracleCommand(query, conn))
                 {
                     cmd.Parameters.Add(":unicodeText", OracleDbType.NVarchar2, "%" + searchText + "%", ParameterDirection.Input);
-                    cmd.Parameters.Add(":searchText", searchText);
+                    cmd.Parameters.Add(":searchText", OracleDbType.NVarchar2, "%" + searchText + "%", ParameterDirection.Input);
                     using (OracleDataReader reader = cmd.ExecuteReader())
                     {
                         DataTable dataTable = new DataTable();
@@ -137,6 +155,43 @@ namespace _21127331_21127388_21127537_21127695
             }
         }
 
+
+        private void SearchAndReloadDSHP(string searchText)
+        {
+            try
+            {
+                string query;
+                if (string.IsNullOrEmpty(searchText))
+                {
+                    query = "select * from OLS_ADMIN.uv_NhanVienCoBan_HOCPHAN";
+                    statuslabel_hocphan.Text = "Chưa chọn học phần nào";
+                    txt_mahp.Text = "";
+                    txt_tenhp.Text = "";
+                    txt_sotc_hp.Text = "";
+                    txt_stlt_hp.Text = "";
+                    txt_stth_hp.Text = "";
+                    txt_svtd_hp.Text = "";
+                    txt_madv_hp.Text = "";
+                }    
+                else
+                    query = "select * from OLS_ADMIN.uv_NhanVienCoBan_HOCPHAN where UPPER(TENHP) like UPPER(:unicodeText) or MAHP like :searchText";
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    cmd.Parameters.Add(":unicodeText", OracleDbType.NVarchar2, "%" + searchText + "%", ParameterDirection.Input);
+                    cmd.Parameters.Add(":searchText", OracleDbType.NVarchar2, "%" + searchText + "%", ParameterDirection.Input);
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(reader);
+                        dtgv_hocphan.DataSource = dataTable;
+                    }
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void dtgv_DSSinhVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -180,6 +235,33 @@ namespace _21127331_21127388_21127537_21127695
                 tb_TenDV.Text = row.Cells["TENDV"].Value.ToString();
                 tb_MaTDV.Text = row.Cells["TRGDV"].Value.ToString();
                 tb_TenTDV.Text = row.Cells["HOTEN"].Value.ToString();
+            }
+        }
+
+        private void dtgv_hocphan_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dtgv_hocphan.Rows[e.RowIndex];
+                txt_mahp.Text = row.Cells["MAHP"].Value.ToString();
+                txt_tenhp.Text = row.Cells["TENHP"].Value.ToString();
+                txt_sotc_hp.Text = row.Cells["SOTC"].Value.ToString();
+                txt_stlt_hp.Text = row.Cells["STLT"].Value.ToString();
+                txt_stth_hp.Text = row.Cells["STTH"].Value.ToString();
+                txt_svtd_hp.Text = row.Cells["SOSVTD"].Value.ToString();
+                txt_madv_hp.Text = row.Cells["MADV"].Value.ToString();
+                statuslabel_hocphan.Text = "Đã chọn học phần " + txt_mahp.Text;
+            }
+            else
+            {
+                statuslabel_hocphan.Text = "Chưa chọn học phần nào";
+                txt_mahp.Text = "";
+                txt_tenhp.Text = "";
+                txt_sotc_hp.Text = "";
+                txt_stlt_hp.Text = "";
+                txt_stth_hp.Text = "";
+                txt_svtd_hp.Text = "";
+                txt_madv_hp.Text = "";
             }
         }
 
@@ -270,6 +352,8 @@ namespace _21127331_21127388_21127537_21127695
             btn_luudiem_dk.Visible = false;
             btn_quayve_dk.Visible = false;
         }
+
+        
 
         private void btn_QuayVe_Click(object sender, EventArgs e)
         {
