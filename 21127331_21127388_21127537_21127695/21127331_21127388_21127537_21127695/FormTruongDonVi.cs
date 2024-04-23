@@ -17,7 +17,7 @@ namespace _21127331_21127388_21127537_21127695
         private OracleConnection conn = FormDangNhap.conn;
         private string SDT_cu;
         private string diemth, diemqt, diemck, diemtk;
-        public static System.Timers.Timer searchMSSV_Timer;
+        public static System.Timers.Timer searchSV_Timer, searchDV_Timer;
 
         public FormTruongDonVi()
         {
@@ -29,26 +29,45 @@ namespace _21127331_21127388_21127537_21127695
             diemtk = txt_diemtk_dk.Text;
             Load_thongtincanhan();
             SearchAndReloadDSSV("");
+            SearchAndReloadDSDV("");
 
-            searchMSSV_Timer = new System.Timers.Timer();
-            searchMSSV_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
-            searchMSSV_Timer.Elapsed += searchMSSV_Event;
+            searchSV_Timer = new System.Timers.Timer();
+            searchSV_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
+            searchSV_Timer.Elapsed += searchSV_Event;
+
+            searchDV_Timer = new System.Timers.Timer();
+            searchDV_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
+            searchDV_Timer.Elapsed += searchDV_Event;
 
 
 
             dtgv_DSSinhVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgv_donvi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private void tb_TimKiemMSSV_TextChanged(object sender, EventArgs e)
         {
-            searchMSSV_Timer.Stop();
-            searchMSSV_Timer.Start();
+            searchSV_Timer.Stop();
+            searchSV_Timer.Start();
         }
 
-        private void searchMSSV_Event(Object source, ElapsedEventArgs e)
+        private void txt_timkiem_dv_TextChanged(object sender, EventArgs e)
         {
-            searchMSSV_Timer.Stop();
+            searchDV_Timer.Stop();
+            searchDV_Timer.Start();
+        }
+
+        private void searchSV_Event(Object source, ElapsedEventArgs e)
+        {
+            searchSV_Timer.Stop();
             this.Invoke(new Action(() => SearchAndReloadDSSV(tb_TimKiemMSSV.Text)));
+        }
+
+        private void searchDV_Event(Object source, ElapsedEventArgs e)
+        {
+            searchDV_Timer.Stop();
+            this.Invoke(new Action(() => SearchAndReloadDSDV(txt_timkiem_dv.Text)));
         }
 
         private void SearchAndReloadDSSV(string searchText)
@@ -72,15 +91,17 @@ namespace _21127331_21127388_21127537_21127695
                     txt_dtbtl_sv.Text = "";
                 }    
                 else
-                    query = $"select * from OLS_ADMIN.uv_NhanVienCoBan_SINHVIEN where MASV like '%{searchText}%'";
+                    query = "select * from OLS_ADMIN.uv_NhanVienCoBan_SINHVIEN where UPPER(HOTEN) like  UPPER(:unicodeText) or MASV = :searchText";
                 using (OracleCommand cmd = new OracleCommand(query, conn))
                 {
+                    cmd.Parameters.Add(":unicodeText", OracleDbType.NVarchar2, "%" + searchText + "%", ParameterDirection.Input);
+                    cmd.Parameters.Add(":searchText", searchText);
                     using (OracleDataReader reader = cmd.ExecuteReader())
                     {
                         DataTable dataTable = new DataTable();
                         dataTable.Load(reader);
                         dtgv_DSSinhVien.DataSource = dataTable;
-                    } 
+                    }
                 }
             }
             catch (OracleException ex)
@@ -88,6 +109,34 @@ namespace _21127331_21127388_21127537_21127695
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void SearchAndReloadDSDV(string searchText)
+        {
+            try
+            {
+                string query;
+                if (string.IsNullOrEmpty(searchText))
+                    query = "select * from OLS_ADMIN.uv_TruongDonVi_DONVI";
+                else
+                    query = "select * from OLS_ADMIN.uv_TruongDonVi_DONVI where UPPER(TENDV) like UPPER(:unicodeText) or MADV = :searchText";
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    cmd.Parameters.Add(":unicodeText", OracleDbType.NVarchar2, "%" + searchText + "%", ParameterDirection.Input);
+                    cmd.Parameters.Add(":searchText", searchText);
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(reader);
+                        dtgv_donvi.DataSource = dataTable;
+                    }
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
 
         private void dtgv_DSSinhVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -119,6 +168,18 @@ namespace _21127331_21127388_21127537_21127695
                 txt_dienthoai_sv.Text = "";
                 txt_tctl_sv.Text = "";
                 txt_dtbtl_sv.Text = "";
+            }
+        }
+
+        private void dtgv_donvi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dtgv_donvi.Rows[e.RowIndex];
+                tb_MaDV.Text = row.Cells["MADV"].Value.ToString();
+                tb_TenDV.Text = row.Cells["TENDV"].Value.ToString();
+                tb_MaTDV.Text = row.Cells["TRGDV"].Value.ToString();
+                tb_TenTDV.Text = row.Cells["HOTEN"].Value.ToString();
             }
         }
 
@@ -219,6 +280,7 @@ namespace _21127331_21127388_21127537_21127695
             btn_luudt.Visible = false;
             btn_QuayVe.Visible = false;
         }
+
 
         private void btn_luudt_Click(object sender, EventArgs e)
         {

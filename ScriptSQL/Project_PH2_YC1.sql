@@ -173,6 +173,15 @@ grant insert, delete on uv_GiaoVu_DANGKY to rl_GiaoVu;
 
 grant rl_GiangVien to rl_TruongDonVi;
 
+create or replace view uv_TruongDonVi_DONVI
+as
+    select DV.*, NS.HOTEN
+    from DONVI DV, NHANSU NS
+    where DV.TRGDV = NS.MANV
+/
+    
+grant select on uv_TruongDonVi_DONVI to rl_TruongDonVi;
+
 create or replace view uv_TruongDonVi_PHANCONG          
 as
     select PC.*
