@@ -162,6 +162,7 @@ end;
 grant select, update on uv_GiaoVu_PHANCONG to rl_GiaoVu;
 grant insert, delete on uv_GiaoVu_DANGKY to rl_GiaoVu;
 
+
 --CS4--
 --grant select, update(DT) on uv_NhanVienCoBan_NHANSU to TruongDonVi;
 --grant select on uv_NhanVienCoBan_SINHVIEN to TruongDonVi;
@@ -179,10 +180,17 @@ as
     from DONVI DV, NHANSU NS
     where DV.TRGDV = NS.MANV
 /
-    
-grant select on uv_TruongDonVi_DONVI to rl_TruongDonVi;
 
-create or replace view uv_TruongDonVi_PHANCONG          
+create or replace view uv_TruongDonVi_PHANCONG_2
+as
+    select PC.*
+    from PHANCONG PC, NHANSU NS, DONVI DV
+    where PC.MAGV = NS.MANV
+    and NS.MADV = DV.MADV
+    and DV.TRGDV = sys_context('userenv', 'session_user')
+/
+
+create or replace view uv_TruongDonVi_PHANCONG_1          
 as
     select PC.*
     from PHANCONG PC, HOCPHAN HP, DONVI DV
@@ -192,7 +200,7 @@ as
     with check option;
     
 create or replace trigger utrig_TruongDonVi_PHANCONG
-instead of insert or update or delete on uv_TruongDonVi_PHANCONG
+instead of insert or update or delete on uv_TruongDonVi_PHANCONG_1
 for each row
 declare
     v_count number;
@@ -230,7 +238,9 @@ begin
 end;
 /
 
-grant select, insert, update, delete on uv_TruongDonVi_PHANCONG to rl_TruongDonVi;
+grant select on uv_TruongDonVi_PHANCONG_2 to rl_TruongDonVi;
+grant select on uv_TruongDonVi_DONVI to rl_TruongDonVi;
+grant select, insert, update, delete on uv_TruongDonVi_PHANCONG_1 to rl_TruongDonVi;
 
 --CS5--
 --grant select, update(DT) on uv_NhanVienCoBan_NHANSU to TruongKhoa;

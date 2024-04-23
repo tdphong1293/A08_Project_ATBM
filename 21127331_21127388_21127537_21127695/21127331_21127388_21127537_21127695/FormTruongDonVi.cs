@@ -17,7 +17,7 @@ namespace _21127331_21127388_21127537_21127695
         private OracleConnection conn = FormDangNhap.conn;
         private string SDT_cu;
         private string diemth, diemqt, diemck, diemtk;
-        public static System.Timers.Timer searchSV_Timer, searchDV_Timer, searchHP_Timer, searchKHMO_Timer;
+        public static System.Timers.Timer searchSV_Timer, searchDV_Timer, searchHP_Timer, searchKHMO_Timer, searchPC_Timer;
 
         public FormTruongDonVi()
         {
@@ -33,6 +33,7 @@ namespace _21127331_21127388_21127537_21127695
             SearchAndReloadDSDV("");
             SearchAndReloadDSHP("");
             SearchAndReloadDSKHMO("");
+            SearchAndReloadDSPC("");
 
             searchSV_Timer = new System.Timers.Timer();
             searchSV_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
@@ -50,13 +51,16 @@ namespace _21127331_21127388_21127537_21127695
             searchKHMO_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
             searchKHMO_Timer.Elapsed += searchKHMO_Event;
 
+            searchPC_Timer = new System.Timers.Timer();
+            searchPC_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
+            searchPC_Timer.Elapsed += searchPC_Event;
+
 
             dtgv_DSSinhVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtgv_donvi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgv_hocphan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtgv_khmo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-
+            dtgv_phancong_HP.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void tb_TimKiemMSSV_TextChanged(object sender, EventArgs e)
@@ -83,6 +87,12 @@ namespace _21127331_21127388_21127537_21127695
             searchKHMO_Timer.Start();
         }
 
+        private void txt_timkiem_pc_TextChanged(object sender, EventArgs e)
+        {
+            searchPC_Timer.Stop();
+            searchPC_Timer.Start();
+        }
+
         private void searchSV_Event(Object source, ElapsedEventArgs e)
         {
             searchSV_Timer.Stop();
@@ -105,6 +115,12 @@ namespace _21127331_21127388_21127537_21127695
         {
             searchKHMO_Timer.Stop();
             this.Invoke(new Action(() => SearchAndReloadDSKHMO(txt_timkiem_khmo.Text)));
+        }
+
+        private void searchPC_Event(Object source, ElapsedEventArgs e)
+        {
+            searchPC_Timer.Stop();
+            this.Invoke(new Action(() => SearchAndReloadDSPC(txt_timkiem_pchp.Text)));
         }
 
         private void SearchAndReloadDSSV(string searchText)
@@ -238,6 +254,42 @@ namespace _21127331_21127388_21127537_21127695
             }
         }
 
+        private void SearchAndReloadDSPC(string searchText)
+        {
+            try
+            {
+                string query;
+                if (string.IsNullOrEmpty(searchText))
+                {
+                    query = "select * from OLS_ADMIN.uv_TruongDonVi_PHANCONG_1";
+                    statuslabel_phancong.Text = "Chưa chọn phân công nào";
+                    txt_magv_pc.Text = "";
+                    txt_mahp_pc.Text = "";
+                    txt_hocki_pc.Text = "";
+                    txt_nam_pc.Text = "";
+                    txt_mact_pc.Text = "";
+                }    
+                else
+                    query = "select * from OLS_ADMIN.uv_TruongDonVi_PHANCONG_1 where MAHP = UPPER(:searchMAHP) or MAGV = UPPER(:searchMAGV)";
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    cmd.Parameters.Add(":searchMAHP", searchText);
+                    cmd.Parameters.Add(":searchMAGV", searchText);
+
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(reader);
+                        dtgv_phancong_HP.DataSource = dataTable;
+                    }
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void dtgv_DSSinhVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -310,6 +362,29 @@ namespace _21127331_21127388_21127537_21127695
             }
         }
 
+        private void dtgv_phancong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dtgv_phancong_HP.Rows[e.RowIndex];
+                txt_magv_pc.Text = row.Cells["MAGV"].Value.ToString();
+                txt_mahp_pc.Text = row.Cells["MAHP"].Value.ToString();
+                txt_hocki_pc.Text = row.Cells["HK"].Value.ToString();
+                txt_nam_pc.Text = DateTime.Parse(row.Cells["NAM"].Value.ToString()).ToString("yyyy");
+                txt_mact_pc.Text = row.Cells["MACT"].Value.ToString();
+                statuslabel_phancong.Text = "Đã chọn học phần " + txt_mahp_pc.Text + " được phân công cho " + txt_magv_pc.Text +
+                    ". Học kì " + txt_hocki_pc.Text + ", Năm " + txt_nam_pc.Text + ". Chương trình " + txt_mact_pc.Text;
+            }
+            else
+            {
+                statuslabel_phancong.Text = "Chưa chọn phân công nào";
+                txt_magv_pc.Text = "";
+                txt_mahp_pc.Text = "";
+                txt_hocki_pc.Text = "";
+                txt_nam_pc.Text = "";
+                txt_mact_pc.Text = "";
+            }
+        }
 
 
         private void btn_thongbao_Click(object sender, EventArgs e)
@@ -352,6 +427,8 @@ namespace _21127331_21127388_21127537_21127695
             btn_luudiem_dk.Visible = false;
             btn_quayve_dk.Visible = false;
         }
+
+        
 
         private void btn_chinhsua_dk_Click(object sender, EventArgs e)
         {
