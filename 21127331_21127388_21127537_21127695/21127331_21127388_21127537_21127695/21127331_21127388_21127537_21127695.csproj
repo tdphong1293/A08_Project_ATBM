@@ -98,6 +98,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapNhatDonVi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapNhatDonVi.Designer.cs">
+      <DependentUpon>CapNhatDonVi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapNhatHocPhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapNhatHocPhan.Designer.cs">
+      <DependentUpon>CapNhatHocPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapNhatKHMO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapNhatKHMO.Designer.cs">
+      <DependentUpon>CapNhatKHMO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapNhatSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapNhatSV.Designer.cs">
+      <DependentUpon>CapNhatSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="DoiDiaChi_SV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +244,30 @@
     <Compile Include="SinhVien.designer.cs">
       <DependentUpon>SinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemDonVi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemDonVi.Designer.cs">
+      <DependentUpon>ThemDonVi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemHocPhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemHocPhan.Designer.cs">
+      <DependentUpon>ThemHocPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemKHMO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemKHMO.Designer.cs">
+      <DependentUpon>ThemKHMO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemSV.Designer.cs">
+      <DependentUpon>ThemSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThongTinCaNhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +286,18 @@
     <Compile Include="TRUONGKHOA.designer.cs">
       <DependentUpon>TRUONGKHOA.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CapNhatDonVi.resx">
+      <DependentUpon>CapNhatDonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapNhatHocPhan.resx">
+      <DependentUpon>CapNhatHocPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapNhatKHMO.resx">
+      <DependentUpon>CapNhatKHMO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapNhatSV.resx">
+      <DependentUpon>CapNhatSV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DoiDiaChi_SV.resx">
       <DependentUpon>DoiDiaChi_SV.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,6 +367,18 @@
     </Compile>
     <EmbeddedResource Include="SinhVien.resx">
       <DependentUpon>SinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemDonVi.resx">
+      <DependentUpon>ThemDonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemHocPhan.resx">
+      <DependentUpon>ThemHocPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemKHMO.resx">
+      <DependentUpon>ThemKHMO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemSV.resx">
+      <DependentUpon>ThemSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongTinCaNhan.resx">
       <DependentUpon>ThongTinCaNhan.cs</DependentUpon>

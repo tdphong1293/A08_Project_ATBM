@@ -147,7 +147,7 @@
             this.tc_FormNhanVienCoBan.Controls.Add(this.tp_khoahocmo);
             this.tc_FormNhanVienCoBan.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tc_FormNhanVienCoBan.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tc_FormNhanVienCoBan.Location = new System.Drawing.Point(0, 24);
+            this.tc_FormNhanVienCoBan.Location = new System.Drawing.Point(0, 20);
             this.tc_FormNhanVienCoBan.Name = "tc_FormNhanVienCoBan";
             this.tc_FormNhanVienCoBan.SelectedIndex = 0;
             this.tc_FormNhanVienCoBan.Size = new System.Drawing.Size(1264, 681);
@@ -1156,7 +1156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 705);
+            this.ClientSize = new System.Drawing.Size(1264, 701);
             this.Controls.Add(this.btn_DangXuat);
             this.Controls.Add(this.tc_FormNhanVienCoBan);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

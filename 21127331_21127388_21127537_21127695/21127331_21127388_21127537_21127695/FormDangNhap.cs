@@ -23,8 +23,8 @@ namespace _21127331_21127388_21127537_21127695
         public FormDangNhap()
         {
             InitializeComponent();
-            tb_dangnhap_taikhoan.Text = "TRGDV0001";
-            tb_dangnhap_matkhau.Text = "TRGDV0001";
+            tb_dangnhap_taikhoan.Text = "GIAOVU001";
+            tb_dangnhap_matkhau.Text = "GIAOVU001";
         }
 
         private void btn_dangnhap_Click(object sender, EventArgs e)
@@ -87,7 +87,10 @@ namespace _21127331_21127388_21127537_21127695
                     }
                     else if (cb_dangnhap_vaitro.Text == "Giáo vụ")
                     {
-                        conn.Close();
+                        GiaoVu giaovu = new GiaoVu();
+                        this.Hide();
+                        giaovu.ShowDialog();
+                        this.Close();
                     }
                     else if (cb_dangnhap_vaitro.Text == "Trưởng đơn vị")
                     {

@@ -38,71 +38,75 @@ namespace _21127331_21127388_21127537_21127695
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(47, 27);
-            label1.Name = "label1";
-            label1.Size = new Size(106, 25);
-            label1.TabIndex = 0;
-            label1.Text = "SĐT hiện tại";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(42, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "SĐT hiện tại";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(191, 27);
-            label2.Name = "label2";
-            label2.Size = new Size(112, 25);
-            label2.TabIndex = 0;
-            label2.Text = "0123456789";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(172, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "0145";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(47, 81);
-            label3.Name = "label3";
-            label3.Size = new Size(80, 25);
-            label3.TabIndex = 0;
-            label3.Text = "SĐT mới";
-            label3.Click += label3_Click;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(42, 65);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "SĐT mới";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(191, 78);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(118, 31);
-            textBox1.TabIndex = 1;
+            this.textBox1.Location = new System.Drawing.Point(172, 62);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(107, 26);
+            this.textBox1.TabIndex = 1;
             // 
             // button1
             // 
-            button1.Location = new Point(116, 139);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 2;
-            button1.Text = "Xác nhận";
-            button1.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(104, 111);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 27);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Xác nhận";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DoiSDT
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(345, 194);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
-            Controls.Add(label2);
-            Controls.Add(label3);
-            Controls.Add(label1);
-            Name = "DoiSDT";
-            Text = "DoiSDT";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(310, 155);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "DoiSDT";
+            this.Text = "DoiSDT";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

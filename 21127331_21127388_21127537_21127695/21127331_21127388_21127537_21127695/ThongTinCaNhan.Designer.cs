@@ -38,205 +38,228 @@ namespace _21127331_21127388_21127537_21127695
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label1 = new Label();
-            label7 = new Label();
-            SuspendLayout();
+            this.button1 = new System.Windows.Forms.Button();
+            this.manv = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.hoten = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.phai = new System.Windows.Forms.Label();
+            this.phucap = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.sdt = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.vaitro = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.ngaysinh = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.madv = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(699, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 0;
-            button1.Text = "Đổi SĐT";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            this.button1.Location = new System.Drawing.Point(628, 11);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 35);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Đổi SĐT";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // label2
+            // manv
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(160, 84);
-            label2.Name = "label2";
-            label2.Size = new Size(92, 25);
-            label2.TabIndex = 2;
-            label2.Text = "21127695";
-            label2.Click += label2_Click;
+            this.manv.AutoSize = true;
+            this.manv.Location = new System.Drawing.Point(149, 75);
+            this.manv.Name = "manv";
+            this.manv.Size = new System.Drawing.Size(81, 20);
+            this.manv.TabIndex = 2;
+            this.manv.Text = "21127695";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(10, 138);
-            label3.Name = "label3";
-            label3.Size = new Size(66, 25);
-            label3.TabIndex = 3;
-            label3.Text = "Họ tên";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Họ tên";
             // 
-            // label4
+            // hoten
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(160, 138);
-            label4.Name = "label4";
-            label4.Size = new Size(159, 25);
-            label4.TabIndex = 4;
-            label4.Text = "Hoàng Trần Thông";
+            this.hoten.AutoSize = true;
+            this.hoten.Location = new System.Drawing.Point(149, 118);
+            this.hoten.Name = "hoten";
+            this.hoten.Size = new System.Drawing.Size(142, 20);
+            this.hoten.TabIndex = 4;
+            this.hoten.Text = "Hoàng Trần Thông";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(12, 193);
-            label5.Name = "label5";
-            label5.Size = new Size(45, 25);
-            label5.TabIndex = 5;
-            label5.Text = "Phái";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 162);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 20);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Phái";
             // 
-            // label6
+            // phai
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(160, 193);
-            label6.Name = "label6";
-            label6.Size = new Size(50, 25);
-            label6.TabIndex = 6;
-            label6.Text = "Nam";
+            this.phai.AutoSize = true;
+            this.phai.Location = new System.Drawing.Point(149, 162);
+            this.phai.Name = "phai";
+            this.phai.Size = new System.Drawing.Size(42, 20);
+            this.phai.TabIndex = 6;
+            this.phai.Text = "Nam";
             // 
-            // label8
+            // phucap
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(688, 84);
-            label8.Name = "label8";
-            label8.Size = new Size(92, 25);
-            label8.TabIndex = 2;
-            label8.Text = "21127695";
-            label8.Click += label2_Click;
+            this.phucap.AutoSize = true;
+            this.phucap.Location = new System.Drawing.Point(624, 75);
+            this.phucap.Name = "phucap";
+            this.phucap.Size = new System.Drawing.Size(81, 20);
+            this.phucap.TabIndex = 2;
+            this.phucap.Text = "21127695";
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(536, 138);
-            label9.Name = "label9";
-            label9.Size = new Size(44, 25);
-            label9.TabIndex = 3;
-            label9.Text = "SĐT";
-            label9.Click += label9_Click;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(487, 118);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 20);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "SĐT";
             // 
-            // label10
+            // sdt
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(688, 138);
-            label10.Name = "label10";
-            label10.Size = new Size(112, 25);
-            label10.TabIndex = 4;
-            label10.Text = "0123456789";
+            this.sdt.AutoSize = true;
+            this.sdt.Location = new System.Drawing.Point(624, 118);
+            this.sdt.Name = "sdt";
+            this.sdt.Size = new System.Drawing.Size(99, 20);
+            this.sdt.TabIndex = 4;
+            this.sdt.Text = "0123456789";
             // 
             // label11
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(536, 193);
-            label11.Name = "label11";
-            label11.Size = new Size(64, 25);
-            label11.TabIndex = 5;
-            label11.Text = "MADV";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(487, 162);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 20);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Vai trò";
             // 
-            // label12
+            // vaitro
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(688, 193);
-            label12.Name = "label12";
-            label12.Size = new Size(41, 25);
-            label12.TabIndex = 6;
-            label12.Text = "CLC";
+            this.vaitro.AutoSize = true;
+            this.vaitro.Location = new System.Drawing.Point(624, 162);
+            this.vaitro.Name = "vaitro";
+            this.vaitro.Size = new System.Drawing.Size(40, 20);
+            this.vaitro.TabIndex = 6;
+            this.vaitro.Text = "CLC";
             // 
             // label13
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(13, 252);
-            label13.Name = "label13";
-            label13.Size = new Size(91, 25);
-            label13.TabIndex = 5;
-            label13.Text = "Ngày sinh";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(17, 210);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(78, 20);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "Ngày sinh";
             // 
-            // label14
+            // ngaysinh
             // 
-            label14.AutoSize = true;
-            label14.Location = new Point(160, 252);
-            label14.Name = "label14";
-            label14.Size = new Size(106, 25);
-            label14.TabIndex = 6;
-            label14.Text = "01/01/2001";
+            this.ngaysinh.AutoSize = true;
+            this.ngaysinh.Location = new System.Drawing.Point(149, 210);
+            this.ngaysinh.Name = "ngaysinh";
+            this.ngaysinh.Size = new System.Drawing.Size(89, 20);
+            this.ngaysinh.TabIndex = 6;
+            this.ngaysinh.Text = "01/01/2001";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(13, 84);
-            label1.Name = "label1";
-            label1.Size = new Size(59, 25);
-            label1.TabIndex = 7;
-            label1.Text = "MSSV";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 20);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "MANV";
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(536, 84);
-            label7.Name = "label7";
-            label7.Size = new Size(75, 25);
-            label7.TabIndex = 8;
-            label7.Text = "Phụ cấp";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(487, 75);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 20);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Phụ cấp";
+            // 
+            // madv
+            // 
+            this.madv.AutoSize = true;
+            this.madv.Location = new System.Drawing.Point(624, 210);
+            this.madv.Name = "madv";
+            this.madv.Size = new System.Drawing.Size(40, 20);
+            this.madv.TabIndex = 10;
+            this.madv.Text = "CLC";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(487, 210);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(56, 20);
+            this.label16.TabIndex = 9;
+            this.label16.Text = "MADV";
             // 
             // ThongTinCaNhan
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(823, 312);
-            Controls.Add(label7);
-            Controls.Add(label1);
-            Controls.Add(label12);
-            Controls.Add(label14);
-            Controls.Add(label6);
-            Controls.Add(label13);
-            Controls.Add(label11);
-            Controls.Add(label5);
-            Controls.Add(label10);
-            Controls.Add(label4);
-            Controls.Add(label9);
-            Controls.Add(label3);
-            Controls.Add(label8);
-            Controls.Add(label2);
-            Controls.Add(button1);
-            Name = "ThongTinCaNhan";
-            Text = "ThongTinCaNhan";
-            Load += ThongTinCaNhan_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(741, 250);
+            this.Controls.Add(this.madv);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.vaitro);
+            this.Controls.Add(this.ngaysinh);
+            this.Controls.Add(this.phai);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.sdt);
+            this.Controls.Add(this.hoten);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.phucap);
+            this.Controls.Add(this.manv);
+            this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "ThongTinCaNhan";
+            this.Text = "ThongTinCaNhan";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
         private Button button1;
-        private Label label2;
+        private Label manv;
         private Label label3;
-        private Label label4;
+        private Label hoten;
         private Label label5;
-        private Label label6;
-        private Label label8;
+        private Label phai;
+        private Label phucap;
         private Label label9;
-        private Label label10;
+        private Label sdt;
         private Label label11;
-        private Label label12;
+        private Label vaitro;
         private Label label13;
-        private Label label14;
+        private Label ngaysinh;
         private Label label1;
         private Label label7;
+        private Label madv;
+        private Label label16;
     }
 }
