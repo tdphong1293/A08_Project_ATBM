@@ -26,7 +26,7 @@ as
     
 create or replace view uv_NhanVienCoBan_KHMO
 as
-    select MAHP, HK, extract(year from NAM) as NAM, MACT
+    select MAHP as "MA HOC PHAN", HK as "HOC KY", extract(year from NAM) as "NAM", MACT as "MA CHUONG TRINH"
     from KHMO
     with check option;
     

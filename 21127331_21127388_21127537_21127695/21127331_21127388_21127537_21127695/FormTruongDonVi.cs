@@ -17,7 +17,7 @@ namespace _21127331_21127388_21127537_21127695
         private OracleConnection conn = FormDangNhap.conn;
         private string SDT_cu;
         private string diemth, diemqt, diemck, diemtk;
-        public static System.Timers.Timer searchSV_Timer, searchDV_Timer, searchHP_Timer;
+        public static System.Timers.Timer searchSV_Timer, searchDV_Timer, searchHP_Timer, searchKHMO_Timer;
 
         public FormTruongDonVi()
         {
@@ -28,9 +28,11 @@ namespace _21127331_21127388_21127537_21127695
             diemck = txt_diemck_dk.Text;
             diemtk = txt_diemtk_dk.Text;
             Load_thongtincanhan();
+
             SearchAndReloadDSSV("");
             SearchAndReloadDSDV("");
             SearchAndReloadDSHP("");
+            SearchAndReloadDSKHMO("");
 
             searchSV_Timer = new System.Timers.Timer();
             searchSV_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
@@ -44,10 +46,15 @@ namespace _21127331_21127388_21127537_21127695
             searchHP_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
             searchHP_Timer.Elapsed += searchHP_Event;
 
+            searchKHMO_Timer = new System.Timers.Timer();
+            searchKHMO_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
+            searchKHMO_Timer.Elapsed += searchKHMO_Event;
 
-            dtgv_DSSinhVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dtgv_DSSinhVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtgv_donvi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtgv_hocphan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgv_hocphan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtgv_khmo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
 
         }
@@ -70,6 +77,12 @@ namespace _21127331_21127388_21127537_21127695
             searchHP_Timer.Start();
         }
 
+        private void txt_timkiem_khmo_TextChanged(object sender, EventArgs e)
+        {
+            searchKHMO_Timer.Stop();
+            searchKHMO_Timer.Start();
+        }
+
         private void searchSV_Event(Object source, ElapsedEventArgs e)
         {
             searchSV_Timer.Stop();
@@ -86,6 +99,12 @@ namespace _21127331_21127388_21127537_21127695
         {
             searchHP_Timer.Stop();
             this.Invoke(new Action(() => SearchAndReloadDSHP(txt_timkiem_hp.Text)));
+        }
+
+        private void searchKHMO_Event(Object source, ElapsedEventArgs e)
+        {
+            searchKHMO_Timer.Stop();
+            this.Invoke(new Action(() => SearchAndReloadDSKHMO(txt_timkiem_khmo.Text)));
         }
 
         private void SearchAndReloadDSSV(string searchText)
@@ -109,11 +128,11 @@ namespace _21127331_21127388_21127537_21127695
                     txt_dtbtl_sv.Text = "";
                 }    
                 else
-                    query = "select * from OLS_ADMIN.uv_NhanVienCoBan_SINHVIEN where UPPER(HOTEN) like  UPPER(:unicodeText) or MASV like :searchText";
+                    query = "select * from OLS_ADMIN.uv_NhanVienCoBan_SINHVIEN where UPPER(HOTEN) like  UPPER(:unicodeText) or MASV = UPPER(:searchText)";
                 using (OracleCommand cmd = new OracleCommand(query, conn))
                 {
                     cmd.Parameters.Add(":unicodeText", OracleDbType.NVarchar2, "%" + searchText + "%", ParameterDirection.Input);
-                    cmd.Parameters.Add(":searchText", OracleDbType.NVarchar2, "%" + searchText + "%", ParameterDirection.Input);
+                    cmd.Parameters.Add(":searchText", searchText);
                     using (OracleDataReader reader = cmd.ExecuteReader())
                     {
                         DataTable dataTable = new DataTable();
@@ -136,11 +155,11 @@ namespace _21127331_21127388_21127537_21127695
                 if (string.IsNullOrEmpty(searchText))
                     query = "select * from OLS_ADMIN.uv_TruongDonVi_DONVI";
                 else
-                    query = "select * from OLS_ADMIN.uv_TruongDonVi_DONVI where UPPER(TENDV) like UPPER(:unicodeText) or MADV like :searchText";
+                    query = "select * from OLS_ADMIN.uv_TruongDonVi_DONVI where UPPER(TENDV) like UPPER(:unicodeText) or MADV = UPPER(:searchText)";
                 using (OracleCommand cmd = new OracleCommand(query, conn))
                 {
                     cmd.Parameters.Add(":unicodeText", OracleDbType.NVarchar2, "%" + searchText + "%", ParameterDirection.Input);
-                    cmd.Parameters.Add(":searchText", OracleDbType.NVarchar2, "%" + searchText + "%", ParameterDirection.Input);
+                    cmd.Parameters.Add(":searchText", searchText);
                     using (OracleDataReader reader = cmd.ExecuteReader())
                     {
                         DataTable dataTable = new DataTable();
@@ -174,16 +193,42 @@ namespace _21127331_21127388_21127537_21127695
                     txt_madv_hp.Text = "";
                 }    
                 else
-                    query = "select * from OLS_ADMIN.uv_NhanVienCoBan_HOCPHAN where UPPER(TENHP) like UPPER(:unicodeText) or MAHP like :searchText";
+                    query = "select * from OLS_ADMIN.uv_NhanVienCoBan_HOCPHAN where UPPER(TENHP) like UPPER(:unicodeText) or MAHP = UPPER(:searchText)";
                 using (OracleCommand cmd = new OracleCommand(query, conn))
                 {
                     cmd.Parameters.Add(":unicodeText", OracleDbType.NVarchar2, "%" + searchText + "%", ParameterDirection.Input);
-                    cmd.Parameters.Add(":searchText", OracleDbType.NVarchar2, "%" + searchText + "%", ParameterDirection.Input);
+                    cmd.Parameters.Add(":searchText", searchText);
                     using (OracleDataReader reader = cmd.ExecuteReader())
                     {
                         DataTable dataTable = new DataTable();
                         dataTable.Load(reader);
                         dtgv_hocphan.DataSource = dataTable;
+                    }
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void SearchAndReloadDSKHMO(string searchText)
+        {
+            try
+            {
+                string query;
+                if (string.IsNullOrEmpty(searchText))
+                    query = "select * from OLS_ADMIN.uv_NhanVienCoBan_KHMO";
+                else
+                    query = "select * from OLS_ADMIN.uv_NhanVienCoBan_KHMO where \"MA HOC PHAN\" = UPPER(:searchText)";
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    cmd.Parameters.Add(":searchText", searchText);
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(reader);
+                        dtgv_khmo.DataSource = dataTable;
                     }
                 }
             }
@@ -329,6 +374,8 @@ namespace _21127331_21127388_21127537_21127695
             btn_luudiem_dk.Visible = true;
             btn_quayve_dk.Visible = true;
         }
+
+        
 
         private void btn_luudiem_dk_Click(object sender, EventArgs e)
         {

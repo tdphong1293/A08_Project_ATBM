@@ -1,3 +1,5 @@
+drop table THONGBAO;
+
 -- Tạo bảng THONGBAO
 create table THONGBAO(
     NoiDung nvarchar2(2000),
@@ -6,6 +8,14 @@ create table THONGBAO(
 
 
 grant select on THONGBAO to rl_SinhVien, rl_NhanVienCoBan, rl_GiangVien, rl_GiaoVu, rl_TruongDonVi, rl_TruongKhoa;
+
+--begin
+--    sa_sysdba.drop_policy(
+--        policy_name => 'thongbao_policy',
+--        drop_column => TRUE
+--    );
+--end;
+--/
 
 -- Tạo chính sách OLS
 begin
@@ -52,17 +62,28 @@ select * from dba_sa_levels;
 select * from dba_sa_compartments;
 select * from dba_sa_groups;
 
--- Áp dụng chính sách OLS lên bảng THONGBAO
---begin 
---    sa_policy_admin.remove_table_policy(
---        policy_name => 'thongbao_policy',
---        schema_name => 'OLS_ADMIN',
---        table_name => 'THONGBAO'
---    );
---end;
---/
+insert into THONGBAO(noidung) values (N'Thông báo này dành cho sinh viên');
+insert into THONGBAO(noidung) values (N'Thông báo này dành cho nhân viên');
+insert into THONGBAO(noidung) values (N'Thông báo này dành cho giáo vụ');
+insert into THONGBAO(noidung) values (N'Thông báo này dành cho trưởng khoa');
 
+BEGIN
+SA_POLICY_ADMIN.APPLY_TABLE_POLICY (
+    POLICY_NAME => 'thongbao_policy',
+    SCHEMA_NAME => 'OLS_ADMIN',
+    TABLE_NAME => 'THONGBAO',
+    TABLE_OPTIONS => 'NO_CONTROL'
+);
+END;
+
+--Áp dụng chính sách OLS lên bảng THONGBAO
 begin 
+    sa_policy_admin.remove_table_policy(
+        policy_name => 'thongbao_policy',
+        schema_name => 'OLS_ADMIN',
+        table_name => 'THONGBAO'
+    );
+
     sa_policy_admin.apply_table_policy(
         policy_name => 'thongbao_policy',
         schema_name => 'OLS_ADMIN',
@@ -71,6 +92,11 @@ begin
     );
 end;
 /
+
+update THONGBAO set noidung = noidung;
+
+update THONGBAO set thongbao_label = char_to_label('thongbao_policy', 'SV');
+
 
 --a) gán nhãn cho người dùng là Trưởng khoa có thể đọc được toàn bộ thông báo.
 begin
