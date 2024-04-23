@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace _21127331_21127388_21127537_21127695
@@ -16,6 +17,7 @@ namespace _21127331_21127388_21127537_21127695
         private OracleConnection conn = FormDangNhap.conn;
         private string SDT_cu;
         private string diemth, diemqt, diemck, diemtk;
+        public static System.Timers.Timer searchMSSV_Timer;
 
         public FormTruongDonVi()
         {
@@ -26,7 +28,101 @@ namespace _21127331_21127388_21127537_21127695
             diemck = txt_diemck_dk.Text;
             diemtk = txt_diemtk_dk.Text;
             Load_thongtincanhan();
+            SearchAndReloadDSSV("");
+
+            searchMSSV_Timer = new System.Timers.Timer();
+            searchMSSV_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
+            searchMSSV_Timer.Elapsed += searchMSSV_Event;
+
+
+
+            dtgv_DSSinhVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
+        private void tb_TimKiemMSSV_TextChanged(object sender, EventArgs e)
+        {
+            searchMSSV_Timer.Stop();
+            searchMSSV_Timer.Start();
+        }
+
+        private void searchMSSV_Event(Object source, ElapsedEventArgs e)
+        {
+            searchMSSV_Timer.Stop();
+            this.Invoke(new Action(() => SearchAndReloadDSSV(tb_TimKiemMSSV.Text)));
+        }
+
+        private void SearchAndReloadDSSV(string searchText)
+        {
+            try
+            {
+                string query;
+                if (string.IsNullOrEmpty(searchText))
+                {
+                    query = "select * from OLS_ADMIN.uv_NhanVienCoBan_SINHVIEN";
+                    statuslabel_sinhvien.Text = "Chưa chọn sinh viên nào";
+                    txt_masv.Text = "";
+                    txt_hoten_sv.Text = "";
+                    txt_gioitinh_sv.Text = "";
+                    txt_ngaysinh_sv.Text = "";
+                    txt_mact_sv.Text = "";
+                    txt_manganh_sv.Text = "";
+                    txt_diachi_sv.Text = "";
+                    txt_dienthoai_sv.Text = "";
+                    txt_tctl_sv.Text = "";
+                    txt_dtbtl_sv.Text = "";
+                }    
+                else
+                    query = $"select * from OLS_ADMIN.uv_NhanVienCoBan_SINHVIEN where MASV like '%{searchText}%'";
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(reader);
+                        dtgv_DSSinhVien.DataSource = dataTable;
+                    } 
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtgv_DSSinhVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dtgv_DSSinhVien.Rows[e.RowIndex];
+                txt_masv.Text = row.Cells["MASV"].Value.ToString();
+                txt_hoten_sv.Text = row.Cells["HOTEN"].Value.ToString();
+                txt_gioitinh_sv.Text = row.Cells["PHAI"].Value.ToString();
+                txt_ngaysinh_sv.Text = DateTime.Parse(row.Cells["NGSINH"].Value.ToString()).ToString("dd/MM/yyyy");
+                txt_dienthoai_sv.Text = row.Cells["DT"].Value.ToString();
+                txt_tctl_sv.Text = row.Cells["SOTCTL"].Value.ToString();
+                txt_dtbtl_sv.Text = float.Parse(row.Cells["DTBTL"].Value.ToString()).ToString("F2");
+                txt_diachi_sv.Text = row.Cells["DCHI"].Value.ToString();
+                txt_mact_sv.Text = row.Cells["MACT"].Value.ToString();
+                txt_manganh_sv.Text = row.Cells["MANGANH"].Value.ToString();
+                statuslabel_sinhvien.Text = "Đã chọn sinh viên " + txt_masv.Text;
+            }
+            else
+            {
+                statuslabel_sinhvien.Text = "Chưa chọn sinh viên nào";
+                txt_masv.Text = "";
+                txt_hoten_sv.Text = "";
+                txt_gioitinh_sv.Text = "";
+                txt_ngaysinh_sv.Text = "";
+                txt_mact_sv.Text = "";
+                txt_manganh_sv.Text = "";
+                txt_diachi_sv.Text = "";
+                txt_dienthoai_sv.Text = "";
+                txt_tctl_sv.Text = "";
+                txt_dtbtl_sv.Text = "";
+            }
+        }
+
+
 
         private void btn_thongbao_Click(object sender, EventArgs e)
         {
@@ -157,6 +253,7 @@ namespace _21127331_21127388_21127537_21127695
             }    
         }
 
+        
 
         private void btn_ThemPC_Click(object sender, EventArgs e)
         {

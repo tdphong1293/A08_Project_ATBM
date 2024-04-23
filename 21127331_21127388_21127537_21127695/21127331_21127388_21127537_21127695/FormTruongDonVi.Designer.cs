@@ -62,10 +62,10 @@
             this.txt_tctl_sv = new System.Windows.Forms.TextBox();
             this.txt_ngaysinh_sv = new System.Windows.Forms.TextBox();
             this.txt_manganh_sv = new System.Windows.Forms.TextBox();
-            this.txt_gioitinh__sv = new System.Windows.Forms.TextBox();
+            this.txt_gioitinh_sv = new System.Windows.Forms.TextBox();
             this.txt_mact_sv = new System.Windows.Forms.TextBox();
             this.txt_hoten_sv = new System.Windows.Forms.TextBox();
-            this.txt_dienthoai__sv = new System.Windows.Forms.TextBox();
+            this.txt_dienthoai_sv = new System.Windows.Forms.TextBox();
             this.txt_masv = new System.Windows.Forms.TextBox();
             this.lb_dtbtl_sv = new System.Windows.Forms.Label();
             this.lb_tctl_sv = new System.Windows.Forms.Label();
@@ -80,7 +80,7 @@
             this.lb_sinhvien = new System.Windows.Forms.Label();
             this.lb_timkiemsinhvien = new System.Windows.Forms.Label();
             this.tb_TimKiemMSSV = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgv_DSSinhVien = new System.Windows.Forms.DataGridView();
             this.tp_donvi = new System.Windows.Forms.TabPage();
             this.tb_TenTDV = new System.Windows.Forms.TextBox();
             this.tb_MaTDV = new System.Windows.Forms.TextBox();
@@ -178,7 +178,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_nhanvien)).BeginInit();
             this.tp_sinhvien.SuspendLayout();
             this.status_sinhvien.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_DSSinhVien)).BeginInit();
             this.tp_donvi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_donvi)).BeginInit();
             this.tb_hocphan.SuspendLayout();
@@ -521,10 +521,10 @@
             this.tp_sinhvien.Controls.Add(this.txt_tctl_sv);
             this.tp_sinhvien.Controls.Add(this.txt_ngaysinh_sv);
             this.tp_sinhvien.Controls.Add(this.txt_manganh_sv);
-            this.tp_sinhvien.Controls.Add(this.txt_gioitinh__sv);
+            this.tp_sinhvien.Controls.Add(this.txt_gioitinh_sv);
             this.tp_sinhvien.Controls.Add(this.txt_mact_sv);
             this.tp_sinhvien.Controls.Add(this.txt_hoten_sv);
-            this.tp_sinhvien.Controls.Add(this.txt_dienthoai__sv);
+            this.tp_sinhvien.Controls.Add(this.txt_dienthoai_sv);
             this.tp_sinhvien.Controls.Add(this.txt_masv);
             this.tp_sinhvien.Controls.Add(this.lb_dtbtl_sv);
             this.tp_sinhvien.Controls.Add(this.lb_tctl_sv);
@@ -539,7 +539,7 @@
             this.tp_sinhvien.Controls.Add(this.lb_sinhvien);
             this.tp_sinhvien.Controls.Add(this.lb_timkiemsinhvien);
             this.tp_sinhvien.Controls.Add(this.tb_TimKiemMSSV);
-            this.tp_sinhvien.Controls.Add(this.dataGridView1);
+            this.tp_sinhvien.Controls.Add(this.dtgv_DSSinhVien);
             this.tp_sinhvien.Location = new System.Drawing.Point(4, 26);
             this.tp_sinhvien.Name = "tp_sinhvien";
             this.tp_sinhvien.Padding = new System.Windows.Forms.Padding(3);
@@ -568,7 +568,7 @@
             // 
             this.txt_dtbtl_sv.Enabled = false;
             this.txt_dtbtl_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_dtbtl_sv.Location = new System.Drawing.Point(923, 518);
+            this.txt_dtbtl_sv.Location = new System.Drawing.Point(923, 569);
             this.txt_dtbtl_sv.Name = "txt_dtbtl_sv";
             this.txt_dtbtl_sv.ReadOnly = true;
             this.txt_dtbtl_sv.Size = new System.Drawing.Size(309, 27);
@@ -579,7 +579,7 @@
             // 
             this.txt_diachi_sv.Enabled = false;
             this.txt_diachi_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_diachi_sv.Location = new System.Drawing.Point(923, 302);
+            this.txt_diachi_sv.Location = new System.Drawing.Point(923, 299);
             this.txt_diachi_sv.Name = "txt_diachi_sv";
             this.txt_diachi_sv.ReadOnly = true;
             this.txt_diachi_sv.Size = new System.Drawing.Size(309, 27);
@@ -590,7 +590,7 @@
             // 
             this.txt_tctl_sv.Enabled = false;
             this.txt_tctl_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tctl_sv.Location = new System.Drawing.Point(923, 572);
+            this.txt_tctl_sv.Location = new System.Drawing.Point(923, 515);
             this.txt_tctl_sv.Name = "txt_tctl_sv";
             this.txt_tctl_sv.ReadOnly = true;
             this.txt_tctl_sv.Size = new System.Drawing.Size(309, 27);
@@ -601,7 +601,7 @@
             // 
             this.txt_ngaysinh_sv.Enabled = false;
             this.txt_ngaysinh_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ngaysinh_sv.Location = new System.Drawing.Point(923, 248);
+            this.txt_ngaysinh_sv.Location = new System.Drawing.Point(923, 245);
             this.txt_ngaysinh_sv.Name = "txt_ngaysinh_sv";
             this.txt_ngaysinh_sv.ReadOnly = true;
             this.txt_ngaysinh_sv.Size = new System.Drawing.Size(309, 27);
@@ -612,29 +612,29 @@
             // 
             this.txt_manganh_sv.Enabled = false;
             this.txt_manganh_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_manganh_sv.Location = new System.Drawing.Point(923, 464);
+            this.txt_manganh_sv.Location = new System.Drawing.Point(923, 461);
             this.txt_manganh_sv.Name = "txt_manganh_sv";
             this.txt_manganh_sv.ReadOnly = true;
             this.txt_manganh_sv.Size = new System.Drawing.Size(309, 27);
             this.txt_manganh_sv.TabIndex = 13;
             this.txt_manganh_sv.TabStop = false;
             // 
-            // txt_gioitinh__sv
+            // txt_gioitinh_sv
             // 
-            this.txt_gioitinh__sv.Enabled = false;
-            this.txt_gioitinh__sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_gioitinh__sv.Location = new System.Drawing.Point(923, 194);
-            this.txt_gioitinh__sv.Name = "txt_gioitinh__sv";
-            this.txt_gioitinh__sv.ReadOnly = true;
-            this.txt_gioitinh__sv.Size = new System.Drawing.Size(309, 27);
-            this.txt_gioitinh__sv.TabIndex = 13;
-            this.txt_gioitinh__sv.TabStop = false;
+            this.txt_gioitinh_sv.Enabled = false;
+            this.txt_gioitinh_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_gioitinh_sv.Location = new System.Drawing.Point(923, 191);
+            this.txt_gioitinh_sv.Name = "txt_gioitinh_sv";
+            this.txt_gioitinh_sv.ReadOnly = true;
+            this.txt_gioitinh_sv.Size = new System.Drawing.Size(309, 27);
+            this.txt_gioitinh_sv.TabIndex = 13;
+            this.txt_gioitinh_sv.TabStop = false;
             // 
             // txt_mact_sv
             // 
             this.txt_mact_sv.Enabled = false;
             this.txt_mact_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mact_sv.Location = new System.Drawing.Point(923, 410);
+            this.txt_mact_sv.Location = new System.Drawing.Point(923, 407);
             this.txt_mact_sv.Name = "txt_mact_sv";
             this.txt_mact_sv.ReadOnly = true;
             this.txt_mact_sv.Size = new System.Drawing.Size(309, 27);
@@ -645,29 +645,29 @@
             // 
             this.txt_hoten_sv.Enabled = false;
             this.txt_hoten_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_hoten_sv.Location = new System.Drawing.Point(923, 140);
+            this.txt_hoten_sv.Location = new System.Drawing.Point(923, 137);
             this.txt_hoten_sv.Name = "txt_hoten_sv";
             this.txt_hoten_sv.ReadOnly = true;
             this.txt_hoten_sv.Size = new System.Drawing.Size(309, 27);
             this.txt_hoten_sv.TabIndex = 13;
             this.txt_hoten_sv.TabStop = false;
             // 
-            // txt_dienthoai__sv
+            // txt_dienthoai_sv
             // 
-            this.txt_dienthoai__sv.Enabled = false;
-            this.txt_dienthoai__sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_dienthoai__sv.Location = new System.Drawing.Point(923, 356);
-            this.txt_dienthoai__sv.Name = "txt_dienthoai__sv";
-            this.txt_dienthoai__sv.ReadOnly = true;
-            this.txt_dienthoai__sv.Size = new System.Drawing.Size(309, 27);
-            this.txt_dienthoai__sv.TabIndex = 13;
-            this.txt_dienthoai__sv.TabStop = false;
+            this.txt_dienthoai_sv.Enabled = false;
+            this.txt_dienthoai_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_dienthoai_sv.Location = new System.Drawing.Point(923, 353);
+            this.txt_dienthoai_sv.Name = "txt_dienthoai_sv";
+            this.txt_dienthoai_sv.ReadOnly = true;
+            this.txt_dienthoai_sv.Size = new System.Drawing.Size(309, 27);
+            this.txt_dienthoai_sv.TabIndex = 13;
+            this.txt_dienthoai_sv.TabStop = false;
             // 
             // txt_masv
             // 
             this.txt_masv.Enabled = false;
             this.txt_masv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_masv.Location = new System.Drawing.Point(923, 86);
+            this.txt_masv.Location = new System.Drawing.Point(923, 83);
             this.txt_masv.Name = "txt_masv";
             this.txt_masv.ReadOnly = true;
             this.txt_masv.Size = new System.Drawing.Size(309, 27);
@@ -801,15 +801,17 @@
             this.tb_TimKiemMSSV.Name = "tb_TimKiemMSSV";
             this.tb_TimKiemMSSV.Size = new System.Drawing.Size(164, 27);
             this.tb_TimKiemMSSV.TabIndex = 2;
+            this.tb_TimKiemMSSV.TextChanged += new System.EventHandler(this.tb_TimKiemMSSV_TextChanged);
             // 
-            // dataGridView1
+            // dtgv_DSSinhVien
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 86);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(711, 533);
-            this.dataGridView1.TabIndex = 0;
+            this.dtgv_DSSinhVien.BackgroundColor = System.Drawing.Color.White;
+            this.dtgv_DSSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_DSSinhVien.Location = new System.Drawing.Point(6, 86);
+            this.dtgv_DSSinhVien.Name = "dtgv_DSSinhVien";
+            this.dtgv_DSSinhVien.Size = new System.Drawing.Size(711, 533);
+            this.dtgv_DSSinhVien.TabIndex = 0;
+            this.dtgv_DSSinhVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_DSSinhVien_CellClick);
             // 
             // tp_donvi
             // 
@@ -1832,7 +1834,7 @@
             this.tp_sinhvien.PerformLayout();
             this.status_sinhvien.ResumeLayout(false);
             this.status_sinhvien.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_DSSinhVien)).EndInit();
             this.tp_donvi.ResumeLayout(false);
             this.tp_donvi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_donvi)).EndInit();
@@ -1890,10 +1892,10 @@
         private System.Windows.Forms.TextBox txt_tctl_sv;
         private System.Windows.Forms.TextBox txt_ngaysinh_sv;
         private System.Windows.Forms.TextBox txt_manganh_sv;
-        private System.Windows.Forms.TextBox txt_gioitinh__sv;
+        private System.Windows.Forms.TextBox txt_gioitinh_sv;
         private System.Windows.Forms.TextBox txt_mact_sv;
         private System.Windows.Forms.TextBox txt_hoten_sv;
-        private System.Windows.Forms.TextBox txt_dienthoai__sv;
+        private System.Windows.Forms.TextBox txt_dienthoai_sv;
         private System.Windows.Forms.TextBox txt_masv;
         private System.Windows.Forms.Label lb_dtbtl_sv;
         private System.Windows.Forms.Label lb_tctl_sv;
@@ -1908,7 +1910,7 @@
         private System.Windows.Forms.Label lb_sinhvien;
         private System.Windows.Forms.Label lb_timkiemsinhvien;
         private System.Windows.Forms.TextBox tb_TimKiemMSSV;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgv_DSSinhVien;
         private System.Windows.Forms.TabPage tp_donvi;
         private System.Windows.Forms.Label lb_donvi;
         private System.Windows.Forms.Label lb_timkiem_dv;
