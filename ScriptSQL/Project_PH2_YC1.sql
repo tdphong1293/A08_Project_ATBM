@@ -83,6 +83,26 @@ grant select, update(DIEMTH, DIEMQT, DIEMCK, DIEMTK) on uv_GiangVien_DANGKY to r
 --grant select, insert, update on uv_NhanVienCoBan_HOCPHAN to GiaoVu;
 --grant select, insert, update on uv_NhanVienCoBan_KHMO to GiaoVu;
 
+create or replace trigger utrig_GiaoVu_KHMO
+instead of insert or update on uv_NhanVienCoBan_KHMO
+for each row 
+begin
+    if (inserting) then
+        insert into KHMO values (:new.MAHP, :new.HK, TO_DATE(TO_CHAR(:new.NAM), 'YYYY'), :new.MACT);
+    elsif (updating) then
+        update KHMO set 
+        MAHP = :new.MAHP,
+        HK = :new.HK,
+        NAM = TO_DATE(TO_CHAR(:new.NAM), 'YYYY'),
+        MACT = :new.MACT
+        where MAHP = :old.MAHP
+        and HK = :old.HK
+        and NAM = TO_DATE(TO_CHAR(:old.NAM), 'YYYY')
+        and MACT = :old.MACT;
+    end if;
+end;
+/
+
 grant rl_NhanVienCoBan to rl_GiaoVu;
 grant insert, update on uv_NhanVienCoBan_SINHVIEN to rl_GiaoVu;
 grant insert, update on uv_NhanVienCoBan_DONVI to rl_GiaoVu;
