@@ -61,15 +61,19 @@ as
     with check option;
     
 create or replace trigger utrig_GiangVien_DANGKY
-instead of update on uv_GiangVien_DANGKY
+instead of insert or update on uv_GiangVien_DANGKY
 for each row
 begin
-    update DANGKY 
-    set DIEMTH = NVL(:new.DIEMTH, :old.DIEMTH),
-        DIEMQT = NVL(:new.DIEMQT, :old.DIEMQT),
-        DIEMCK = NVL(:new.DIEMCK, :old.DIEMCK),
-        DIEMTK = NVL(:new.DIEMTK, :old.DIEMTK)
-    where MASV = :old.MASV and MAGV = :old.MAGV;
+    if (inserting) then
+        insert into DANGKY values (:new.MASV, :new.MAGV, :new.MAHP, :new.HK, TO_DATE(TO_CHAR(:new.NAM), 'YYYY'), :new.MACT, :new.DIEMTH, :new.DIEMQT, :new.DIEMCK, :new.DIEMTK);
+    elsif (updating) then
+        update DANGKY 
+        set DIEMTH = NVL(:new.DIEMTH, :old.DIEMTH),
+            DIEMQT = NVL(:new.DIEMQT, :old.DIEMQT),
+            DIEMCK = NVL(:new.DIEMCK, :old.DIEMCK),
+            DIEMTK = NVL(:new.DIEMTK, :old.DIEMTK)
+        where MASV = :old.MASV and MAGV = :old.MAGV;
+    end if;    
 end;
 /
 

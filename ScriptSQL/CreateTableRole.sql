@@ -77,10 +77,10 @@ create table DANGKY (
     HK int,
     NAM date,
     MACT varchar2(5),
-    DIEMTH float check (DIEMTH > 0 and DIEMTH <= 10),
-    DIEMQT float check (DIEMQT > 0 and DIEMQT <= 10),
-    DIEMCK float check (DIEMCK > 0 and DIEMCK <= 10),
-    DIEMTK float check (DIEMTK > 0 and DIEMTK <= 10),
+    DIEMTH float check (DIEMTH >= 0 and DIEMTH <= 10),
+    DIEMQT float check (DIEMQT >= 0 and DIEMQT <= 10),
+    DIEMCK float check (DIEMCK >= 0 and DIEMCK <= 10),
+    DIEMTK float check (DIEMTK >= 0 and DIEMTK <= 10),
     constraint PK_DANGKY primary key (MASV, MAGV, MAHP, HK, NAM, MACT)
 );
 
