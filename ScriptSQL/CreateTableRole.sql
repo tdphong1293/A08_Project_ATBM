@@ -56,7 +56,7 @@ create table HOCPHAN (
 create table KHMO (
     MAHP varchar2(9),
     HK int check (HK > 0 and HK <= 3),
-    NAM date,
+    NAM number,
     MACT varchar2(5) check (MACT in ('CLC', 'CQ', 'CTTT', 'VP')),
     constraint PK_KHMO primary key (MAHP, HK, NAM, MACT)
 );
@@ -65,7 +65,7 @@ create table PHANCONG (
     MAGV varchar2(9),
     MAHP varchar2(9),
     HK int,
-    NAM date,
+    NAM number,
     MACT varchar2(5),
     constraint PK_PHANCONG primary key (MAGV, MAHP, HK, NAM, MACT)
 );
@@ -75,12 +75,12 @@ create table DANGKY (
     MAGV varchar2(9),
     MAHP varchar2(9),
     HK int,
-    NAM date,
+    NAM number,
     MACT varchar2(5),
-    DIEMTH float check (DIEMTH > 0 and DIEMTH <= 10),
-    DIEMQT float check (DIEMQT > 0 and DIEMQT <= 10),
-    DIEMCK float check (DIEMCK > 0 and DIEMCK <= 10),
-    DIEMTK float check (DIEMTK > 0 and DIEMTK <= 10),
+    DIEMTH float check (DIEMTH >= 0 and DIEMTH <= 10),
+    DIEMQT float check (DIEMQT >= 0 and DIEMQT <= 10),
+    DIEMCK float check (DIEMCK >= 0 and DIEMCK <= 10),
+    DIEMTK float check (DIEMTK >= 0 and DIEMTK <= 10),
     constraint PK_DANGKY primary key (MASV, MAGV, MAHP, HK, NAM, MACT)
 );
 
