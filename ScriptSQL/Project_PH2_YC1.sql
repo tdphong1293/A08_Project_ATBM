@@ -464,6 +464,14 @@ begin
     end if;
     
     strsql := 'MASV = ''' || usr || ''' and HK = ' || v_hk || ' 
+<<<<<<< HEAD
+        and NAM = to_date(''' || to_char(trunc(sysdate, 'YYYY'), 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'')
+        and DIEMTH is null 
+        and DIEMQT is null 
+        and DIEMCK is null 
+        and DIEMTK is null
+        and trunc(sysdate) between to_date(''' || to_char(v_start_date, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'') and to_date(''' || to_char(v_start_date + 14, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'')';
+=======
         and NAM = ' || extract(year from sysdate) || ' 
         and DIEMTH is null 
         and DIEMQT is null 
@@ -522,3 +530,55 @@ end;
 /
 
 grant select, update(MASV, MAGV, MAHP, HK, NAM, MACT) on DANGKY to rl_SinhVien;
+
+create or replace function pc5_SinhVien_HOCPHAN
+    (p_schema varchar2, p_obj varchar2)
+return varchar2
+as
+    cursor cur1 is (
+        select granted_role
+        from DBA_ROLE_PRIVS
+        where grantee = sys_context('userenv', 'session_user')
+    );
+    cursor cur2 is (
+        select MACT
+        from SINHVIEN
+    );
+    v_mact varchar2(10);
+    type role_tab is table of varchar2(100);
+    roles role_tab := role_tab();
+begin
+    if (sys_context('userenv', 'session_user') = 'OLS_ADMIN') then
+        return '';
+    end if; 
+
+    for res in cur1 loop
+        roles.extend;
+        roles(roles.count) := res.granted_role;
+    end loop;
+    
+    if 'RL_SINHVIEN' member of roles then
+        open cur2;
+        fetch cur2 into v_mact;
+        close cur2;
+        return 'MAHP IN (SELECT MAHP FROM KHMO WHERE MACT = ''' || v_mact || ''')';   
+    else 
+        return '';
+    end if;   
+end;
+/
+
+begin
+    dbms_rls.add_policy(
+        object_schema => 'OLS_ADMIN',
+        object_name => 'HOCPHAN',
+        policy_name => 'pc5',
+        function_schema => 'OLS_ADMIN',
+        policy_function => 'pc5_SinhVien_HOCPHAN',
+        statement_types => 'select',
+        update_check => true
+    );
+end;
+/
+
+grant select on HOCPHAN to rl_SinhVien;

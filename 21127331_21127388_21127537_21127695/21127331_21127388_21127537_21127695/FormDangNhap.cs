@@ -67,7 +67,10 @@ namespace _21127331_21127388_21127537_21127695
                     conn.Open();
                     if (cb_dangnhap_vaitro.Text == "Sinh viên")
                     {
-                        conn.Close();
+                        SinhVien sv = new SinhVien();
+                        this.Hide();
+                        sv.ShowDialog();
+                        this.Close();
                     }
                     else if (cb_dangnhap_vaitro.Text == "Nhân viên cơ bản")
                     {

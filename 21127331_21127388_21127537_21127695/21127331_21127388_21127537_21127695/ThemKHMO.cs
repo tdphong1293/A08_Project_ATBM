@@ -35,7 +35,7 @@ namespace _21127331_21127388_21127537_21127695
                         }
                         else
                         {
-                            string query1 = $"insert into OLS_ADMIN.uv_NhanVienCoBan_KHMO (MAHP, HK, NAM, MACT) values" +
+                            string query1 = $"insert into OLS_ADMIN.uv_NhanVienCoBan_KHMO values" +
                                 $" ('{new_txt_khmo_mahp.Text}', {hki}, '{new_txt_khmo_nam.Text}', '{new_txt_khmo_mact.Text}')";
                             using (OracleCommand cmd = new OracleCommand(query1, conn))
                             {

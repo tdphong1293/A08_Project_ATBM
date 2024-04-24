@@ -38,284 +38,290 @@ namespace _21127331_21127388_21127537_21127695
         /// </summary>
         private void InitializeComponent()
         {
-            label7 = new Label();
-            label1 = new Label();
-            label12 = new Label();
-            label14 = new Label();
-            label6 = new Label();
-            label13 = new Label();
-            label11 = new Label();
-            label5 = new Label();
-            label10 = new Label();
-            label4 = new Label();
-            label9 = new Label();
-            label3 = new Label();
-            label8 = new Label();
-            label2 = new Label();
-            button1 = new Button();
-            label15 = new Label();
-            label16 = new Label();
-            label17 = new Label();
-            label18 = new Label();
-            label19 = new Label();
-            label20 = new Label();
-            button2 = new Button();
-            SuspendLayout();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.manganh = new System.Windows.Forms.Label();
+            this.ngaysinh = new System.Windows.Forms.Label();
+            this.phai = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.mact = new System.Windows.Forms.Label();
+            this.hoten = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.sdt = new System.Windows.Forms.Label();
+            this.mssv = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.diachi = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.sotctl = new System.Windows.Forms.Label();
+            this.dtbtl = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(529, 108);
-            label7.Name = "label7";
-            label7.Size = new Size(44, 25);
-            label7.TabIndex = 23;
-            label7.Text = "SĐT";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(483, 122);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 20);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "SĐT";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 108);
-            label1.Name = "label1";
-            label1.Size = new Size(59, 25);
-            label1.TabIndex = 22;
-            label1.Text = "MSSV";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 122);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 20);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "MSSV";
             // 
-            // label12
+            // manganh
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(681, 217);
-            label12.Name = "label12";
-            label12.Size = new Size(52, 25);
-            label12.TabIndex = 19;
-            label12.Text = "HTTT";
+            this.manganh.AutoSize = true;
+            this.manganh.Location = new System.Drawing.Point(620, 210);
+            this.manganh.Name = "manganh";
+            this.manganh.Size = new System.Drawing.Size(48, 20);
+            this.manganh.TabIndex = 19;
+            this.manganh.Text = "HTTT";
             // 
-            // label14
+            // ngaysinh
             // 
-            label14.AutoSize = true;
-            label14.Location = new Point(153, 276);
-            label14.Name = "label14";
-            label14.Size = new Size(106, 25);
-            label14.TabIndex = 20;
-            label14.Text = "01/01/2001";
+            this.ngaysinh.AutoSize = true;
+            this.ngaysinh.Location = new System.Drawing.Point(145, 257);
+            this.ngaysinh.Name = "ngaysinh";
+            this.ngaysinh.Size = new System.Drawing.Size(89, 20);
+            this.ngaysinh.TabIndex = 20;
+            this.ngaysinh.Text = "01/01/2001";
             // 
-            // label6
+            // phai
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(153, 217);
-            label6.Name = "label6";
-            label6.Size = new Size(50, 25);
-            label6.TabIndex = 21;
-            label6.Text = "Nam";
+            this.phai.AutoSize = true;
+            this.phai.Location = new System.Drawing.Point(145, 210);
+            this.phai.Name = "phai";
+            this.phai.Size = new System.Drawing.Size(42, 20);
+            this.phai.TabIndex = 21;
+            this.phai.Text = "Nam";
             // 
             // label13
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(6, 276);
-            label13.Name = "label13";
-            label13.Size = new Size(91, 25);
-            label13.TabIndex = 16;
-            label13.Text = "Ngày sinh";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(12, 257);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(78, 20);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Ngày sinh";
             // 
             // label11
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(529, 217);
-            label11.Name = "label11";
-            label11.Size = new Size(103, 25);
-            label11.TabIndex = 17;
-            label11.Text = "MANGANH";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(483, 210);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(91, 20);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "MANGANH";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(5, 217);
-            label5.Name = "label5";
-            label5.Size = new Size(45, 25);
-            label5.TabIndex = 18;
-            label5.Text = "Phái";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(11, 210);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 20);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Phái";
             // 
-            // label10
+            // mact
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(681, 162);
-            label10.Name = "label10";
-            label10.Size = new Size(61, 25);
-            label10.TabIndex = 14;
-            label10.Text = "21CLC";
+            this.mact.AutoSize = true;
+            this.mact.Location = new System.Drawing.Point(620, 166);
+            this.mact.Name = "mact";
+            this.mact.Size = new System.Drawing.Size(58, 20);
+            this.mact.TabIndex = 14;
+            this.mact.Text = "21CLC";
             // 
-            // label4
+            // hoten
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(153, 162);
-            label4.Name = "label4";
-            label4.Size = new Size(159, 25);
-            label4.TabIndex = 15;
-            label4.Text = "Hoàng Trần Thông";
+            this.hoten.AutoSize = true;
+            this.hoten.Location = new System.Drawing.Point(145, 166);
+            this.hoten.Name = "hoten";
+            this.hoten.Size = new System.Drawing.Size(142, 20);
+            this.hoten.TabIndex = 15;
+            this.hoten.Text = "Hoàng Trần Thông";
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(529, 162);
-            label9.Name = "label9";
-            label9.Size = new Size(60, 25);
-            label9.TabIndex = 12;
-            label9.Text = "MACT";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(483, 166);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 20);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "MACT";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(3, 162);
-            label3.Name = "label3";
-            label3.Size = new Size(66, 25);
-            label3.TabIndex = 13;
-            label3.Text = "Họ tên";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 166);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 20);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Họ tên";
             // 
-            // label8
+            // sdt
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(681, 108);
-            label8.Name = "label8";
-            label8.Size = new Size(112, 25);
-            label8.TabIndex = 10;
-            label8.Text = "0123456789";
+            this.sdt.AutoSize = true;
+            this.sdt.Location = new System.Drawing.Point(620, 122);
+            this.sdt.Name = "sdt";
+            this.sdt.Size = new System.Drawing.Size(99, 20);
+            this.sdt.TabIndex = 10;
+            this.sdt.Text = "0123456789";
             // 
-            // label2
+            // mssv
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(153, 108);
-            label2.Name = "label2";
-            label2.Size = new Size(92, 25);
-            label2.TabIndex = 11;
-            label2.Text = "21127695";
+            this.mssv.AutoSize = true;
+            this.mssv.Location = new System.Drawing.Point(145, 122);
+            this.mssv.Name = "mssv";
+            this.mssv.Size = new System.Drawing.Size(81, 20);
+            this.mssv.TabIndex = 11;
+            this.mssv.Text = "21127695";
             // 
             // button1
             // 
-            button1.Location = new Point(683, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 9;
-            button1.Text = "Đổi SĐT";
-            button1.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(618, 10);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 39);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Đổi SĐT";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label15
             // 
-            label15.AutoSize = true;
-            label15.Location = new Point(6, 335);
-            label15.Name = "label15";
-            label15.Size = new Size(65, 25);
-            label15.TabIndex = 24;
-            label15.Text = "Địa chỉ";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(12, 304);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(57, 20);
+            this.label15.TabIndex = 24;
+            this.label15.Text = "Địa chỉ";
             // 
-            // label16
+            // diachi
             // 
-            label16.AutoSize = true;
-            label16.Location = new Point(153, 335);
-            label16.Name = "label16";
-            label16.Size = new Size(170, 25);
-            label16.TabIndex = 25;
-            label16.Text = "123 Nguyễn Văn Cừ";
+            this.diachi.AutoSize = true;
+            this.diachi.Location = new System.Drawing.Point(145, 304);
+            this.diachi.Name = "diachi";
+            this.diachi.Size = new System.Drawing.Size(151, 20);
+            this.diachi.TabIndex = 25;
+            this.diachi.Text = "123 Nguyễn Văn Cừ";
             // 
             // label17
             // 
-            label17.AutoSize = true;
-            label17.Location = new Point(529, 276);
-            label17.Name = "label17";
-            label17.Size = new Size(71, 25);
-            label17.TabIndex = 26;
-            label17.Text = "SOTCTL";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(483, 257);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 20);
+            this.label17.TabIndex = 26;
+            this.label17.Text = "SOTCTL";
             // 
             // label18
             // 
-            label18.AutoSize = true;
-            label18.Location = new Point(529, 335);
-            label18.Name = "label18";
-            label18.Size = new Size(59, 25);
-            label18.TabIndex = 27;
-            label18.Text = "DTBTL";
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(483, 304);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(59, 20);
+            this.label18.TabIndex = 27;
+            this.label18.Text = "DTBTL";
             // 
-            // label19
+            // sotctl
             // 
-            label19.AutoSize = true;
-            label19.Location = new Point(681, 276);
-            label19.Name = "label19";
-            label19.Size = new Size(42, 25);
-            label19.TabIndex = 28;
-            label19.Text = "100";
+            this.sotctl.AutoSize = true;
+            this.sotctl.Location = new System.Drawing.Point(620, 257);
+            this.sotctl.Name = "sotctl";
+            this.sotctl.Size = new System.Drawing.Size(36, 20);
+            this.sotctl.TabIndex = 28;
+            this.sotctl.Text = "100";
             // 
-            // label20
+            // dtbtl
             // 
-            label20.AutoSize = true;
-            label20.Location = new Point(681, 335);
-            label20.Name = "label20";
-            label20.Size = new Size(36, 25);
-            label20.TabIndex = 29;
-            label20.Text = "5.0";
+            this.dtbtl.AutoSize = true;
+            this.dtbtl.Location = new System.Drawing.Point(620, 304);
+            this.dtbtl.Name = "dtbtl";
+            this.dtbtl.Size = new System.Drawing.Size(31, 20);
+            this.dtbtl.TabIndex = 29;
+            this.dtbtl.Text = "5.0";
             // 
             // button2
             // 
-            button2.Location = new Point(683, 52);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 30;
-            button2.Text = "Đổi địa chỉ";
-            button2.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(618, 65);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(101, 42);
+            this.button2.TabIndex = 30;
+            this.button2.Text = "Đổi địa chỉ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ThongTinCaNhanSV
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(807, 368);
-            Controls.Add(button2);
-            Controls.Add(label20);
-            Controls.Add(label19);
-            Controls.Add(label18);
-            Controls.Add(label17);
-            Controls.Add(label16);
-            Controls.Add(label15);
-            Controls.Add(label7);
-            Controls.Add(label1);
-            Controls.Add(label12);
-            Controls.Add(label14);
-            Controls.Add(label6);
-            Controls.Add(label13);
-            Controls.Add(label11);
-            Controls.Add(label5);
-            Controls.Add(label10);
-            Controls.Add(label4);
-            Controls.Add(label9);
-            Controls.Add(label3);
-            Controls.Add(label8);
-            Controls.Add(label2);
-            Controls.Add(button1);
-            Name = "ThongTinCaNhanSV";
-            Text = "ThongTinCaNhanSV";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(742, 337);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.dtbtl);
+            this.Controls.Add(this.sotctl);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.diachi);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.manganh);
+            this.Controls.Add(this.ngaysinh);
+            this.Controls.Add(this.phai);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.mact);
+            this.Controls.Add(this.hoten);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.sdt);
+            this.Controls.Add(this.mssv);
+            this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "ThongTinCaNhanSV";
+            this.Text = "ThongTinCaNhanSV";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
         private Label label7;
         private Label label1;
-        private Label label12;
-        private Label label14;
-        private Label label6;
+        private Label manganh;
+        private Label ngaysinh;
+        private Label phai;
         private Label label13;
         private Label label11;
         private Label label5;
-        private Label label10;
-        private Label label4;
+        private Label mact;
+        private Label hoten;
         private Label label9;
         private Label label3;
-        private Label label8;
-        private Label label2;
+        private Label sdt;
+        private Label mssv;
         private Button button1;
         private Label label15;
-        private Label label16;
+        private Label diachi;
         private Label label17;
         private Label label18;
-        private Label label19;
-        private Label label20;
+        private Label sotctl;
+        private Label dtbtl;
         private Button button2;
     }
 }
