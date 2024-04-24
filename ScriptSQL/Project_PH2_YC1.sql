@@ -26,7 +26,7 @@ as
     
 create or replace view uv_NhanVienCoBan_KHMO
 as
-    select MAHP as "MA HOC PHAN", HK as "HOC KY", extract(year from NAM) as "NAM", MACT as "MA CHUONG TRINH"
+    select MAHP as "MA HOC PHAN", HK as "HOC KY", NAM, MACT as "MA CHUONG TRINH"
     from KHMO
     with check option;
     
@@ -47,7 +47,7 @@ grant rl_NhanVienCoBan to rl_GiangVien;
 
 create or replace view uv_GiangVien_PHANCONG
 as
-    select MAGV, MAHP, HK, extract(year from NAM) as NAM, MACT
+    select MAGV, MAHP, HK, NAM, MACT
     from PHANCONG
     where MAGV = sys_context('userenv', 'session_user');
     
@@ -57,6 +57,8 @@ as
     from DANGKY DK, PHANCONG PC
     where PC.MAGV = DK.MAGV 
     and PC.MAHP = DK.MAHP
+    and DK.HK = PC.HK
+    and DK.NAM = PC.NAM
     and PC.MAGV = sys_context('userenv', 'session_user')
     with check option;
     
@@ -92,17 +94,17 @@ instead of insert or update on uv_NhanVienCoBan_KHMO
 for each row 
 begin
     if (inserting) then
-        insert into KHMO values (:new.MAHP, :new.HK, TO_DATE(TO_CHAR(:new.NAM), 'YYYY'), :new.MACT);
+        insert into KHMO values (:new."MA HOC PHAN", :new."HOC KY", :new.NAM, :new."MA CHUONG TRINH");
     elsif (updating) then
         update KHMO set 
-        MAHP = :new.MAHP,
-        HK = :new.HK,
-        NAM = TO_DATE(TO_CHAR(:new.NAM), 'YYYY'),
-        MACT = :new.MACT
-        where MAHP = :old.MAHP
-        and HK = :old.HK
-        and NAM = TO_DATE(TO_CHAR(:old.NAM), 'YYYY')
-        and MACT = :old.MACT;
+        MAHP = :new."MA HOC PHAN",
+        HK = :new."HOC KY",
+        NAM = :new.NAM,
+        MACT = :new."MA CHUONG TRINH"
+        where MAHP = :old."MA HOC PHAN"
+        and HK = :old."HOC KY"
+        and NAM = :old.NAM
+        and MACT = :old."MA CHUONG TRINH";
     end if;
 end;
 /
@@ -222,7 +224,7 @@ as
     and HP.MADV = DV.MADV
     and DV.TRGDV = sys_context('userenv', 'session_user')
     with check option;
-    
+       
 create or replace trigger utrig_TruongDonVi_PHANCONG
 instead of insert or update or delete on uv_TruongDonVi_PHANCONG_1
 for each row
@@ -462,12 +464,11 @@ begin
     end if;
     
     strsql := 'MASV = ''' || usr || ''' and HK = ' || v_hk || ' 
-        and NAM = to_date(''' || to_char(trunc(sysdate, 'YYYY'), 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'')
+        and NAM = ' || extract(year from sysdate) || ' 
         and DIEMTH is null 
         and DIEMQT is null 
         and DIEMCK is null 
-        and DIEMTK is null
-        and trunc(sysdate) between to_date(''' || to_char(v_start_date, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'') and to_date(''' || to_char(v_start_date + 14, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'')';
+        and DIEMTK is null';
         
     return strsql;
 end;
@@ -492,14 +493,17 @@ create or replace function pc4_SinhVien_DANGKY
     (p_schema varchar2, p_obj varchar2)
 return varchar2
 as
-    usr varchar2(10);
+    usr varchar2(10) := sys_context('userenv', 'session_user');
 begin
     if (sys_context('userenv', 'session_user') = 'OLS_ADMIN') then
         return '';
     end if;
 
-    usr := sys_context('userenv', 'session_user');
-    return 'MASV = ''' || usr || '''';
+    if (usr like 'SV%') then
+        return 'MASV = ''' || usr || '''';
+    else 
+        return '';
+    end if;    
 end;
 /
 
