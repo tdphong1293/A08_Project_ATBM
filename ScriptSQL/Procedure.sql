@@ -6,6 +6,7 @@ drop procedure sp_AddRoleNV;
 drop procedure sp_AddRoleSV;
 drop procedure sp_SetLabelNV;
 drop procedure sp_SetLabelSV;
+drop procedure sp_Create_Audit_UserNV;
 
 -- Tạo user nhân viên
 create or replace procedure sp_CreateUserNV
@@ -269,6 +270,38 @@ begin
 end;
 /
 
+-- Cài Standard Audit cho nhân viên
+create or replace procedure sp_Create_Audit_UserNV
+authid current_user
+as
+    cursor cur is (
+        select MANV
+        from NHANSU
+        where MANV in (select username from all_users)
+    );
+    strsql varchar2(1000);
+    usr varchar2(100);
+begin
+    open cur;
+    loop
+        fetch cur into usr;
+        exit when cur%notfound;
+        
+        strsql := 'GRANT UNLIMITED TABLESPACE TO ' || usr ;
+        execute immediate (strsql);
+        
+        strsql := 'AUDIT ALL BY ' || usr || ' BY ACCESS;';
+        execute immediate (strsql);
+
+        strsql := 'AUDIT SESSION WHENEVER NOT SUCCESSFUL;';
+        execute immediate (strsql);
+
+    end loop;
+    close cur;
+end;
+/
+
+
 -- Chạy procedure tạo user, thêm role user
 exec sp_dropNV;
 exec sp_dropSV;
@@ -285,3 +318,7 @@ exec sp_AddRoleSV;
 
 exec sp_SetLabelNV;
 exec sp_SetLabelSV;
+
+exec sp_Create_Audit_UserNV;
+
+

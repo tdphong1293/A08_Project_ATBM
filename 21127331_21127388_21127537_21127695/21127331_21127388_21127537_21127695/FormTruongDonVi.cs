@@ -492,8 +492,6 @@ namespace _21127331_21127388_21127537_21127695
             btn_QuayVe.Visible = true;
         }
 
-        
-
         private void btn_quayve_dk_Click(object sender, EventArgs e)
         {
             btn_chinhsua_dk.Visible = true;
@@ -517,8 +515,6 @@ namespace _21127331_21127388_21127537_21127695
             btn_quayve_dk.Visible = false;
         }
 
-        
-
         private void btn_chinhsua_dk_Click(object sender, EventArgs e)
         {
             btn_chinhsua_dk.Visible = false;
@@ -540,8 +536,6 @@ namespace _21127331_21127388_21127537_21127695
             btn_luudiem_dk.Visible = true;
             btn_quayve_dk.Visible = true;
         }
-
-        
 
         private void btn_luudiem_dk_Click(object sender, EventArgs e)
         {
@@ -566,8 +560,6 @@ namespace _21127331_21127388_21127537_21127695
             btn_quayve_dk.Visible = false;
         }
 
-        
-
         private void btn_QuayVe_Click(object sender, EventArgs e)
         {
             btn_ChinhSua.Visible = true;
@@ -577,7 +569,6 @@ namespace _21127331_21127388_21127537_21127695
             btn_luudt.Visible = false;
             btn_QuayVe.Visible = false;
         }
-
 
         private void btn_luudt_Click(object sender, EventArgs e)
         {
@@ -618,6 +609,11 @@ namespace _21127331_21127388_21127537_21127695
         {
             Form_TruongDonVi_ThemPC form_TruongDonVi_ThemPC = new Form_TruongDonVi_ThemPC();
             form_TruongDonVi_ThemPC.ShowDialog();
+        }
+
+        private void btn_CapNhatPC_Click(object sender, EventArgs e)
+        {
+
         }
 
 
