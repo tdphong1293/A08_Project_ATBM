@@ -1597,6 +1597,7 @@
             this.btn_CapNhatPC.TabIndex = 93;
             this.btn_CapNhatPC.Text = "Cập nhật";
             this.btn_CapNhatPC.UseVisualStyleBackColor = true;
+            this.btn_CapNhatPC.Click += new System.EventHandler(this.btn_CapNhatPC_Click);
             // 
             // btn_ThemPC
             // 
