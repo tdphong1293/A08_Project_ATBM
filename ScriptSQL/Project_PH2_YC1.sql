@@ -464,20 +464,12 @@ begin
     end if;
     
     strsql := 'MASV = ''' || usr || ''' and HK = ' || v_hk || ' 
-<<<<<<< HEAD
-        and NAM = to_date(''' || to_char(trunc(sysdate, 'YYYY'), 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'')
-        and DIEMTH is null 
-        and DIEMQT is null 
-        and DIEMCK is null 
-        and DIEMTK is null
-        and trunc(sysdate) between to_date(''' || to_char(v_start_date, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'') and to_date(''' || to_char(v_start_date + 14, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'')';
-=======
-        and NAM = ' || extract(year from sysdate) || ' 
-        and DIEMTH is null 
-        and DIEMQT is null 
-        and DIEMCK is null 
-        and DIEMTK is null
-        and trunc(sysdate) between to_date(''' || to_char(v_start_date, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'') and to_date(''' || to_char(v_start_date + 14, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'')';
+    and NAM = ' || extract(year from sysdate) || ' 
+    and DIEMTH is null 
+    and DIEMQT is null 
+    and DIEMCK is null 
+    and DIEMTK is null
+    and trunc(sysdate) between to_date(''' || to_char(v_start_date, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'') and to_date(''' || to_char(v_start_date + 14, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'')';
         
     return strsql;
 end;
