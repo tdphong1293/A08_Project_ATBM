@@ -19,6 +19,7 @@ namespace _21127331_21127388_21127537_21127695
         private Timer searchdonvi;
         private Timer searchhp;
         private Timer searchkhmo;
+        private Timer searchphancong;
         public GiaoVu()
         {
             InitializeComponent();
@@ -49,6 +50,13 @@ namespace _21127331_21127388_21127537_21127695
             searchkhmo.Interval = 1000;
             searchkhmo.Tick += searchkhmo_Tick;
             SearchAndFill_KHMo("", "");
+
+            dtgphancong.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            searchphancong = new Timer();
+            searchphancong.Interval = 1000;
+            searchphancong.Tick += searchphancong_Tick;
+            SearchAndFill_PhanCong("", "", "");
+            chinhsua_pc.Enabled = false;
         }
 
         private void ten_giaovu()
@@ -289,17 +297,17 @@ namespace _21127331_21127388_21127537_21127695
                     query = "select * from OLS_ADMIN.uv_NhanVienCoBan_KHMO";
                 
                 else if (string.IsNullOrEmpty(hki))
-                    query = "select * from OLS_ADMIN.uv_NhanVienCoBan_KHMO where MAHP= :mahp";
+                    query = "select * from OLS_ADMIN.uv_NhanVienCoBan_KHMO where \"MA HOC PHAN\"= :mahp";
 
                 else if (string.IsNullOrEmpty(mahp))
                 {
                     int hk = int.Parse(hki);
-                    query = $"select * from OLS_ADMIN.uv_NhanVienCoBan_KHMO where HK= {hk}";
+                    query = $"select * from OLS_ADMIN.uv_NhanVienCoBan_KHMO where \"HOC KY\"= {hk}";
                 }
                 else
                 {
                     int hk = int.Parse(hki);
-                    query = $"select * from OLS_ADMIN.uv_NhanVienCoBan_KHMO where MAHP= :mahp and HK= {hk}";
+                    query = $"select * from OLS_ADMIN.uv_NhanVienCoBan_KHMO where \"MA HOC PHAN\"= :mahp and \"HOC KY\"= {hk}";
                 }
                 using (OracleCommand cmd = new OracleCommand(query, conn))
                 {
@@ -334,6 +342,120 @@ namespace _21127331_21127388_21127537_21127695
                 txt_khmo_hki.Text = "";
                 txt_khmo_nam.Text = "";
                 txt_khmo_mact.Text = "";
+            }
+        }
+
+        private void phancong_mahp_TextChanged(object sender, EventArgs e)
+        {
+            searchphancong.Stop();
+            searchphancong.Start();
+        }
+
+        private void phancong_magv_TextChanged(object sender, EventArgs e)
+        {
+            searchphancong.Stop();
+            searchphancong.Start();
+        }
+
+        private void phancong_hki_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            searchphancong.Stop();
+            searchphancong.Start();
+        }
+
+        private void searchphancong_Tick(object sender, EventArgs e)
+        {
+            searchphancong.Stop();
+            SearchAndFill_PhanCong(phancong_mahp.Text, phancong_hki.Text, phancong_magv.Text);
+        }
+
+        private void SearchAndFill_PhanCong(string mahp, string hki, string magv)
+        {
+            try
+            {
+                string query = "select * from OLS_ADMIN.uv_GiaoVu_PHANCONG where 1=1";
+
+                if (!string.IsNullOrEmpty(mahp) && mahp.Trim() != "")
+                {
+                    query += " AND MAHP = :mahp";
+                }
+
+                if (!string.IsNullOrEmpty(hki) && hki.Trim() != "")
+                {
+                    int hk = Int32.Parse(hki);
+                    query += " AND HK = :hk";
+                }
+
+                if (!string.IsNullOrEmpty(magv) && magv.Trim() != "")
+                {
+                    query += " AND MAGV = :magv";
+                }
+
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    if (!string.IsNullOrEmpty(mahp) && mahp.Trim() != "")
+                    {
+                        cmd.Parameters.Add(":mahp", mahp);
+                    }
+
+                    if (!string.IsNullOrEmpty(hki) && hki.Trim() != "")
+                    {
+                        int hk = Int32.Parse(hki);
+                        cmd.Parameters.Add(":hk", hk);
+                    }
+
+                    if (!string.IsNullOrEmpty(magv) && magv.Trim() != "")
+                    {
+                        cmd.Parameters.Add(":magv", magv);
+                    }
+
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(reader);
+                        dtgphancong.DataSource = dataTable;
+                    }
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtgphancong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string mahp = "";
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dtgphancong.Rows[e.RowIndex];
+                txt_pc_magv.Text = row.Cells["MAGV"].Value.ToString();
+                txt_pc_mahp.Text = row.Cells["MAHP"].Value.ToString();
+                txt_pc_hki.Text = row.Cells["HK"].Value.ToString();
+                txt_pc_nam.Text = row.Cells["NAM"].Value.ToString();
+                txt_pc_mact.Text = row.Cells["MACT"].Value.ToString();
+
+                mahp = row.Cells["MAHP"].Value.ToString(); 
+            }
+            else
+            {
+                txt_khmo_mahp.Text = "";
+                txt_khmo_hki.Text = "";
+                txt_khmo_nam.Text = "";
+                txt_khmo_mact.Text = "";
+            }
+
+            string query = $"select * from OLS_ADMIN.uv_NhanVienCoban_HOCPHAN where MAHP = '{mahp}' AND MADV= 'VPK'";
+            using (OracleCommand command = new OracleCommand(query, conn))
+            {
+                using (OracleDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        chinhsua_pc.Enabled = true;
+                    }
+                    else chinhsua_pc.Enabled = false;
+                }
             }
         }
 
@@ -416,6 +538,13 @@ namespace _21127331_21127388_21127537_21127695
             public string Khmo_hki { get; set; }
             public string Khmo_nam { get; set; }
             public string Khmo_mact { get; set; }
+
+            public string Pc_magv { get; set; }
+            public string Pc_mahp { get; set; }
+            public string Pc_hk { get; set; }
+            public string Pc_nam { get; set; }
+            public string Pc_mact { get; set; }
+            public string Pc_oldmagv { get; set; }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -500,6 +629,21 @@ namespace _21127331_21127388_21127537_21127695
         {
             ThemKHMO themkhmo = new ThemKHMO();
             themkhmo.ShowDialog();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            CapNhatPhanCong capnhatpc = new CapNhatPhanCong();
+            DataToPass data = new DataToPass();
+            data.Pc_magv = txt_pc_magv.Text;
+            data.Pc_oldmagv = txt_pc_magv.Text;
+            data.Pc_mahp = txt_pc_mahp.Text;
+            data.Pc_hk = txt_pc_hki.Text;
+            data.Pc_nam = txt_pc_nam.Text;
+            data.Pc_mact = txt_pc_mact.Text;
+
+            capnhatpc.SetData(data);
+            capnhatpc.ShowDialog();
         }
     }
 }

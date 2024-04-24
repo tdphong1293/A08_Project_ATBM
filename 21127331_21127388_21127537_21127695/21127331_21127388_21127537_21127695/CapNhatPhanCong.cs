@@ -13,57 +13,50 @@ using static _21127331_21127388_21127537_21127695.GiaoVu;
 
 namespace _21127331_21127388_21127537_21127695
 {
-    public partial class CapNhatKHMO : Form
+    public partial class CapNhatPhanCong : Form
     {
         private OracleConnection conn = FormDangNhap.conn;
-        public CapNhatKHMO()
+        public CapNhatPhanCong()
         {
             InitializeComponent();
         }
 
         public void SetData(DataToPass data)
         {
-            txt_khmo_mahp.Text = data.Khmo_mahp;
-            txt_khmo_hki.Text = data.Khmo_hki;
-            txt_khmo_nam.Text = data.Khmo_nam;
-            txt_khmo_mact.Text = data.Khmo_mact;
-
-            new_txt_khmo_mahp.Text = data.Khmo_mahp;
-            new_txt_khmo_hki.Text = data.Khmo_hki;
-            new_txt_khmo_nam.Text = data.Khmo_nam;
-            new_txt_khmo_mact.Text = data.Khmo_mact;
+            magv.Text = data.Pc_magv;
+            mahp.Text = data.Pc_mahp;
+            nam.Text = data.Pc_nam;
+            hki.Text = data.Pc_hk;
+            mact.Text = data.Pc_mact;
+            oldmagv.Text = data.Pc_magv;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int hki = int.Parse(new_txt_khmo_hki.Text);
-            int hki_cu = int.Parse(txt_khmo_hki.Text);
+            int hk = int.Parse(hki.Text);
+            int namm = int.Parse(nam.Text);
             try
             {
-                string query = $"select * from OLS_ADMIN.uv_NhanVienCoBan_KHMO where \"MA HOC PHAN\" = '{new_txt_khmo_mahp.Text}'";
+                string query = $"select * from OLS_ADMIN.uv_GiaoVu_PHANCONG WHERE MAGV= '{magv.Text}' AND MAHP = '{mahp.Text}' AND HK= {hk} AND NAM= {namm} AND MACT = '{mact.Text}'";
                 using (OracleCommand command = new OracleCommand(query, conn))
                 {
                     using (OracleDataReader reader = command.ExecuteReader())
                     {
-                        if (reader.Read() && new_txt_khmo_mahp.Text != txt_khmo_mahp.Text)
+                        if (reader.Read() && oldmagv.Text != magv.Text)
                         {
-                            MessageBox.Show("MAHP đã tồn tại");
+                            MessageBox.Show("Phân công đã tồn tại");
                         }
                         else
                         {
-                            int namcu = Int32.Parse(txt_khmo_nam.Text);
-                            int nammoi = Int32.Parse(new_txt_khmo_nam.Text);
-                            string query1 = $"update OLS_ADMIN.uv_NhanVienCoBan_KHMO" +
-                                $"  set \"MA HOC PHAN\"= '{new_txt_khmo_mahp.Text}', \"HOC KY\"= {hki}," +
-                                $" NAM={nammoi}, \"MA CHUONG TRINH\"= '{new_txt_khmo_mact.Text}'" +
-                                $" where \"MA HOC PHAN\"= '{txt_khmo_mahp.Text}' AND \"HOC KY\"= {hki_cu} AND NAM={nammoi} AND \"MA CHUONG TRINH\" = '{txt_khmo_mact.Text}'";
+                            string query1 = $"update OLS_ADMIN.uv_GiaoVu_PHANCONG" +
+                                $"  set MAGV = '{magv.Text}' WHERE MAHP = '{mahp.Text}' AND HK= {hk} AND NAM = {namm} AND MACT = '{mact.Text}'";
                             Debug.WriteLine(query1);
                             using (OracleCommand cmd = new OracleCommand(query1, conn))
                             {
                                 try
                                 {
                                     cmd.ExecuteNonQuery();
-                                    MessageBox.Show("Đổi thông tin kế hoạch mở thành công");
+                                    MessageBox.Show("Chỉnh sửa phân công thành công");
                                     this.Close();
                                 }
 

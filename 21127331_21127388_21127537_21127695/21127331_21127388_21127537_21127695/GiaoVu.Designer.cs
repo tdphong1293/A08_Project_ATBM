@@ -120,24 +120,29 @@ namespace _21127331_21127388_21127537_21127695
             this.label10 = new System.Windows.Forms.Label();
             this.text_khmo_mahp = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
+            this.txt_pc_mact = new System.Windows.Forms.TextBox();
+            this.txt_pc_nam = new System.Windows.Forms.TextBox();
+            this.txt_pc_mahp = new System.Windows.Forms.TextBox();
+            this.txt_pc_hki = new System.Windows.Forms.TextBox();
+            this.txt_pc_magv = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.chinhsua_pc = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.phancong_hki = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.dtgphancong = new System.Windows.Forms.DataGridView();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.phancong_magv = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.phancong_mahp = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
@@ -165,7 +170,7 @@ namespace _21127331_21127388_21127537_21127695
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgkhmo)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgphancong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
@@ -1065,10 +1070,10 @@ namespace _21127331_21127388_21127537_21127695
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(850, 16);
+            this.button8.Location = new System.Drawing.Point(850, 10);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(154, 28);
+            this.button8.Size = new System.Drawing.Size(154, 44);
             this.button8.TabIndex = 21;
             this.button8.Text = "Cập nhật KHMO";
             this.button8.UseVisualStyleBackColor = true;
@@ -1076,10 +1081,10 @@ namespace _21127331_21127388_21127537_21127695
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(850, 61);
+            this.button9.Location = new System.Drawing.Point(850, 70);
             this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(154, 28);
+            this.button9.Size = new System.Drawing.Size(154, 38);
             this.button9.TabIndex = 22;
             this.button9.Text = "Thêm KHMO";
             this.button9.UseVisualStyleBackColor = true;
@@ -1163,24 +1168,29 @@ namespace _21127331_21127388_21127537_21127695
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.button11);
-            this.tabPage5.Controls.Add(this.button10);
-            this.tabPage5.Controls.Add(this.label16);
+            this.tabPage5.Controls.Add(this.txt_pc_mact);
+            this.tabPage5.Controls.Add(this.txt_pc_nam);
+            this.tabPage5.Controls.Add(this.txt_pc_mahp);
+            this.tabPage5.Controls.Add(this.txt_pc_hki);
+            this.tabPage5.Controls.Add(this.txt_pc_magv);
             this.tabPage5.Controls.Add(this.label6);
-            this.tabPage5.Controls.Add(this.comboBox6);
-            this.tabPage5.Controls.Add(this.comboBox1);
+            this.tabPage5.Controls.Add(this.label31);
+            this.tabPage5.Controls.Add(this.label16);
+            this.tabPage5.Controls.Add(this.label29);
+            this.tabPage5.Controls.Add(this.label30);
+            this.tabPage5.Controls.Add(this.chinhsua_pc);
             this.tabPage5.Controls.Add(this.label15);
             this.tabPage5.Controls.Add(this.label7);
-            this.tabPage5.Controls.Add(this.comboBox5);
+            this.tabPage5.Controls.Add(this.phancong_hki);
             this.tabPage5.Controls.Add(this.comboBox2);
-            this.tabPage5.Controls.Add(this.dataGridView6);
+            this.tabPage5.Controls.Add(this.dtgphancong);
             this.tabPage5.Controls.Add(this.dataGridView5);
             this.tabPage5.Controls.Add(this.label14);
             this.tabPage5.Controls.Add(this.label12);
             this.tabPage5.Controls.Add(this.label13);
-            this.tabPage5.Controls.Add(this.textBox8);
+            this.tabPage5.Controls.Add(this.phancong_magv);
             this.tabPage5.Controls.Add(this.label11);
-            this.tabPage5.Controls.Add(this.textBox7);
+            this.tabPage5.Controls.Add(this.phancong_mahp);
             this.tabPage5.Controls.Add(this.textBox6);
             this.tabPage5.Controls.Add(this.textBox5);
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
@@ -1192,61 +1202,131 @@ namespace _21127331_21127388_21127537_21127695
             this.tabPage5.Text = "PHÂN CÔNG";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // txt_pc_mact
             // 
-            this.button11.Location = new System.Drawing.Point(807, 5);
-            this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(200, 28);
-            this.button11.TabIndex = 30;
-            this.button11.Text = "Chỉnh sửa PHÂN CÔNG";
-            this.button11.UseVisualStyleBackColor = true;
+            this.txt_pc_mact.Enabled = false;
+            this.txt_pc_mact.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pc_mact.Location = new System.Drawing.Point(1327, 608);
+            this.txt_pc_mact.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_pc_mact.Name = "txt_pc_mact";
+            this.txt_pc_mact.ReadOnly = true;
+            this.txt_pc_mact.Size = new System.Drawing.Size(462, 37);
+            this.txt_pc_mact.TabIndex = 51;
+            this.txt_pc_mact.TabStop = false;
             // 
-            // button10
+            // txt_pc_nam
             // 
-            this.button10.Location = new System.Drawing.Point(807, 5);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(200, 28);
-            this.button10.TabIndex = 30;
-            this.button10.Text = "Chỉnh sửa PHÂN CÔNG";
-            this.button10.UseVisualStyleBackColor = true;
+            this.txt_pc_nam.Enabled = false;
+            this.txt_pc_nam.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pc_nam.Location = new System.Drawing.Point(1327, 526);
+            this.txt_pc_nam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_pc_nam.Name = "txt_pc_nam";
+            this.txt_pc_nam.ReadOnly = true;
+            this.txt_pc_nam.Size = new System.Drawing.Size(462, 37);
+            this.txt_pc_nam.TabIndex = 50;
+            this.txt_pc_nam.TabStop = false;
             // 
-            // label16
+            // txt_pc_mahp
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(282, 52);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(72, 20);
-            this.label16.TabIndex = 29;
-            this.label16.Text = "Năm học";
+            this.txt_pc_mahp.Enabled = false;
+            this.txt_pc_mahp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pc_mahp.Location = new System.Drawing.Point(1327, 353);
+            this.txt_pc_mahp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_pc_mahp.Name = "txt_pc_mahp";
+            this.txt_pc_mahp.ReadOnly = true;
+            this.txt_pc_mahp.Size = new System.Drawing.Size(462, 37);
+            this.txt_pc_mahp.TabIndex = 49;
+            this.txt_pc_mahp.TabStop = false;
+            // 
+            // txt_pc_hki
+            // 
+            this.txt_pc_hki.Enabled = false;
+            this.txt_pc_hki.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pc_hki.Location = new System.Drawing.Point(1327, 439);
+            this.txt_pc_hki.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_pc_hki.Name = "txt_pc_hki";
+            this.txt_pc_hki.ReadOnly = true;
+            this.txt_pc_hki.Size = new System.Drawing.Size(462, 37);
+            this.txt_pc_hki.TabIndex = 49;
+            this.txt_pc_hki.TabStop = false;
+            // 
+            // txt_pc_magv
+            // 
+            this.txt_pc_magv.Enabled = false;
+            this.txt_pc_magv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pc_magv.Location = new System.Drawing.Point(1327, 262);
+            this.txt_pc_magv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_pc_magv.Name = "txt_pc_magv";
+            this.txt_pc_magv.ReadOnly = true;
+            this.txt_pc_magv.Size = new System.Drawing.Size(462, 37);
+            this.txt_pc_magv.TabIndex = 48;
+            this.txt_pc_magv.TabStop = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(282, 52);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(1057, 611);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 20);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Năm học";
+            this.label6.Size = new System.Drawing.Size(186, 31);
+            this.label6.TabIndex = 47;
+            this.label6.Text = "Mã chương trình";
             // 
-            // comboBox6
+            // label31
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(363, 51);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(164, 28);
-            this.comboBox6.TabIndex = 28;
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(1057, 356);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(148, 31);
+            this.label31.TabIndex = 45;
+            this.label31.Text = "Mã học phần";
             // 
-            // comboBox1
+            // label16
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(363, 51);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(164, 28);
-            this.comboBox1.TabIndex = 28;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(1057, 529);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(63, 31);
+            this.label16.TabIndex = 46;
+            this.label16.Text = "Năm";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(1057, 442);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(77, 31);
+            this.label29.TabIndex = 45;
+            this.label29.Text = "Học kì";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(1057, 265);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(146, 31);
+            this.label30.TabIndex = 44;
+            this.label30.Text = "Mã giáo viên";
+            // 
+            // chinhsua_pc
+            // 
+            this.chinhsua_pc.Location = new System.Drawing.Point(814, 26);
+            this.chinhsua_pc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chinhsua_pc.Name = "chinhsua_pc";
+            this.chinhsua_pc.Size = new System.Drawing.Size(200, 46);
+            this.chinhsua_pc.TabIndex = 30;
+            this.chinhsua_pc.Text = "Chỉnh sửa PHÂN CÔNG";
+            this.chinhsua_pc.UseVisualStyleBackColor = true;
+            this.chinhsua_pc.Click += new System.EventHandler(this.button11_Click);
             // 
             // label15
             // 
@@ -1266,14 +1346,20 @@ namespace _21127331_21127388_21127537_21127695
             this.label7.TabIndex = 27;
             this.label7.Text = "Học kì";
             // 
-            // comboBox5
+            // phancong_hki
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(76, 49);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(164, 28);
-            this.comboBox5.TabIndex = 26;
+            this.phancong_hki.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.phancong_hki.FormattingEnabled = true;
+            this.phancong_hki.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.phancong_hki.Location = new System.Drawing.Point(76, 49);
+            this.phancong_hki.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.phancong_hki.Name = "phancong_hki";
+            this.phancong_hki.Size = new System.Drawing.Size(164, 28);
+            this.phancong_hki.TabIndex = 26;
+            this.phancong_hki.SelectedIndexChanged += new System.EventHandler(this.phancong_hki_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -1284,16 +1370,17 @@ namespace _21127331_21127388_21127537_21127695
             this.comboBox2.Size = new System.Drawing.Size(164, 28);
             this.comboBox2.TabIndex = 26;
             // 
-            // dataGridView6
+            // dtgphancong
             // 
-            this.dataGridView6.AllowUserToDeleteRows = false;
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(-2, 94);
-            this.dataGridView6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.RowHeadersWidth = 62;
-            this.dataGridView6.Size = new System.Drawing.Size(1016, 363);
-            this.dataGridView6.TabIndex = 25;
+            this.dtgphancong.AllowUserToDeleteRows = false;
+            this.dtgphancong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgphancong.Location = new System.Drawing.Point(-2, 94);
+            this.dtgphancong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgphancong.Name = "dtgphancong";
+            this.dtgphancong.RowHeadersWidth = 62;
+            this.dtgphancong.Size = new System.Drawing.Size(1016, 862);
+            this.dtgphancong.TabIndex = 25;
+            this.dtgphancong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgphancong_CellClick);
             // 
             // dataGridView5
             // 
@@ -1333,13 +1420,14 @@ namespace _21127331_21127388_21127537_21127695
             this.label13.TabIndex = 24;
             this.label13.Text = "Mã HP";
             // 
-            // textBox8
+            // phancong_magv
             // 
-            this.textBox8.Location = new System.Drawing.Point(363, 9);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(164, 26);
-            this.textBox8.TabIndex = 23;
+            this.phancong_magv.Location = new System.Drawing.Point(363, 9);
+            this.phancong_magv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.phancong_magv.Name = "phancong_magv";
+            this.phancong_magv.Size = new System.Drawing.Size(164, 26);
+            this.phancong_magv.TabIndex = 23;
+            this.phancong_magv.TextChanged += new System.EventHandler(this.phancong_magv_TextChanged);
             // 
             // label11
             // 
@@ -1350,13 +1438,14 @@ namespace _21127331_21127388_21127537_21127695
             this.label11.TabIndex = 24;
             this.label11.Text = "Mã HP";
             // 
-            // textBox7
+            // phancong_mahp
             // 
-            this.textBox7.Location = new System.Drawing.Point(76, 9);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(164, 26);
-            this.textBox7.TabIndex = 23;
+            this.phancong_mahp.Location = new System.Drawing.Point(76, 9);
+            this.phancong_mahp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.phancong_mahp.Name = "phancong_mahp";
+            this.phancong_mahp.Size = new System.Drawing.Size(164, 26);
+            this.phancong_mahp.TabIndex = 23;
+            this.phancong_mahp.TextChanged += new System.EventHandler(this.phancong_mahp_TextChanged);
             // 
             // textBox6
             // 
@@ -1543,7 +1632,7 @@ namespace _21127331_21127388_21127537_21127695
             ((System.ComponentModel.ISupportInitialize)(this.dtgkhmo)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgphancong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
@@ -1588,9 +1677,6 @@ namespace _21127331_21127388_21127537_21127695
         private Button button8;
         private Button button9;
         private TabPage tabPage5;
-        private Button button10;
-        private Label label6;
-        private ComboBox comboBox1;
         private Label label7;
         private ComboBox comboBox2;
         private DataGridView dataGridView5;
@@ -1599,16 +1685,14 @@ namespace _21127331_21127388_21127537_21127695
         private Label label12;
         private TextBox textBox6;
         private TabPage tabPage6;
-        private Button button11;
-        private Label label16;
-        private ComboBox comboBox6;
+        private Button chinhsua_pc;
         private Label label15;
-        private ComboBox comboBox5;
-        private DataGridView dataGridView6;
+        private ComboBox phancong_hki;
+        private DataGridView dtgphancong;
         private Label label14;
         private Label label13;
-        private TextBox textBox8;
-        private TextBox textBox7;
+        private TextBox phancong_magv;
+        private TextBox phancong_mahp;
         private Button button13;
         private Button button12;
         private Label label17;
@@ -1670,5 +1754,15 @@ namespace _21127331_21127388_21127537_21127695
         private Label label26;
         private Label label27;
         private Label label28;
+        private TextBox txt_pc_mact;
+        private TextBox txt_pc_nam;
+        private TextBox txt_pc_hki;
+        private TextBox txt_pc_magv;
+        private Label label6;
+        private Label label16;
+        private Label label29;
+        private Label label30;
+        private TextBox txt_pc_mahp;
+        private Label label31;
     }
 }

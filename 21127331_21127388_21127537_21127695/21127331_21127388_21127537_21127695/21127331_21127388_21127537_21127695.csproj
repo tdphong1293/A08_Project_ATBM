@@ -116,6 +116,12 @@
     <Compile Include="CapNhatKHMO.Designer.cs">
       <DependentUpon>CapNhatKHMO.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapNhatPhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapNhatPhanCong.Designer.cs">
+      <DependentUpon>CapNhatPhanCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapNhatSV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapNhatKHMO.resx">
       <DependentUpon>CapNhatKHMO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapNhatPhanCong.resx">
+      <DependentUpon>CapNhatPhanCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapNhatSV.resx">
       <DependentUpon>CapNhatSV.cs</DependentUpon>
