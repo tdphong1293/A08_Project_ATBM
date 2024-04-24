@@ -53,7 +53,7 @@ as
     
 create or replace view uv_GiangVien_DANGKY
 as
-    select DK.MASV, DK.MAGV, DK.MAHP, DK.HK, extract(year from DK.NAM) as NAM, DK.MACT, DK.DIEMTH, DK.DIEMQT, DK.DIEMCK, DK.DIEMTK
+    select DK.*
     from DANGKY DK, PHANCONG PC
     where PC.MAGV = DK.MAGV 
     and PC.MAHP = DK.MAHP
@@ -65,7 +65,7 @@ instead of insert or update on uv_GiangVien_DANGKY
 for each row
 begin
     if (inserting) then
-        insert into DANGKY values (:new.MASV, :new.MAGV, :new.MAHP, :new.HK, TO_DATE(TO_CHAR(:new.NAM), 'YYYY'), :new.MACT, :new.DIEMTH, :new.DIEMQT, :new.DIEMCK, :new.DIEMTK);
+        insert into DANGKY values (:new.MASV, :new.MAGV, :new.MAHP, :new.HK, :new.NAM, :new.MACT, :new.DIEMTH, :new.DIEMQT, :new.DIEMCK, :new.DIEMTK);
     elsif (updating) then
         update DANGKY 
         set DIEMTH = NVL(:new.DIEMTH, :old.DIEMTH),
@@ -462,12 +462,13 @@ begin
     end if;
     
     strsql := 'MASV = ''' || usr || ''' and HK = ' || v_hk || ' 
-        and NAM = extract(year from sysdate) 
+        and NAM = to_date(''' || to_char(trunc(sysdate, 'YYYY'), 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'')
         and DIEMTH is null 
         and DIEMQT is null 
         and DIEMCK is null 
         and DIEMTK is null
-        and trunc(sysdate) between ''' || v_start_date || ''' and ''' || v_start_date + interval '14' day || '''';
+        and trunc(sysdate) between to_date(''' || to_char(v_start_date, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'') and to_date(''' || to_char(v_start_date + 14, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'')';
+        
     return strsql;
 end;
 /
