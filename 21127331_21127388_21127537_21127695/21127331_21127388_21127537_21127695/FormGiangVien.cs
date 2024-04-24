@@ -102,7 +102,8 @@ namespace _21127331_21127388_21127537_21127695
             {
                 try
                 {
-                    string query = "update OLS_ADMIN.uv_GiangVien_DANGKY set DIEMTH = :diemth and DIEMQT = :diemqt and DIEMCK = :diemck and DIEMTK = :diemtk where MASV = :masv and MAHP = :mahp";
+                    string query = "update OLS_ADMIN.uv_GiangVien_DANGKY set DIEMTH = :diemth, DIEMQT = :diemqt, DIEMCK = :diemck, " +
+                        "DIEMTK = :diemtk where MASV = :masv and MAHP = :mahp and HK = :hk and NAM = :nam and MACT = :mact";
                     using (OracleCommand cmd = new OracleCommand(query, conn))
                     {
                         cmd.Parameters.Add(":diemth", txt_diemth_dk.Text);
@@ -111,8 +112,12 @@ namespace _21127331_21127388_21127537_21127695
                         cmd.Parameters.Add(":diemtk", txt_diemtk_dk.Text);
                         cmd.Parameters.Add(":masv", txt_masv_dk.Text);
                         cmd.Parameters.Add(":mahp", txt_mahp_dk.Text);
+                        cmd.Parameters.Add(":hk", txt_hk_dk.Text);
+                        cmd.Parameters.Add(":nam", txt_nam_dk.Text);
+                        cmd.Parameters.Add(":mact", txt_mact_dk.Text);
                         cmd.ExecuteNonQuery();
                     }
+                    SearchAndFill_DangKy("");
                 }
                 catch (OracleException ex)
                 {
@@ -618,9 +623,9 @@ namespace _21127331_21127388_21127537_21127695
                 txt_masv_dk.Text = row.Cells["MASV"].Value.ToString();
                 txt_magv_dk.Text = row.Cells["MAGV"].Value.ToString();
                 txt_mahp_dk.Text = row.Cells["MAHP"].Value.ToString();
-                txt_hocki_pc.Text = row.Cells["HK"].Value.ToString();
-                txt_nam_pc.Text = row.Cells["NAM"].Value.ToString();
-                txt_mact_pc.Text = row.Cells["MACT"].Value.ToString();
+                txt_hk_dk.Text = row.Cells["HK"].Value.ToString();
+                txt_nam_dk.Text = row.Cells["NAM"].Value.ToString();
+                txt_mact_dk.Text = row.Cells["MACT"].Value.ToString();
                 txt_diemth_dk.Text = float.Parse(row.Cells["DIEMTH"].Value.ToString()).ToString("F2");
                 txt_diemqt_dk.Text = float.Parse(row.Cells["DIEMQT"].Value.ToString()).ToString("F2");
                 txt_diemck_dk.Text = float.Parse(row.Cells["DIEMCK"].Value.ToString()).ToString("F2");

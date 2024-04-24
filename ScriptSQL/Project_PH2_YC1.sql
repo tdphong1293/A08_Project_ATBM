@@ -468,7 +468,8 @@ begin
         and DIEMTH is null 
         and DIEMQT is null 
         and DIEMCK is null 
-        and DIEMTK is null';
+        and DIEMTK is null
+        and trunc(sysdate) between to_date(''' || to_char(v_start_date, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'') and to_date(''' || to_char(v_start_date + 14, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'')';
         
     return strsql;
 end;
