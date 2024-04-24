@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTruongDonVi));
             this.tc_FormTruongDonVi = new System.Windows.Forms.TabControl();
             this.tb_canhan = new System.Windows.Forms.TabPage();
@@ -127,6 +125,14 @@
             this.txt_timkiem_khmo = new System.Windows.Forms.TextBox();
             this.dtgv_khmo = new System.Windows.Forms.DataGridView();
             this.tp_PhanCong = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_timkiem_pcgv = new System.Windows.Forms.TextBox();
+            this.dtgv_phancong_GV = new System.Windows.Forms.DataGridView();
+            this.lb_timkiem_pcgv = new System.Windows.Forms.Label();
+            this.gb_PCHP = new System.Windows.Forms.GroupBox();
+            this.txt_timkiem_pchp = new System.Windows.Forms.TextBox();
+            this.dtgv_phancong_HP = new System.Windows.Forms.DataGridView();
+            this.lb_timkiem_pchp = new System.Windows.Forms.Label();
             this.gb_TTPhanCong = new System.Windows.Forms.GroupBox();
             this.txt_mact_pc = new System.Windows.Forms.TextBox();
             this.txt_nam_pc = new System.Windows.Forms.TextBox();
@@ -141,11 +147,8 @@
             this.btn_XoaPC = new System.Windows.Forms.Button();
             this.btn_CapNhatPC = new System.Windows.Forms.Button();
             this.btn_ThemPC = new System.Windows.Forms.Button();
-            this.lb_timkiem_pchp = new System.Windows.Forms.Label();
             this.status_phancong = new System.Windows.Forms.StatusStrip();
             this.statuslabel_phancong = new System.Windows.Forms.ToolStripStatusLabel();
-            this.txt_timkiem_pchp = new System.Windows.Forms.TextBox();
-            this.dtgv_phancong_HP = new System.Windows.Forms.DataGridView();
             this.tp_DangKy = new System.Windows.Forms.TabPage();
             this.status_dangky = new System.Windows.Forms.StatusStrip();
             this.statuslabel_dangky = new System.Windows.Forms.ToolStripStatusLabel();
@@ -177,11 +180,6 @@
             this.lb_magv_dk = new System.Windows.Forms.Label();
             this.lb_masv_dk = new System.Windows.Forms.Label();
             this.btn_DangXuat = new System.Windows.Forms.Button();
-            this.gb_PCHP = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_timkiem_pcgv = new System.Windows.Forms.TextBox();
-            this.dtgv_phancong_GV = new System.Windows.Forms.DataGridView();
-            this.lb_timkiem_pcgv = new System.Windows.Forms.Label();
             this.tc_FormTruongDonVi.SuspendLayout();
             this.tb_canhan.SuspendLayout();
             this.pn_thongbao.SuspendLayout();
@@ -201,15 +199,15 @@
             this.tp_khoahocmo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_khmo)).BeginInit();
             this.tp_PhanCong.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_phancong_GV)).BeginInit();
+            this.gb_PCHP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_phancong_HP)).BeginInit();
             this.gb_TTPhanCong.SuspendLayout();
             this.status_phancong.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv_phancong_HP)).BeginInit();
             this.tp_DangKy.SuspendLayout();
             this.status_dangky.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_dangky)).BeginInit();
-            this.gb_PCHP.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv_phancong_GV)).BeginInit();
             this.SuspendLayout();
             // 
             // tc_FormTruongDonVi
@@ -1350,6 +1348,99 @@
             this.tp_PhanCong.Text = "Phân công";
             this.tp_PhanCong.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txt_timkiem_pcgv);
+            this.groupBox1.Controls.Add(this.dtgv_phancong_GV);
+            this.groupBox1.Controls.Add(this.lb_timkiem_pcgv);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(6, 339);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(727, 284);
+            this.groupBox1.TabIndex = 101;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Phân công giảng dạy của các giảng viên thuộc các đơn vị mà mình làm trưởng";
+            // 
+            // txt_timkiem_pcgv
+            // 
+            this.txt_timkiem_pcgv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_timkiem_pcgv.Location = new System.Drawing.Point(537, 40);
+            this.txt_timkiem_pcgv.Name = "txt_timkiem_pcgv";
+            this.txt_timkiem_pcgv.Size = new System.Drawing.Size(180, 27);
+            this.txt_timkiem_pcgv.TabIndex = 77;
+            this.txt_timkiem_pcgv.TextChanged += new System.EventHandler(this.txt_timkiem_pcgv_TextChanged);
+            // 
+            // dtgv_phancong_GV
+            // 
+            this.dtgv_phancong_GV.AllowUserToAddRows = false;
+            this.dtgv_phancong_GV.AllowUserToDeleteRows = false;
+            this.dtgv_phancong_GV.BackgroundColor = System.Drawing.Color.White;
+            this.dtgv_phancong_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_phancong_GV.Location = new System.Drawing.Point(6, 73);
+            this.dtgv_phancong_GV.Name = "dtgv_phancong_GV";
+            this.dtgv_phancong_GV.ReadOnly = true;
+            this.dtgv_phancong_GV.Size = new System.Drawing.Size(711, 205);
+            this.dtgv_phancong_GV.TabIndex = 78;
+            this.dtgv_phancong_GV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_phancong_GV_CellClick);
+            // 
+            // lb_timkiem_pcgv
+            // 
+            this.lb_timkiem_pcgv.AutoSize = true;
+            this.lb_timkiem_pcgv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_timkiem_pcgv.Location = new System.Drawing.Point(259, 43);
+            this.lb_timkiem_pcgv.Name = "lb_timkiem_pcgv";
+            this.lb_timkiem_pcgv.Size = new System.Drawing.Size(272, 20);
+            this.lb_timkiem_pcgv.TabIndex = 91;
+            this.lb_timkiem_pcgv.Text = "Nhập mã giảng viên hoặc mã học phần:";
+            // 
+            // gb_PCHP
+            // 
+            this.gb_PCHP.BackColor = System.Drawing.Color.Transparent;
+            this.gb_PCHP.Controls.Add(this.txt_timkiem_pchp);
+            this.gb_PCHP.Controls.Add(this.dtgv_phancong_HP);
+            this.gb_PCHP.Controls.Add(this.lb_timkiem_pchp);
+            this.gb_PCHP.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_PCHP.Location = new System.Drawing.Point(6, 24);
+            this.gb_PCHP.Name = "gb_PCHP";
+            this.gb_PCHP.Size = new System.Drawing.Size(727, 284);
+            this.gb_PCHP.TabIndex = 100;
+            this.gb_PCHP.TabStop = false;
+            this.gb_PCHP.Text = "Phân công đối với các học phần được phụ trách chuyên môn bởi đơn vị mà mình làm t" +
+    "rưởng";
+            // 
+            // txt_timkiem_pchp
+            // 
+            this.txt_timkiem_pchp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_timkiem_pchp.Location = new System.Drawing.Point(537, 40);
+            this.txt_timkiem_pchp.Name = "txt_timkiem_pchp";
+            this.txt_timkiem_pchp.Size = new System.Drawing.Size(180, 27);
+            this.txt_timkiem_pchp.TabIndex = 77;
+            this.txt_timkiem_pchp.TextChanged += new System.EventHandler(this.txt_timkiem_pchp_TextChanged);
+            // 
+            // dtgv_phancong_HP
+            // 
+            this.dtgv_phancong_HP.AllowUserToAddRows = false;
+            this.dtgv_phancong_HP.AllowUserToDeleteRows = false;
+            this.dtgv_phancong_HP.BackgroundColor = System.Drawing.Color.White;
+            this.dtgv_phancong_HP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_phancong_HP.Location = new System.Drawing.Point(6, 73);
+            this.dtgv_phancong_HP.Name = "dtgv_phancong_HP";
+            this.dtgv_phancong_HP.ReadOnly = true;
+            this.dtgv_phancong_HP.Size = new System.Drawing.Size(711, 205);
+            this.dtgv_phancong_HP.TabIndex = 78;
+            this.dtgv_phancong_HP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_phancong_HP_CellClick);
+            // 
+            // lb_timkiem_pchp
+            // 
+            this.lb_timkiem_pchp.AutoSize = true;
+            this.lb_timkiem_pchp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_timkiem_pchp.Location = new System.Drawing.Point(259, 43);
+            this.lb_timkiem_pchp.Name = "lb_timkiem_pchp";
+            this.lb_timkiem_pchp.Size = new System.Drawing.Size(272, 20);
+            this.lb_timkiem_pchp.TabIndex = 91;
+            this.lb_timkiem_pchp.Text = "Nhập mã giảng viên hoặc mã học phần:";
+            // 
             // gb_TTPhanCong
             // 
             this.gb_TTPhanCong.BackColor = System.Drawing.Color.Azure;
@@ -1484,6 +1575,7 @@
             // btn_XoaPC
             // 
             this.btn_XoaPC.AccessibleDescription = "";
+            this.btn_XoaPC.Enabled = false;
             this.btn_XoaPC.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_XoaPC.ForeColor = System.Drawing.Color.Red;
             this.btn_XoaPC.Location = new System.Drawing.Point(1050, 509);
@@ -1496,6 +1588,7 @@
             // btn_CapNhatPC
             // 
             this.btn_CapNhatPC.AccessibleDescription = "";
+            this.btn_CapNhatPC.Enabled = false;
             this.btn_CapNhatPC.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CapNhatPC.ForeColor = System.Drawing.Color.Blue;
             this.btn_CapNhatPC.Location = new System.Drawing.Point(918, 509);
@@ -1518,16 +1611,6 @@
             this.btn_ThemPC.UseVisualStyleBackColor = true;
             this.btn_ThemPC.Click += new System.EventHandler(this.btn_ThemPC_Click);
             // 
-            // lb_timkiem_pchp
-            // 
-            this.lb_timkiem_pchp.AutoSize = true;
-            this.lb_timkiem_pchp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_timkiem_pchp.Location = new System.Drawing.Point(259, 43);
-            this.lb_timkiem_pchp.Name = "lb_timkiem_pchp";
-            this.lb_timkiem_pchp.Size = new System.Drawing.Size(272, 20);
-            this.lb_timkiem_pchp.TabIndex = 91;
-            this.lb_timkiem_pchp.Text = "Nhập mã giảng viên hoặc mã học phần:";
-            // 
             // status_phancong
             // 
             this.status_phancong.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1544,36 +1627,6 @@
             this.statuslabel_phancong.Name = "statuslabel_phancong";
             this.statuslabel_phancong.Size = new System.Drawing.Size(162, 17);
             this.statuslabel_phancong.Text = "Chưa chọn phân công nào";
-            // 
-            // txt_timkiem_pchp
-            // 
-            this.txt_timkiem_pchp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_timkiem_pchp.Location = new System.Drawing.Point(537, 40);
-            this.txt_timkiem_pchp.Name = "txt_timkiem_pchp";
-            this.txt_timkiem_pchp.Size = new System.Drawing.Size(180, 27);
-            this.txt_timkiem_pchp.TabIndex = 77;
-            this.txt_timkiem_pchp.TextChanged += new System.EventHandler(this.txt_timkiem_pc_TextChanged);
-            // 
-            // dtgv_phancong_HP
-            // 
-            this.dtgv_phancong_HP.AllowUserToAddRows = false;
-            this.dtgv_phancong_HP.AllowUserToDeleteRows = false;
-            this.dtgv_phancong_HP.BackgroundColor = System.Drawing.Color.White;
-            this.dtgv_phancong_HP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgv_phancong_HP.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgv_phancong_HP.Location = new System.Drawing.Point(6, 73);
-            this.dtgv_phancong_HP.Name = "dtgv_phancong_HP";
-            this.dtgv_phancong_HP.ReadOnly = true;
-            this.dtgv_phancong_HP.Size = new System.Drawing.Size(711, 205);
-            this.dtgv_phancong_HP.TabIndex = 78;
-            this.dtgv_phancong_HP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_phancong_CellClick);
             // 
             // tp_DangKy
             // 
@@ -1924,73 +1977,6 @@
             this.btn_DangXuat.UseVisualStyleBackColor = true;
             this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
             // 
-            // gb_PCHP
-            // 
-            this.gb_PCHP.BackColor = System.Drawing.Color.Transparent;
-            this.gb_PCHP.Controls.Add(this.txt_timkiem_pchp);
-            this.gb_PCHP.Controls.Add(this.dtgv_phancong_HP);
-            this.gb_PCHP.Controls.Add(this.lb_timkiem_pchp);
-            this.gb_PCHP.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_PCHP.Location = new System.Drawing.Point(6, 24);
-            this.gb_PCHP.Name = "gb_PCHP";
-            this.gb_PCHP.Size = new System.Drawing.Size(727, 284);
-            this.gb_PCHP.TabIndex = 100;
-            this.gb_PCHP.TabStop = false;
-            this.gb_PCHP.Text = "Phân công đối với các học phần được phụ trách chuyên môn bởi đơn vị mà mình làm t" +
-    "rưởng";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.txt_timkiem_pcgv);
-            this.groupBox1.Controls.Add(this.dtgv_phancong_GV);
-            this.groupBox1.Controls.Add(this.lb_timkiem_pcgv);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(6, 339);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(727, 284);
-            this.groupBox1.TabIndex = 101;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Phân công giảng dạy của các giảng viên thuộc các đơn vị mà mình làm trưởng";
-            // 
-            // txt_timkiem_pcgv
-            // 
-            this.txt_timkiem_pcgv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_timkiem_pcgv.Location = new System.Drawing.Point(537, 40);
-            this.txt_timkiem_pcgv.Name = "txt_timkiem_pcgv";
-            this.txt_timkiem_pcgv.Size = new System.Drawing.Size(180, 27);
-            this.txt_timkiem_pcgv.TabIndex = 77;
-            // 
-            // dtgv_phancong_GV
-            // 
-            this.dtgv_phancong_GV.AllowUserToAddRows = false;
-            this.dtgv_phancong_GV.AllowUserToDeleteRows = false;
-            this.dtgv_phancong_GV.BackgroundColor = System.Drawing.Color.White;
-            this.dtgv_phancong_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgv_phancong_GV.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgv_phancong_GV.Location = new System.Drawing.Point(6, 73);
-            this.dtgv_phancong_GV.Name = "dtgv_phancong_GV";
-            this.dtgv_phancong_GV.ReadOnly = true;
-            this.dtgv_phancong_GV.Size = new System.Drawing.Size(711, 205);
-            this.dtgv_phancong_GV.TabIndex = 78;
-            // 
-            // lb_timkiem_pcgv
-            // 
-            this.lb_timkiem_pcgv.AutoSize = true;
-            this.lb_timkiem_pcgv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_timkiem_pcgv.Location = new System.Drawing.Point(259, 43);
-            this.lb_timkiem_pcgv.Name = "lb_timkiem_pcgv";
-            this.lb_timkiem_pcgv.Size = new System.Drawing.Size(272, 20);
-            this.lb_timkiem_pcgv.TabIndex = 91;
-            this.lb_timkiem_pcgv.Text = "Nhập mã giảng viên hoặc mã học phần:";
-            // 
             // FormTruongDonVi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2032,21 +2018,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_khmo)).EndInit();
             this.tp_PhanCong.ResumeLayout(false);
             this.tp_PhanCong.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_phancong_GV)).EndInit();
+            this.gb_PCHP.ResumeLayout(false);
+            this.gb_PCHP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_phancong_HP)).EndInit();
             this.gb_TTPhanCong.ResumeLayout(false);
             this.gb_TTPhanCong.PerformLayout();
             this.status_phancong.ResumeLayout(false);
             this.status_phancong.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv_phancong_HP)).EndInit();
             this.tp_DangKy.ResumeLayout(false);
             this.tp_DangKy.PerformLayout();
             this.status_dangky.ResumeLayout(false);
             this.status_dangky.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_dangky)).EndInit();
-            this.gb_PCHP.ResumeLayout(false);
-            this.gb_PCHP.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv_phancong_GV)).EndInit();
             this.ResumeLayout(false);
 
         }
