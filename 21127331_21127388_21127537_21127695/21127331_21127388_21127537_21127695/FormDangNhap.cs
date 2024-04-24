@@ -23,8 +23,8 @@ namespace _21127331_21127388_21127537_21127695
         public FormDangNhap()
         {
             InitializeComponent();
-            tb_dangnhap_taikhoan.Text = "GIAOVU001";
-            tb_dangnhap_matkhau.Text = "GIAOVU001";
+            tb_dangnhap_taikhoan.Text = "SV0003838";
+            tb_dangnhap_matkhau.Text = "SV0003838";
         }
 
         private void btn_dangnhap_Click(object sender, EventArgs e)
@@ -69,7 +69,10 @@ namespace _21127331_21127388_21127537_21127695
                     conn.Open();
                     if (cb_dangnhap_vaitro.Text == "Sinh viên")
                     {
-                        conn.Close();
+                        SinhVien sv = new SinhVien();
+                        this.Hide();
+                        sv.ShowDialog();
+                        this.Close();
                     }
                     else if (cb_dangnhap_vaitro.Text == "Nhân viên cơ bản")
                     {

@@ -53,7 +53,7 @@ as
     
 create or replace view uv_GiangVien_DANGKY
 as
-    select DK.MASV, DK.MAGV, DK.MAHP, DK.HK, extract(year from DK.NAM) as NAM, DK.MACT, DK.DIEMTH, DK.DIEMQT, DK.DIEMCK, DK.DIEMTK
+    select DK.*
     from DANGKY DK, PHANCONG PC
     where PC.MAGV = DK.MAGV 
     and PC.MAHP = DK.MAHP
@@ -61,15 +61,19 @@ as
     with check option;
     
 create or replace trigger utrig_GiangVien_DANGKY
-instead of update on uv_GiangVien_DANGKY
+instead of insert or update on uv_GiangVien_DANGKY
 for each row
 begin
-    update DANGKY 
-    set DIEMTH = NVL(:new.DIEMTH, :old.DIEMTH),
-        DIEMQT = NVL(:new.DIEMQT, :old.DIEMQT),
-        DIEMCK = NVL(:new.DIEMCK, :old.DIEMCK),
-        DIEMTK = NVL(:new.DIEMTK, :old.DIEMTK)
-    where MASV = :old.MASV and MAGV = :old.MAGV;
+    if (inserting) then
+        insert into DANGKY values (:new.MASV, :new.MAGV, :new.MAHP, :new.HK, :new.NAM, :new.MACT, :new.DIEMTH, :new.DIEMQT, :new.DIEMCK, :new.DIEMTK);
+    elsif (updating) then
+        update DANGKY 
+        set DIEMTH = NVL(:new.DIEMTH, :old.DIEMTH),
+            DIEMQT = NVL(:new.DIEMQT, :old.DIEMQT),
+            DIEMCK = NVL(:new.DIEMCK, :old.DIEMCK),
+            DIEMTK = NVL(:new.DIEMTK, :old.DIEMTK)
+        where MASV = :old.MASV and MAGV = :old.MAGV;
+    end if;    
 end;
 /
 
@@ -458,12 +462,13 @@ begin
     end if;
     
     strsql := 'MASV = ''' || usr || ''' and HK = ' || v_hk || ' 
-        and NAM = extract(year from sysdate) 
+        and NAM = to_date(''' || to_char(trunc(sysdate, 'YYYY'), 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'')
         and DIEMTH is null 
         and DIEMQT is null 
         and DIEMCK is null 
         and DIEMTK is null
-        and trunc(sysdate) between ''' || v_start_date || ''' and ''' || v_start_date + interval '14' day || '''';
+        and trunc(sysdate) between to_date(''' || to_char(v_start_date, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'') and to_date(''' || to_char(v_start_date + 14, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'')';
+        
     return strsql;
 end;
 /
@@ -512,3 +517,55 @@ end;
 /
 
 grant select, update(MASV, MAGV, MAHP, HK, NAM, MACT) on DANGKY to rl_SinhVien;
+
+create or replace function pc5_SinhVien_HOCPHAN
+    (p_schema varchar2, p_obj varchar2)
+return varchar2
+as
+    cursor cur1 is (
+        select granted_role
+        from DBA_ROLE_PRIVS
+        where grantee = sys_context('userenv', 'session_user')
+    );
+    cursor cur2 is (
+        select MACT
+        from SINHVIEN
+    );
+    v_mact varchar2(10);
+    type role_tab is table of varchar2(100);
+    roles role_tab := role_tab();
+begin
+    if (sys_context('userenv', 'session_user') = 'OLS_ADMIN') then
+        return '';
+    end if; 
+
+    for res in cur1 loop
+        roles.extend;
+        roles(roles.count) := res.granted_role;
+    end loop;
+    
+    if 'RL_SINHVIEN' member of roles then
+        open cur2;
+        fetch cur2 into v_mact;
+        close cur2;
+        return 'MAHP IN (SELECT MAHP FROM KHMO WHERE MACT = ''' || v_mact || ''')';   
+    else 
+        return '';
+    end if;   
+end;
+/
+
+begin
+    dbms_rls.add_policy(
+        object_schema => 'OLS_ADMIN',
+        object_name => 'HOCPHAN',
+        policy_name => 'pc5',
+        function_schema => 'OLS_ADMIN',
+        policy_function => 'pc5_SinhVien_HOCPHAN',
+        statement_types => 'select',
+        update_check => true
+    );
+end;
+/
+
+grant select on HOCPHAN to rl_SinhVien;
