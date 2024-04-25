@@ -17,12 +17,13 @@ namespace _21127331_21127388_21127537_21127695
         private Timer searchhp;
         private Timer searchkhmo;
         private Timer searchkqhp;
+        private Timer searchdk;
         public SinhVien()
         {
             InitializeComponent();
             ten_sinhvien();
 
-            dtghp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtghp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             searchhp = new Timer();
             searchhp.Interval = 1000;
             searchhp.Tick += searchhp_Tick;
@@ -35,11 +36,20 @@ namespace _21127331_21127388_21127537_21127695
             searchkhmo.Tick += searchkhmo_Tick;
             SearchAndFill_KHMo("", "");
 
-            kq_hp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            kq_hp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             searchkqhp = new Timer();
             searchkqhp.Interval = 1000;
             searchkqhp.Tick += searchkqhp_Tick;
             SearchAndFill_KetQuaHocPhan("");
+
+            dtgdk.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            searchdk = new Timer();
+            searchdk.Interval = 1000;
+            searchdk.Tick += searchdk_Tick;
+            SearchAndFill_DangKy("");
+
+            dtgmo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            HocPhanDangKy();
         }
 
         private void ten_sinhvien()
@@ -251,6 +261,7 @@ namespace _21127331_21127388_21127537_21127695
                         DataTable dataTable = new DataTable();
                         dataTable.Load(reader);
                         kq_hp.DataSource = dataTable;
+                        kq_hp.Columns["MAGV"].Visible = false;
                     }
                 }
             }
@@ -275,6 +286,182 @@ namespace _21127331_21127388_21127537_21127695
                 txt_diemqt.Text = "";
                 txt_diemck.Text = "";
                 txt_diemtk.Text = "";
+            }
+        }
+
+        private void text_dk_mahp_TextChanged(object sender, EventArgs e)
+        {
+            searchdk.Stop();
+            searchdk.Start();
+        }
+
+        private void searchdk_Tick(object sender, EventArgs e)
+        {
+            searchdk.Stop();
+            SearchAndFill_DangKy(text_dk_mahp.Text);
+        }
+
+        private void SearchAndFill_DangKy(string searchtext)
+        {
+            int thang = DateTime.Now.Month;
+            int hki;
+            if (1 <= thang && thang <= 4) hki = 1;
+            else if (5 <= thang && thang <= 9) hki = 2;
+            else hki = 3;
+            try
+            {
+                string query;
+                if (string.IsNullOrEmpty(searchtext))
+                    query = $"select * from OLS_ADMIN.PHANCONG WHERE HK= {hki}" +
+                        $" and not exists (select magv, mahp, hk, nam, mact from OLS_ADMIN.DANGKY where magv = OLS_ADMIN.PHANCONG.magv" +
+                        $" and mahp = OLS_ADMIN.PHANCONG.mahp and hk = OLS_ADMIN.PHANCONG.hk and mact = OLS_ADMIN.PHANCONG.mact)";
+                else
+                    query = $"select * from OLS_ADMIN.PHANCONG where HK= {hki}" +
+                        $" and not exists (select magv, mahp, hk, nam, mact from OLS_ADMIN.DANGKY where magv = OLS_ADMIN.PHANCONG.magv" +
+                        $" and mahp = OLS_ADMIN.PHANCONG.mahp and hk = OLS_ADMIN.PHANCONG.hk and mact = OLS_ADMIN.PHANCONG.mact) AND MAHP= :searchtext";
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    cmd.Parameters.Add(":searchtext", searchtext);
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(reader);
+                        dtgdk.DataSource = dataTable;
+                        dtgdk.Columns["MAGV"].Visible = false;
+                    }
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void HocPhanDangKy()
+        {
+            int thang = DateTime.Now.Month;
+            int hki;
+            if (1 <= thang && thang <= 4) hki = 1;
+            else if (5 <= thang && thang <= 9) hki = 2;
+            else hki = 3;
+            try
+            {
+                string query;
+                query = $"select * from OLS_ADMIN.DANGKY WHERE HK= {hki}";
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(reader);
+                        dtgmo.DataSource = dataTable;
+                        dtgmo.Columns["MAGV"].Visible = false;
+                        dtgmo.Columns["MASV"].Visible = false;
+                        dtgmo.Columns["DIEMTH"].Visible = false;
+                        dtgmo.Columns["DIEMQT"].Visible = false;
+                        dtgmo.Columns["DIEMCK"].Visible = false;
+                        dtgmo.Columns["DIEMTK"].Visible = false;
+                    }
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtgdk_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dtgdk.Rows[e.RowIndex];
+                txt_pc_mahp.Text = row.Cells["MAHP"].Value.ToString();
+                txt_pc_hki.Text = row.Cells["HK"].Value.ToString();
+                txt_pc_nam.Text = row.Cells["NAM"].Value.ToString();
+                txt_pc_mact.Text = row.Cells["MACT"].Value.ToString();
+                txt_pc_magv.Text = row.Cells["MAGV"].Value.ToString();
+            }
+            else
+            {
+                txt_pc_mahp.Text = "";
+                txt_pc_hki.Text = "";
+                txt_pc_nam.Text = "";
+                txt_pc_mact.Text = "";
+                txt_pc_magv.Text = "";
+            }
+        }
+
+        private void dtgmo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dtgmo.Rows[e.RowIndex];
+                txt_pc_mahp.Text = row.Cells["MAHP"].Value.ToString();
+                txt_pc_hki.Text = row.Cells["HK"].Value.ToString();
+                txt_pc_nam.Text = row.Cells["NAM"].Value.ToString();
+                txt_pc_mact.Text = row.Cells["MACT"].Value.ToString();
+                txt_pc_magv.Text = row.Cells["MAGV"].Value.ToString();
+            }
+            else
+            {
+                txt_pc_mahp.Text = "";
+                txt_pc_hki.Text = "";
+                txt_pc_nam.Text = "";
+                txt_pc_mact.Text = "";
+                txt_pc_magv.Text = "";
+            }
+        }
+
+        private void kq_hp_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            int hki = Int32.Parse(txt_pc_hki.Text);
+            int namm = Int32.Parse(txt_pc_nam.Text);
+            string query = $"INSERT INTO OLS_ADMIN.DANGKY (MASV, MAGV, MAHP, HK, NAM, MACT, DIEMTH, DIEMQT, DIEMCK, DIEMTK)" +
+                $" VALUES ('{FormDangNhap.usernameUser}', '{txt_pc_magv.Text}', '{txt_pc_mahp.Text}', {hki}, {namm}, '{txt_pc_mact.Text}', NULL, NULL, NULL, NULL)";
+            using (OracleCommand cmd = new OracleCommand(query, conn))
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Thêm đăng ký thành công");
+                    HocPhanDangKy();
+                    SearchAndFill_DangKy("");
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            int hki = Int32.Parse(txt_pc_hki.Text);
+            int namm = Int32.Parse(txt_pc_nam.Text);
+            string query = $"DELETE FROM OLS_ADMIN.DANGKY " +
+                $" WHERE MASV= '{FormDangNhap.usernameUser}' AND MAGV ='{txt_pc_magv.Text}' AND MAHP = '{txt_pc_mahp.Text}' AND HK= {hki} AND NAM= {namm} AND MACT= '{txt_pc_mact.Text}'";
+            using (OracleCommand cmd = new OracleCommand(query, conn))
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Xóa đăng ký thành công");
+                    HocPhanDangKy();
+                    SearchAndFill_DangKy("");
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
             }
         }
     }

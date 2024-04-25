@@ -25,7 +25,7 @@ namespace _21127331_21127388_21127537_21127695
             InitializeComponent();
             ten_giaovu();
 
-            dtgsv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtgsv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; ;
             searchsv = new Timer();
             searchsv.Interval = 1000;
             searchsv.Tick += searchsv_Tick;
@@ -38,7 +38,7 @@ namespace _21127331_21127388_21127537_21127695
             searchdonvi.Tick += searchdonvi_Tick;
             SearchAndFill_DonVi("");
 
-            dtghp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtghp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             searchhp = new Timer();
             searchhp.Interval = 1000;
             searchhp.Tick += searchhp_Tick;
@@ -644,6 +644,11 @@ namespace _21127331_21127388_21127537_21127695
 
             capnhatpc.SetData(data);
             capnhatpc.ShowDialog();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

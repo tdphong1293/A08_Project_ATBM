@@ -899,10 +899,10 @@ namespace _21127331_21127388_21127537_21127695
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(670, 18);
+            this.button6.Location = new System.Drawing.Point(671, 18);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(154, 28);
+            this.button6.Size = new System.Drawing.Size(154, 46);
             this.button6.TabIndex = 10;
             this.button6.Text = "Cập nhật HP";
             this.button6.UseVisualStyleBackColor = true;
@@ -910,10 +910,10 @@ namespace _21127331_21127388_21127537_21127695
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(854, 18);
+            this.button7.Location = new System.Drawing.Point(860, 18);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(154, 28);
+            this.button7.Size = new System.Drawing.Size(154, 46);
             this.button7.TabIndex = 11;
             this.button7.Text = "Thêm HP";
             this.button7.UseVisualStyleBackColor = true;
@@ -1492,20 +1492,21 @@ namespace _21127331_21127388_21127537_21127695
             this.button13.Location = new System.Drawing.Point(810, 52);
             this.button13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(200, 28);
+            this.button13.Size = new System.Drawing.Size(200, 38);
             this.button13.TabIndex = 40;
             this.button13.Text = "Xóa ĐĂNG KÝ";
             this.button13.UseVisualStyleBackColor = true;
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(810, 12);
+            this.button12.Location = new System.Drawing.Point(810, 4);
             this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(200, 28);
+            this.button12.Size = new System.Drawing.Size(200, 36);
             this.button12.TabIndex = 40;
             this.button12.Text = "Thêm ĐĂNG KÝ";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // label17
             // 
