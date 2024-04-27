@@ -250,6 +250,12 @@
     <Compile Include="SinhVien.designer.cs">
       <DependentUpon>SinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemDangKy_GiaoVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemDangKy_GiaoVu.Designer.cs">
+      <DependentUpon>ThemDangKy_GiaoVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemDonVi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -376,6 +382,9 @@
     </Compile>
     <EmbeddedResource Include="SinhVien.resx">
       <DependentUpon>SinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemDangKy_GiaoVu.resx">
+      <DependentUpon>ThemDangKy_GiaoVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemDonVi.resx">
       <DependentUpon>ThemDonVi.cs</DependentUpon>
