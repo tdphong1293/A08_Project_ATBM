@@ -104,18 +104,23 @@ namespace _21127331_21127388_21127537_21127695
                 {
                     string query = "update OLS_ADMIN.uv_GiangVien_DANGKY set DIEMTH = :diemth, DIEMQT = :diemqt, DIEMCK = :diemck, " +
                         "DIEMTK = :diemtk where MASV = :masv and MAHP = :mahp and HK = :hk and NAM = :nam and MACT = :mact";
-                    using (OracleCommand cmd = new OracleCommand(query, conn))
+                    using (OracleTransaction trans = conn.BeginTransaction())
                     {
-                        cmd.Parameters.Add(":diemth", txt_diemth_dk.Text);
-                        cmd.Parameters.Add(":diemqt", txt_diemqt_dk.Text);
-                        cmd.Parameters.Add(":diemck", txt_diemck_dk.Text);
-                        cmd.Parameters.Add(":diemtk", txt_diemtk_dk.Text);
-                        cmd.Parameters.Add(":masv", txt_masv_dk.Text);
-                        cmd.Parameters.Add(":mahp", txt_mahp_dk.Text);
-                        cmd.Parameters.Add(":hk", txt_hk_dk.Text);
-                        cmd.Parameters.Add(":nam", txt_nam_dk.Text);
-                        cmd.Parameters.Add(":mact", txt_mact_dk.Text);
-                        cmd.ExecuteNonQuery();
+                        using (OracleCommand cmd = new OracleCommand(query, conn))
+                        {
+                            cmd.Transaction = trans;
+                            cmd.Parameters.Add(":diemth", txt_diemth_dk.Text);
+                            cmd.Parameters.Add(":diemqt", txt_diemqt_dk.Text);
+                            cmd.Parameters.Add(":diemck", txt_diemck_dk.Text);
+                            cmd.Parameters.Add(":diemtk", txt_diemtk_dk.Text);
+                            cmd.Parameters.Add(":masv", txt_masv_dk.Text);
+                            cmd.Parameters.Add(":mahp", txt_mahp_dk.Text);
+                            cmd.Parameters.Add(":hk", txt_hk_dk.Text);
+                            cmd.Parameters.Add(":nam", txt_nam_dk.Text);
+                            cmd.Parameters.Add(":mact", txt_mact_dk.Text);
+                            cmd.ExecuteNonQuery();
+                            trans.Commit();
+                        }
                     }
                     SearchAndFill_DangKy("");
                 }

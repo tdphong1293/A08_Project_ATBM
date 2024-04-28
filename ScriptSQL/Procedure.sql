@@ -165,7 +165,7 @@ create or replace procedure sp_Insert_ThongBao
 authid current_user    
 as
 begin
-    insert into THONGBAO (NoiDung, thongbao_label) values (to_nchar(v_noidung), char_to_label('thongbao_policy', v_label));
+    insert into THONGBAO (NoiDung, thongbao_label) values (to_nchar(v_noidung), to_data_label('thongbao_policy', v_label));
     commit;
 end;
 /
@@ -287,6 +287,3 @@ exec sp_AddRoleSV;
 
 exec sp_SetLabelNV;
 exec sp_SetLabelSV;
-
-
-

@@ -34,3 +34,4 @@ grant execute on char_to_label to OLS_ADMIN with grant option;
 grant lbac_dba to OLS_ADMIN;
 grant execute on sa_sysdba to OLS_ADMIN; 
 grant execute on to_lbac_data_label to OLS_ADMIN;
+grant execute on to_data_label to OLS_ADMIN;
