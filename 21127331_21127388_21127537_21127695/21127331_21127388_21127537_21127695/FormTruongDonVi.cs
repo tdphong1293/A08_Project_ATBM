@@ -3,12 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace _21127331_21127388_21127537_21127695
 {
@@ -28,6 +30,7 @@ namespace _21127331_21127388_21127537_21127695
             diemck = txt_diemck_dk.Text;
             diemtk = txt_diemtk_dk.Text;
             Load_thongtincanhan();
+            Load_MAGV_IntoComboBox();
 
             SearchAndReloadDSSV("");
             SearchAndReloadDSDV("");
@@ -278,7 +281,7 @@ namespace _21127331_21127388_21127537_21127695
                 string query;
                 if (string.IsNullOrEmpty(searchText))
                 {
-                    query = "select * from OLS_ADMIN.uv_TruongDonVi_PHANCONG_1";
+                    query = "select * from OLS_ADMIN.UV_TruongDonVi_PHANCONG_1";
                     statuslabel_phancong.Text = "Chưa chọn phân công nào";
                     txt_magv_pc.Text = "";
                     txt_mahp_pc.Text = "";
@@ -286,7 +289,7 @@ namespace _21127331_21127388_21127537_21127695
                     txt_nam_pc.Text = "";
                     txt_mact_pc.Text = "";
 
-                    btn_CapNhatPC.Enabled = false;
+                    btn_ChinhSuaPC.Enabled = false;
                     btn_XoaPC.Enabled = false;
                 }    
                 else
@@ -325,7 +328,7 @@ namespace _21127331_21127388_21127537_21127695
                     txt_nam_pc.Text = "";
                     txt_mact_pc.Text = "";
 
-                    btn_CapNhatPC.Enabled = false;
+                    btn_ChinhSuaPC.Enabled = false;
                     btn_XoaPC.Enabled = false;
                 }
                 else
@@ -423,7 +426,7 @@ namespace _21127331_21127388_21127537_21127695
 
         private void dtgv_phancong_HP_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btn_CapNhatPC.Enabled = true;
+            btn_ChinhSuaPC.Enabled = true;
             btn_XoaPC.Enabled = true;
             if (e.RowIndex >= 0)
             {
@@ -431,7 +434,7 @@ namespace _21127331_21127388_21127537_21127695
                 txt_magv_pc.Text = row.Cells["MAGV"].Value.ToString();
                 txt_mahp_pc.Text = row.Cells["MAHP"].Value.ToString();
                 txt_hocki_pc.Text = row.Cells["HK"].Value.ToString();
-                txt_nam_pc.Text = DateTime.Parse(row.Cells["NAM"].Value.ToString()).ToString("yyyy");
+                txt_nam_pc.Text = row.Cells["NAM"].Value.ToString();
                 txt_mact_pc.Text = row.Cells["MACT"].Value.ToString();
                 statuslabel_phancong.Text = "Đã chọn học phần " + txt_mahp_pc.Text + " được phân công cho " + txt_magv_pc.Text +
                     ". Học kì " + txt_hocki_pc.Text + ", Năm " + txt_nam_pc.Text + ". Chương trình " + txt_mact_pc.Text;
@@ -449,7 +452,7 @@ namespace _21127331_21127388_21127537_21127695
 
         private void dtgv_phancong_GV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btn_CapNhatPC.Enabled = false;
+            btn_ChinhSuaPC.Enabled = false;
             btn_XoaPC.Enabled = false;
             if (e.RowIndex >= 0)
             {
@@ -457,7 +460,7 @@ namespace _21127331_21127388_21127537_21127695
                 txt_magv_pc.Text = row.Cells["MAGV"].Value.ToString();
                 txt_mahp_pc.Text = row.Cells["MAHP"].Value.ToString();
                 txt_hocki_pc.Text = row.Cells["HK"].Value.ToString();
-                txt_nam_pc.Text = DateTime.Parse(row.Cells["NAM"].Value.ToString()).ToString("yyyy");
+                txt_nam_pc.Text = row.Cells["NAM"].Value.ToString();
                 txt_mact_pc.Text = row.Cells["MACT"].Value.ToString();
                 statuslabel_phancong.Text = "Đã chọn học phần " + txt_mahp_pc.Text + " được phân công cho " + txt_magv_pc.Text +
                     ". Học kì " + txt_hocki_pc.Text + ", Năm " + txt_nam_pc.Text + ". Chương trình " + txt_mact_pc.Text;
@@ -611,11 +614,121 @@ namespace _21127331_21127388_21127537_21127695
             form_TruongDonVi_ThemPC.ShowDialog();
         }
 
-        private void btn_CapNhatPC_Click(object sender, EventArgs e)
+        private void btn_ChinhSuaPC_Click(object sender, EventArgs e)
         {
+            btn_ThemPC.Visible = false;
+            btn_XoaPC.Visible = false;
+            btn_ChinhSuaPC.Visible = false;
+            txt_magv_pc.Visible = false;
+            cb_manv_pc.Visible = true;
+            btn_CapNhatPC.Visible = true;
+            btn_QuayLaiPC.Visible = true;
 
+
+            cb_manv_pc.SelectedItem = txt_magv_pc.Text;
+            cb_manv_pc.SelectionStart = 0;
+            cb_manv_pc.SelectionLength = cb_manv_pc.Text.Length;
+            cb_manv_pc.Focus();
         }
 
+        private void btn_XoaPC_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa phân công này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                string query = $"DELETE FROM OLS_ADMIN.UV_TRUONGDONVI_PHANCONG_1 " +
+                        $"WHERE MAGV = '{txt_magv_pc.Text}' and MAHP = '{txt_mahp_pc.Text}' " +
+                        $"and HK = {txt_hocki_pc.Text} and NAM = {txt_nam_pc.Text} and MACT = '{txt_mact_pc.Text}'";
+                OracleTransaction transaction = null;
+                try
+                {
+                    transaction = conn.BeginTransaction();
+                    OracleCommand cmd = new OracleCommand(query, conn);
+                    cmd.Transaction = transaction;
+                    cmd.ExecuteNonQuery();
+                    transaction.Commit();
+
+                }
+                catch (OracleException ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+
+                }
+                transaction.Dispose();
+                SearchAndReloadDSPCHP("");
+                SearchAndReloadDSPCGV("");
+            }
+        }
+
+        private void btn_QuayLaiPC_Click(object sender, EventArgs e)
+        {
+            btn_ThemPC.Visible = true;
+            btn_XoaPC.Visible = true;
+            btn_ChinhSuaPC.Visible = true;
+            txt_magv_pc.Visible = true;
+            cb_manv_pc.Visible = false;
+            btn_CapNhatPC.Visible = false;
+            btn_QuayLaiPC.Visible = false;
+        }
+
+        private void btn_CapNhatPC_Click(object sender, EventArgs e)
+        {
+            if(cb_manv_pc.SelectedItem.ToString() != txt_magv_pc.Text)
+            {
+                string query = $"UPDATE OLS_ADMIN.UV_TRUONGDONVI_PHANCONG_1 SET MAGV = '{cb_manv_pc.SelectedItem}'" +
+                            $"WHERE MAGV = '{txt_magv_pc.Text}' and MAHP = '{txt_mahp_pc.Text}' " +
+                            $"and HK = {txt_hocki_pc.Text} and NAM = {txt_nam_pc.Text} and MACT = '{txt_mact_pc.Text}'";
+                OracleTransaction transaction = null;
+                try
+                {
+                    transaction = conn.BeginTransaction();
+                    OracleCommand cmd = new OracleCommand(query, conn);
+                    cmd.Transaction = transaction;
+                    cmd.ExecuteNonQuery();
+                    transaction.Commit();
+
+                }
+                catch (OracleException ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+
+                }
+                transaction.Dispose();
+            }
+            btn_ThemPC.Visible = true;
+            btn_XoaPC.Visible = true;
+            btn_ChinhSuaPC.Visible = true;
+            txt_magv_pc.Visible = true;
+            cb_manv_pc.Visible = false;
+            btn_CapNhatPC.Visible = false;
+            btn_QuayLaiPC.Visible = false;
+            SearchAndReloadDSPCHP("");
+            SearchAndReloadDSPCGV("");
+        }
+
+        private void Load_MAGV_IntoComboBox()
+        {
+            try
+            {
+                string query = "select * from OLS_ADMIN.uv_TruongDonVi_NHANSU";
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        cb_manv_pc.Items.Clear();
+                        while(reader.Read())
+                        {
+                            cb_manv_pc.Items.Add(reader["MANV"].ToString());
+                        }    
+                    }
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void Load_thongtincanhan()
         {
@@ -655,5 +768,6 @@ namespace _21127331_21127388_21127537_21127695
             this.Close();
         }
 
+        
     }
 }

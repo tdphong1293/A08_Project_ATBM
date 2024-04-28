@@ -125,6 +125,8 @@
             this.txt_timkiem_khmo = new System.Windows.Forms.TextBox();
             this.dtgv_khmo = new System.Windows.Forms.DataGridView();
             this.tp_PhanCong = new System.Windows.Forms.TabPage();
+            this.btn_QuayLaiPC = new System.Windows.Forms.Button();
+            this.btn_CapNhatPC = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_timkiem_pcgv = new System.Windows.Forms.TextBox();
             this.dtgv_phancong_GV = new System.Windows.Forms.DataGridView();
@@ -134,6 +136,7 @@
             this.dtgv_phancong_HP = new System.Windows.Forms.DataGridView();
             this.lb_timkiem_pchp = new System.Windows.Forms.Label();
             this.gb_TTPhanCong = new System.Windows.Forms.GroupBox();
+            this.cb_manv_pc = new System.Windows.Forms.ComboBox();
             this.txt_mact_pc = new System.Windows.Forms.TextBox();
             this.txt_nam_pc = new System.Windows.Forms.TextBox();
             this.txt_hocki_pc = new System.Windows.Forms.TextBox();
@@ -145,7 +148,7 @@
             this.lb_mahp_pc = new System.Windows.Forms.Label();
             this.lb_magv_pc = new System.Windows.Forms.Label();
             this.btn_XoaPC = new System.Windows.Forms.Button();
-            this.btn_CapNhatPC = new System.Windows.Forms.Button();
+            this.btn_ChinhSuaPC = new System.Windows.Forms.Button();
             this.btn_ThemPC = new System.Windows.Forms.Button();
             this.status_phancong = new System.Windows.Forms.StatusStrip();
             this.statuslabel_phancong = new System.Windows.Forms.ToolStripStatusLabel();
@@ -212,6 +215,7 @@
             // 
             // tc_FormTruongDonVi
             // 
+            this.tc_FormTruongDonVi.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tc_FormTruongDonVi.Controls.Add(this.tb_canhan);
             this.tc_FormTruongDonVi.Controls.Add(this.tp_sinhvien);
             this.tc_FormTruongDonVi.Controls.Add(this.tp_donvi);
@@ -254,10 +258,10 @@
             this.tb_canhan.Controls.Add(this.btn_luudt);
             this.tb_canhan.Controls.Add(this.pb_nhanvien);
             this.tb_canhan.Controls.Add(this.lb_canhan);
-            this.tb_canhan.Location = new System.Drawing.Point(4, 26);
+            this.tb_canhan.Location = new System.Drawing.Point(4, 29);
             this.tb_canhan.Name = "tb_canhan";
             this.tb_canhan.Padding = new System.Windows.Forms.Padding(3);
-            this.tb_canhan.Size = new System.Drawing.Size(1256, 651);
+            this.tb_canhan.Size = new System.Drawing.Size(1256, 648);
             this.tb_canhan.TabIndex = 0;
             this.tb_canhan.Text = "Thông tin cá nhân";
             // 
@@ -536,10 +540,10 @@
             this.tp_sinhvien.Controls.Add(this.lb_timkiemsinhvien);
             this.tp_sinhvien.Controls.Add(this.tb_TimKiemMSSV);
             this.tp_sinhvien.Controls.Add(this.dtgv_DSSinhVien);
-            this.tp_sinhvien.Location = new System.Drawing.Point(4, 26);
+            this.tp_sinhvien.Location = new System.Drawing.Point(4, 29);
             this.tp_sinhvien.Name = "tp_sinhvien";
             this.tp_sinhvien.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_sinhvien.Size = new System.Drawing.Size(1256, 651);
+            this.tp_sinhvien.Size = new System.Drawing.Size(1256, 648);
             this.tp_sinhvien.TabIndex = 1;
             this.tp_sinhvien.Text = "Sinh viên";
             // 
@@ -798,7 +802,7 @@
             // 
             this.status_sinhvien.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statuslabel_sinhvien});
-            this.status_sinhvien.Location = new System.Drawing.Point(3, 622);
+            this.status_sinhvien.Location = new System.Drawing.Point(3, 619);
             this.status_sinhvien.Name = "status_sinhvien";
             this.status_sinhvien.Size = new System.Drawing.Size(1246, 22);
             this.status_sinhvien.TabIndex = 14;
@@ -862,10 +866,10 @@
             this.tp_donvi.Controls.Add(this.lb_timkiem_dv);
             this.tp_donvi.Controls.Add(this.txt_timkiem_dv);
             this.tp_donvi.Controls.Add(this.dtgv_donvi);
-            this.tp_donvi.Location = new System.Drawing.Point(4, 26);
+            this.tp_donvi.Location = new System.Drawing.Point(4, 29);
             this.tp_donvi.Name = "tp_donvi";
             this.tp_donvi.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_donvi.Size = new System.Drawing.Size(1256, 651);
+            this.tp_donvi.Size = new System.Drawing.Size(1256, 648);
             this.tp_donvi.TabIndex = 2;
             this.tp_donvi.Text = "Đơn vị";
             // 
@@ -1029,10 +1033,10 @@
             this.tb_hocphan.Controls.Add(this.lb_timkiem_hp);
             this.tb_hocphan.Controls.Add(this.txt_timkiem_hp);
             this.tb_hocphan.Controls.Add(this.dtgv_hocphan);
-            this.tb_hocphan.Location = new System.Drawing.Point(4, 26);
+            this.tb_hocphan.Location = new System.Drawing.Point(4, 29);
             this.tb_hocphan.Name = "tb_hocphan";
             this.tb_hocphan.Padding = new System.Windows.Forms.Padding(3);
-            this.tb_hocphan.Size = new System.Drawing.Size(1256, 651);
+            this.tb_hocphan.Size = new System.Drawing.Size(1256, 648);
             this.tb_hocphan.TabIndex = 3;
             this.tb_hocphan.Text = "Học phần";
             // 
@@ -1219,7 +1223,7 @@
             // 
             this.status_hocphan.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statuslabel_hocphan});
-            this.status_hocphan.Location = new System.Drawing.Point(3, 622);
+            this.status_hocphan.Location = new System.Drawing.Point(3, 619);
             this.status_hocphan.Name = "status_hocphan";
             this.status_hocphan.Size = new System.Drawing.Size(1246, 22);
             this.status_hocphan.TabIndex = 39;
@@ -1282,10 +1286,10 @@
             this.tp_khoahocmo.Controls.Add(this.lb_timkiem_khmo);
             this.tp_khoahocmo.Controls.Add(this.txt_timkiem_khmo);
             this.tp_khoahocmo.Controls.Add(this.dtgv_khmo);
-            this.tp_khoahocmo.Location = new System.Drawing.Point(4, 26);
+            this.tp_khoahocmo.Location = new System.Drawing.Point(4, 29);
             this.tp_khoahocmo.Name = "tp_khoahocmo";
             this.tp_khoahocmo.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_khoahocmo.Size = new System.Drawing.Size(1256, 651);
+            this.tp_khoahocmo.Size = new System.Drawing.Size(1256, 648);
             this.tp_khoahocmo.TabIndex = 4;
             this.tp_khoahocmo.Text = "Khóa học mở";
             // 
@@ -1333,20 +1337,51 @@
             // 
             // tp_PhanCong
             // 
+            this.tp_PhanCong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tp_PhanCong.Controls.Add(this.btn_QuayLaiPC);
+            this.tp_PhanCong.Controls.Add(this.btn_CapNhatPC);
             this.tp_PhanCong.Controls.Add(this.groupBox1);
             this.tp_PhanCong.Controls.Add(this.gb_PCHP);
             this.tp_PhanCong.Controls.Add(this.gb_TTPhanCong);
             this.tp_PhanCong.Controls.Add(this.btn_XoaPC);
-            this.tp_PhanCong.Controls.Add(this.btn_CapNhatPC);
+            this.tp_PhanCong.Controls.Add(this.btn_ChinhSuaPC);
             this.tp_PhanCong.Controls.Add(this.btn_ThemPC);
             this.tp_PhanCong.Controls.Add(this.status_phancong);
-            this.tp_PhanCong.Location = new System.Drawing.Point(4, 26);
+            this.tp_PhanCong.Location = new System.Drawing.Point(4, 29);
             this.tp_PhanCong.Name = "tp_PhanCong";
             this.tp_PhanCong.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_PhanCong.Size = new System.Drawing.Size(1256, 651);
+            this.tp_PhanCong.Size = new System.Drawing.Size(1256, 648);
             this.tp_PhanCong.TabIndex = 5;
             this.tp_PhanCong.Text = "Phân công";
             this.tp_PhanCong.UseVisualStyleBackColor = true;
+            // 
+            // btn_QuayLaiPC
+            // 
+            this.btn_QuayLaiPC.AccessibleDescription = "";
+            this.btn_QuayLaiPC.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QuayLaiPC.ForeColor = System.Drawing.Color.Red;
+            this.btn_QuayLaiPC.Location = new System.Drawing.Point(985, 509);
+            this.btn_QuayLaiPC.Name = "btn_QuayLaiPC";
+            this.btn_QuayLaiPC.Size = new System.Drawing.Size(126, 50);
+            this.btn_QuayLaiPC.TabIndex = 103;
+            this.btn_QuayLaiPC.Text = "Quay lại";
+            this.btn_QuayLaiPC.UseVisualStyleBackColor = true;
+            this.btn_QuayLaiPC.Visible = false;
+            this.btn_QuayLaiPC.Click += new System.EventHandler(this.btn_QuayLaiPC_Click);
+            // 
+            // btn_CapNhatPC
+            // 
+            this.btn_CapNhatPC.AccessibleDescription = "";
+            this.btn_CapNhatPC.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CapNhatPC.ForeColor = System.Drawing.Color.Blue;
+            this.btn_CapNhatPC.Location = new System.Drawing.Point(843, 509);
+            this.btn_CapNhatPC.Name = "btn_CapNhatPC";
+            this.btn_CapNhatPC.Size = new System.Drawing.Size(126, 50);
+            this.btn_CapNhatPC.TabIndex = 102;
+            this.btn_CapNhatPC.Text = "Cập nhật";
+            this.btn_CapNhatPC.UseVisualStyleBackColor = true;
+            this.btn_CapNhatPC.Visible = false;
+            this.btn_CapNhatPC.Click += new System.EventHandler(this.btn_CapNhatPC_Click);
             // 
             // groupBox1
             // 
@@ -1444,6 +1479,7 @@
             // gb_TTPhanCong
             // 
             this.gb_TTPhanCong.BackColor = System.Drawing.Color.Azure;
+            this.gb_TTPhanCong.Controls.Add(this.cb_manv_pc);
             this.gb_TTPhanCong.Controls.Add(this.txt_mact_pc);
             this.gb_TTPhanCong.Controls.Add(this.txt_nam_pc);
             this.gb_TTPhanCong.Controls.Add(this.txt_hocki_pc);
@@ -1461,6 +1497,16 @@
             this.gb_TTPhanCong.TabIndex = 95;
             this.gb_TTPhanCong.TabStop = false;
             this.gb_TTPhanCong.Text = "Thông tin phân công giảng dạy của giảng viên";
+            // 
+            // cb_manv_pc
+            // 
+            this.cb_manv_pc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_manv_pc.FormattingEnabled = true;
+            this.cb_manv_pc.Location = new System.Drawing.Point(177, 51);
+            this.cb_manv_pc.Name = "cb_manv_pc";
+            this.cb_manv_pc.Size = new System.Drawing.Size(248, 28);
+            this.cb_manv_pc.TabIndex = 100;
+            this.cb_manv_pc.Visible = false;
             // 
             // txt_mact_pc
             // 
@@ -1584,20 +1630,21 @@
             this.btn_XoaPC.TabIndex = 94;
             this.btn_XoaPC.Text = "Xóa";
             this.btn_XoaPC.UseVisualStyleBackColor = true;
+            this.btn_XoaPC.Click += new System.EventHandler(this.btn_XoaPC_Click);
             // 
-            // btn_CapNhatPC
+            // btn_ChinhSuaPC
             // 
-            this.btn_CapNhatPC.AccessibleDescription = "";
-            this.btn_CapNhatPC.Enabled = false;
-            this.btn_CapNhatPC.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CapNhatPC.ForeColor = System.Drawing.Color.Blue;
-            this.btn_CapNhatPC.Location = new System.Drawing.Point(918, 509);
-            this.btn_CapNhatPC.Name = "btn_CapNhatPC";
-            this.btn_CapNhatPC.Size = new System.Drawing.Size(126, 50);
-            this.btn_CapNhatPC.TabIndex = 93;
-            this.btn_CapNhatPC.Text = "Cập nhật";
-            this.btn_CapNhatPC.UseVisualStyleBackColor = true;
-            this.btn_CapNhatPC.Click += new System.EventHandler(this.btn_CapNhatPC_Click);
+            this.btn_ChinhSuaPC.AccessibleDescription = "";
+            this.btn_ChinhSuaPC.Enabled = false;
+            this.btn_ChinhSuaPC.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ChinhSuaPC.ForeColor = System.Drawing.Color.Blue;
+            this.btn_ChinhSuaPC.Location = new System.Drawing.Point(918, 509);
+            this.btn_ChinhSuaPC.Name = "btn_ChinhSuaPC";
+            this.btn_ChinhSuaPC.Size = new System.Drawing.Size(126, 50);
+            this.btn_ChinhSuaPC.TabIndex = 93;
+            this.btn_ChinhSuaPC.Text = "Chỉnh sửa";
+            this.btn_ChinhSuaPC.UseVisualStyleBackColor = true;
+            this.btn_ChinhSuaPC.Click += new System.EventHandler(this.btn_ChinhSuaPC_Click);
             // 
             // btn_ThemPC
             // 
@@ -1616,9 +1663,9 @@
             // 
             this.status_phancong.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statuslabel_phancong});
-            this.status_phancong.Location = new System.Drawing.Point(3, 626);
+            this.status_phancong.Location = new System.Drawing.Point(3, 619);
             this.status_phancong.Name = "status_phancong";
-            this.status_phancong.Size = new System.Drawing.Size(1250, 22);
+            this.status_phancong.Size = new System.Drawing.Size(1246, 22);
             this.status_phancong.TabIndex = 90;
             this.status_phancong.Text = "status_phancong";
             // 
@@ -1659,10 +1706,10 @@
             this.tp_DangKy.Controls.Add(this.lb_mahp_dk);
             this.tp_DangKy.Controls.Add(this.lb_magv_dk);
             this.tp_DangKy.Controls.Add(this.lb_masv_dk);
-            this.tp_DangKy.Location = new System.Drawing.Point(4, 26);
+            this.tp_DangKy.Location = new System.Drawing.Point(4, 29);
             this.tp_DangKy.Name = "tp_DangKy";
             this.tp_DangKy.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_DangKy.Size = new System.Drawing.Size(1256, 651);
+            this.tp_DangKy.Size = new System.Drawing.Size(1256, 648);
             this.tp_DangKy.TabIndex = 6;
             this.tp_DangKy.Text = "Đăng ký";
             this.tp_DangKy.UseVisualStyleBackColor = true;
@@ -1671,7 +1718,7 @@
             // 
             this.status_dangky.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statuslabel_dangky});
-            this.status_dangky.Location = new System.Drawing.Point(3, 626);
+            this.status_dangky.Location = new System.Drawing.Point(3, 623);
             this.status_dangky.Name = "status_dangky";
             this.status_dangky.Size = new System.Drawing.Size(1250, 22);
             this.status_dangky.TabIndex = 91;
@@ -2105,7 +2152,7 @@
         private System.Windows.Forms.ToolStripStatusLabel statuslabel_phancong;
         private System.Windows.Forms.Label lb_timkiem_pchp;
         private System.Windows.Forms.Button btn_ThemPC;
-        private System.Windows.Forms.Button btn_CapNhatPC;
+        private System.Windows.Forms.Button btn_ChinhSuaPC;
         private System.Windows.Forms.Button btn_XoaPC;
         private System.Windows.Forms.TabPage tp_DangKy;
         private System.Windows.Forms.Button btn_quayve_dk;
@@ -2191,5 +2238,8 @@
         private System.Windows.Forms.TextBox txt_timkiem_pcgv;
         private System.Windows.Forms.DataGridView dtgv_phancong_GV;
         private System.Windows.Forms.Label lb_timkiem_pcgv;
+        private System.Windows.Forms.ComboBox cb_manv_pc;
+        private System.Windows.Forms.Button btn_CapNhatPC;
+        private System.Windows.Forms.Button btn_QuayLaiPC;
     }
 }

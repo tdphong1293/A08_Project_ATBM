@@ -200,11 +200,28 @@ grant insert, delete on uv_GiaoVu_DANGKY to rl_GiaoVu;
 
 grant rl_GiangVien to rl_TruongDonVi;
 
+create or replace view uv_TruongDonVi_NHANSU
+as
+    select ns.MANV 
+    from NHANSU ns, DONVI dv
+    where ns.MADV = dv.MADV 
+    and DV.TRGDV = sys_context('userenv', 'session_user')
+/
+
 create or replace view uv_TruongDonVi_DONVI
 as
     select DV.*, NS.HOTEN
     from DONVI DV, NHANSU NS
     where DV.TRGDV = NS.MANV
+/
+
+create or replace view uv_TruongDonVi_KHMO
+as
+    select KH.*
+    from KHMO KH, HOCPHAN HP, DONVI DV
+    where KH.MAHP = HP.MAHP
+    and HP.MADV = DV.MADV 
+    and DV.TRGDV = sys_context('userenv', 'session_user')
 /
 
 create or replace view uv_TruongDonVi_PHANCONG_2
@@ -237,7 +254,14 @@ begin
     and HP.MADV = DV.MADV
     and DV.TRGDV = sys_context('userenv', 'session_user');
 
-    if (v_count > 0) then
+    if (deleting) then
+        delete from PHANCONG 
+        where MAGV = :old.MAGV 
+        and MAHP = :old.MAHP
+        and HK = :old.HK
+        and NAM = :old.NAM
+        and MACT = :old.MACT;
+    elsif (v_count > 0) then
         if (inserting) then
             insert into PHANCONG values (:new.MAGV, :new.MAHP, :new.HK, :new.NAM, :new.MACT);
         elsif (updating) then
@@ -252,21 +276,16 @@ begin
             and HK = :old.HK
             and NAM = :old.NAM
             and MACT = :old.MACT;
-        elsif (deleting) then
-            delete from PHANCONG 
-            where MAGV = :old.MAGV 
-            and MAHP = :old.MAHP
-            and HK = :old.HK
-            and NAM = :old.NAM
-            and MACT = :old.MACT;
         end if;
     end if;
 end;
 /
 
-grant select on uv_TruongDonVi_PHANCONG_2 to rl_TruongDonVi;
+grant select on uv_TruongDonVi_NHANSU to rl_TruongDonVi;
 grant select on uv_TruongDonVi_DONVI to rl_TruongDonVi;
-grant select, insert, update, delete on uv_TruongDonVi_PHANCONG_1 to rl_TruongDonVi;
+grant select on uv_TruongDonVi_KHMO to rl_TruongDonVi;
+grant select on uv_TruongDonVi_PHANCONG_2 to rl_TruongDonVi;
+grant select, insert, update(MAGV), delete on uv_TruongDonVi_PHANCONG_1 to rl_TruongDonVi;
 
 --CS5--
 --grant select, update(DT) on uv_NhanVienCoBan_NHANSU to TruongKhoa;
