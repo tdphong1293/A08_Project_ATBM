@@ -62,11 +62,6 @@ select * from dba_sa_levels;
 select * from dba_sa_compartments;
 select * from dba_sa_groups;
 
-insert into THONGBAO(noidung) values (N'Thông báo này dành cho sinh viên');
-insert into THONGBAO(noidung) values (N'Thông báo này dành cho nhân viên');
-insert into THONGBAO(noidung) values (N'Thông báo này dành cho giáo vụ');
-insert into THONGBAO(noidung) values (N'Thông báo này dành cho trưởng khoa');
-
 BEGIN
 SA_POLICY_ADMIN.APPLY_TABLE_POLICY (
     POLICY_NAME => 'thongbao_policy',
@@ -109,11 +104,42 @@ end;
 /
 
 --b) user label: 'TDV:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2'
+begin
+    sa_user_admin.set_user_labels(
+        policy_name => 'thongbao_policy',
+        user_name => 'TRGDV00001',
+        max_read_label => 'TDV:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2'
+    );
+end;
+/
+
 --c) user label: 'GVU:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2'
+begin
+    sa_user_admin.set_user_labels(
+        policy_name => 'thongbao_policy',
+        user_name => 'GIAOVU001',
+        max_read_label => 'GVU:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2'
+    );
+end;
+/
+
 --d) data label t1: 'TDV'
+exec sp_Insert_ThongBao(N'Thông báo cho các trưởng đơn vị', 'TDV');
+
 --e) data label t2: 'SV:HTTT:CS1'
+exec sp_Insert_ThongBao(N'Thông báo cho các sinh viên thuộc ngành HTTT ở cơ sở 1', 'SV:HTTT:CS1');
+
 --f) data label t3: 'TDV:KHMT:CS1'
---g) data label t4: 'TDV:KHTM:CS1,CS2'
+exec sp_Insert_ThongBao(N'Thông báo cho các trưởng đơn vị thuộc bộ môn KHMT ở cơ sở 1', 'TDV:KHMT:CS1');
+
+--g) data label t4: 'TDV:KHMT'
+exec sp_Insert_ThongBao(N'Thông báo cho các trưởng đơn vị thuộc bộ môn KHMT ở cơ sở 1 và 2', 'TDV:KHMT:CS1,CS2');
+
 --h1) dữ liệu được phát tán đến mỗi giảng viên thuộc bộ môn HTTT ở cả 2 cơ sở, data label t5: 'GV:HTTT'
+exec sp_Insert_ThongBao(N'Thông báo cho các giảng viên thuộc bộ môn HTTT ở cả 2 cơ sở', 'GV:HTTT');
+
 --h2) dữ liệu được phát tán đến mỗi người trong trường không kể cơ sở, data label t6: 'SV'
---h3) dữ liệu được phát tán đến mỗi nhân viên trong của trường ở cơ sở 2, data label t7: 'NV:CS2'
+exec sp_Insert_ThongBao(N'Thông báo mỗi người trong trường', 'SV');
+
+--h3) dữ liệu được phát tán đến mỗi nhân viên trong của trường ở cơ sở 2, data label t7: 'NV::CS2'
+exec sp_Insert_ThongBao(N'Thông báo đến mỗi nhân viên trong trưởng ở cơ sở 2', 'NV::CS2');

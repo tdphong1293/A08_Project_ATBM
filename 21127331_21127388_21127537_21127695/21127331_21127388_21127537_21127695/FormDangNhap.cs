@@ -105,6 +105,9 @@ namespace _21127331_21127388_21127537_21127695
                     }
                     else if (cb_dangnhap_vaitro.Text == "Trưởng khoa")
                     {
+                        TRUONGKHOA tRUONGKHOA = new TRUONGKHOA(usernameUser);
+                        this.Hide();
+                        tRUONGKHOA.ShowDialog();
                         conn.Close();
                     }
                     else
