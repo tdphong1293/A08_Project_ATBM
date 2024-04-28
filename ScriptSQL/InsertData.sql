@@ -4407,6 +4407,15 @@ insert into HOCPHAN values ('CSC16004', N'Thị giác máy tính', 4, 45, 30, 50
 insert into HOCPHAN values ('CSC16005', N'Xử lý ảnh số và video số', 4, 45, 30, 50, 'BMTGMT');
 insert into HOCPHAN values ('CSC16101', N'Đồ họa ứng dụng', 4, 45, 30, 50, 'BMTGMT');
 insert into HOCPHAN values ('CSC16102', N'Kỹ thuật lập trình xử lý ảnh số và video số', 4, 45, 30, 50, 'BMTGMT');
+
+-- môn CNTT
+insert into HOCPHAN values ('CSC14007', N'Nhập môn phân tích độ phức tạp thuật toán', 4, 45, 30, 50, 'BMCNTT');
+insert into HOCPHAN values ('CSC15001', N'An ninh máy tính', 4, 45, 30, 50, 'BMCNTT');
+insert into HOCPHAN values ('CSC15002', N'Bảo mật cơ sở dữ liệu', 4, 45, 30, 50, 'BMCNTT');
+insert into HOCPHAN values ('CSC15003', N'Mã hóa ứng dụng', 4, 45, 30, 50, 'BMCNTT');
+insert into HOCPHAN values ('CSC15004', N'Học thống kế', 4, 45, 30, 50, 'BMCNTT');
+insert into HOCPHAN values ('CSC15005', N'Nhập môn mã hóa - mật mã', 4, 45, 30, 50, 'BMCNTT');
+insert into HOCPHAN values ('CSC15006', N'Nhập môn xử lý ngôn ngữ tự nhiên', 4, 45, 30, 50, 'BMCNTT');
 commit;
 
 -- insert data KHMO
@@ -4490,6 +4499,22 @@ insert into KHMO values ('CSC16004', 1, 2024, 'CLC');
 insert into KHMO values ('CSC16004', 2, 2024, 'CQ');
 insert into KHMO values ('CSC16004', 3, 2024, 'CTTT');
 insert into KHMO values ('CSC16004', 1, 2024, 'VP');
+insert into KHMO values ('CSC14007', 1, 2024, 'CLC');
+insert into KHMO values ('CSC14007', 1, 2024, 'CQ');
+insert into KHMO values ('CSC14007', 1, 2024, 'CTTT');
+insert into KHMO values ('CSC14007', 1, 2024, 'VP');
+insert into KHMO values ('CSC15001', 2, 2024, 'CLC');
+insert into KHMO values ('CSC15001', 2, 2024, 'CQ');
+insert into KHMO values ('CSC15001', 2, 2024, 'CTTT');
+insert into KHMO values ('CSC15001', 2, 2024, 'VP');
+insert into KHMO values ('CSC15002', 3, 2024, 'CLC');
+insert into KHMO values ('CSC15002', 3, 2024, 'CQ');
+insert into KHMO values ('CSC15002', 3, 2024, 'CTTT');
+insert into KHMO values ('CSC15002', 3, 2024, 'VP');
+insert into KHMO values ('CSC15003', 1, 2024, 'CLC');
+insert into KHMO values ('CSC15003', 2, 2024, 'CQ');
+insert into KHMO values ('CSC15003', 3, 2024, 'CTTT');
+insert into KHMO values ('CSC15003', 1, 2024, 'VP');
 commit;
 
 -- insert data PHANCONG
@@ -4573,4 +4598,20 @@ insert into PHANCONG values ('GV0000057', 'CSC16004', 1, 2024, 'CLC');
 insert into PHANCONG values ('GV0000058', 'CSC16004', 2, 2024, 'CQ');
 insert into PHANCONG values ('GV0000059', 'CSC16004', 3, 2024, 'CTTT');
 insert into PHANCONG values ('GV0000060', 'CSC16004', 1, 2024, 'VP');
+insert into PHANCONG values ('GV0000043', 'CSC14007', 1, 2024, 'CLC');
+insert into PHANCONG values ('GV0000044', 'CSC14007', 1, 2024, 'CQ');
+insert into PHANCONG values ('GV0000045', 'CSC14007', 1, 2024, 'CTTT');
+insert into PHANCONG values ('GV0000046', 'CSC14007', 1, 2024, 'VP');
+insert into PHANCONG values ('GV0000047', 'CSC15001', 2, 2024, 'CLC');
+insert into PHANCONG values ('GV0000048', 'CSC15001', 2, 2024, 'CQ');
+insert into PHANCONG values ('GV0000049', 'CSC15001', 2, 2024, 'CTTT');
+insert into PHANCONG values ('GV0000050', 'CSC15001', 2, 2024, 'VP');
+insert into PHANCONG values ('GV0000051', 'CSC15002', 3, 2024, 'CLC');
+insert into PHANCONG values ('GV0000052', 'CSC15002', 3, 2024, 'CQ');
+insert into PHANCONG values ('GV0000053', 'CSC15002', 3, 2024, 'CTTT');
+insert into PHANCONG values ('GV0000054', 'CSC15002', 3, 2024, 'VP');
+insert into PHANCONG values ('GV0000055', 'CSC15003', 1, 2024, 'CLC');
+insert into PHANCONG values ('GV0000056', 'CSC15003', 2, 2024, 'CQ');
+insert into PHANCONG values ('GV0000057', 'CSC15003', 3, 2024, 'CTTT');
+insert into PHANCONG values ('GV0000058', 'CSC15003', 1, 2024, 'VP');
 commit;
