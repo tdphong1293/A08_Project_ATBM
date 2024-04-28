@@ -19,7 +19,7 @@ namespace _21127331_21127388_21127537_21127695
         private OracleConnection conn = FormDangNhap.conn;
         private string SDT_cu;
         private string diemth, diemqt, diemck, diemtk;
-        public static System.Timers.Timer searchSV_Timer, searchDV_Timer, searchHP_Timer, searchKHMO_Timer, searchPCHP_Timer, searchPCGV_Timer;
+        public static System.Timers.Timer searchSV_Timer, searchDV_Timer, searchHP_Timer, searchKHMO_Timer, searchPCHP_Timer, searchPCGV_Timer, searchDK_Timer;
 
         public FormTruongDonVi()
         {
@@ -38,6 +38,7 @@ namespace _21127331_21127388_21127537_21127695
             SearchAndReloadDSKHMO("");
             SearchAndReloadDSPCHP("");
             SearchAndReloadDSPCGV("");
+            SearchAndReloadDSDK("");
 
             searchSV_Timer = new System.Timers.Timer();
             searchSV_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
@@ -63,6 +64,10 @@ namespace _21127331_21127388_21127537_21127695
             searchPCGV_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
             searchPCGV_Timer.Elapsed += searchPCGV_Event;
 
+            searchDK_Timer = new System.Timers.Timer();
+            searchDK_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
+            searchDK_Timer.Elapsed += searchDK_Event;
+
 
             dtgv_DSSinhVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtgv_donvi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -70,6 +75,7 @@ namespace _21127331_21127388_21127537_21127695
             dtgv_khmo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgv_phancong_HP.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgv_phancong_GV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgv_dangky.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void tb_TimKiemMSSV_TextChanged(object sender, EventArgs e)
@@ -108,6 +114,12 @@ namespace _21127331_21127388_21127537_21127695
             searchPCGV_Timer.Start();
         }
 
+        private void txt_timkiem_dk_TextChanged(object sender, EventArgs e)
+        {
+            searchDK_Timer.Stop();
+            searchDK_Timer.Start();
+        }
+
         private void searchSV_Event(Object source, ElapsedEventArgs e)
         {
             searchSV_Timer.Stop();
@@ -142,6 +154,12 @@ namespace _21127331_21127388_21127537_21127695
         {
             searchPCGV_Timer.Stop();
             this.Invoke(new Action(() => SearchAndReloadDSPCGV(txt_timkiem_pcgv.Text)));
+        }
+
+        private void searchDK_Event(Object source, ElapsedEventArgs e)
+        {
+            searchDK_Timer.Stop();
+            this.Invoke(new Action(() => SearchAndReloadDSDK(txt_timkiem_dk.Text)));
         }
 
         private void SearchAndReloadDSSV(string searchText)
@@ -274,7 +292,7 @@ namespace _21127331_21127388_21127537_21127695
             }
         }
 
-        private void SearchAndReloadDSPCHP(string searchText)
+        public void SearchAndReloadDSPCHP(string searchText)
         {
             try
             {
@@ -313,7 +331,7 @@ namespace _21127331_21127388_21127537_21127695
             }
         }
 
-        private void SearchAndReloadDSPCGV(string searchText)
+        public void SearchAndReloadDSPCGV(string searchText)
         {
             try
             {
@@ -343,6 +361,32 @@ namespace _21127331_21127388_21127537_21127695
                         DataTable dataTable = new DataTable();
                         dataTable.Load(reader);
                         dtgv_phancong_GV.DataSource = dataTable;
+                    }
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void SearchAndReloadDSDK(string searchText)
+        {
+            try
+            {
+                string query;
+                if (string.IsNullOrEmpty(searchText))
+                    query = "select * from OLS_ADMIN.uv_GiangVien_DANGKY";
+                else
+                    query = "select * from OLS_ADMIN.uv_GiangVien_DANGKY where MASV = :searchText or MAHP = :searchText";
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    cmd.Parameters.Add(":searchText", searchText);
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(reader);
+                        dtgv_dangky.DataSource = dataTable;
                     }
                 }
             }
@@ -573,6 +617,44 @@ namespace _21127331_21127388_21127537_21127695
             btn_QuayVe.Visible = false;
         }
 
+        private void dtgv_dangky_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                btn_chinhsua_dk.Enabled = true;
+                DataGridViewRow row = dtgv_dangky.Rows[e.RowIndex];
+                txt_masv_dk.Text = row.Cells["MASV"].Value.ToString();
+                txt_magv_dk.Text = row.Cells["MAGV"].Value.ToString();
+                txt_mahp_dk.Text = row.Cells["MAHP"].Value.ToString();
+                txt_hk_dk.Text = row.Cells["HK"].Value.ToString();
+                txt_nam_dk.Text = row.Cells["NAM"].Value.ToString();
+                txt_mact_dk.Text = row.Cells["MACT"].Value.ToString();
+                txt_diemth_dk.Text = float.Parse(row.Cells["DIEMTH"].Value.ToString()).ToString("F2");
+                txt_diemqt_dk.Text = float.Parse(row.Cells["DIEMQT"].Value.ToString()).ToString("F2");
+                txt_diemck_dk.Text = float.Parse(row.Cells["DIEMCK"].Value.ToString()).ToString("F2");
+                txt_diemtk_dk.Text = float.Parse(row.Cells["DIEMTK"].Value.ToString()).ToString("F2");
+                statuslabel_dangky.Text = "Đã chọn sinh viên " + txt_masv_dk.Text + " thuộc lớp học phần " + txt_mahp_dk.Text +
+                    " của giáo viên " + txt_magv_dk + ". Học kì " + txt_hk_dk.Text + ", Năm " + txt_nam_dk.Text +
+                    ". Chương trình " + txt_mact_dk.Text;
+            }
+            else
+            {
+                btn_quayve_dk.PerformClick();
+                btn_chinhsua_dk.Enabled = false;
+                statuslabel_dangky.Text = "Chưa chọn đăng ký nào";
+                txt_masv_dk.Text = "";
+                txt_magv_pc.Text = "";
+                txt_mahp_pc.Text = "";
+                txt_hocki_pc.Text = "";
+                txt_nam_pc.Text = "";
+                txt_mact_pc.Text = "";
+                txt_diemth_dk.Text = "";
+                txt_diemqt_dk.Text = "";
+                txt_diemck_dk.Text = "";
+                txt_diemtk_dk.Text = "";
+            }
+        }
+
         private void btn_luudt_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txt_dienthoai_nv.Text))
@@ -610,7 +692,7 @@ namespace _21127331_21127388_21127537_21127695
 
         private void btn_ThemPC_Click(object sender, EventArgs e)
         {
-            Form_TruongDonVi_ThemPC form_TruongDonVi_ThemPC = new Form_TruongDonVi_ThemPC();
+            Form_TruongDonVi_ThemPC form_TruongDonVi_ThemPC = new Form_TruongDonVi_ThemPC(this);
             form_TruongDonVi_ThemPC.ShowDialog();
         }
 

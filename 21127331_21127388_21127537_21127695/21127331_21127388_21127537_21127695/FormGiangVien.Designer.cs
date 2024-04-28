@@ -1763,6 +1763,8 @@
             this.Controls.Add(this.btn_DangXuat);
             this.Controls.Add(this.tc_FormNhanVienCoBan);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormGiangVien";
             this.Text = "FormGiangVien";
             this.tc_FormNhanVienCoBan.ResumeLayout(false);

@@ -14,13 +14,13 @@ namespace _21127331_21127388_21127537_21127695
     public partial class Form_TruongDonVi_ThemPC : Form
     {
         private OracleConnection conn = FormDangNhap.conn;
-        
-        public Form_TruongDonVi_ThemPC()
+        private FormTruongDonVi fTDV;
+        public Form_TruongDonVi_ThemPC(FormTruongDonVi fTDV)
         {
             InitializeComponent();
             Load_MAGV_IntoComboBox();
             SearchAndReloadDSPCHP();
-
+            this.fTDV = fTDV;
             dtgv_KHMO_hp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
@@ -43,7 +43,8 @@ namespace _21127331_21127388_21127537_21127695
                     cmd.Transaction = transaction;
                     cmd.ExecuteNonQuery();
                     transaction.Commit();
-
+                    fTDV.SearchAndReloadDSPCHP("");
+                    fTDV.SearchAndReloadDSPCGV("");
                 }
                 catch (OracleException ex)
                 {
@@ -52,6 +53,7 @@ namespace _21127331_21127388_21127537_21127695
                 }
                 transaction.Dispose();
             }
+            this.Close();
         }
 
         private void SearchAndReloadDSPCHP()
