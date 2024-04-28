@@ -76,10 +76,12 @@
             // 
             // cb_dangnhap_vaitro
             // 
+            this.cb_dangnhap_vaitro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_dangnhap_vaitro.FormattingEnabled = true;
             this.cb_dangnhap_vaitro.Items.AddRange(new object[] {
             "SYSDBA",
             "ADMIN",
+            "AUDIT_ADMIN",
             "Sinh viên",
             "Nhân viên cơ bản",
             "Giảng viên",

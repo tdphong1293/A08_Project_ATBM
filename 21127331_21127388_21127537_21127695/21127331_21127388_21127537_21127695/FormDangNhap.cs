@@ -107,6 +107,13 @@ namespace _21127331_21127388_21127537_21127695
                         tRUONGKHOA.ShowDialog();
                         conn.Close();
                     }
+                    else if (cb_dangnhap_vaitro.Text == "AUDIT_ADMIN")
+                    {
+                        FormAuditAdmin formAuditAdmin = new FormAuditAdmin();
+                        this.Hide();
+                        formAuditAdmin.ShowDialog();
+                        conn.Close();
+                    }
                     else
                     {
                         MessageBox.Show("Không tồn tại vai trò " + cb_dangnhap_vaitro.Text);

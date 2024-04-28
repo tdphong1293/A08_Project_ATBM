@@ -146,6 +146,12 @@
     <Compile Include="DoiSDT_SV.designer.cs">
       <DependentUpon>DoiSDT_SV.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAuditAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAuditAdmin.Designer.cs">
+      <DependentUpon>FormAuditAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCapQuyen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DoiSDT_SV.resx">
       <DependentUpon>DoiSDT_SV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAuditAdmin.resx">
+      <DependentUpon>FormAuditAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCapQuyen.resx">
       <DependentUpon>FormCapQuyen.cs</DependentUpon>
