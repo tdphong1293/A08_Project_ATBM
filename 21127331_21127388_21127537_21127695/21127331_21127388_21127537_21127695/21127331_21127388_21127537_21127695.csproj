@@ -244,6 +244,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SDT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SDT.Designer.cs">
+      <DependentUpon>SDT.cs</DependentUpon>
+    </Compile>
     <Compile Include="SinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +303,12 @@
     </Compile>
     <Compile Include="TRUONGKHOA.designer.cs">
       <DependentUpon>TRUONGKHOA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TTCANHAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TTCANHAN.designer.cs">
+      <DependentUpon>TTCANHAN.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CapNhatDonVi.resx">
       <DependentUpon>CapNhatDonVi.cs</DependentUpon>
@@ -380,6 +392,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SDT.resx">
+      <DependentUpon>SDT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SinhVien.resx">
       <DependentUpon>SinhVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TRUONGKHOA.resx">
       <DependentUpon>TRUONGKHOA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TTCANHAN.resx">
+      <DependentUpon>TTCANHAN.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
