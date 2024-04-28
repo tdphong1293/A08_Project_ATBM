@@ -44,6 +44,7 @@ namespace _21127331_21127388_21127537_21127695
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button12 = new System.Windows.Forms.Button();
             this.txt_dtbtl_sv = new System.Windows.Forms.TextBox();
             this.txt_diachi_sv = new System.Windows.Forms.TextBox();
             this.txt_tctl_sv = new System.Windows.Forms.TextBox();
@@ -146,19 +147,22 @@ namespace _21127331_21127388_21127537_21127695
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.txt_dk_mact = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txt_dk_nam = new System.Windows.Forms.TextBox();
+            this.txt_dk_hki = new System.Windows.Forms.TextBox();
+            this.txt_dk_magv = new System.Windows.Forms.TextBox();
+            this.txt_dk_mahp = new System.Windows.Forms.TextBox();
+            this.txt_dk_masv = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.button13 = new System.Windows.Forms.Button();
+            this.dtgdk = new System.Windows.Forms.DataGridView();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.dtgdk_masv = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -173,7 +177,7 @@ namespace _21127331_21127388_21127537_21127695
             ((System.ComponentModel.ISupportInitialize)(this.dtgphancong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgdk)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -240,6 +244,7 @@ namespace _21127331_21127388_21127537_21127695
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button12);
             this.tabPage1.Controls.Add(this.txt_dtbtl_sv);
             this.tabPage1.Controls.Add(this.txt_diachi_sv);
             this.tabPage1.Controls.Add(this.txt_tctl_sv);
@@ -273,6 +278,17 @@ namespace _21127331_21127388_21127537_21127695
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "SINH VIÊN";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(915, 20);
+            this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(200, 36);
+            this.button12.TabIndex = 41;
+            this.button12.Text = "Thêm ĐĂNG KÝ";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // txt_dtbtl_sv
             // 
@@ -1465,19 +1481,22 @@ namespace _21127331_21127388_21127537_21127695
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.button13);
-            this.tabPage6.Controls.Add(this.button12);
+            this.tabPage6.Controls.Add(this.txt_dk_mact);
+            this.tabPage6.Controls.Add(this.label33);
+            this.tabPage6.Controls.Add(this.txt_dk_nam);
+            this.tabPage6.Controls.Add(this.txt_dk_hki);
+            this.tabPage6.Controls.Add(this.txt_dk_magv);
+            this.tabPage6.Controls.Add(this.txt_dk_mahp);
+            this.tabPage6.Controls.Add(this.txt_dk_masv);
             this.tabPage6.Controls.Add(this.label17);
-            this.tabPage6.Controls.Add(this.comboBox7);
             this.tabPage6.Controls.Add(this.label18);
-            this.tabPage6.Controls.Add(this.comboBox8);
-            this.tabPage6.Controls.Add(this.dataGridView7);
             this.tabPage6.Controls.Add(this.label19);
             this.tabPage6.Controls.Add(this.label21);
+            this.tabPage6.Controls.Add(this.label32);
+            this.tabPage6.Controls.Add(this.button13);
+            this.tabPage6.Controls.Add(this.dtgdk);
             this.tabPage6.Controls.Add(this.label20);
-            this.tabPage6.Controls.Add(this.textBox9);
-            this.tabPage6.Controls.Add(this.textBox11);
-            this.tabPage6.Controls.Add(this.textBox10);
+            this.tabPage6.Controls.Add(this.dtgdk_masv);
             this.tabPage6.Location = new System.Drawing.Point(4, 29);
             this.tabPage6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage6.Name = "tabPage6";
@@ -1485,6 +1504,144 @@ namespace _21127331_21127388_21127537_21127695
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "ĐĂNG KÝ";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // txt_dk_mact
+            // 
+            this.txt_dk_mact.Enabled = false;
+            this.txt_dk_mact.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_dk_mact.Location = new System.Drawing.Point(1370, 563);
+            this.txt_dk_mact.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_dk_mact.Name = "txt_dk_mact";
+            this.txt_dk_mact.ReadOnly = true;
+            this.txt_dk_mact.Size = new System.Drawing.Size(462, 37);
+            this.txt_dk_mact.TabIndex = 63;
+            this.txt_dk_mact.TabStop = false;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(1100, 566);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(186, 31);
+            this.label33.TabIndex = 62;
+            this.label33.Text = "Mã chương trình";
+            // 
+            // txt_dk_nam
+            // 
+            this.txt_dk_nam.Enabled = false;
+            this.txt_dk_nam.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_dk_nam.Location = new System.Drawing.Point(1370, 482);
+            this.txt_dk_nam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_dk_nam.Name = "txt_dk_nam";
+            this.txt_dk_nam.ReadOnly = true;
+            this.txt_dk_nam.Size = new System.Drawing.Size(462, 37);
+            this.txt_dk_nam.TabIndex = 61;
+            this.txt_dk_nam.TabStop = false;
+            // 
+            // txt_dk_hki
+            // 
+            this.txt_dk_hki.Enabled = false;
+            this.txt_dk_hki.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_dk_hki.Location = new System.Drawing.Point(1370, 400);
+            this.txt_dk_hki.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_dk_hki.Name = "txt_dk_hki";
+            this.txt_dk_hki.ReadOnly = true;
+            this.txt_dk_hki.Size = new System.Drawing.Size(462, 37);
+            this.txt_dk_hki.TabIndex = 60;
+            this.txt_dk_hki.TabStop = false;
+            // 
+            // txt_dk_magv
+            // 
+            this.txt_dk_magv.Enabled = false;
+            this.txt_dk_magv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_dk_magv.Location = new System.Drawing.Point(1370, 227);
+            this.txt_dk_magv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_dk_magv.Name = "txt_dk_magv";
+            this.txt_dk_magv.ReadOnly = true;
+            this.txt_dk_magv.Size = new System.Drawing.Size(462, 37);
+            this.txt_dk_magv.TabIndex = 58;
+            this.txt_dk_magv.TabStop = false;
+            // 
+            // txt_dk_mahp
+            // 
+            this.txt_dk_mahp.Enabled = false;
+            this.txt_dk_mahp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_dk_mahp.Location = new System.Drawing.Point(1370, 313);
+            this.txt_dk_mahp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_dk_mahp.Name = "txt_dk_mahp";
+            this.txt_dk_mahp.ReadOnly = true;
+            this.txt_dk_mahp.Size = new System.Drawing.Size(462, 37);
+            this.txt_dk_mahp.TabIndex = 59;
+            this.txt_dk_mahp.TabStop = false;
+            // 
+            // txt_dk_masv
+            // 
+            this.txt_dk_masv.Enabled = false;
+            this.txt_dk_masv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_dk_masv.Location = new System.Drawing.Point(1370, 136);
+            this.txt_dk_masv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_dk_masv.Name = "txt_dk_masv";
+            this.txt_dk_masv.ReadOnly = true;
+            this.txt_dk_masv.Size = new System.Drawing.Size(462, 37);
+            this.txt_dk_masv.TabIndex = 57;
+            this.txt_dk_masv.TabStop = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(1100, 485);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(63, 31);
+            this.label17.TabIndex = 56;
+            this.label17.Text = "Năm";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(1100, 230);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(146, 31);
+            this.label18.TabIndex = 53;
+            this.label18.Text = "Mã giáo viên";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(1100, 403);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(77, 31);
+            this.label19.TabIndex = 55;
+            this.label19.Text = "Học kì";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(1100, 316);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(148, 31);
+            this.label21.TabIndex = 54;
+            this.label21.Text = "Mã học phần";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(1100, 139);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(143, 31);
+            this.label32.TabIndex = 52;
+            this.label32.Text = "Mã sinh viên";
             // 
             // button13
             // 
@@ -1496,115 +1653,37 @@ namespace _21127331_21127388_21127537_21127695
             this.button13.TabIndex = 40;
             this.button13.Text = "Xóa ĐĂNG KÝ";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // button12
+            // dtgdk
             // 
-            this.button12.Location = new System.Drawing.Point(810, 4);
-            this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(200, 36);
-            this.button12.TabIndex = 40;
-            this.button12.Text = "Thêm ĐĂNG KÝ";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(282, 54);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(72, 20);
-            this.label17.TabIndex = 39;
-            this.label17.Text = "Năm học";
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(363, 52);
-            this.comboBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(164, 28);
-            this.comboBox7.TabIndex = 38;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(567, 54);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(53, 20);
-            this.label18.TabIndex = 37;
-            this.label18.Text = "Học kì";
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(632, 52);
-            this.comboBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(164, 28);
-            this.comboBox8.TabIndex = 36;
-            // 
-            // dataGridView7
-            // 
-            this.dataGridView7.AllowUserToDeleteRows = false;
-            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Location = new System.Drawing.Point(-2, 94);
-            this.dataGridView7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.RowHeadersWidth = 62;
-            this.dataGridView7.Size = new System.Drawing.Size(1016, 363);
-            this.dataGridView7.TabIndex = 35;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(282, 12);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(59, 20);
-            this.label19.TabIndex = 33;
-            this.label19.Text = "Mã GV";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(14, 55);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(57, 20);
-            this.label21.TabIndex = 34;
-            this.label21.Text = "Mã HP";
+            this.dtgdk.AllowUserToDeleteRows = false;
+            this.dtgdk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgdk.Location = new System.Drawing.Point(-2, 94);
+            this.dtgdk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgdk.Name = "dtgdk";
+            this.dtgdk.RowHeadersWidth = 62;
+            this.dtgdk.Size = new System.Drawing.Size(1016, 537);
+            this.dtgdk.TabIndex = 35;
+            this.dtgdk.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgdk_CellClick);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(14, 12);
+            this.label20.Location = new System.Drawing.Point(14, 61);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(57, 20);
             this.label20.TabIndex = 34;
             this.label20.Text = "Mã SV";
             // 
-            // textBox9
+            // dtgdk_masv
             // 
-            this.textBox9.Location = new System.Drawing.Point(363, 9);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(164, 26);
-            this.textBox9.TabIndex = 31;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(76, 54);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(164, 26);
-            this.textBox11.TabIndex = 32;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(76, 9);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(164, 26);
-            this.textBox10.TabIndex = 32;
+            this.dtgdk_masv.Location = new System.Drawing.Point(88, 58);
+            this.dtgdk_masv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgdk_masv.Name = "dtgdk_masv";
+            this.dtgdk_masv.Size = new System.Drawing.Size(164, 26);
+            this.dtgdk_masv.TabIndex = 32;
+            this.dtgdk_masv.TextChanged += new System.EventHandler(this.dtgdk_masv_TextChanged);
             // 
             // GiaoVu
             // 
@@ -1637,7 +1716,7 @@ namespace _21127331_21127388_21127537_21127695
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgdk)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1695,18 +1774,9 @@ namespace _21127331_21127388_21127537_21127695
         private TextBox phancong_magv;
         private TextBox phancong_mahp;
         private Button button13;
-        private Button button12;
-        private Label label17;
-        private ComboBox comboBox7;
-        private Label label18;
-        private ComboBox comboBox8;
-        private DataGridView dataGridView7;
-        private Label label19;
-        private Label label21;
+        private DataGridView dtgdk;
         private Label label20;
-        private TextBox textBox9;
-        private TextBox textBox11;
-        private TextBox textBox10;
+        private TextBox dtgdk_masv;
         private TextBox txt_dtbtl_sv;
         private TextBox txt_diachi_sv;
         private TextBox txt_tctl_sv;
@@ -1765,5 +1835,18 @@ namespace _21127331_21127388_21127537_21127695
         private Label label30;
         private TextBox txt_pc_mahp;
         private Label label31;
+        private TextBox txt_dk_nam;
+        private TextBox txt_dk_hki;
+        private TextBox txt_dk_magv;
+        private TextBox txt_dk_mahp;
+        private TextBox txt_dk_masv;
+        private Label label17;
+        private Label label18;
+        private Label label19;
+        private Label label21;
+        private Label label32;
+        private TextBox txt_dk_mact;
+        private Label label33;
+        private Button button12;
     }
 }

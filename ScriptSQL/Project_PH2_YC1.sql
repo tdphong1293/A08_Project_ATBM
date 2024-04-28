@@ -186,7 +186,7 @@ end;
 /
 
 grant select, update on uv_GiaoVu_PHANCONG to rl_GiaoVu;
-grant insert, delete on uv_GiaoVu_DANGKY to rl_GiaoVu;
+grant select, insert, delete on uv_GiaoVu_DANGKY to rl_GiaoVu;
 
 
 --CS4--
@@ -463,14 +463,22 @@ begin
         v_start_date := trunc(add_months(trunc(sysdate, 'YYYY'), 8), 'MM');
     end if;
     
+    
+    if usr like '%SV' then
     strsql := 'MASV = ''' || usr || ''' and HK = ' || v_hk || ' 
     and NAM = ' || extract(year from sysdate) || ' 
     and DIEMTH is null 
     and DIEMQT is null 
     and DIEMCK is null 
-    and DIEMTK is null
-    and trunc(sysdate) between to_date(''' || to_char(v_start_date, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'') and to_date(''' || to_char(v_start_date + 14, 'DD/MM/YYYY') || ''', ''DD/MM/YYYY'')';
-        
+    and DIEMTK is null';
+    elsif usr like '%GIAOVU' then
+    strsql := 'HK = ' || v_hk || ' 
+    and NAM = ' || extract(year from sysdate) || ' 
+    and DIEMTH is null 
+    and DIEMQT is null 
+    and DIEMCK is null 
+    and DIEMTK is null';
+    end if;  
     return strsql;
 end;
 /
