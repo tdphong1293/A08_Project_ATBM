@@ -46,11 +46,12 @@ namespace _21127331_21127388_21127537_21127695
         {
             try
             {
-                string query = $"update OLS_ADMIN.SINHVIEN set DCHI = '{textBox1.Text}'";
+                string query = $"update OLS_ADMIN.SINHVIEN set DCHI = :diachi";
                 using (OracleCommand cmd = new OracleCommand(query, conn))
                 {
                     try
                     {
+                        cmd.Parameters.Add(":diachi", OracleDbType.NVarchar2, textBox1.Text, ParameterDirection.Input);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Thay đổi địa chỉ thành công");
                         this.Hide();

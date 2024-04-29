@@ -471,21 +471,17 @@ begin
     end if;
     
     
-    if usr like '%SV' then
+    if usr like 'SV%' then
     strsql := 'MASV = ''' || usr || ''' and HK = ' || v_hk || ' 
     and NAM = ' || extract(year from sysdate) || ' 
     and DIEMTH is null 
     and DIEMQT is null 
     and DIEMCK is null 
-    and DIEMTK is null';
-    elsif usr like '%GIAOVU' then
-    strsql := 'HK = ' || v_hk || ' 
-    and NAM = ' || extract(year from sysdate) || ' 
-    and DIEMTH is null 
-    and DIEMQT is null 
-    and DIEMCK is null 
-    and DIEMTK is null';
-    end if;  
+    and DIEMTK is null
+    and trunc(sysdate) between ''' || v_start_date || ''' and ''' || v_start_date + interval '14' day || '''';
+    elsif usr like 'GIAOVU%' then
+    strsql := '';
+    end if;
     return strsql;
 end;
 /
@@ -589,54 +585,3 @@ end;
 /
 
 grant select on HOCPHAN to rl_SinhVien;
-
-create or replace function pc6_SinhVien_PHANCONG
-    (p_schema varchar2, p_obj varchar2)
-return varchar2
-as
-    cursor cur1 is (
-        select granted_role
-        from DBA_ROLE_PRIVS
-        where grantee = sys_context('userenv', 'session_user')
-    );
-    cursor cur2 is (
-        select MACT
-        from SINHVIEN
-    );
-    v_mact varchar2(10);
-    type role_tab is table of varchar2(100);
-    roles role_tab := role_tab();
-begin
-    if (sys_context('userenv', 'session_user') = 'OLS_ADMIN') then
-        return '';
-    end if; 
-
-    for res in cur1 loop
-        roles.extend;
-        roles(roles.count) := res.granted_role;
-    end loop;
-    
-    if 'RL_SINHVIEN' member of roles then
-        open cur2;
-        fetch cur2 into v_mact;
-        close cur2;
-        return 'MACT = ' || '''' || v_mact || '''';   
-    else 
-        return '';
-    end if;   
-end;
-/
-
-begin
-    dbms_rls.add_policy(
-        object_schema => 'OLS_ADMIN',
-        object_name => 'PHANCONG',
-        policy_name => 'pc6',
-        function_schema => 'OLS_ADMIN',
-        policy_function => 'pc6_SinhVien_PHANCONG',
-        statement_types => 'select'
-    );
-end;
-/
-
-grant select on PHANCONG to rl_SinhVien;
