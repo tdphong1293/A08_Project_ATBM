@@ -1,6 +1,6 @@
 -- ============== STANDARD AUDIT ============== --
--- Cài Standard Audit cho nhân viên
-create or replace procedure sp_Create_Audit_UserNV
+-- Kích Standard Audit cho nhân viên
+create or replace procedure sp_Enable_Audit_UserNV
 authid current_user
 as
     cursor cur is (
@@ -33,8 +33,8 @@ begin
 end;
 /
 
--- Cài Standard Audit cho sinh viên
-create or replace procedure sp_Create_Audit_UserSV
+-- Kích hoạt Standard Audit cho sinh viên
+create or replace procedure sp_Enable_Audit_UserSV
 authid current_user
 as
     cursor cur is (
@@ -67,14 +67,78 @@ begin
 end;
 /
 
-exec sp_Create_Audit_UserNV;
-exec sp_Create_Audit_UserSV;
+-- Tắt Standard Audit cho nhân viên
+create or replace procedure sp_Disable_Audit_UserNV
+authid current_user
+as
+    cursor cur is (
+        select MANV
+        from NHANSU
+        where MANV in (select username from all_users)
+    );
+    strsql varchar2(1000);
+    usr varchar2(100);
+begin
+    open cur;
+    loop
+        fetch cur into usr;
+        exit when cur%notfound;
+        
+        strsql := 'NOAUDIT ALL BY ' || usr || ' BY ACCESS';
+        execute immediate (strsql);
+
+        strsql := 'NOAUDIT SELECT TABLE, UPDATE TABLE, INSERT TABLE, DELETE TABLE BY ' || usr || ' BY ACCESS';
+        execute immediate (strsql);
+
+        strsql := 'NOAUDIT SESSION WHENEVER NOT SUCCESSFUL';
+        execute immediate (strsql);
+
+    end loop;
+    close cur;
+end;
+/
+
+-- Tắt Standard Audit cho sinh viên
+create or replace procedure sp_Disable_Audit_UserSV
+authid current_user
+as
+    cursor cur is (
+        select MASV
+        from SINHVIEN
+        where MASV in (select username from all_users)
+    );
+    strsql varchar2(1000);
+    usr varchar2(100);
+begin
+    open cur;
+    loop
+        fetch cur into usr;
+        exit when cur%notfound;
+        
+        strsql := 'NOAUDIT ALL BY ' || usr || ' BY ACCESS';
+        execute immediate (strsql);
+
+        strsql := 'NOAUDIT SELECT TABLE, UPDATE TABLE, INSERT TABLE, DELETE TABLE BY ' || usr || ' BY ACCESS';
+        execute immediate (strsql);
+
+        strsql := 'NOAUDIT SESSION WHENEVER NOT SUCCESSFUL';
+        execute immediate (strsql);
+
+    end loop;
+    close cur;
+end;
+/
+
+exec sp_Enable_Audit_UserNV;
+exec sp_Enable_Audit_UserSV;
+
+exec sp_Disable_Audit_UserNV;
+exec sp_Disable_Audit_UserSV;
 
 
 SELECT *
 FROM DBA_AUDIT_TRAIL where username = 'TRGDV0001' and OWNER = 'OLS_ADMIN' AND (ACTION_NAME IN ('SELECT', 'INSERT', 'UPDATE', 'DELETE'))
 ORDER BY TIMESTAMP desc;
-
 
 
 
@@ -95,9 +159,9 @@ begin
         return 0;
     end if;
 
-    select granted_role
+    select granted_role into UserRole
     from dba_role_privs
-    where grantee = 'TRGDV0001';
+    where grantee = sys_context('USERENV', 'SESSION_USER');
 
     if ( UserRole = 'rl_GiangVien' ) then
         return 1; 
