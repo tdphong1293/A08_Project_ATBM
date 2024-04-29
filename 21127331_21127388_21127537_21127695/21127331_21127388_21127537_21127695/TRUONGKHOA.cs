@@ -17,12 +17,14 @@ namespace _21127331_21127388_21127537_21127695
         string hk, nam, mahp, magv, mact;
         string oldmanv, oldmahp, oldhk, oldnam, oldmact;
         string ID;
+        bool show;
         public TRUONGKHOA(string ID)
         {
      
         InitializeComponent();
             label2.Text = ID;
             this.ID = ID;
+            dataGridView10.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             SearchAndFill_SinhVien("");
             SearchAndFill_DonVi("");
             SearchAndFill_HocPhan("");
@@ -527,6 +529,42 @@ namespace _21127331_21127388_21127537_21127695
         private void tabPage11_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void LoadData_ThongBao()
+        {
+            try
+            {
+                string query = "select NoiDung from OLS_ADMIN.THONGBAO order by NgayTao desc";
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(reader);
+                        dataGridView10.DataSource = dataTable;
+                    }
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_thongbao_Click(object sender, EventArgs e)
+        {
+            show = !show;
+            if (show)
+            {
+                LoadData_ThongBao();
+                dataGridView10.Visible = true;
+            }
+            else
+            {
+                dataGridView10.Visible = false;
+            }
         }
 
         private void dataGridView6_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -307,7 +307,7 @@
     <Compile Include="TRUONGKHOA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TRUONGKHOA.designer.cs">
+    <Compile Include="TRUONGKHOA.Designer.cs">
       <DependentUpon>TRUONGKHOA.cs</DependentUpon>
     </Compile>
     <Compile Include="TTCANHAN.cs">
