@@ -178,13 +178,6 @@ grant select, insert, delete on uv_GiaoVu_DANGKY to rl_GiaoVu;
 
 
 --CS4--
---grant select, update(DT) on uv_NhanVienCoBan_NHANSU to TruongDonVi;
---grant select on uv_NhanVienCoBan_SINHVIEN to TruongDonVi;
---grant select on uv_NhanVienCoBan_DONVI to TruongDonVi;
---grant select on uv_NhanVienCoBan_HOCPHAN to TruongDonVi;
---grant select on uv_NhanVienCoBan_KHMO to TruongDonVi;
---grant select on uv_GiangVien_PHANCONG to TruongDonVi;
---grant select, update(DIEMTH, DIEMQT, DIEMCK, DIEMTK) on uv_GiangVien_DANGKY to TruongDonVi;
 
 grant rl_GiangVien to rl_TruongDonVi;
 
@@ -273,16 +266,9 @@ grant select on uv_TruongDonVi_NHANSU to rl_TruongDonVi;
 grant select on uv_TruongDonVi_DONVI to rl_TruongDonVi;
 grant select on uv_TruongDonVi_KHMO to rl_TruongDonVi;
 grant select on uv_TruongDonVi_PHANCONG_2 to rl_TruongDonVi;
-grant select, insert, update(MAGV), delete on uv_TruongDonVi_PHANCONG_1 to rl_TruongDonVi;
+grant select, insert, update, delete on uv_TruongDonVi_PHANCONG_1 to rl_TruongDonVi;
 
 --CS5--
---grant select, update(DT) on uv_NhanVienCoBan_NHANSU to TruongKhoa;
---grant select on uv_NhanVienCoBan_SINHVIEN to TruongKhoa;
---grant select on uv_NhanVienCoBan_DONVI to TruongKhoa;
---grant select on uv_NhanVienCoBan_HOCPHAN to TruongKhoa;
---grant select on uv_NhanVienCoBan_KHMO to TruongKhoa;
---grant select on uv_GiangVien_PHANCONG to TruongKhoa;
---grant select, update(DIEMTH, DIEMQT, DIEMCK, DIEMTK) on uv_GiangVien_DANGKY to TruongKhoa;
 
 grant rl_GiangVien to rl_TruongKhoa;
 
