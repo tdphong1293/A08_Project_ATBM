@@ -70,6 +70,7 @@ SA_POLICY_ADMIN.APPLY_TABLE_POLICY (
     TABLE_OPTIONS => 'NO_CONTROL'
 );
 END;
+/
 
 --Áp dụng chính sách OLS lên bảng THONGBAO
 begin 
@@ -143,3 +144,5 @@ exec sp_Insert_ThongBao(N'Thông báo mỗi người trong trường', 'SV');
 
 --h3) dữ liệu được phát tán đến mỗi nhân viên trong của trường ở cơ sở 2, data label t7: 'NV::CS2'
 exec sp_Insert_ThongBao(N'Thông báo đến mỗi nhân viên trong trưởng ở cơ sở 2', 'NV::CS2');
+
+commit;
