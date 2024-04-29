@@ -141,6 +141,7 @@
             // 
             // tc_FormNhanVienCoBan
             // 
+            this.tc_FormNhanVienCoBan.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tc_FormNhanVienCoBan.Controls.Add(this.tb_canhan);
             this.tc_FormNhanVienCoBan.Controls.Add(this.tp_sinhvien);
             this.tc_FormNhanVienCoBan.Controls.Add(this.tp_donvi);
@@ -182,11 +183,10 @@
             this.tb_canhan.Controls.Add(this.txt_hoten_nv);
             this.tb_canhan.Controls.Add(this.pb_nhanvien);
             this.tb_canhan.Controls.Add(this.lb_canhan);
-            this.tb_canhan.Location = new System.Drawing.Point(4, 37);
-            this.tb_canhan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_canhan.Location = new System.Drawing.Point(4, 29);
             this.tb_canhan.Name = "tb_canhan";
-            this.tb_canhan.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tb_canhan.Size = new System.Drawing.Size(1888, 1007);
+            this.tb_canhan.Padding = new System.Windows.Forms.Padding(3);
+            this.tb_canhan.Size = new System.Drawing.Size(1256, 651);
             this.tb_canhan.TabIndex = 0;
             this.tb_canhan.Text = "Thông tin cá nhân";
             // 
@@ -524,11 +524,10 @@
             this.tp_sinhvien.Controls.Add(this.lb_tịmkiemsinhvien);
             this.tp_sinhvien.Controls.Add(this.txt_timkiemsinhvien);
             this.tp_sinhvien.Controls.Add(this.dtgv_sinhvien);
-            this.tp_sinhvien.Location = new System.Drawing.Point(4, 37);
-            this.tp_sinhvien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tp_sinhvien.Location = new System.Drawing.Point(4, 26);
             this.tp_sinhvien.Name = "tp_sinhvien";
-            this.tp_sinhvien.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tp_sinhvien.Size = new System.Drawing.Size(1888, 1007);
+            this.tp_sinhvien.Padding = new System.Windows.Forms.Padding(3);
+            this.tp_sinhvien.Size = new System.Drawing.Size(1256, 651);
             this.tp_sinhvien.TabIndex = 1;
             this.tp_sinhvien.Text = "Sinh viên";
             // 
@@ -537,7 +536,7 @@
             this.status_sinhvien.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.status_sinhvien.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statuslabel_sinhvien});
-            this.status_sinhvien.Location = new System.Drawing.Point(4, 963);
+            this.status_sinhvien.Location = new System.Drawing.Point(3, 622);
             this.status_sinhvien.Name = "status_sinhvien";
             this.status_sinhvien.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
             this.status_sinhvien.Size = new System.Drawing.Size(1876, 35);
@@ -840,11 +839,10 @@
             this.tp_donvi.Controls.Add(this.lb_timkiem_dv);
             this.tp_donvi.Controls.Add(this.txt_timkiem_dv);
             this.tp_donvi.Controls.Add(this.dtgv_donvi);
-            this.tp_donvi.Location = new System.Drawing.Point(4, 37);
-            this.tp_donvi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tp_donvi.Location = new System.Drawing.Point(4, 26);
             this.tp_donvi.Name = "tp_donvi";
-            this.tp_donvi.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tp_donvi.Size = new System.Drawing.Size(1888, 1007);
+            this.tp_donvi.Padding = new System.Windows.Forms.Padding(3);
+            this.tp_donvi.Size = new System.Drawing.Size(1256, 651);
             this.tp_donvi.TabIndex = 2;
             this.tp_donvi.Text = "Đơn vị";
             // 
@@ -921,11 +919,10 @@
             this.tb_hocphan.Controls.Add(this.lb_timkiem_hp);
             this.tb_hocphan.Controls.Add(this.txt_timkiem_hp);
             this.tb_hocphan.Controls.Add(this.dtgv_hocphan);
-            this.tb_hocphan.Location = new System.Drawing.Point(4, 37);
-            this.tb_hocphan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_hocphan.Location = new System.Drawing.Point(4, 26);
             this.tb_hocphan.Name = "tb_hocphan";
-            this.tb_hocphan.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tb_hocphan.Size = new System.Drawing.Size(1888, 1007);
+            this.tb_hocphan.Padding = new System.Windows.Forms.Padding(3);
+            this.tb_hocphan.Size = new System.Drawing.Size(1256, 651);
             this.tb_hocphan.TabIndex = 3;
             this.tb_hocphan.Text = "Học phần";
             // 
@@ -934,7 +931,7 @@
             this.status_hocphan.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.status_hocphan.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statuslabel_hocphan});
-            this.status_hocphan.Location = new System.Drawing.Point(4, 963);
+            this.status_hocphan.Location = new System.Drawing.Point(3, 622);
             this.status_hocphan.Name = "status_hocphan";
             this.status_hocphan.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
             this.status_hocphan.Size = new System.Drawing.Size(1876, 35);
@@ -1168,11 +1165,10 @@
             this.tp_khoahocmo.Controls.Add(this.lb_timkiem_khmo);
             this.tp_khoahocmo.Controls.Add(this.txt_timkiem_khmo);
             this.tp_khoahocmo.Controls.Add(this.dtgv_khmo);
-            this.tp_khoahocmo.Location = new System.Drawing.Point(4, 37);
-            this.tp_khoahocmo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tp_khoahocmo.Location = new System.Drawing.Point(4, 26);
             this.tp_khoahocmo.Name = "tp_khoahocmo";
-            this.tp_khoahocmo.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tp_khoahocmo.Size = new System.Drawing.Size(1888, 1007);
+            this.tp_khoahocmo.Padding = new System.Windows.Forms.Padding(3);
+            this.tp_khoahocmo.Size = new System.Drawing.Size(1256, 651);
             this.tp_khoahocmo.TabIndex = 4;
             this.tp_khoahocmo.Text = "Khóa học mở";
             // 

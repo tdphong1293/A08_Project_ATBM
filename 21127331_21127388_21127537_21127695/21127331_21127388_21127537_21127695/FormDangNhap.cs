@@ -23,6 +23,9 @@ namespace _21127331_21127388_21127537_21127695
         public FormDangNhap()
         {
             InitializeComponent();
+            tb_dangnhap_taikhoan.Text = "TRGDV0001";
+            tb_dangnhap_matkhau.Text = "TRGDV0001";
+            cb_dangnhap_vaitro.Text = "Trưởng đơn vị";
         }
 
         private void btn_dangnhap_Click(object sender, EventArgs e)
@@ -105,6 +108,13 @@ namespace _21127331_21127388_21127537_21127695
                         TRUONGKHOA tRUONGKHOA = new TRUONGKHOA(usernameUser);
                         this.Hide();
                         tRUONGKHOA.ShowDialog();
+                        conn.Close();
+                    }
+                    else if (cb_dangnhap_vaitro.Text == "AUDIT_ADMIN")
+                    {
+                        FormAuditAdmin formAuditAdmin = new FormAuditAdmin();
+                        this.Hide();
+                        formAuditAdmin.ShowDialog();
                         conn.Close();
                     }
                     else

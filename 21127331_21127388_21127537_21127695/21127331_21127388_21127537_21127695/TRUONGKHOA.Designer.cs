@@ -125,6 +125,8 @@ namespace _21127331_21127388_21127537_21127695
             this.label21 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.dataGridView9 = new System.Windows.Forms.DataGridView();
+            this.btn_thongbao = new System.Windows.Forms.Button();
+            this.dataGridView10 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tabPage10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
@@ -149,6 +151,7 @@ namespace _21127331_21127388_21127537_21127695
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -179,6 +182,7 @@ namespace _21127331_21127388_21127537_21127695
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.btn_thongbao);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -695,7 +699,7 @@ namespace _21127331_21127388_21127537_21127695
             this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Controls.Add(this.tabPage11);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(11, 75);
+            this.tabControl1.Location = new System.Drawing.Point(8, 76);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(20, 20);
@@ -1140,14 +1144,43 @@ namespace _21127331_21127388_21127537_21127695
             this.dataGridView9.TabIndex = 41;
             this.dataGridView9.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView9_CellContentClick);
             // 
+            // btn_thongbao
+            // 
+            this.btn_thongbao.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_thongbao.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_thongbao.Image = global::_21127331_21127388_21127537_21127695.Properties.Resources.small_mail_envelope;
+            this.btn_thongbao.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_thongbao.Location = new System.Drawing.Point(1570, 14);
+            this.btn_thongbao.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_thongbao.Name = "btn_thongbao";
+            this.btn_thongbao.Size = new System.Drawing.Size(173, 41);
+            this.btn_thongbao.TabIndex = 60;
+            this.btn_thongbao.Text = "Thông báo";
+            this.btn_thongbao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_thongbao.UseVisualStyleBackColor = true;
+            this.btn_thongbao.Click += new System.EventHandler(this.btn_thongbao_Click);
+            // 
+            // dataGridView10
+            // 
+            this.dataGridView10.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView10.Location = new System.Drawing.Point(1134, 76);
+            this.dataGridView10.Name = "dataGridView10";
+            this.dataGridView10.RowHeadersWidth = 82;
+            this.dataGridView10.RowTemplate.Height = 33;
+            this.dataGridView10.Size = new System.Drawing.Size(609, 347);
+            this.dataGridView10.TabIndex = 4;
+            this.dataGridView10.Visible = false;
+            // 
             // TRUONGKHOA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1761, 1022);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.dataGridView10);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TRUONGKHOA";
             this.Text = "ROLE TRUONG KHOA";
@@ -1185,6 +1218,7 @@ namespace _21127331_21127388_21127537_21127695
             this.tabPage11.ResumeLayout(false);
             this.tabPage11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1278,5 +1312,7 @@ namespace _21127331_21127388_21127537_21127695
         private TextBox textBox17;
         private TextBox textBox16;
         private TextBox textBox14;
+        private Button btn_thongbao;
+        private DataGridView dataGridView10;
     }
 }
