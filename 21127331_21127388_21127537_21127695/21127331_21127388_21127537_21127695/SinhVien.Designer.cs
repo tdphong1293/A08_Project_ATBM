@@ -112,8 +112,6 @@ namespace _21127331_21127388_21127537_21127695
             this.dtgmo = new System.Windows.Forms.DataGridView();
             this.dtgdk = new System.Windows.Forms.DataGridView();
             this.thongbaotimer = new System.Windows.Forms.Timer(this.components);
-            this.combo_magv = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -799,8 +797,6 @@ namespace _21127331_21127388_21127537_21127695
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.label17);
-            this.tabPage6.Controls.Add(this.combo_magv);
             this.tabPage6.Controls.Add(this.label16);
             this.tabPage6.Controls.Add(this.label15);
             this.tabPage6.Controls.Add(this.txt_pc_magv);
@@ -1018,112 +1014,6 @@ namespace _21127331_21127388_21127537_21127695
             // 
             this.thongbaotimer.Tick += new System.EventHandler(this.thongbaotimer_Tick);
             // 
-            // combo_magv
-            // 
-            this.combo_magv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combo_magv.FormattingEnabled = true;
-            this.combo_magv.Items.AddRange(new object[] {
-            "GV0000001",
-            "GV0000002",
-            "GV0000003",
-            "GV0000004",
-            "GV0000005",
-            "GV0000006",
-            "GV0000007",
-            "GV0000008",
-            "GV0000009",
-            "GV0000010",
-            "GV0000011",
-            "GV0000012",
-            "GV0000013",
-            "GV0000014",
-            "GV0000015",
-            "GV0000016",
-            "GV0000017",
-            "GV0000018",
-            "GV0000019",
-            "GV0000020",
-            "GV0000021",
-            "GV0000022",
-            "GV0000023",
-            "GV0000024",
-            "GV0000025",
-            "GV0000026",
-            "GV0000027",
-            "GV0000028",
-            "GV0000029",
-            "GV0000030",
-            "GV0000031",
-            "GV0000032",
-            "GV0000033",
-            "GV0000034",
-            "GV0000035",
-            "GV0000036",
-            "GV0000037",
-            "GV0000038",
-            "GV0000039",
-            "GV0000040",
-            "GV0000041",
-            "GV0000042",
-            "GV0000043",
-            "GV0000044",
-            "GV0000045",
-            "GV0000046",
-            "GV0000047",
-            "GV0000048",
-            "GV0000049",
-            "GV0000050",
-            "GV0000051",
-            "GV0000052",
-            "GV0000053",
-            "GV0000054",
-            "GV0000055",
-            "GV0000056",
-            "GV0000057",
-            "GV0000058",
-            "GV0000059",
-            "GV0000060",
-            "GV0000061",
-            "GV0000062",
-            "GV0000063",
-            "GV0000064",
-            "GV0000065",
-            "GV0000066",
-            "GV0000067",
-            "GV0000068",
-            "GV0000069",
-            "GV0000070",
-            "GV0000071",
-            "GV0000072",
-            "GV0000073",
-            "GV0000074",
-            "GV0000075",
-            "GV0000076",
-            "GV0000077",
-            "GV0000078",
-            "GV0000079",
-            "GV0000080",
-            "TRGDV0001",
-            "TRGDV0002",
-            "TRGDV0003",
-            "TRGDV0004",
-            "TRGDV0005",
-            "TRGDV0006",
-            "TRKHOA001"});
-            this.combo_magv.Location = new System.Drawing.Point(889, 291);
-            this.combo_magv.Name = "combo_magv";
-            this.combo_magv.Size = new System.Drawing.Size(121, 28);
-            this.combo_magv.TabIndex = 69;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(786, 294);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(97, 20);
-            this.label17.TabIndex = 70;
-            this.label17.Text = "Mã giáo viên";
-            // 
             // SinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1231,7 +1121,5 @@ namespace _21127331_21127388_21127537_21127695
         private Panel pn_thongbao;
         private DataGridView dtgv_thongbao;
         private Button btn_thongbao;
-        private Label label17;
-        private ComboBox combo_magv;
     }
 }

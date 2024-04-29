@@ -14,6 +14,7 @@ namespace _21127331_21127388_21127537_21127695
     public partial class SinhVien : Form
     {
         private OracleConnection conn = FormDangNhap.conn;
+        private bool connectionOpened = false;
         private Timer searchhp;
         private Timer searchkhmo;
         private Timer searchkqhp;
@@ -57,6 +58,42 @@ namespace _21127331_21127388_21127537_21127695
 
             dtgmo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             HocPhanDangKy();
+
+           
+        }
+
+        private void OpenConnection()
+        {
+            if (!connectionOpened)
+            {
+                try
+                {
+                    conn.Open();
+                    connectionOpened = true;
+                    Console.WriteLine("Connection opened successfully.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error opening connection: " + ex.Message);
+                }
+            }
+        }
+
+        private void CloseConnection()
+        {
+            if (connectionOpened)
+            {
+                try
+                {
+                    conn.Close();
+                    connectionOpened = false;
+                    Console.WriteLine("Connection closed.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error closing connection: " + ex.Message);
+                }
+            }
         }
 
         private void ten_sinhvien()
@@ -385,7 +422,40 @@ namespace _21127331_21127388_21127537_21127695
                 txt_pc_hki.Text = row.Cells["HK"].Value.ToString();
                 txt_pc_nam.Text = row.Cells["NAM"].Value.ToString();
                 txt_pc_mact.Text = row.Cells["MACT"].Value.ToString();
-            }   
+
+                using (OracleConnection tempConn = new OracleConnection(@"DATA SOURCE = localhost:1521/A08_ProjectATBM; USER ID=OLS_ADMIN;PASSWORD=123"))
+                {
+                    try
+                    {
+                        int hki = Int32.Parse(txt_pc_hki.Text);
+                        int namm = Int32.Parse(txt_pc_nam.Text);
+                        tempConn.Open();
+                        string query = $"select MAGV from PHANCONG where MAHP='{txt_pc_mahp.Text}' and HK={hki} and NAM={namm} and MACT='{txt_pc_mact.Text}'";
+                        using (OracleCommand cmd = new OracleCommand(query, tempConn))
+                        {
+                            using (OracleDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    txt_pc_magv.Text = reader["MAGV"].ToString();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No data found for the selected criteria.");
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        tempConn.Close();
+                    }
+                }
+            }
             else
             {
                 txt_pc_mahp.Text = "";
@@ -426,7 +496,7 @@ namespace _21127331_21127388_21127537_21127695
             int hki = Int32.Parse(txt_pc_hki.Text);
             int namm = Int32.Parse(txt_pc_nam.Text);
             string query = $"INSERT INTO OLS_ADMIN.DANGKY (MASV, MAGV, MAHP, HK, NAM, MACT, DIEMTH, DIEMQT, DIEMCK, DIEMTK)" +
-                $" VALUES ('{FormDangNhap.usernameUser}', '{combo_magv.Text}', '{txt_pc_mahp.Text}', {hki}, {namm}, '{txt_pc_mact.Text}', NULL, NULL, NULL, NULL)";
+                $" VALUES ('{FormDangNhap.usernameUser}', '{txt_pc_magv.Text}', '{txt_pc_mahp.Text}', {hki}, {namm}, '{txt_pc_mact.Text}', NULL, NULL, NULL, NULL)";
             using (OracleTransaction trans = conn.BeginTransaction())
             {
                 using (OracleCommand cmd = new OracleCommand(query, conn))
@@ -445,7 +515,7 @@ namespace _21127331_21127388_21127537_21127695
                     {
                         if (ex.Message == "ORA-02291: integrity constraint (OLS_ADMIN.FK_DANGKY_PHANCONG) violated - parent key not found")
                         {
-                            string txt = $"Học phần không phải do giáo viên {combo_magv.Text} phụ trách";
+                            string txt = $"Học phần không phải do giáo viên {txt_pc_magv.Text} phụ trách";
                             MessageBox.Show(txt);
                             return;
                         }
