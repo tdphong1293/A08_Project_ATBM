@@ -105,14 +105,14 @@ namespace _21127331_21127388_21127537_21127695
                         TRUONGKHOA tRUONGKHOA = new TRUONGKHOA(usernameUser);
                         this.Hide();
                         tRUONGKHOA.ShowDialog();
-                        conn.Close();
+                        this.Close();
                     }
                     else if (cb_dangnhap_vaitro.Text == "AUDIT_ADMIN")
                     {
                         FormAuditAdmin formAuditAdmin = new FormAuditAdmin();
                         this.Hide();
                         formAuditAdmin.ShowDialog();
-                        conn.Close();
+                        this.Close();
                     }
                     else
                     {
