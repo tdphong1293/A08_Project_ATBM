@@ -319,13 +319,13 @@ namespace _21127331_21127388_21127537_21127695
             {
                 string query;
                 if (string.IsNullOrEmpty(searchtext))
-                    query = $"select * from OLS_ADMIN.PHANCONG WHERE HK= {hki}" +
-                        $" and not exists (select magv, mahp, hk, nam, mact from OLS_ADMIN.DANGKY where magv = OLS_ADMIN.PHANCONG.magv" +
-                        $" and mahp = OLS_ADMIN.PHANCONG.mahp and hk = OLS_ADMIN.PHANCONG.hk and mact = OLS_ADMIN.PHANCONG.mact)";
+                    query = $"select * from OLS_ADMIN.KHMO WHERE HK= {hki}" +
+                        $" and not exists (select mahp, hk, nam, mact from OLS_ADMIN.DANGKY where" +
+                        $" mahp= OLS_ADMIN.KHMO.mahp and hk = OLS_ADMIN.KHMO.hk and nam = OLS_ADMIN.KHMO.nam)";
                 else
-                    query = $"select * from OLS_ADMIN.PHANCONG where HK= {hki}" +
-                        $" and not exists (select magv, mahp, hk, nam, mact from OLS_ADMIN.DANGKY where magv = OLS_ADMIN.PHANCONG.magv" +
-                        $" and mahp = OLS_ADMIN.PHANCONG.mahp and hk = OLS_ADMIN.PHANCONG.hk and mact = OLS_ADMIN.PHANCONG.mact) AND MAHP= :searchtext";
+                    query = $"select * from OLS_ADMIN.KHMO where HK= {hki}" +
+                        $" and not exists (select mahp, hk, nam, mact from OLS_ADMIN.DANGKY where" +
+                        $" mahp= OLS_ADMIN.KHMO.mahp and hk = OLS_ADMIN.KHMO.hk and nam = OLS_ADMIN.KHMO.nam) AND MAHP= :searchtext";
                 using (OracleCommand cmd = new OracleCommand(query, conn))
                 {
                     cmd.Parameters.Add(":searchtext", searchtext);
@@ -334,7 +334,6 @@ namespace _21127331_21127388_21127537_21127695
                         DataTable dataTable = new DataTable();
                         dataTable.Load(reader);
                         dtgdk.DataSource = dataTable;
-                        dtgdk.Columns["MAGV"].Visible = false;
                     }
                 }
             }
@@ -386,15 +385,13 @@ namespace _21127331_21127388_21127537_21127695
                 txt_pc_hki.Text = row.Cells["HK"].Value.ToString();
                 txt_pc_nam.Text = row.Cells["NAM"].Value.ToString();
                 txt_pc_mact.Text = row.Cells["MACT"].Value.ToString();
-                txt_pc_magv.Text = row.Cells["MAGV"].Value.ToString();
-            }
+            }   
             else
             {
                 txt_pc_mahp.Text = "";
                 txt_pc_hki.Text = "";
                 txt_pc_nam.Text = "";
                 txt_pc_mact.Text = "";
-                txt_pc_magv.Text = "";
             }
         }
 
@@ -429,7 +426,7 @@ namespace _21127331_21127388_21127537_21127695
             int hki = Int32.Parse(txt_pc_hki.Text);
             int namm = Int32.Parse(txt_pc_nam.Text);
             string query = $"INSERT INTO OLS_ADMIN.DANGKY (MASV, MAGV, MAHP, HK, NAM, MACT, DIEMTH, DIEMQT, DIEMCK, DIEMTK)" +
-                $" VALUES ('{FormDangNhap.usernameUser}', '{txt_pc_magv.Text}', '{txt_pc_mahp.Text}', {hki}, {namm}, '{txt_pc_mact.Text}', NULL, NULL, NULL, NULL)";
+                $" VALUES ('{FormDangNhap.usernameUser}', '{combo_magv.Text}', '{txt_pc_mahp.Text}', {hki}, {namm}, '{txt_pc_mact.Text}', NULL, NULL, NULL, NULL)";
             using (OracleCommand cmd = new OracleCommand(query, conn))
             {
                 try
@@ -442,8 +439,17 @@ namespace _21127331_21127388_21127537_21127695
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
-                    return;
+                    if(ex.Message == "ORA-02291: integrity constraint (OLS_ADMIN.FK_DANGKY_PHANCONG) violated - parent key not found")
+                    {
+                        string txt = $"Học phần không phải do giáo viên {combo_magv.Text} phụ trách";
+                        MessageBox.Show(txt);
+                        return;
+                    }
+                    else {
+                        MessageBox.Show(ex.Message);
+                        return;
+                    }
+                    
                 }
             }
         }
@@ -453,7 +459,7 @@ namespace _21127331_21127388_21127537_21127695
             int hki = Int32.Parse(txt_pc_hki.Text);
             int namm = Int32.Parse(txt_pc_nam.Text);
             string query = $"DELETE FROM OLS_ADMIN.DANGKY " +
-                $" WHERE MASV= '{FormDangNhap.usernameUser}' AND MAGV ='{txt_pc_magv.Text}' AND MAHP = '{txt_pc_mahp.Text}' AND HK= {hki} AND NAM= {namm} AND MACT= '{txt_pc_mact.Text}'";
+                $" WHERE MASV= '{FormDangNhap.usernameUser}' AND MAGV= '{txt_pc_magv.Text}' AND MAHP = '{txt_pc_mahp.Text}' AND HK= {hki} AND NAM= {namm} AND MACT= '{txt_pc_mact.Text}'";
             using (OracleCommand cmd = new OracleCommand(query, conn))
             {
                 try
