@@ -1,4 +1,4 @@
---CS1--
+-- CHÍNH SÁCH 1--
 create or replace view uv_NhanVienCoBan_NHANSU
 as 
     select * 
@@ -36,13 +36,9 @@ grant select on uv_NhanVienCoBan_DONVI to rl_NhanVienCoBan;
 grant select on uv_NhanVienCoBan_HOCPHAN to rl_NhanVienCoBan;
 grant select on uv_NhanVienCoBan_KHMO to rl_NhanVienCoBan;
 
---CS2--
---grant select, update(DT) on uv_NhanVienCoBan_NHANSU to GiangVien;
---grant select on uv_NhanVienCoBan_SINHVIEN to GiangVien;
---grant select on uv_NhanVienCoBan_DONVI to GiangVien;
---grant select on uv_NhanVienCoBan_HOCPHAN to GiangVien;
---grant select on uv_NhanVienCoBan_KHMO to GiangVien;
 
+
+-- CHÍNH SÁCH 2--
 grant rl_NhanVienCoBan to rl_GiangVien;
 
 create or replace view uv_GiangVien_PHANCONG
@@ -66,15 +62,13 @@ create or replace trigger utrig_GiangVien_DANGKY
 instead of insert or update on uv_GiangVien_DANGKY
 for each row
 begin
-    if (inserting) then
-        insert into DANGKY values (:new.MASV, :new.MAGV, :new.MAHP, :new.HK, :new.NAM, :new.MACT, :new.DIEMTH, :new.DIEMQT, :new.DIEMCK, :new.DIEMTK);
-    elsif (updating) then
+    if (updating) then
         update DANGKY 
         set DIEMTH = NVL(:new.DIEMTH, :old.DIEMTH),
             DIEMQT = NVL(:new.DIEMQT, :old.DIEMQT),
             DIEMCK = NVL(:new.DIEMCK, :old.DIEMCK),
             DIEMTK = NVL(:new.DIEMTK, :old.DIEMTK)
-        where MASV = :old.MASV and MAGV = :old.MAGV;
+        where MASV = :old.MASV and MAGV = :old.MAGV and MACT = :old.MACT and NAM = :old.NAM and HK = :old.HK and MAHP = :old.MAHP;
     end if;    
 end;
 /
@@ -82,13 +76,7 @@ end;
 grant select on uv_GiangVien_PHANCONG to rl_GiangVien;
 grant select, update(DIEMTH, DIEMQT, DIEMCK, DIEMTK) on uv_GiangVien_DANGKY to rl_GiangVien;
 
---CS3--
---grant select, update(DT) on uv_NhanVienCoBan_NHANSU to GiaoVu;
---grant select, insert, update on uv_NhanVienCoBan_SINHVIEN to GiaoVu;
---grant select, insert, update on uv_NhanVienCoBan_DONVI to GiaoVu;
---grant select, insert, update on uv_NhanVienCoBan_HOCPHAN to GiaoVu;
---grant select, insert, update on uv_NhanVienCoBan_KHMO to GiaoVu;
-
+-- CHÍNH SÁCH 3--
 create or replace trigger utrig_GiaoVu_KHMO
 instead of insert or update on uv_NhanVienCoBan_KHMO
 for each row 

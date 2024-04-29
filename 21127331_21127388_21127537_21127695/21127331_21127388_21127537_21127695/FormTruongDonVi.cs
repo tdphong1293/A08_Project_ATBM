@@ -542,6 +542,7 @@ namespace _21127331_21127388_21127537_21127695
         private void btn_quayve_dk_Click(object sender, EventArgs e)
         {
             btn_chinhsua_dk.Visible = true;
+
             txt_diemth_dk.Text = diemth;
             txt_diemqt_dk.Text = diemqt;
             txt_diemck_dk.Text = diemck;
@@ -586,25 +587,61 @@ namespace _21127331_21127388_21127537_21127695
 
         private void btn_luudiem_dk_Click(object sender, EventArgs e)
         {
-            btn_chinhsua_dk.Visible = true;
-            diemth = txt_diemth_dk.Text.Trim();
-            diemqt = txt_diemqt_dk.Text.Trim();
-            diemck = txt_diemck_dk.Text.Trim();
-            diemtk = txt_diemtk_dk.Text.Trim();
-            txt_diemth_dk.Enabled = false;
-            txt_diemqt_dk.Enabled = false;
-            txt_diemck_dk.Enabled = false;
-            txt_diemtk_dk.Enabled = false;
-            txt_diemth_dk.ReadOnly = true;
-            txt_diemqt_dk.ReadOnly = true;
-            txt_diemck_dk.ReadOnly = true;
-            txt_diemtk_dk.ReadOnly = true;
-            txt_diemth_dk.TabStop = false;
-            txt_diemqt_dk.TabStop = false;
-            txt_diemck_dk.TabStop = false;
-            txt_diemtk_dk.TabStop = false;
-            btn_luudiem_dk.Visible = false;
-            btn_quayve_dk.Visible = false;
+            if (string.IsNullOrEmpty(txt_diemth_dk.Text) || string.IsNullOrEmpty(txt_diemqt_dk.Text) || string.IsNullOrEmpty(txt_diemck_dk.Text) || string.IsNullOrEmpty(txt_diemtk_dk.Text))
+            {
+                MessageBox.Show("Các trường điểm không được để trống");
+            }
+            else
+            {
+                try
+                {
+                    string query = "update OLS_ADMIN.uv_GiangVien_DANGKY set DIEMTH = :diemth, DIEMQT = :diemqt, DIEMCK = :diemck, " +
+                        "DIEMTK = :diemtk where MASV = :masv and MAHP = :mahp and HK = :hk and NAM = :nam and MACT = :mact";
+                    using (OracleTransaction trans = conn.BeginTransaction())
+                    {
+                        using (OracleCommand cmd = new OracleCommand(query, conn))
+                        {
+                            cmd.Transaction = trans;
+                            cmd.Parameters.Add(":diemth", txt_diemth_dk.Text);
+                            cmd.Parameters.Add(":diemqt", txt_diemqt_dk.Text);
+                            cmd.Parameters.Add(":diemck", txt_diemck_dk.Text);
+                            cmd.Parameters.Add(":diemtk", txt_diemtk_dk.Text);
+                            cmd.Parameters.Add(":masv", txt_masv_dk.Text);
+                            cmd.Parameters.Add(":mahp", txt_mahp_dk.Text);
+                            cmd.Parameters.Add(":hk", txt_hk_dk.Text);
+                            cmd.Parameters.Add(":nam", txt_nam_dk.Text);
+                            cmd.Parameters.Add(":mact", txt_mact_dk.Text);
+                            cmd.ExecuteNonQuery();
+                            trans.Commit();
+                        }
+                    }
+                    SearchAndReloadDSDK("");
+                }
+                catch (OracleException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                diemth = txt_diemth_dk.Text.Trim();
+                diemqt = txt_diemqt_dk.Text.Trim();
+                diemck = txt_diemck_dk.Text.Trim();
+                diemtk = txt_diemtk_dk.Text.Trim();
+                btn_chinhsua_dk.Visible = true;
+                txt_diemth_dk.Enabled = false;
+                txt_diemqt_dk.Enabled = false;
+                txt_diemck_dk.Enabled = false;
+                txt_diemtk_dk.Enabled = false;
+                txt_diemth_dk.ReadOnly = true;
+                txt_diemqt_dk.ReadOnly = true;
+                txt_diemck_dk.ReadOnly = true;
+                txt_diemtk_dk.ReadOnly = true;
+                txt_diemth_dk.TabStop = false;
+                txt_diemqt_dk.TabStop = false;
+                txt_diemck_dk.TabStop = false;
+                txt_diemtk_dk.TabStop = false;
+                btn_luudiem_dk.Visible = false;
+                btn_quayve_dk.Visible = false;
+            }
         }
 
         private void btn_QuayVe_Click(object sender, EventArgs e)
@@ -629,10 +666,10 @@ namespace _21127331_21127388_21127537_21127695
                 txt_hk_dk.Text = row.Cells["HK"].Value.ToString();
                 txt_nam_dk.Text = row.Cells["NAM"].Value.ToString();
                 txt_mact_dk.Text = row.Cells["MACT"].Value.ToString();
-                txt_diemth_dk.Text = float.Parse(row.Cells["DIEMTH"].Value.ToString()).ToString("F2");
-                txt_diemqt_dk.Text = float.Parse(row.Cells["DIEMQT"].Value.ToString()).ToString("F2");
-                txt_diemck_dk.Text = float.Parse(row.Cells["DIEMCK"].Value.ToString()).ToString("F2");
-                txt_diemtk_dk.Text = float.Parse(row.Cells["DIEMTK"].Value.ToString()).ToString("F2");
+                txt_diemth_dk.Text = (!string.IsNullOrEmpty(row.Cells["DIEMTH"].Value.ToString())) ? float.Parse(row.Cells["DIEMTH"].Value.ToString()).ToString("F2") : "N/A";
+                txt_diemqt_dk.Text = (!string.IsNullOrEmpty(row.Cells["DIEMQT"].Value.ToString())) ? float.Parse(row.Cells["DIEMQT"].Value.ToString()).ToString("F2") : "N/A";
+                txt_diemck_dk.Text = (!string.IsNullOrEmpty(row.Cells["DIEMCK"].Value.ToString())) ? float.Parse(row.Cells["DIEMCK"].Value.ToString()).ToString("F2") : "N/A";
+                txt_diemtk_dk.Text = (!string.IsNullOrEmpty(row.Cells["DIEMTK"].Value.ToString())) ? float.Parse(row.Cells["DIEMTK"].Value.ToString()).ToString("F2") : "N/A";
                 statuslabel_dangky.Text = "Đã chọn sinh viên " + txt_masv_dk.Text + " thuộc lớp học phần " + txt_mahp_dk.Text +
                     " của giáo viên " + txt_magv_dk + ". Học kì " + txt_hk_dk.Text + ", Năm " + txt_nam_dk.Text +
                     ". Chương trình " + txt_mact_dk.Text;

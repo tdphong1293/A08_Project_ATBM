@@ -73,9 +73,9 @@ namespace _21127331_21127388_21127537_21127695
                         else
                         {
                             string query1 = $"update OLS_ADMIN.uv_NhanVienCoBan_SINHVIEN" +
-                                $"  set MASV= '{new_txt_masv.Text}', HOTEN= N'{new_txt_hoten_sv.Text}'," +
-                                $" PHAI= N'{new_txt_gioitinh_sv.Text}', NGSINH= TO_DATE('{new_txt_ngaysinh_sv.Text}', 'DD-MM-YY')," +
-                                $" DCHI= N'{new_txt_diachi_sv.Text}', DT= '{new_txt_dienthoai_sv.Text}'," +
+                                $"  set MASV= '{new_txt_masv.Text}', HOTEN= :hoten," +
+                                $" PHAI= :phai, NGSINH= TO_DATE('{new_txt_ngaysinh_sv.Text}', 'DD-MM-YY')," +
+                                $" DCHI= :diachi, DT= '{new_txt_dienthoai_sv.Text}'," +
                                 $" MACT= '{new_txt_mact_sv.Text}', MANGANH= '{new_txt_manganh_sv.Text}'," +
                                 $" SOTCTL= {tctl}, DTBTL= {dtbtl}" +
                                 $" where MASV= '{txt_masv.Text}'";
@@ -83,6 +83,10 @@ namespace _21127331_21127388_21127537_21127695
                             {
                                 try
                                 {
+                                    cmd.Parameters.Add(":hoten", OracleDbType.NVarchar2, new_txt_hoten_sv.Text, ParameterDirection.Input);
+                                    cmd.Parameters.Add(":phai", OracleDbType.NVarchar2, new_txt_gioitinh_sv.Text, ParameterDirection.Input);
+                                    cmd.Parameters.Add(":diachi", OracleDbType.NVarchar2, new_txt_diachi_sv.Text, ParameterDirection.Input);
+
                                     cmd.ExecuteNonQuery();
                                     MessageBox.Show("Đổi thông tin sinh viên thành công");
                                     this.Close();

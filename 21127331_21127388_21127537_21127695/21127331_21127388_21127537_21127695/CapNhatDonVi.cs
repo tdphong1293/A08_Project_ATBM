@@ -48,12 +48,13 @@ namespace _21127331_21127388_21127537_21127695
                         }
                         else
                         {
-                            string query2 = $"update OLS_ADMIN.uv_NhanVienCoBan_DONVI set MADV= '{new_txt_madv.Text}', TENDV= N'{new_txt_tendv.Text}', TRGDV= '{new_txt_truongdv.Text}' where MADV= '{txt_madv.Text}'";
+                            string query2 = $"update OLS_ADMIN.uv_NhanVienCoBan_DONVI set MADV= '{new_txt_madv.Text}', TENDV= :tendv, TRGDV= '{new_txt_truongdv.Text}' where MADV= '{txt_madv.Text}'";
                             Debug.WriteLine(query2);
                             using (OracleCommand cmd = new OracleCommand(query2, conn))
                             {
                                 try
                                 {
+                                    cmd.Parameters.Add(":tendv", OracleDbType.NVarchar2, new_txt_tendv.Text, ParameterDirection.Input);
                                     cmd.ExecuteNonQuery();
                                     MessageBox.Show("Đổi thông tin đơn vị thành công");
                                     this.Close();

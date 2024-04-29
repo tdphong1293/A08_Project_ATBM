@@ -35,12 +35,13 @@ namespace _21127331_21127388_21127537_21127695
                         else
                         {
                             string query1 = $"insert into OLS_ADMIN.uv_NhanVienCoBan_DONVI (MADV, TENDV, TRGDV) values" +
-                                $" ('{txt_madv.Text}', N'{txt_tendv.Text}'," +
+                                $" ('{txt_madv.Text}', :tendv," +
                                 $" '{txt_truongdv.Text}')"; 
                             using (OracleCommand cmd = new OracleCommand(query1, conn))
                             {
                                 try
                                 {
+                                    cmd.Parameters.Add(":tendv", OracleDbType.NVarchar2, txt_tendv.Text, ParameterDirection.Input);
                                     cmd.ExecuteNonQuery();
                                     MessageBox.Show("Thêm đơn vị thành công");
                                     this.Close();

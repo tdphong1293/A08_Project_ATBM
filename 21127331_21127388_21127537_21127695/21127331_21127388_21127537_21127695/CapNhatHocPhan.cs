@@ -87,7 +87,7 @@ namespace _21127331_21127388_21127537_21127695
                         else
                         {
                             string query1 = $"update OLS_ADMIN.uv_NhanVienCoBan_HOCPHAN" +
-                                $"  set MAHP= '{new_txt_mahp.Text}', TENHP= N'{new_txt_tenhp.Text}'," +
+                                $"  set MAHP= '{new_txt_mahp.Text}', TENHP= :tenhp," +
                                 $" SOTC= {sotc}, STLT= {stlt}," +
                                 $" STTH= {stth}, SOSVTD= {svtd}," +
                                 $" MADV= '{new_txt_madv_hp.Text}'" +
@@ -97,6 +97,7 @@ namespace _21127331_21127388_21127537_21127695
                             {
                                 try
                                 {
+                                    cmd.Parameters.Add(":tenhp", OracleDbType.NVarchar2, new_txt_tenhp.Text, ParameterDirection.Input);
                                     cmd.ExecuteNonQuery();
                                     MessageBox.Show("Đổi thông tin học phần thành công");
                                     this.Close();

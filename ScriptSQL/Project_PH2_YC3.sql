@@ -163,7 +163,7 @@ begin
     from dba_role_privs
     where grantee = sys_context('USERENV', 'SESSION_USER');
 
-    if ( UserRole = 'rl_GiangVien' ) then
+    if ( UserRole = 'RL_GIANGVIEN' ) then
         return 1; 
     else
         return 0;
@@ -226,3 +226,6 @@ ORDER BY TIMESTAMP desc;
 --SELECT * FROM AUDITABLE_SYSTEM_ACTIONS;
 
 select USERNAME, OWNER, OBJ_NAME, ACTION, ACTION_NAME, TO_CHAR(EXTENDED_TIMESTAMP, 'DD/MM/YYYY HH24:MI:SS') from DBA_AUDIT_TRAIL;
+-- ======== LỆNH XÓA LỊCH SỬ AUDIT ========
+-- TRUNCATE table sys.Aud$;
+-- TRUNCATE table sys.FGA_LOG$;

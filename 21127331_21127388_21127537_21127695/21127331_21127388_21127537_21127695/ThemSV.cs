@@ -46,15 +46,19 @@ namespace _21127331_21127388_21127537_21127695
                         else
                         {
                             string query1 = $"insert into OLS_ADMIN.uv_NhanVienCoBan_SINHVIEN (MASV, HOTEN, PHAI, NGSINH, DCHI, DT, MACT, MANGANH, SOTCTL, DTBTL) values" +
-                                $" ('{txt_masv.Text}', N'{txt_hoten_sv.Text}'," +
-                                $" N'{txt_gioitinh_sv.Text}', TO_DATE('{txt_ngaysinh_sv.Text}', 'DD-MM-YY')," +
-                                $" N'{txt_diachi_sv.Text}', '{txt_dienthoai_sv.Text}'," +
+                                $" ('{txt_masv.Text}', :hoten," +
+                                $" :gioitinh, TO_DATE('{txt_ngaysinh_sv.Text}', 'DD-MM-YY')," +
+                                $" :diachi, '{txt_dienthoai_sv.Text}'," +
                                 $" '{txt_mact_sv.Text}', '{txt_manganh_sv.Text}'," +
                                 $" {tctl}, {dtbtl})";
                             using (OracleCommand cmd = new OracleCommand(query1, conn))
                             {
                                 try
                                 {
+                                    cmd.Parameters.Add(":hoten", OracleDbType.NVarchar2, txt_hoten_sv.Text, ParameterDirection.Input);
+                                    cmd.Parameters.Add(":gioitinh", OracleDbType.NVarchar2, txt_gioitinh_sv.Text, ParameterDirection.Input);
+                                    cmd.Parameters.Add(":diachi", OracleDbType.NVarchar2, txt_diachi_sv.Text, ParameterDirection.Input);
+
                                     cmd.ExecuteNonQuery();
                                     MessageBox.Show("Thêm sinh viên thành công");
                                     this.Close();

@@ -631,10 +631,10 @@ namespace _21127331_21127388_21127537_21127695
                 txt_hk_dk.Text = row.Cells["HK"].Value.ToString();
                 txt_nam_dk.Text = row.Cells["NAM"].Value.ToString();
                 txt_mact_dk.Text = row.Cells["MACT"].Value.ToString();
-                txt_diemth_dk.Text = float.Parse(row.Cells["DIEMTH"].Value.ToString()).ToString("F2");
-                txt_diemqt_dk.Text = float.Parse(row.Cells["DIEMQT"].Value.ToString()).ToString("F2");
-                txt_diemck_dk.Text = float.Parse(row.Cells["DIEMCK"].Value.ToString()).ToString("F2");
-                txt_diemtk_dk.Text = float.Parse(row.Cells["DIEMTK"].Value.ToString()).ToString("F2");
+                txt_diemth_dk.Text = (!string.IsNullOrEmpty(row.Cells["DIEMTH"].Value.ToString())) ? float.Parse(row.Cells["DIEMTH"].Value.ToString()).ToString("F2") : "N/A";
+                txt_diemqt_dk.Text = (!string.IsNullOrEmpty(row.Cells["DIEMQT"].Value.ToString())) ? float.Parse(row.Cells["DIEMQT"].Value.ToString()).ToString("F2") : "N/A";
+                txt_diemck_dk.Text = (!string.IsNullOrEmpty(row.Cells["DIEMCK"].Value.ToString())) ? float.Parse(row.Cells["DIEMCK"].Value.ToString()).ToString("F2") : "N/A";
+                txt_diemtk_dk.Text = (!string.IsNullOrEmpty(row.Cells["DIEMTK"].Value.ToString())) ? float.Parse(row.Cells["DIEMTK"].Value.ToString()).ToString("F2") : "N/A";
                 statuslabel_dangky.Text = "Đã chọn sinh viên " + txt_masv_dk.Text + " thuộc lớp học phần " + txt_mahp_dk.Text +
                     " của giáo viên " + txt_magv_dk + ". Học kì " + txt_hk_dk.Text + ", Năm " + txt_nam_dk.Text +
                     ". Chương trình " + txt_mact_dk.Text;

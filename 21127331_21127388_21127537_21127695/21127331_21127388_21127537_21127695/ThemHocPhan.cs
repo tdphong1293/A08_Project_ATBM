@@ -55,7 +55,7 @@ namespace _21127331_21127388_21127537_21127695
                         else
                         {
                             string query1 = $"insert into OLS_ADMIN.uv_NhanVienCoBan_HOCPHAN (MAHP, TENHP, SOTC, STLT, STTH, SOSVTD, MADV) values" +
-                                $" ('{txt_mahp.Text}', N'{txt_tenhp.Text}'," +
+                                $" ('{txt_mahp.Text}', :tenhp," +
                                 $" {sotc}, {stlt}," +
                                 $" {stth}, {svtd}," +
                                 $" '{txt_madv_hp.Text}')";
@@ -63,6 +63,7 @@ namespace _21127331_21127388_21127537_21127695
                             {
                                 try
                                 {
+                                    cmd.Parameters.Add(":tenhp", OracleDbType.NVarchar2, txt_tenhp.Text, ParameterDirection.Input);
                                     cmd.ExecuteNonQuery();
                                     MessageBox.Show("Thêm học phần thành công");
                                     this.Close();
