@@ -764,19 +764,24 @@ namespace _21127331_21127388_21127537_21127695
             int nam = Int32.Parse(txt_dk_nam.Text);
             string query = $"delete from OLS_ADMIN.uv_GiaoVu_DANGKY where MASV= '{txt_dk_masv.Text}' and MAGV= '{txt_dk_magv.Text}' and MAHP= '{txt_dk_mahp.Text}' " +
                 $"and HK= {hki} and nam= {nam} and MACT = '{txt_dk_mact.Text}' and DIEMTH is null and DIEMQT is null and DIEMCK is null and DIEMTK is null";
-            using (OracleCommand cmd = new OracleCommand(query, conn))
+            using (OracleTransaction trans = conn.BeginTransaction())
             {
-                try
+                using (OracleCommand cmd = new OracleCommand(query, conn))
                 {
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Xóa đăng ký thành công");
-                    SearchAndFill_DangKy("");
-                }
+                    try
+                    {
+                        cmd.Transaction = trans;
+                        cmd.ExecuteNonQuery();
+                        trans.Commit();
+                        MessageBox.Show("Xóa đăng ký thành công");
+                        SearchAndFill_DangKy("");
+                    }
 
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return;
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        return;
+                    }
                 }
             }
         }

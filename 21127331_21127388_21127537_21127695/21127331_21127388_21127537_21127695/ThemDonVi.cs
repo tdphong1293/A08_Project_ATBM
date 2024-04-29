@@ -36,21 +36,26 @@ namespace _21127331_21127388_21127537_21127695
                         {
                             string query1 = $"insert into OLS_ADMIN.uv_NhanVienCoBan_DONVI (MADV, TENDV, TRGDV) values" +
                                 $" ('{txt_madv.Text}', :tendv," +
-                                $" '{txt_truongdv.Text}')"; 
-                            using (OracleCommand cmd = new OracleCommand(query1, conn))
+                                $" '{txt_truongdv.Text}')";
+                            using (OracleTransaction trans = conn.BeginTransaction())
                             {
-                                try
+                                using (OracleCommand cmd = new OracleCommand(query1, conn))
                                 {
-                                    cmd.Parameters.Add(":tendv", OracleDbType.NVarchar2, txt_tendv.Text, ParameterDirection.Input);
-                                    cmd.ExecuteNonQuery();
-                                    MessageBox.Show("Thêm đơn vị thành công");
-                                    this.Close();
-                                }
+                                    try
+                                    {
+                                        cmd.Transaction = trans;
+                                        cmd.Parameters.Add(":tendv", OracleDbType.NVarchar2, txt_tendv.Text, ParameterDirection.Input);
+                                        cmd.ExecuteNonQuery();
+                                        trans.Commit();
+                                        MessageBox.Show("Thêm đơn vị thành công");
+                                        this.Close();
+                                    }
 
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show(ex.Message);
-                                    return;
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show(ex.Message);
+                                        return;
+                                    }
                                 }
                             }
                         }

@@ -50,20 +50,25 @@ namespace _21127331_21127388_21127537_21127695
                         {
                             string query2 = $"update OLS_ADMIN.uv_NhanVienCoBan_DONVI set MADV= '{new_txt_madv.Text}', TENDV= :tendv, TRGDV= '{new_txt_truongdv.Text}' where MADV= '{txt_madv.Text}'";
                             Debug.WriteLine(query2);
-                            using (OracleCommand cmd = new OracleCommand(query2, conn))
+                            using (OracleTransaction trans = conn.BeginTransaction())
                             {
-                                try
+                                using (OracleCommand cmd = new OracleCommand(query2, conn))
                                 {
-                                    cmd.Parameters.Add(":tendv", OracleDbType.NVarchar2, new_txt_tendv.Text, ParameterDirection.Input);
-                                    cmd.ExecuteNonQuery();
-                                    MessageBox.Show("Đổi thông tin đơn vị thành công");
-                                    this.Close();
-                               }
+                                    try
+                                    {
+                                        cmd.Transaction = trans;
+                                        cmd.Parameters.Add(":tendv", OracleDbType.NVarchar2, new_txt_tendv.Text, ParameterDirection.Input);
+                                        cmd.ExecuteNonQuery();
+                                        trans.Commit();
+                                        MessageBox.Show("Đổi thông tin đơn vị thành công");
+                                        this.Close();
+                                    }
 
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show(ex.Message);
-                                    return;
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show(ex.Message);
+                                        return;
+                                    }
                                 }
                             }
                         }

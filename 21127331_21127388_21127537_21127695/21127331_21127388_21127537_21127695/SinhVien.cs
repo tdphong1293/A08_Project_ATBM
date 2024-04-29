@@ -427,29 +427,35 @@ namespace _21127331_21127388_21127537_21127695
             int namm = Int32.Parse(txt_pc_nam.Text);
             string query = $"INSERT INTO OLS_ADMIN.DANGKY (MASV, MAGV, MAHP, HK, NAM, MACT, DIEMTH, DIEMQT, DIEMCK, DIEMTK)" +
                 $" VALUES ('{FormDangNhap.usernameUser}', '{combo_magv.Text}', '{txt_pc_mahp.Text}', {hki}, {namm}, '{txt_pc_mact.Text}', NULL, NULL, NULL, NULL)";
-            using (OracleCommand cmd = new OracleCommand(query, conn))
+            using (OracleTransaction trans = conn.BeginTransaction())
             {
-                try
+                using (OracleCommand cmd = new OracleCommand(query, conn))
                 {
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Thêm đăng ký thành công");
-                    HocPhanDangKy();
-                    SearchAndFill_DangKy("");
-                }
-
-                catch (Exception ex)
-                {
-                    if(ex.Message == "ORA-02291: integrity constraint (OLS_ADMIN.FK_DANGKY_PHANCONG) violated - parent key not found")
+                    try
                     {
-                        string txt = $"Học phần không phải do giáo viên {combo_magv.Text} phụ trách";
-                        MessageBox.Show(txt);
-                        return;
+                        cmd.Transaction = trans;
+                        cmd.ExecuteNonQuery();
+                        trans.Commit();
+                        MessageBox.Show("Thêm đăng ký thành công");
+                        HocPhanDangKy();
+                        SearchAndFill_DangKy("");
                     }
-                    else {
-                        MessageBox.Show(ex.Message);
-                        return;
+
+                    catch (Exception ex)
+                    {
+                        if (ex.Message == "ORA-02291: integrity constraint (OLS_ADMIN.FK_DANGKY_PHANCONG) violated - parent key not found")
+                        {
+                            string txt = $"Học phần không phải do giáo viên {combo_magv.Text} phụ trách";
+                            MessageBox.Show(txt);
+                            return;
+                        }
+                        else
+                        {
+                            MessageBox.Show(ex.Message);
+                            return;
+                        }
+
                     }
-                    
                 }
             }
         }
