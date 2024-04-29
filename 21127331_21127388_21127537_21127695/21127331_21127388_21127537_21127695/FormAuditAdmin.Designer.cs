@@ -32,8 +32,7 @@
         {
             this.tc_audit = new System.Windows.Forms.TabControl();
             this.tp_stdaud = new System.Windows.Forms.TabPage();
-            this.status_stdaud = new System.Windows.Forms.StatusStrip();
-            this.statuslabel_stdaud = new System.Windows.Forms.ToolStripStatusLabel();
+            this.gb_stdaud = new System.Windows.Forms.GroupBox();
             this.txt_action_code_stdaud = new System.Windows.Forms.TextBox();
             this.txt_time_stdaud = new System.Windows.Forms.TextBox();
             this.txt_action_name_stdaud = new System.Windows.Forms.TextBox();
@@ -46,6 +45,8 @@
             this.lb_object_stdaud = new System.Windows.Forms.Label();
             this.lb_owner_stdaud = new System.Windows.Forms.Label();
             this.lb_username_stdaud = new System.Windows.Forms.Label();
+            this.status_stdaud = new System.Windows.Forms.StatusStrip();
+            this.statuslabel_stdaud = new System.Windows.Forms.ToolStripStatusLabel();
             this.dtgv_stdaud = new System.Windows.Forms.DataGridView();
             this.txt_timkiem_stdaud = new System.Windows.Forms.TextBox();
             this.lb_timkiem_stdaud = new System.Windows.Forms.Label();
@@ -74,6 +75,7 @@
             this.btn_DangXuat = new System.Windows.Forms.Button();
             this.tc_audit.SuspendLayout();
             this.tp_stdaud.SuspendLayout();
+            this.gb_stdaud.SuspendLayout();
             this.status_stdaud.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_stdaud)).BeginInit();
             this.tp_fgaaud.SuspendLayout();
@@ -97,19 +99,8 @@
             // tp_stdaud
             // 
             this.tp_stdaud.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tp_stdaud.Controls.Add(this.gb_stdaud);
             this.tp_stdaud.Controls.Add(this.status_stdaud);
-            this.tp_stdaud.Controls.Add(this.txt_action_code_stdaud);
-            this.tp_stdaud.Controls.Add(this.txt_time_stdaud);
-            this.tp_stdaud.Controls.Add(this.txt_action_name_stdaud);
-            this.tp_stdaud.Controls.Add(this.txt_object_stdaud);
-            this.tp_stdaud.Controls.Add(this.txt_owner_stdaud);
-            this.tp_stdaud.Controls.Add(this.txt_username_stdaud);
-            this.tp_stdaud.Controls.Add(this.lb_action_code_stdaud);
-            this.tp_stdaud.Controls.Add(this.lb_time_stdaud);
-            this.tp_stdaud.Controls.Add(this.lb_action_name_stdaud);
-            this.tp_stdaud.Controls.Add(this.lb_object_stdaud);
-            this.tp_stdaud.Controls.Add(this.lb_owner_stdaud);
-            this.tp_stdaud.Controls.Add(this.lb_username_stdaud);
             this.tp_stdaud.Controls.Add(this.dtgv_stdaud);
             this.tp_stdaud.Controls.Add(this.txt_timkiem_stdaud);
             this.tp_stdaud.Controls.Add(this.lb_timkiem_stdaud);
@@ -121,6 +112,161 @@
             this.tp_stdaud.TabIndex = 0;
             this.tp_stdaud.Text = "Standard Audit";
             this.tp_stdaud.UseVisualStyleBackColor = true;
+            // 
+            // gb_stdaud
+            // 
+            this.gb_stdaud.BackColor = System.Drawing.Color.Azure;
+            this.gb_stdaud.Controls.Add(this.txt_action_code_stdaud);
+            this.gb_stdaud.Controls.Add(this.txt_time_stdaud);
+            this.gb_stdaud.Controls.Add(this.txt_action_name_stdaud);
+            this.gb_stdaud.Controls.Add(this.txt_object_stdaud);
+            this.gb_stdaud.Controls.Add(this.txt_owner_stdaud);
+            this.gb_stdaud.Controls.Add(this.txt_username_stdaud);
+            this.gb_stdaud.Controls.Add(this.lb_action_code_stdaud);
+            this.gb_stdaud.Controls.Add(this.lb_time_stdaud);
+            this.gb_stdaud.Controls.Add(this.lb_action_name_stdaud);
+            this.gb_stdaud.Controls.Add(this.lb_object_stdaud);
+            this.gb_stdaud.Controls.Add(this.lb_owner_stdaud);
+            this.gb_stdaud.Controls.Add(this.lb_username_stdaud);
+            this.gb_stdaud.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_stdaud.Location = new System.Drawing.Point(723, 83);
+            this.gb_stdaud.Name = "gb_stdaud";
+            this.gb_stdaud.Size = new System.Drawing.Size(531, 533);
+            this.gb_stdaud.TabIndex = 31;
+            this.gb_stdaud.TabStop = false;
+            this.gb_stdaud.Text = "Nhật ký hoạt động";
+            // 
+            // txt_action_code_stdaud
+            // 
+            this.txt_action_code_stdaud.BackColor = System.Drawing.Color.White;
+            this.txt_action_code_stdaud.Enabled = false;
+            this.txt_action_code_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_action_code_stdaud.Location = new System.Drawing.Point(234, 289);
+            this.txt_action_code_stdaud.Name = "txt_action_code_stdaud";
+            this.txt_action_code_stdaud.ReadOnly = true;
+            this.txt_action_code_stdaud.Size = new System.Drawing.Size(266, 27);
+            this.txt_action_code_stdaud.TabIndex = 40;
+            this.txt_action_code_stdaud.TabStop = false;
+            // 
+            // txt_time_stdaud
+            // 
+            this.txt_time_stdaud.BackColor = System.Drawing.Color.White;
+            this.txt_time_stdaud.Enabled = false;
+            this.txt_time_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_time_stdaud.Location = new System.Drawing.Point(234, 439);
+            this.txt_time_stdaud.Name = "txt_time_stdaud";
+            this.txt_time_stdaud.ReadOnly = true;
+            this.txt_time_stdaud.Size = new System.Drawing.Size(266, 27);
+            this.txt_time_stdaud.TabIndex = 39;
+            this.txt_time_stdaud.TabStop = false;
+            // 
+            // txt_action_name_stdaud
+            // 
+            this.txt_action_name_stdaud.BackColor = System.Drawing.Color.White;
+            this.txt_action_name_stdaud.Enabled = false;
+            this.txt_action_name_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_action_name_stdaud.Location = new System.Drawing.Point(234, 364);
+            this.txt_action_name_stdaud.Name = "txt_action_name_stdaud";
+            this.txt_action_name_stdaud.ReadOnly = true;
+            this.txt_action_name_stdaud.Size = new System.Drawing.Size(266, 27);
+            this.txt_action_name_stdaud.TabIndex = 38;
+            this.txt_action_name_stdaud.TabStop = false;
+            // 
+            // txt_object_stdaud
+            // 
+            this.txt_object_stdaud.BackColor = System.Drawing.Color.White;
+            this.txt_object_stdaud.Enabled = false;
+            this.txt_object_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_object_stdaud.Location = new System.Drawing.Point(234, 214);
+            this.txt_object_stdaud.Name = "txt_object_stdaud";
+            this.txt_object_stdaud.ReadOnly = true;
+            this.txt_object_stdaud.Size = new System.Drawing.Size(266, 27);
+            this.txt_object_stdaud.TabIndex = 37;
+            this.txt_object_stdaud.TabStop = false;
+            // 
+            // txt_owner_stdaud
+            // 
+            this.txt_owner_stdaud.BackColor = System.Drawing.Color.White;
+            this.txt_owner_stdaud.Enabled = false;
+            this.txt_owner_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_owner_stdaud.Location = new System.Drawing.Point(234, 139);
+            this.txt_owner_stdaud.Name = "txt_owner_stdaud";
+            this.txt_owner_stdaud.ReadOnly = true;
+            this.txt_owner_stdaud.Size = new System.Drawing.Size(266, 27);
+            this.txt_owner_stdaud.TabIndex = 36;
+            this.txt_owner_stdaud.TabStop = false;
+            // 
+            // txt_username_stdaud
+            // 
+            this.txt_username_stdaud.BackColor = System.Drawing.Color.White;
+            this.txt_username_stdaud.Enabled = false;
+            this.txt_username_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_username_stdaud.Location = new System.Drawing.Point(234, 61);
+            this.txt_username_stdaud.Name = "txt_username_stdaud";
+            this.txt_username_stdaud.ReadOnly = true;
+            this.txt_username_stdaud.Size = new System.Drawing.Size(266, 27);
+            this.txt_username_stdaud.TabIndex = 35;
+            this.txt_username_stdaud.TabStop = false;
+            // 
+            // lb_action_code_stdaud
+            // 
+            this.lb_action_code_stdaud.AutoSize = true;
+            this.lb_action_code_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lb_action_code_stdaud.Location = new System.Drawing.Point(31, 292);
+            this.lb_action_code_stdaud.Name = "lb_action_code_stdaud";
+            this.lb_action_code_stdaud.Size = new System.Drawing.Size(106, 20);
+            this.lb_action_code_stdaud.TabIndex = 34;
+            this.lb_action_code_stdaud.Text = "Mã hoạt động:";
+            // 
+            // lb_time_stdaud
+            // 
+            this.lb_time_stdaud.AutoSize = true;
+            this.lb_time_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lb_time_stdaud.Location = new System.Drawing.Point(31, 442);
+            this.lb_time_stdaud.Name = "lb_time_stdaud";
+            this.lb_time_stdaud.Size = new System.Drawing.Size(139, 20);
+            this.lb_time_stdaud.TabIndex = 33;
+            this.lb_time_stdaud.Text = "Thời gian thực hiện:";
+            // 
+            // lb_action_name_stdaud
+            // 
+            this.lb_action_name_stdaud.AutoSize = true;
+            this.lb_action_name_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lb_action_name_stdaud.Location = new System.Drawing.Point(31, 367);
+            this.lb_action_name_stdaud.Name = "lb_action_name_stdaud";
+            this.lb_action_name_stdaud.Size = new System.Drawing.Size(84, 20);
+            this.lb_action_name_stdaud.TabIndex = 32;
+            this.lb_action_name_stdaud.Text = "Hoạt động:";
+            // 
+            // lb_object_stdaud
+            // 
+            this.lb_object_stdaud.AutoSize = true;
+            this.lb_object_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lb_object_stdaud.Location = new System.Drawing.Point(31, 217);
+            this.lb_object_stdaud.Name = "lb_object_stdaud";
+            this.lb_object_stdaud.Size = new System.Drawing.Size(80, 20);
+            this.lb_object_stdaud.TabIndex = 31;
+            this.lb_object_stdaud.Text = "Đối tượng:";
+            // 
+            // lb_owner_stdaud
+            // 
+            this.lb_owner_stdaud.AutoSize = true;
+            this.lb_owner_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lb_owner_stdaud.Location = new System.Drawing.Point(31, 142);
+            this.lb_owner_stdaud.Name = "lb_owner_stdaud";
+            this.lb_owner_stdaud.Size = new System.Drawing.Size(180, 20);
+            this.lb_owner_stdaud.TabIndex = 30;
+            this.lb_owner_stdaud.Text = "Chủ thể sở hữu đối tượng:";
+            // 
+            // lb_username_stdaud
+            // 
+            this.lb_username_stdaud.AutoSize = true;
+            this.lb_username_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lb_username_stdaud.Location = new System.Drawing.Point(31, 64);
+            this.lb_username_stdaud.Name = "lb_username_stdaud";
+            this.lb_username_stdaud.Size = new System.Drawing.Size(119, 20);
+            this.lb_username_stdaud.TabIndex = 29;
+            this.lb_username_stdaud.Text = "Người thực hiện:";
             // 
             // status_stdaud
             // 
@@ -139,138 +285,13 @@
             this.statuslabel_stdaud.Size = new System.Drawing.Size(143, 17);
             this.statuslabel_stdaud.Text = "Chưa chọn truy vết nào";
             // 
-            // txt_action_code_stdaud
-            // 
-            this.txt_action_code_stdaud.Enabled = false;
-            this.txt_action_code_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txt_action_code_stdaud.Location = new System.Drawing.Point(937, 311);
-            this.txt_action_code_stdaud.Name = "txt_action_code_stdaud";
-            this.txt_action_code_stdaud.ReadOnly = true;
-            this.txt_action_code_stdaud.Size = new System.Drawing.Size(309, 27);
-            this.txt_action_code_stdaud.TabIndex = 28;
-            this.txt_action_code_stdaud.TabStop = false;
-            // 
-            // txt_time_stdaud
-            // 
-            this.txt_time_stdaud.Enabled = false;
-            this.txt_time_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txt_time_stdaud.Location = new System.Drawing.Point(937, 461);
-            this.txt_time_stdaud.Name = "txt_time_stdaud";
-            this.txt_time_stdaud.ReadOnly = true;
-            this.txt_time_stdaud.Size = new System.Drawing.Size(309, 27);
-            this.txt_time_stdaud.TabIndex = 27;
-            this.txt_time_stdaud.TabStop = false;
-            // 
-            // txt_action_name_stdaud
-            // 
-            this.txt_action_name_stdaud.Enabled = false;
-            this.txt_action_name_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txt_action_name_stdaud.Location = new System.Drawing.Point(937, 386);
-            this.txt_action_name_stdaud.Name = "txt_action_name_stdaud";
-            this.txt_action_name_stdaud.ReadOnly = true;
-            this.txt_action_name_stdaud.Size = new System.Drawing.Size(309, 27);
-            this.txt_action_name_stdaud.TabIndex = 26;
-            this.txt_action_name_stdaud.TabStop = false;
-            // 
-            // txt_object_stdaud
-            // 
-            this.txt_object_stdaud.Enabled = false;
-            this.txt_object_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txt_object_stdaud.Location = new System.Drawing.Point(937, 236);
-            this.txt_object_stdaud.Name = "txt_object_stdaud";
-            this.txt_object_stdaud.ReadOnly = true;
-            this.txt_object_stdaud.Size = new System.Drawing.Size(309, 27);
-            this.txt_object_stdaud.TabIndex = 25;
-            this.txt_object_stdaud.TabStop = false;
-            // 
-            // txt_owner_stdaud
-            // 
-            this.txt_owner_stdaud.Enabled = false;
-            this.txt_owner_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txt_owner_stdaud.Location = new System.Drawing.Point(937, 161);
-            this.txt_owner_stdaud.Name = "txt_owner_stdaud";
-            this.txt_owner_stdaud.ReadOnly = true;
-            this.txt_owner_stdaud.Size = new System.Drawing.Size(309, 27);
-            this.txt_owner_stdaud.TabIndex = 24;
-            this.txt_owner_stdaud.TabStop = false;
-            // 
-            // txt_username_stdaud
-            // 
-            this.txt_username_stdaud.Enabled = false;
-            this.txt_username_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txt_username_stdaud.Location = new System.Drawing.Point(937, 83);
-            this.txt_username_stdaud.Name = "txt_username_stdaud";
-            this.txt_username_stdaud.ReadOnly = true;
-            this.txt_username_stdaud.Size = new System.Drawing.Size(309, 27);
-            this.txt_username_stdaud.TabIndex = 23;
-            this.txt_username_stdaud.TabStop = false;
-            // 
-            // lb_action_code_stdaud
-            // 
-            this.lb_action_code_stdaud.AutoSize = true;
-            this.lb_action_code_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lb_action_code_stdaud.Location = new System.Drawing.Point(734, 311);
-            this.lb_action_code_stdaud.Name = "lb_action_code_stdaud";
-            this.lb_action_code_stdaud.Size = new System.Drawing.Size(103, 20);
-            this.lb_action_code_stdaud.TabIndex = 21;
-            this.lb_action_code_stdaud.Text = "Mã hoạt động";
-            // 
-            // lb_time_stdaud
-            // 
-            this.lb_time_stdaud.AutoSize = true;
-            this.lb_time_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lb_time_stdaud.Location = new System.Drawing.Point(734, 461);
-            this.lb_time_stdaud.Name = "lb_time_stdaud";
-            this.lb_time_stdaud.Size = new System.Drawing.Size(136, 20);
-            this.lb_time_stdaud.TabIndex = 20;
-            this.lb_time_stdaud.Text = "Thời gian thực hiện";
-            // 
-            // lb_action_name_stdaud
-            // 
-            this.lb_action_name_stdaud.AutoSize = true;
-            this.lb_action_name_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lb_action_name_stdaud.Location = new System.Drawing.Point(734, 386);
-            this.lb_action_name_stdaud.Name = "lb_action_name_stdaud";
-            this.lb_action_name_stdaud.Size = new System.Drawing.Size(81, 20);
-            this.lb_action_name_stdaud.TabIndex = 19;
-            this.lb_action_name_stdaud.Text = "Hoạt động";
-            // 
-            // lb_object_stdaud
-            // 
-            this.lb_object_stdaud.AutoSize = true;
-            this.lb_object_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lb_object_stdaud.Location = new System.Drawing.Point(734, 236);
-            this.lb_object_stdaud.Name = "lb_object_stdaud";
-            this.lb_object_stdaud.Size = new System.Drawing.Size(77, 20);
-            this.lb_object_stdaud.TabIndex = 18;
-            this.lb_object_stdaud.Text = "Đối tượng";
-            // 
-            // lb_owner_stdaud
-            // 
-            this.lb_owner_stdaud.AutoSize = true;
-            this.lb_owner_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lb_owner_stdaud.Location = new System.Drawing.Point(734, 161);
-            this.lb_owner_stdaud.Name = "lb_owner_stdaud";
-            this.lb_owner_stdaud.Size = new System.Drawing.Size(177, 20);
-            this.lb_owner_stdaud.TabIndex = 17;
-            this.lb_owner_stdaud.Text = "Chủ thể sở hữu đối tượng";
-            // 
-            // lb_username_stdaud
-            // 
-            this.lb_username_stdaud.AutoSize = true;
-            this.lb_username_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lb_username_stdaud.Location = new System.Drawing.Point(734, 83);
-            this.lb_username_stdaud.Name = "lb_username_stdaud";
-            this.lb_username_stdaud.Size = new System.Drawing.Size(116, 20);
-            this.lb_username_stdaud.TabIndex = 16;
-            this.lb_username_stdaud.Text = "Người thực hiện";
-            // 
             // dtgv_stdaud
             // 
             this.dtgv_stdaud.AllowUserToAddRows = false;
             this.dtgv_stdaud.AllowUserToDeleteRows = false;
             this.dtgv_stdaud.AllowUserToOrderColumns = true;
             this.dtgv_stdaud.AllowUserToResizeRows = false;
+            this.dtgv_stdaud.BackgroundColor = System.Drawing.Color.White;
             this.dtgv_stdaud.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_stdaud.Location = new System.Drawing.Point(6, 83);
             this.dtgv_stdaud.MultiSelect = false;
@@ -285,7 +306,7 @@
             // txt_timkiem_stdaud
             // 
             this.txt_timkiem_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txt_timkiem_stdaud.Location = new System.Drawing.Point(82, 50);
+            this.txt_timkiem_stdaud.Location = new System.Drawing.Point(188, 47);
             this.txt_timkiem_stdaud.Name = "txt_timkiem_stdaud";
             this.txt_timkiem_stdaud.Size = new System.Drawing.Size(262, 27);
             this.txt_timkiem_stdaud.TabIndex = 14;
@@ -297,9 +318,9 @@
             this.lb_timkiem_stdaud.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lb_timkiem_stdaud.Location = new System.Drawing.Point(6, 50);
             this.lb_timkiem_stdaud.Name = "lb_timkiem_stdaud";
-            this.lb_timkiem_stdaud.Size = new System.Drawing.Size(70, 20);
+            this.lb_timkiem_stdaud.Size = new System.Drawing.Size(179, 20);
             this.lb_timkiem_stdaud.TabIndex = 13;
-            this.lb_timkiem_stdaud.Text = "Tìm kiếm";
+            this.lb_timkiem_stdaud.Text = "Tìm kiếm mã người dùng:";
             // 
             // lb_standardaudit
             // 
@@ -307,9 +328,9 @@
             this.lb_standardaudit.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_standardaudit.Location = new System.Drawing.Point(547, 16);
             this.lb_standardaudit.Name = "lb_standardaudit";
-            this.lb_standardaudit.Size = new System.Drawing.Size(162, 30);
+            this.lb_standardaudit.Size = new System.Drawing.Size(197, 30);
             this.lb_standardaudit.TabIndex = 12;
-            this.lb_standardaudit.Text = "Standard Audit";
+            this.lb_standardaudit.Text = "STANDARD AUDIT";
             // 
             // tp_fgaaud
             // 
@@ -553,6 +574,7 @@
             this.btn_DangXuat.TabIndex = 63;
             this.btn_DangXuat.Text = "Đăng xuất";
             this.btn_DangXuat.UseVisualStyleBackColor = true;
+            this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
             // 
             // FormAuditAdmin
             // 
@@ -566,6 +588,8 @@
             this.tc_audit.ResumeLayout(false);
             this.tp_stdaud.ResumeLayout(false);
             this.tp_stdaud.PerformLayout();
+            this.gb_stdaud.ResumeLayout(false);
+            this.gb_stdaud.PerformLayout();
             this.status_stdaud.ResumeLayout(false);
             this.status_stdaud.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_stdaud)).EndInit();
@@ -584,18 +608,6 @@
         private System.Windows.Forms.TabPage tp_stdaud;
         private System.Windows.Forms.StatusStrip status_stdaud;
         private System.Windows.Forms.ToolStripStatusLabel statuslabel_stdaud;
-        private System.Windows.Forms.TextBox txt_action_code_stdaud;
-        private System.Windows.Forms.TextBox txt_time_stdaud;
-        private System.Windows.Forms.TextBox txt_action_name_stdaud;
-        private System.Windows.Forms.TextBox txt_object_stdaud;
-        private System.Windows.Forms.TextBox txt_owner_stdaud;
-        private System.Windows.Forms.TextBox txt_username_stdaud;
-        private System.Windows.Forms.Label lb_action_code_stdaud;
-        private System.Windows.Forms.Label lb_time_stdaud;
-        private System.Windows.Forms.Label lb_action_name_stdaud;
-        private System.Windows.Forms.Label lb_object_stdaud;
-        private System.Windows.Forms.Label lb_owner_stdaud;
-        private System.Windows.Forms.Label lb_username_stdaud;
         private System.Windows.Forms.DataGridView dtgv_stdaud;
         private System.Windows.Forms.TextBox txt_timkiem_stdaud;
         private System.Windows.Forms.Label lb_timkiem_stdaud;
@@ -622,5 +634,18 @@
         private System.Windows.Forms.Label lb_object_fgaaud;
         private System.Windows.Forms.Label lb_owner_fgaaud;
         private System.Windows.Forms.Label lb_username_fgaaud;
+        private System.Windows.Forms.GroupBox gb_stdaud;
+        private System.Windows.Forms.TextBox txt_action_code_stdaud;
+        private System.Windows.Forms.TextBox txt_time_stdaud;
+        private System.Windows.Forms.TextBox txt_action_name_stdaud;
+        private System.Windows.Forms.TextBox txt_object_stdaud;
+        private System.Windows.Forms.TextBox txt_owner_stdaud;
+        private System.Windows.Forms.TextBox txt_username_stdaud;
+        private System.Windows.Forms.Label lb_action_code_stdaud;
+        private System.Windows.Forms.Label lb_time_stdaud;
+        private System.Windows.Forms.Label lb_action_name_stdaud;
+        private System.Windows.Forms.Label lb_object_stdaud;
+        private System.Windows.Forms.Label lb_owner_stdaud;
+        private System.Windows.Forms.Label lb_username_stdaud;
     }
 }
