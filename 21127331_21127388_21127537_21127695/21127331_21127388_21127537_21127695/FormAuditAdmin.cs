@@ -108,29 +108,29 @@ namespace _21127331_21127388_21127537_21127695
 
         private void SearchAndFillFGAAUD(string searchtext)
         {
-            //try
-            //{
-            //    string query;
-            //    if (string.IsNullOrEmpty(searchtext))
-            //        query = "select USERNAME, OWNER, OBJ_NAME, ACTION, ACTION_NAME, TO_CHAR(EXTENDED_TIMESTAMP, 'DD/MM/YYYY HH24:MI:SS') AS \"EXTENDED_TIMESTAMP\", SQL_TEXT from DBA_FGA_AUDIT_TRAIL WHERE OWNER = 'OLS_ADMIN' AND (ACTION_NAME IN ('SELECT', 'INSERT', 'UPDATE', 'DELETE')) ORDER BY TIMESTAMP desc";
-            //    else
-            //        query = "select USERNAME, OWNER, OBJ_NAME, ACTION, ACTION_NAME, TO_CHAR(EXTENDED_TIMESTAMP, 'DD/MM/YYYY HH24:MI:SS') AS \"EXTENDED_TIMESTAMP\", SQL_TEXT from DBA_FGA_AUDIT_TRAIL WHERE OWNER = OLS_ADMIN' AND (ACTION_NAME IN ('SELECT', 'INSERT', 'UPDATE', 'DELETE')) AND UPPER(USERNAME) LIKE UPPER(:searchtext) ORDER BY TIMESTAMP desc";
+            try
+            {
+                string query;
+                if (string.IsNullOrEmpty(searchtext))
+                    query = "select DB_USER, OBJECT_SCHEMA, OBJECT_NAME, POLICY_NAME, SQL_TEXT, SQL_BIND, STATEMENT_TYPE, TO_CHAR(EXTENDED_TIMESTAMP, 'DD/MM/YYYY HH24:MI:SS') AS \"EXTENDED_TIMESTAMP\" from DBA_FGA_AUDIT_TRAIL WHERE OBJECT_SCHEMA = 'OLS_ADMIN' AND (STATEMENT_TYPE IN ('SELECT', 'INSERT', 'UPDATE', 'DELETE')) ORDER BY TIMESTAMP desc";
+                else
+                    query = "select DB_USER, OBJECT_SCHEMA, OBJECT_NAME, POLICY_NAME, SQL_TEXT, SQL_BIND, STATEMENT_TYPE, TO_CHAR(EXTENDED_TIMESTAMP, 'DD/MM/YYYY HH24:MI:SS') AS \"EXTENDED_TIMESTAMP\" from DBA_FGA_AUDIT_TRAIL WHERE OBJECT_SCHEMA = 'OLS_ADMIN' AND (STATEMENT_TYPE IN ('SELECT', 'INSERT', 'UPDATE', 'DELETE')) AND UPPER(DB_USER) LIKE UPPER(:searchtext) ORDER BY TIMESTAMP desc";
 
-            //    using (OracleCommand cmd = new OracleCommand(query, conn))
-            //    {
-            //        cmd.Parameters.Add(":searchtext", "%" + searchtext + "%");
-            //        using (OracleDataReader reader = cmd.ExecuteReader())
-            //        {
-            //            DataTable dataTable = new DataTable();
-            //            dataTable.Load(reader);
-            //            dtgv_fgaaud.DataSource = dataTable;
-            //        }
-            //    }
-            //}
-            //catch (OracleException ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    cmd.Parameters.Add(":searchtext", "%" + searchtext + "%");
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(reader);
+                        dtgv_fgaaud.DataSource = dataTable;
+                    }
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void searchFGAAUD_Tick(object sender, EventArgs e)
@@ -143,31 +143,31 @@ namespace _21127331_21127388_21127537_21127695
 
         private void dtgv_fgaaud_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dtgv_fgaaud.Rows[e.RowIndex];
-                txt_username_fgaaud.Text = row.Cells["USERNAME"].Value.ToString();
-                txt_owner_fgaaud.Text = row.Cells["OWNER"].Value.ToString();
-                txt_object_fgaaud.Text = row.Cells["OBJ_NAME"].Value.ToString();
-                txt_action_code_fgaaud.Text = row.Cells["ACTION"].Value.ToString();
-                txt_action_name_fgaaud.Text = row.Cells["ACTION_NAME"].Value.ToString();
-                txt_time_fgaaud.Text = row.Cells["EXTENDED_TIMESTAMP"].Value.ToString();
-                txt_command_fgaaud.Text = row.Cells["SQL_TEXT"].Value.ToString();
-                statuslabel_fgaaud.Text = "Đã chọn truy vết " + txt_action_name_fgaaud.Text +
-                    " được thực hiện bởi " + txt_username_fgaaud.Text;
-            }
-            else
-            {
-                statuslabel_fgaaud.Text = "Chưa chọn truy vết nào";
-                txt_username_fgaaud.Text = "";
-                txt_owner_fgaaud.Text = "";
-                txt_object_fgaaud.Text = "";
-                txt_action_code_fgaaud.Text = "";
-                txt_action_name_fgaaud.Text = "";
-                txt_time_fgaaud.Text = "";
-                txt_command_fgaaud.Text = "";
-                statuslabel_fgaaud.Text = "";
-            }
+            //if (e.RowIndex >= 0)
+            //{
+            //    DataGridViewRow row = dtgv_fgaaud.Rows[e.RowIndex];
+            //    txt_username_fgaaud.Text = row.Cells["USERNAME"].Value.ToString();
+            //    txt_owner_fgaaud.Text = row.Cells["OWNER"].Value.ToString();
+            //    txt_object_fgaaud.Text = row.Cells["OBJ_NAME"].Value.ToString();
+            //    txt_action_code_fgaaud.Text = row.Cells["ACTION"].Value.ToString();
+            //    txt_action_name_fgaaud.Text = row.Cells["ACTION_NAME"].Value.ToString();
+            //    txt_time_fgaaud.Text = row.Cells["EXTENDED_TIMESTAMP"].Value.ToString();
+            //    txt_command_fgaaud.Text = row.Cells["SQL_TEXT"].Value.ToString();
+            //    statuslabel_fgaaud.Text = "Đã chọn truy vết " + txt_action_name_fgaaud.Text +
+            //        " được thực hiện bởi " + txt_username_fgaaud.Text;
+            //}
+            //else
+            //{
+            //    statuslabel_fgaaud.Text = "Chưa chọn truy vết nào";
+            //    txt_username_fgaaud.Text = "";
+            //    txt_owner_fgaaud.Text = "";
+            //    txt_object_fgaaud.Text = "";
+            //    txt_action_code_fgaaud.Text = "";
+            //    txt_action_name_fgaaud.Text = "";
+            //    txt_time_fgaaud.Text = "";
+            //    txt_command_fgaaud.Text = "";
+            //    statuslabel_fgaaud.Text = "";
+            //}
         }
 
         private void btn_DangXuat_Click(object sender, EventArgs e)

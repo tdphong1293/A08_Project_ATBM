@@ -25,12 +25,9 @@ namespace _21127331_21127388_21127537_21127695
         {
             InitializeComponent();
             SDT_cu = txt_dienthoai_nv.Text;
-            diemth = txt_diemth_dk.Text;
-            diemqt = txt_diemqt_dk.Text;
-            diemck = txt_diemck_dk.Text;
-            diemtk = txt_diemtk_dk.Text;
             Load_thongtincanhan();
             Load_MAGV_IntoComboBox();
+            LoadData_ThongBao();
 
             SearchAndReloadDSSV("");
             SearchAndReloadDSDV("");
@@ -68,7 +65,8 @@ namespace _21127331_21127388_21127537_21127695
             searchDK_Timer.Interval = 500; // Set the delay time (500 milliseconds in this case)
             searchDK_Timer.Elapsed += searchDK_Event;
 
-
+            dtgv_thongbao.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgv_thongbao.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dtgv_DSSinhVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtgv_donvi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgv_hocphan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -76,6 +74,27 @@ namespace _21127331_21127388_21127537_21127695
             dtgv_phancong_HP.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgv_phancong_GV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgv_dangky.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void LoadData_ThongBao()
+        {
+            try
+            {
+                string query = "select NoiDung from OLS_ADMIN.THONGBAO order by NgayTao desc";
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(reader);
+                        dtgv_thongbao.DataSource = dataTable;
+                    }
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void tb_TimKiemMSSV_TextChanged(object sender, EventArgs e)
@@ -539,52 +558,6 @@ namespace _21127331_21127388_21127537_21127695
             btn_QuayVe.Visible = true;
         }
 
-        private void btn_quayve_dk_Click(object sender, EventArgs e)
-        {
-            btn_chinhsua_dk.Visible = true;
-
-            txt_diemth_dk.Text = diemth;
-            txt_diemqt_dk.Text = diemqt;
-            txt_diemck_dk.Text = diemck;
-            txt_diemtk_dk.Text = diemtk;
-            txt_diemth_dk.Enabled = false;
-            txt_diemqt_dk.Enabled = false;
-            txt_diemck_dk.Enabled = false;
-            txt_diemtk_dk.Enabled = false;
-            txt_diemth_dk.ReadOnly = true;
-            txt_diemqt_dk.ReadOnly = true;
-            txt_diemck_dk.ReadOnly = true;
-            txt_diemtk_dk.ReadOnly = true;
-            txt_diemth_dk.TabStop = false;
-            txt_diemqt_dk.TabStop = false;
-            txt_diemck_dk.TabStop = false;
-            txt_diemtk_dk.TabStop = false;
-            btn_luudiem_dk.Visible = false;
-            btn_quayve_dk.Visible = false;
-        }
-
-        private void btn_chinhsua_dk_Click(object sender, EventArgs e)
-        {
-            btn_chinhsua_dk.Visible = false;
-            txt_diemth_dk.Enabled = true;
-            txt_diemqt_dk.Enabled = true;
-            txt_diemck_dk.Enabled = true;
-            txt_diemtk_dk.Enabled = true;
-            txt_diemth_dk.ReadOnly = false;
-            txt_diemqt_dk.ReadOnly = false;
-            txt_diemck_dk.ReadOnly = false;
-            txt_diemtk_dk.ReadOnly = false;
-            txt_diemth_dk.TabStop = true;
-            txt_diemqt_dk.TabStop = true;
-            txt_diemck_dk.TabStop = true;
-            txt_diemtk_dk.TabStop = true;
-            txt_diemth_dk.SelectionStart = 0;
-            txt_diemth_dk.SelectionLength = txt_diemth_dk.Text.Length;
-            txt_diemth_dk.Focus();
-            btn_luudiem_dk.Visible = true;
-            btn_quayve_dk.Visible = true;
-        }
-
         private void btn_luudiem_dk_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txt_diemth_dk.Text) || string.IsNullOrEmpty(txt_diemqt_dk.Text) || string.IsNullOrEmpty(txt_diemck_dk.Text) || string.IsNullOrEmpty(txt_diemtk_dk.Text))
@@ -644,6 +617,51 @@ namespace _21127331_21127388_21127537_21127695
             }
         }
 
+        private void btn_chinhsua_dk_Click(object sender, EventArgs e)
+        {
+            btn_chinhsua_dk.Visible = false;
+            txt_diemth_dk.Enabled = true;
+            txt_diemqt_dk.Enabled = true;
+            txt_diemck_dk.Enabled = true;
+            txt_diemtk_dk.Enabled = true;
+            txt_diemth_dk.ReadOnly = false;
+            txt_diemqt_dk.ReadOnly = false;
+            txt_diemck_dk.ReadOnly = false;
+            txt_diemtk_dk.ReadOnly = false;
+            txt_diemth_dk.TabStop = true;
+            txt_diemqt_dk.TabStop = true;
+            txt_diemck_dk.TabStop = true;
+            txt_diemtk_dk.TabStop = true;
+            txt_diemth_dk.SelectionStart = 0;
+            txt_diemth_dk.SelectionLength = txt_diemth_dk.Text.Length;
+            txt_diemth_dk.Focus();
+            btn_luudiem_dk.Visible = true;
+            btn_quayve_dk.Visible = true;
+        }
+
+        private void btn_quayve_dk_Click(object sender, EventArgs e)
+        {
+            btn_chinhsua_dk.Visible = true;
+            txt_diemth_dk.Text = diemth;
+            txt_diemqt_dk.Text = diemqt;
+            txt_diemck_dk.Text = diemck;
+            txt_diemtk_dk.Text = diemtk;
+            txt_diemth_dk.Enabled = false;
+            txt_diemqt_dk.Enabled = false;
+            txt_diemck_dk.Enabled = false;
+            txt_diemtk_dk.Enabled = false;
+            txt_diemth_dk.ReadOnly = true;
+            txt_diemqt_dk.ReadOnly = true;
+            txt_diemck_dk.ReadOnly = true;
+            txt_diemtk_dk.ReadOnly = true;
+            txt_diemth_dk.TabStop = false;
+            txt_diemqt_dk.TabStop = false;
+            txt_diemck_dk.TabStop = false;
+            txt_diemtk_dk.TabStop = false;
+            btn_luudiem_dk.Visible = false;
+            btn_quayve_dk.Visible = false;
+        }
+
         private void btn_QuayVe_Click(object sender, EventArgs e)
         {
             btn_ChinhSua.Visible = true;
@@ -670,6 +688,10 @@ namespace _21127331_21127388_21127537_21127695
                 txt_diemqt_dk.Text = (!string.IsNullOrEmpty(row.Cells["DIEMQT"].Value.ToString())) ? float.Parse(row.Cells["DIEMQT"].Value.ToString()).ToString("F2") : "N/A";
                 txt_diemck_dk.Text = (!string.IsNullOrEmpty(row.Cells["DIEMCK"].Value.ToString())) ? float.Parse(row.Cells["DIEMCK"].Value.ToString()).ToString("F2") : "N/A";
                 txt_diemtk_dk.Text = (!string.IsNullOrEmpty(row.Cells["DIEMTK"].Value.ToString())) ? float.Parse(row.Cells["DIEMTK"].Value.ToString()).ToString("F2") : "N/A";
+                diemth = txt_diemth_dk.Text;
+                diemqt = txt_diemqt_dk.Text;
+                diemck = txt_diemck_dk.Text;
+                diemtk = txt_diemtk_dk.Text;
                 statuslabel_dangky.Text = "Đã chọn sinh viên " + txt_masv_dk.Text + " thuộc lớp học phần " + txt_mahp_dk.Text +
                     " của giáo viên " + txt_magv_dk + ". Học kì " + txt_hk_dk.Text + ", Năm " + txt_nam_dk.Text +
                     ". Chương trình " + txt_mact_dk.Text;
@@ -680,11 +702,11 @@ namespace _21127331_21127388_21127537_21127695
                 btn_chinhsua_dk.Enabled = false;
                 statuslabel_dangky.Text = "Chưa chọn đăng ký nào";
                 txt_masv_dk.Text = "";
-                txt_magv_pc.Text = "";
-                txt_mahp_pc.Text = "";
-                txt_hocki_pc.Text = "";
-                txt_nam_pc.Text = "";
-                txt_mact_pc.Text = "";
+                txt_magv_dk.Text = "";
+                txt_mahp_dk.Text = "";
+                txt_hk_dk.Text = "";
+                txt_nam_dk.Text = "";
+                txt_mact_dk.Text = "";
                 txt_diemth_dk.Text = "";
                 txt_diemqt_dk.Text = "";
                 txt_diemck_dk.Text = "";

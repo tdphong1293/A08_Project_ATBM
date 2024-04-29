@@ -9,13 +9,13 @@ create table THONGBAO(
 
 grant select on THONGBAO to rl_SinhVien, rl_NhanVienCoBan, rl_GiangVien, rl_GiaoVu, rl_TruongDonVi, rl_TruongKhoa;
 
---begin
+-- begin
 --    sa_sysdba.drop_policy(
 --        policy_name => 'thongbao_policy',
 --        drop_column => TRUE
 --    );
---end;
---/
+-- end;
+-- /
 
 -- Tạo chính sách OLS
 begin
@@ -64,12 +64,6 @@ select * from dba_sa_groups;
 
 --Áp dụng chính sách OLS lên bảng THONGBAO
 begin 
-    sa_policy_admin.remove_table_policy(
-        policy_name => 'thongbao_policy',
-        schema_name => 'OLS_ADMIN',
-        table_name => 'THONGBAO'
-    );
-
     sa_policy_admin.apply_table_policy(
         policy_name => 'thongbao_policy',
         schema_name => 'OLS_ADMIN',

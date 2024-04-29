@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTruongDonVi));
             this.tc_FormTruongDonVi = new System.Windows.Forms.TabControl();
             this.tb_canhan = new System.Windows.Forms.TabPage();
@@ -312,7 +313,7 @@
             this.pn_thongbao.Controls.Add(this.dtgv_thongbao);
             this.pn_thongbao.Location = new System.Drawing.Point(941, 47);
             this.pn_thongbao.Name = "pn_thongbao";
-            this.pn_thongbao.Size = new System.Drawing.Size(307, 350);
+            this.pn_thongbao.Size = new System.Drawing.Size(307, 252);
             this.pn_thongbao.TabIndex = 58;
             this.pn_thongbao.Visible = false;
             // 
@@ -320,13 +321,26 @@
             // 
             this.dtgv_thongbao.AllowUserToAddRows = false;
             this.dtgv_thongbao.AllowUserToDeleteRows = false;
+            this.dtgv_thongbao.AllowUserToResizeRows = false;
             this.dtgv_thongbao.BackgroundColor = System.Drawing.Color.LightCyan;
             this.dtgv_thongbao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_thongbao.ColumnHeadersVisible = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv_thongbao.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgv_thongbao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgv_thongbao.Location = new System.Drawing.Point(0, 0);
+            this.dtgv_thongbao.MultiSelect = false;
             this.dtgv_thongbao.Name = "dtgv_thongbao";
             this.dtgv_thongbao.ReadOnly = true;
-            this.dtgv_thongbao.Size = new System.Drawing.Size(307, 350);
+            this.dtgv_thongbao.RowHeadersVisible = false;
+            this.dtgv_thongbao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dtgv_thongbao.Size = new System.Drawing.Size(307, 252);
             this.dtgv_thongbao.TabIndex = 0;
             this.dtgv_thongbao.Visible = false;
             // 
@@ -1750,6 +1764,7 @@
             // txt_nam_dk
             // 
             this.txt_nam_dk.BackColor = System.Drawing.Color.White;
+            this.txt_nam_dk.Enabled = false;
             this.txt_nam_dk.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nam_dk.Location = new System.Drawing.Point(184, 262);
             this.txt_nam_dk.Name = "txt_nam_dk";
@@ -1773,6 +1788,7 @@
             // txt_hk_dk
             // 
             this.txt_hk_dk.BackColor = System.Drawing.Color.White;
+            this.txt_hk_dk.Enabled = false;
             this.txt_hk_dk.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_hk_dk.Location = new System.Drawing.Point(184, 208);
             this.txt_hk_dk.Name = "txt_hk_dk";
@@ -1796,6 +1812,7 @@
             // txt_mahp_dk
             // 
             this.txt_mahp_dk.BackColor = System.Drawing.Color.White;
+            this.txt_mahp_dk.Enabled = false;
             this.txt_mahp_dk.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_mahp_dk.Location = new System.Drawing.Point(184, 154);
             this.txt_mahp_dk.Name = "txt_mahp_dk";
@@ -1819,6 +1836,7 @@
             // txt_magv_dk
             // 
             this.txt_magv_dk.BackColor = System.Drawing.Color.White;
+            this.txt_magv_dk.Enabled = false;
             this.txt_magv_dk.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_magv_dk.Location = new System.Drawing.Point(184, 100);
             this.txt_magv_dk.Name = "txt_magv_dk";
@@ -1830,6 +1848,7 @@
             // txt_mact_dk
             // 
             this.txt_mact_dk.BackColor = System.Drawing.Color.White;
+            this.txt_mact_dk.Enabled = false;
             this.txt_mact_dk.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_mact_dk.Location = new System.Drawing.Point(184, 316);
             this.txt_mact_dk.Name = "txt_mact_dk";
@@ -1841,6 +1860,7 @@
             // txt_masv_dk
             // 
             this.txt_masv_dk.BackColor = System.Drawing.Color.White;
+            this.txt_masv_dk.Enabled = false;
             this.txt_masv_dk.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_masv_dk.Location = new System.Drawing.Point(184, 46);
             this.txt_masv_dk.Name = "txt_masv_dk";

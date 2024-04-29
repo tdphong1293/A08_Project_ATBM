@@ -583,6 +583,8 @@
             this.ClientSize = new System.Drawing.Size(1264, 705);
             this.Controls.Add(this.btn_DangXuat);
             this.Controls.Add(this.tc_audit);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormAuditAdmin";
             this.Text = "FormAuditAdmin";
             this.tc_audit.ResumeLayout(false);

@@ -31,6 +31,7 @@ namespace _21127331_21127388_21127537_21127695
             SDT_cu = txt_dienthoai_nv.Text;
             LoadData_ThongBao();
             dtgv_thongbao.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgv_thongbao.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dtgv_sinhvien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtgv_khmo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgv_hocphan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;

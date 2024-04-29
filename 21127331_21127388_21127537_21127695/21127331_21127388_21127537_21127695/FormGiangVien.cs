@@ -31,12 +31,9 @@ namespace _21127331_21127388_21127537_21127695
             isShow = false;
             Load_thongtincanhan();
             SDT_cu = txt_dienthoai_nv.Text;
-            diemth = txt_diemth_dk.Text;
-            diemqt = txt_diemqt_dk.Text;
-            diemck = txt_diemck_dk.Text;
-            diemtk = txt_diemtk_dk.Text;
             LoadData_ThongBao();
             dtgv_thongbao.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgv_thongbao.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dtgv_sinhvien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtgv_khmo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgv_hocphan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -635,6 +632,10 @@ namespace _21127331_21127388_21127537_21127695
                 txt_diemqt_dk.Text = (!string.IsNullOrEmpty(row.Cells["DIEMQT"].Value.ToString())) ? float.Parse(row.Cells["DIEMQT"].Value.ToString()).ToString("F2") : "N/A";
                 txt_diemck_dk.Text = (!string.IsNullOrEmpty(row.Cells["DIEMCK"].Value.ToString())) ? float.Parse(row.Cells["DIEMCK"].Value.ToString()).ToString("F2") : "N/A";
                 txt_diemtk_dk.Text = (!string.IsNullOrEmpty(row.Cells["DIEMTK"].Value.ToString())) ? float.Parse(row.Cells["DIEMTK"].Value.ToString()).ToString("F2") : "N/A";
+                diemth = txt_diemth_dk.Text;
+                diemqt = txt_diemqt_dk.Text;
+                diemck = txt_diemck_dk.Text;
+                diemtk = txt_diemtk_dk.Text;
                 statuslabel_dangky.Text = "Đã chọn sinh viên " + txt_masv_dk.Text + " thuộc lớp học phần " + txt_mahp_dk.Text +
                     " của giáo viên " + txt_magv_dk + ". Học kì " + txt_hk_dk.Text + ", Năm " + txt_nam_dk.Text +
                     ". Chương trình " + txt_mact_dk.Text;
@@ -645,11 +646,11 @@ namespace _21127331_21127388_21127537_21127695
                 btn_chinhsua_dk.Enabled = false;
                 statuslabel_dangky.Text = "Chưa chọn đăng ký nào";
                 txt_masv_dk.Text = "";
-                txt_magv_pc.Text = "";
-                txt_mahp_pc.Text = "";
-                txt_hocki_pc.Text = "";
-                txt_nam_pc.Text = "";
-                txt_mact_pc.Text = "";
+                txt_magv_dk.Text = "";
+                txt_mahp_dk.Text = "";
+                txt_hk_dk.Text = "";
+                txt_nam_dk.Text = "";
+                txt_mact_dk.Text = "";
                 txt_diemth_dk.Text = "";
                 txt_diemqt_dk.Text = "";
                 txt_diemck_dk.Text = "";
