@@ -38,6 +38,7 @@ namespace _21127331_21127388_21127537_21127695
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -163,6 +164,10 @@ namespace _21127331_21127388_21127537_21127695
             this.dtgdk = new System.Windows.Forms.DataGridView();
             this.label20 = new System.Windows.Forms.Label();
             this.dtgdk_masv = new System.Windows.Forms.TextBox();
+            this.btn_thongbao = new System.Windows.Forms.Button();
+            this.dtgv_thongbao = new System.Windows.Forms.DataGridView();
+            this.thongbaotimer = new System.Windows.Forms.Timer(this.components);
+            this.pn_thongbao = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -178,11 +183,14 @@ namespace _21127331_21127388_21127537_21127695
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgdk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_thongbao)).BeginInit();
+            this.pn_thongbao.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.btn_thongbao);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.button1);
@@ -244,6 +252,7 @@ namespace _21127331_21127388_21127537_21127695
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.pn_thongbao);
             this.tabPage1.Controls.Add(this.button12);
             this.tabPage1.Controls.Add(this.txt_dtbtl_sv);
             this.tabPage1.Controls.Add(this.txt_diachi_sv);
@@ -1685,6 +1694,57 @@ namespace _21127331_21127388_21127537_21127695
             this.dtgdk_masv.TabIndex = 32;
             this.dtgdk_masv.TextChanged += new System.EventHandler(this.dtgdk_masv_TextChanged);
             // 
+            // btn_thongbao
+            // 
+            this.btn_thongbao.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_thongbao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_thongbao.Image = global::_21127331_21127388_21127537_21127695.Properties.Resources.small_mail_envelope;
+            this.btn_thongbao.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_thongbao.Location = new System.Drawing.Point(1585, 9);
+            this.btn_thongbao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_thongbao.Name = "btn_thongbao";
+            this.btn_thongbao.Size = new System.Drawing.Size(200, 43);
+            this.btn_thongbao.TabIndex = 60;
+            this.btn_thongbao.Text = "Thông báo";
+            this.btn_thongbao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_thongbao.UseVisualStyleBackColor = true;
+            this.btn_thongbao.Click += new System.EventHandler(this.btn_thongbao_Click);
+            // 
+            // dtgv_thongbao
+            // 
+            this.dtgv_thongbao.AllowUserToAddRows = false;
+            this.dtgv_thongbao.AllowUserToDeleteRows = false;
+            this.dtgv_thongbao.AllowUserToOrderColumns = true;
+            this.dtgv_thongbao.BackgroundColor = System.Drawing.Color.PaleTurquoise;
+            this.dtgv_thongbao.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgv_thongbao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_thongbao.ColumnHeadersVisible = false;
+            this.dtgv_thongbao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgv_thongbao.Location = new System.Drawing.Point(0, 0);
+            this.dtgv_thongbao.MultiSelect = false;
+            this.dtgv_thongbao.Name = "dtgv_thongbao";
+            this.dtgv_thongbao.ReadOnly = true;
+            this.dtgv_thongbao.RowHeadersVisible = false;
+            this.dtgv_thongbao.RowHeadersWidth = 62;
+            this.dtgv_thongbao.RowTemplate.Height = 28;
+            this.dtgv_thongbao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dtgv_thongbao.Size = new System.Drawing.Size(614, 538);
+            this.dtgv_thongbao.TabIndex = 0;
+            // 
+            // thongbaotimer
+            // 
+            this.thongbaotimer.Tick += new System.EventHandler(this.thongbaotimer_Tick);
+            // 
+            // pn_thongbao
+            // 
+            this.pn_thongbao.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.pn_thongbao.Controls.Add(this.dtgv_thongbao);
+            this.pn_thongbao.Location = new System.Drawing.Point(1294, 7);
+            this.pn_thongbao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pn_thongbao.Name = "pn_thongbao";
+            this.pn_thongbao.Size = new System.Drawing.Size(614, 538);
+            this.pn_thongbao.TabIndex = 59;
+            // 
             // GiaoVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1717,6 +1777,8 @@ namespace _21127331_21127388_21127537_21127695
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgdk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_thongbao)).EndInit();
+            this.pn_thongbao.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1848,5 +1910,9 @@ namespace _21127331_21127388_21127537_21127695
         private TextBox txt_dk_mact;
         private Label label33;
         private Button button12;
+        private Button btn_thongbao;
+        private DataGridView dtgv_thongbao;
+        private Timer thongbaotimer;
+        private Panel pn_thongbao;
     }
 }

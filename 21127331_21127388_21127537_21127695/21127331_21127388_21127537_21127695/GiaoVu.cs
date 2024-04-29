@@ -22,10 +22,17 @@ namespace _21127331_21127388_21127537_21127695
         private Timer searchphancong;
         private Timer searchdk;
         public static String mact;
+        private bool isShow;
         public GiaoVu()
         {
             InitializeComponent();
+            pn_thongbao.Height = 0;
+            thongbaotimer.Interval = 10;
+            isShow = false;
             ten_giaovu();
+            LoadData_ThongBao();
+
+            dtgv_thongbao.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dtgsv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; ;
             searchsv = new Timer();
@@ -771,6 +778,50 @@ namespace _21127331_21127388_21127537_21127695
                     MessageBox.Show(ex.Message);
                     return;
                 }
+            }
+        }
+
+        private void btn_thongbao_Click(object sender, EventArgs e)
+        {
+            isShow = !isShow;
+            thongbaotimer.Start();
+        }
+
+        private void thongbaotimer_Tick(object sender, EventArgs e)
+        {
+            if (isShow && pn_thongbao.Height < 350)
+            {
+                pn_thongbao.Height += 50;
+            }
+            else if (!isShow && pn_thongbao.Height > 0)
+            {
+                pn_thongbao.Height -= 50;
+            }
+
+            if (pn_thongbao.Height <= 0 || pn_thongbao.Height >= 350)
+            {
+                thongbaotimer.Stop();
+            }
+        }
+
+        private void LoadData_ThongBao()
+        {
+            try
+            {
+                string query = "select NoiDung from OLS_ADMIN.THONGBAO order by NgayTao desc";
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(reader);
+                        dtgv_thongbao.DataSource = dataTable;
+                    }
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
