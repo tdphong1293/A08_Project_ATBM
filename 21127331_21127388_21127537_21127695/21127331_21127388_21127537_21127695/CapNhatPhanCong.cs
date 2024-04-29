@@ -51,19 +51,24 @@ namespace _21127331_21127388_21127537_21127695
                             string query1 = $"update OLS_ADMIN.uv_GiaoVu_PHANCONG" +
                                 $"  set MAGV = '{magv.Text}' WHERE MAHP = '{mahp.Text}' AND HK= {hk} AND NAM = {namm} AND MACT = '{mact.Text}'";
                             Debug.WriteLine(query1);
-                            using (OracleCommand cmd = new OracleCommand(query1, conn))
+                            using (OracleTransaction trans = conn.BeginTransaction())
                             {
-                                try
+                                using (OracleCommand cmd = new OracleCommand(query1, conn))
                                 {
-                                    cmd.ExecuteNonQuery();
-                                    MessageBox.Show("Chỉnh sửa phân công thành công");
-                                    this.Close();
-                                }
+                                    try
+                                    {
+                                        cmd.Transaction = trans;
+                                        cmd.ExecuteNonQuery();
+                                        trans.Commit();
+                                        MessageBox.Show("Chỉnh sửa phân công thành công");
+                                        this.Close();
+                                    }
 
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show(ex.Message);
-                                    return;
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show(ex.Message);
+                                        return;
+                                    }
                                 }
                             }
                         }

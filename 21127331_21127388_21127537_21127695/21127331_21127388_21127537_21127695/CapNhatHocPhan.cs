@@ -93,20 +93,25 @@ namespace _21127331_21127388_21127537_21127695
                                 $" MADV= '{new_txt_madv_hp.Text}'" +
                                 $" where MAHP= '{txt_mahp.Text}'";
                             Debug.WriteLine(query1);
-                            using (OracleCommand cmd = new OracleCommand(query1, conn))
+                            using (OracleTransaction trans = conn.BeginTransaction())
                             {
-                                try
+                                using (OracleCommand cmd = new OracleCommand(query1, conn))
                                 {
-                                    cmd.Parameters.Add(":tenhp", OracleDbType.NVarchar2, new_txt_tenhp.Text, ParameterDirection.Input);
-                                    cmd.ExecuteNonQuery();
-                                    MessageBox.Show("Đổi thông tin học phần thành công");
-                                    this.Close();
-                                }
+                                    try
+                                    {
+                                        cmd.Transaction = trans;
+                                        cmd.Parameters.Add(":tenhp", OracleDbType.NVarchar2, new_txt_tenhp.Text, ParameterDirection.Input);
+                                        cmd.ExecuteNonQuery();
+                                        trans.Commit();
+                                        MessageBox.Show("Đổi thông tin học phần thành công");
+                                        this.Close();
+                                    }
 
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show(ex.Message);
-                                    return;
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show(ex.Message);
+                                        return;
+                                    }
                                 }
                             }
                         }

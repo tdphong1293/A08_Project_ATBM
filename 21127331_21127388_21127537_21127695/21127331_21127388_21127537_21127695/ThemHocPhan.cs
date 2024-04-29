@@ -59,20 +59,25 @@ namespace _21127331_21127388_21127537_21127695
                                 $" {sotc}, {stlt}," +
                                 $" {stth}, {svtd}," +
                                 $" '{txt_madv_hp.Text}')";
-                            using (OracleCommand cmd = new OracleCommand(query1, conn))
+                            using (OracleTransaction trans = conn.BeginTransaction())
                             {
-                                try
+                                using (OracleCommand cmd = new OracleCommand(query1, conn))
                                 {
-                                    cmd.Parameters.Add(":tenhp", OracleDbType.NVarchar2, txt_tenhp.Text, ParameterDirection.Input);
-                                    cmd.ExecuteNonQuery();
-                                    MessageBox.Show("Thêm học phần thành công");
-                                    this.Close();
-                                }
+                                    try
+                                    {
+                                        cmd.Transaction = trans;
+                                        cmd.Parameters.Add(":tenhp", OracleDbType.NVarchar2, txt_tenhp.Text, ParameterDirection.Input);
+                                        cmd.ExecuteNonQuery();
+                                        trans.Commit();
+                                        MessageBox.Show("Thêm học phần thành công");
+                                        this.Close();
+                                    }
 
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show(ex.Message);
-                                    return;
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show(ex.Message);
+                                        return;
+                                    }
                                 }
                             }
                         }

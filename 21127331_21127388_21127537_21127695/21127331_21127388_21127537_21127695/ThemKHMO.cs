@@ -63,19 +63,24 @@ namespace _21127331_21127388_21127537_21127695
                         {
                             string query1 = $"insert into OLS_ADMIN.uv_NhanVienCoBan_KHMO values" +
                                 $" ('{new_txt_khmo_mahp.Text}', {hki}, {nam}, '{new_txt_khmo_mact.Text}')";
-                            using (OracleCommand cmd = new OracleCommand(query1, conn))
+                            using (OracleTransaction trans = conn.BeginTransaction())
                             {
-                                try
+                                using (OracleCommand cmd = new OracleCommand(query1, conn))
                                 {
-                                    cmd.ExecuteNonQuery();
-                                    MessageBox.Show("Thêm kế hoạch mở thành công");
-                                    this.Close();
-                                }
+                                    try
+                                    {
+                                        cmd.Transaction = trans;
+                                        cmd.ExecuteNonQuery();
+                                        trans.Commit();
+                                        MessageBox.Show("Thêm kế hoạch mở thành công");
+                                        this.Close();
+                                    }
 
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show(ex.Message);
-                                    return;
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show(ex.Message);
+                                        return;
+                                    }
                                 }
                             }
                         }

@@ -58,19 +58,24 @@ namespace _21127331_21127388_21127537_21127695
                                 $" NAM={nammoi}, \"MA CHUONG TRINH\"= '{new_txt_khmo_mact.Text}'" +
                                 $" where \"MA HOC PHAN\"= '{txt_khmo_mahp.Text}' AND \"HOC KY\"= {hki_cu} AND NAM={nammoi} AND \"MA CHUONG TRINH\" = '{txt_khmo_mact.Text}'";
                             Debug.WriteLine(query1);
-                            using (OracleCommand cmd = new OracleCommand(query1, conn))
+                            using (OracleTransaction trans = conn.BeginTransaction())
                             {
-                                try
+                                using (OracleCommand cmd = new OracleCommand(query1, conn))
                                 {
-                                    cmd.ExecuteNonQuery();
-                                    MessageBox.Show("Đổi thông tin kế hoạch mở thành công");
-                                    this.Close();
-                                }
+                                    try
+                                    {
+                                        cmd.Transaction = trans;
+                                        cmd.ExecuteNonQuery();
+                                        trans.Commit();
+                                        MessageBox.Show("Đổi thông tin kế hoạch mở thành công");
+                                        this.Close();
+                                    }
 
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show(ex.Message);
-                                    return;
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show(ex.Message);
+                                        return;
+                                    }
                                 }
                             }
                         }

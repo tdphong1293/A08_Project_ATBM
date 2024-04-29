@@ -108,20 +108,25 @@ namespace _21127331_21127388_21127537_21127695
             int hki = Int32.Parse(txt_dk_hki.Text);
             int nam = Int32.Parse(txt_dk_nam.Text);
             string query = $"insert into OLS_ADMIN.uv_GiaoVu_DANGKY values ('{txt_dk_masv.Text}', '{txt_dk_magv.Text}', '{txt_dk_mahp.Text}', {hki}, {nam}, '{txt_dk_mact.Text}', NULL, NULL, NULL, NULL)";
-            using (OracleCommand cmd = new OracleCommand(query, conn))
+            using (OracleTransaction trans = conn.BeginTransaction())
             {
-                try
+                using (OracleCommand cmd = new OracleCommand(query, conn))
                 {
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Thêm đăng ký thành công");
-                    this.Close();
-                    SearchAndFill_DangKy("");
-                }
+                    try
+                    {
+                        cmd.Transaction = trans;
+                        cmd.ExecuteNonQuery();
+                        trans.Commit();
+                        MessageBox.Show("Thêm đăng ký thành công");
+                        this.Close();
+                        SearchAndFill_DangKy("");
+                    }
 
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return;
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        return;
+                    }
                 }
             }
         }
