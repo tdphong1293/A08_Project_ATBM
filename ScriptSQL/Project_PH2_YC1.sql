@@ -55,6 +55,7 @@ as
     and PC.MAHP = DK.MAHP
     and DK.HK = PC.HK
     and DK.NAM = PC.NAM
+    and DK.MACT = PC.MACT
     and PC.MAGV = sys_context('userenv', 'session_user')
     with check option;
     
