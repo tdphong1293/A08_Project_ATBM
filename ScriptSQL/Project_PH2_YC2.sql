@@ -87,7 +87,7 @@ end;
 begin
     sa_user_admin.set_user_labels(
         policy_name => 'thongbao_policy',
-        user_name => 'TRGDV00001',
+        user_name => 'TRGDV0001',
         max_read_label => 'TDV:HTTT,CNPM,KHMT,CNTT,TGMT,MMT:CS1,CS2'
     );
 end;
