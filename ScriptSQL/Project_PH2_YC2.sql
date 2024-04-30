@@ -50,7 +50,7 @@ exec sa_components.create_level('thongbao_policy', 120, 'TK', 'Truong Khoa');
 exec sa_components.create_compartment('thongbao_policy', 100, 'HTTT', 'He Thong Thong Tin');
 exec sa_components.create_compartment('thongbao_policy', 200, 'CNPM', 'Cong Nghe Phan Mem');
 exec sa_components.create_compartment('thongbao_policy', 300, 'KHMT', 'Khoa Hoc May Tinh');
-exec sa_components.create_compartment('thongbao_policy', 400, 'CNTT', 'Cong Nghe Thong Tin');
+exec sa_components.create_compartment('thongbao_policy', 400, 'CNTT', 'Cong Nghe Tri Thuc');
 exec sa_components.create_compartment('thongbao_policy', 500, 'TGMT', 'Thi Giac May Tinh');
 exec sa_components.create_compartment('thongbao_policy', 600, 'MMT', 'Mang May Tinh');
 

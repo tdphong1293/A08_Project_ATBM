@@ -15,8 +15,12 @@ namespace _21127331_21127388_21127537_21127695
     {
         private OracleConnection conn = FormDangNhap.conn;
         private Timer searchSTDAUD, searchFGAAUD;
+        private bool flag_audit;
+        private bool flag_fgaaudit;
+        private FormDangNhap fDN;
 
-        public FormAuditAdmin()
+
+        public FormAuditAdmin(bool flag_audit, bool flag_fga_audit)
         {
             InitializeComponent();
             searchSTDAUD = new Timer();
@@ -29,9 +33,39 @@ namespace _21127331_21127388_21127537_21127695
             SearchAndFillSTDAUD("");
             SearchAndFillFGAAUD("");
 
-
+            this.flag_audit = flag_audit;
+            this.flag_fgaaudit = flag_fga_audit;
+            State_Audit();
+            
             dtgv_stdaud.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtgv_fgaaud.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+        
+        private void State_Audit()
+        {
+            if (flag_audit == false)
+            {
+                btn_audit.Text = "Kích hoạt";
+                btn_audit.BackColor = Color.Lime;
+                btn_audit.ForeColor = Color.Black;
+                flag_audit = true;
+            }
+            else if (flag_audit == true)
+            {
+                btn_audit.Text = "Tắt";
+                btn_audit.BackColor = Color.Red;
+                btn_audit.ForeColor = Color.White;
+                flag_audit = false;
+            }    
+        }
+
+        private void ExecuteProcedure(string procedureName)
+        {
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = procedureName;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.ExecuteNonQuery();
         }
 
         private void txt_timkiem_stdaud_TextChanged(object sender, EventArgs e)
@@ -112,7 +146,18 @@ namespace _21127331_21127388_21127537_21127695
             {
                 string query;
                 if (string.IsNullOrEmpty(searchtext))
+                {
                     query = "select DB_USER, OBJECT_SCHEMA, OBJECT_NAME, POLICY_NAME, SQL_TEXT, SQL_BIND, STATEMENT_TYPE, TO_CHAR(EXTENDED_TIMESTAMP, 'DD/MM/YYYY HH24:MI:SS') AS \"EXTENDED_TIMESTAMP\" from DBA_FGA_AUDIT_TRAIL WHERE OBJECT_SCHEMA = 'OLS_ADMIN' AND (STATEMENT_TYPE IN ('SELECT', 'INSERT', 'UPDATE', 'DELETE')) ORDER BY TIMESTAMP desc";
+                    statuslabel_fgaaud.Text = "Chưa chọn truy vết nào";
+                    txt_username_fgaaud.Text = "";
+                    txt_owner_fgaaud.Text = "";
+                    txt_object_fgaaud.Text = "";
+                    txt_policy_fgaaud.Text = "";
+                    tb_statementtype.Text = "";
+                    txt_timestamp_fgaaud.Text = "";
+                    txt_sqltext_fgaaud.Text = "";
+                    txt_sqlbind_fgaaud.Text = "";
+                }    
                 else
                     query = "select DB_USER, OBJECT_SCHEMA, OBJECT_NAME, POLICY_NAME, SQL_TEXT, SQL_BIND, STATEMENT_TYPE, TO_CHAR(EXTENDED_TIMESTAMP, 'DD/MM/YYYY HH24:MI:SS') AS \"EXTENDED_TIMESTAMP\" from DBA_FGA_AUDIT_TRAIL WHERE OBJECT_SCHEMA = 'OLS_ADMIN' AND (STATEMENT_TYPE IN ('SELECT', 'INSERT', 'UPDATE', 'DELETE')) AND UPPER(DB_USER) LIKE UPPER(:searchtext) ORDER BY TIMESTAMP desc";
 
@@ -143,31 +188,74 @@ namespace _21127331_21127388_21127537_21127695
 
         private void dtgv_fgaaud_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex >= 0)
-            //{
-            //    DataGridViewRow row = dtgv_fgaaud.Rows[e.RowIndex];
-            //    txt_username_fgaaud.Text = row.Cells["USERNAME"].Value.ToString();
-            //    txt_owner_fgaaud.Text = row.Cells["OWNER"].Value.ToString();
-            //    txt_object_fgaaud.Text = row.Cells["OBJ_NAME"].Value.ToString();
-            //    txt_action_code_fgaaud.Text = row.Cells["ACTION"].Value.ToString();
-            //    txt_action_name_fgaaud.Text = row.Cells["ACTION_NAME"].Value.ToString();
-            //    txt_time_fgaaud.Text = row.Cells["EXTENDED_TIMESTAMP"].Value.ToString();
-            //    txt_command_fgaaud.Text = row.Cells["SQL_TEXT"].Value.ToString();
-            //    statuslabel_fgaaud.Text = "Đã chọn truy vết " + txt_action_name_fgaaud.Text +
-            //        " được thực hiện bởi " + txt_username_fgaaud.Text;
-            //}
-            //else
-            //{
-            //    statuslabel_fgaaud.Text = "Chưa chọn truy vết nào";
-            //    txt_username_fgaaud.Text = "";
-            //    txt_owner_fgaaud.Text = "";
-            //    txt_object_fgaaud.Text = "";
-            //    txt_action_code_fgaaud.Text = "";
-            //    txt_action_name_fgaaud.Text = "";
-            //    txt_time_fgaaud.Text = "";
-            //    txt_command_fgaaud.Text = "";
-            //    statuslabel_fgaaud.Text = "";
-            //}
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dtgv_fgaaud.Rows[e.RowIndex];
+                txt_username_fgaaud.Text = row.Cells["DB_USER"].Value.ToString();
+                txt_owner_fgaaud.Text = row.Cells["OBJECT_SCHEMA"].Value.ToString();
+                txt_object_fgaaud.Text = row.Cells["OBJECT_NAME"].Value.ToString();
+                txt_policy_fgaaud.Text = row.Cells["POLICY_NAME"].Value.ToString();
+                tb_statementtype.Text = row.Cells["STATEMENT_TYPE"].Value.ToString();
+                txt_timestamp_fgaaud.Text = row.Cells["EXTENDED_TIMESTAMP"].Value.ToString();
+                txt_sqltext_fgaaud.Text = row.Cells["SQL_TEXT"].Value.ToString();
+                txt_sqlbind_fgaaud.Text = row.Cells["SQL_BIND"].Value.ToString();
+
+                statuslabel_fgaaud.Text = "Đã chọn truy vết " + tb_statementtype.Text +
+                    " được thực hiện bởi " + txt_username_fgaaud.Text;
+            }
+            else
+            {
+                statuslabel_fgaaud.Text = "Chưa chọn truy vết nào";
+                txt_username_fgaaud.Text = "";
+                txt_owner_fgaaud.Text = "";
+                txt_object_fgaaud.Text = "";
+                txt_policy_fgaaud.Text = "";
+                tb_statementtype.Text = "";
+                txt_timestamp_fgaaud.Text = "";
+                txt_sqltext_fgaaud.Text = "";
+                txt_sqlbind_fgaaud.Text = "";
+            }
+        }
+
+        private void btn_audit_Click(object sender, EventArgs e)
+        {
+            if(flag_audit)
+            {
+                ExecuteProcedure("sp_Enable_Audit_UserNV");
+                //ExecuteProcedure("sp_Enable_Audit_UserSV");
+                btn_audit.Text = "Tắt";
+                btn_audit.BackColor = Color.Red;
+                btn_audit.ForeColor = Color.White;
+                flag_audit = false;
+                
+            }
+            else
+            {
+                ExecuteProcedure("sp_Disable_Audit_UserNV");
+                //ExecuteProcedure("sp_Disable_Audit_UserSV");
+                btn_audit.Text = "Kích hoạt";
+                btn_audit.BackColor = Color.Lime;
+                btn_audit.ForeColor = Color.Black;
+                flag_audit = true;
+            }    
+        }
+
+        private void btn_fgaaudit_Click(object sender, EventArgs e)
+        {
+            if (flag_fgaaudit)
+            {
+                btn_audit.Text = "Tắt";
+                btn_audit.BackColor = Color.Red;
+                btn_audit.ForeColor = Color.White;
+                flag_fgaaudit = false;
+            }
+            else
+            {
+                btn_audit.Text = "Kích hoạt";
+                btn_audit.BackColor = Color.Lime;
+                btn_audit.ForeColor = Color.Black;
+                flag_fgaaudit = true;
+            }
         }
 
         private void btn_DangXuat_Click(object sender, EventArgs e)

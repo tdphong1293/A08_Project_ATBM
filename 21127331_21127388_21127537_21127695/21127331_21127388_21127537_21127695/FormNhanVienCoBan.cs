@@ -380,7 +380,7 @@ namespace _21127331_21127388_21127537_21127695
                 if (string.IsNullOrEmpty(searchtext))
                     query = "select * from OLS_ADMIN.uv_NhanVienCoBan_KHMO";
                 else
-                    query = "select * from OLS_ADMIN.uv_NhanVienCoBan_KHMO where MAHP = :searchtext";
+                    query = "select * from OLS_ADMIN.uv_NhanVienCoBan_KHMO where \"MA HOC PHAN\" = :searchtext";
                 using (OracleCommand cmd = new OracleCommand(query, conn))
                 {
                     cmd.Parameters.Add(":searchtext", searchtext);

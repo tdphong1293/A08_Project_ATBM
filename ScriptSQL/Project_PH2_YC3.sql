@@ -84,10 +84,10 @@ begin
         fetch cur into usr;
         exit when cur%notfound;
         
-        strsql := 'NOAUDIT ALL BY ' || usr || ' BY ACCESS';
+        strsql := 'NOAUDIT ALL BY ' || usr ;
         execute immediate (strsql);
 
-        strsql := 'NOAUDIT SELECT TABLE, UPDATE TABLE, INSERT TABLE, DELETE TABLE BY ' || usr || ' BY ACCESS';
+        strsql := 'NOAUDIT SELECT TABLE, UPDATE TABLE, INSERT TABLE, DELETE TABLE BY ' || usr ;
         execute immediate (strsql);
 
         strsql := 'NOAUDIT SESSION WHENEVER NOT SUCCESSFUL';
@@ -115,10 +115,10 @@ begin
         fetch cur into usr;
         exit when cur%notfound;
         
-        strsql := 'NOAUDIT ALL BY ' || usr || ' BY ACCESS';
+        strsql := 'NOAUDIT ALL BY ' || usr ;
         execute immediate (strsql);
 
-        strsql := 'NOAUDIT SELECT TABLE, UPDATE TABLE, INSERT TABLE, DELETE TABLE BY ' || usr || ' BY ACCESS';
+        strsql := 'NOAUDIT SELECT TABLE, UPDATE TABLE, INSERT TABLE, DELETE TABLE BY ' || usr ;
         execute immediate (strsql);
 
         strsql := 'NOAUDIT SESSION WHENEVER NOT SUCCESSFUL';
@@ -128,18 +128,6 @@ begin
     close cur;
 end;
 /
-
-exec sp_Enable_Audit_UserNV;
-exec sp_Enable_Audit_UserSV;
-
-exec sp_Disable_Audit_UserNV;
-exec sp_Disable_Audit_UserSV;
-
-
-SELECT *
-FROM DBA_AUDIT_TRAIL where username = 'TRGDV0001' and OWNER = 'OLS_ADMIN' AND (ACTION_NAME IN ('SELECT', 'INSERT', 'UPDATE', 'DELETE'))
-ORDER BY TIMESTAMP desc;
-
 
 
 
@@ -183,15 +171,6 @@ begin
 end;
 /
 
-begin
-    dbms_fga.enable_policy(
-        object_schema => 'OLS_ADMIN',
-        object_name   => 'DANGKY',
-        policy_name   => 'FGA_POLICY_DIEM',
-        enable        => true
-    );
-end;
-/
 
 -- 3b) Hành vi của người dùng này có thể đọc trên trường PHUCAP của người khác ở quan hệ NHANSU
 begin
@@ -209,6 +188,13 @@ end;
 begin
     dbms_fga.enable_policy(
         object_schema => 'OLS_ADMIN',
+        object_name   => 'DANGKY',
+        policy_name   => 'FGA_POLICY_DIEM',
+        enable        => true
+    );
+
+    dbms_fga.enable_policy(
+        object_schema => 'OLS_ADMIN',
         object_name   => 'NHANSU',
         policy_name   => 'FGA_POLICY_PHUCAP',
         enable        => true
@@ -217,15 +203,41 @@ end;
 /
 
 
-select * 
-from DBA_FGA_AUDIT_TRAIL 
-ORDER BY TIMESTAMP desc;
+-- BEGIN
+--     dbms_fga.disable_policy(
+--         object_schema => 'OLS_ADMIN',
+--         object_name   => 'DANGKY',
+--         policy_name   => 'FGA_POLICY_DIEM',
+--         enable        => false
+--     );
+
+--     dbms_fga.disable_policy(
+--         object_schema => 'OLS_ADMIN',
+--         object_name   => 'NHANSU',
+--         policy_name   => 'FGA_POLICY_PHUCAP',
+--         enable        => false
+--     );
+-- END;
+-- /
+
+
+create or replace procedure sp_GetStateAudit(p_result OUT number)
+as
+    flag NUMBER;
+begin
+    select count(*) into flag
+    from DBA_PRIV_AUDIT_OPTS;
+    
+    if (flag = 12000) then
+        p_result := 0;
+    elsif (flag != 12000) then
+        p_result := 1;
+    end if;
+end;
+/
 
 
 
---SELECT * FROM AUDITABLE_SYSTEM_ACTIONS;
-
-select USERNAME, OWNER, OBJ_NAME, ACTION, ACTION_NAME, TO_CHAR(EXTENDED_TIMESTAMP, 'DD/MM/YYYY HH24:MI:SS') from DBA_AUDIT_TRAIL;
 -- ======== LỆNH XÓA LỊCH SỬ AUDIT ========
 -- TRUNCATE table sys.Aud$;
 -- TRUNCATE table sys.FGA_LOG$;
