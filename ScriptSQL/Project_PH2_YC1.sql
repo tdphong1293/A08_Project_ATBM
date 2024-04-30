@@ -518,7 +518,7 @@ begin
 end;
 /
 
-grant select, update(MASV, MAGV, MAHP, HK, NAM, MACT) on DANGKY to rl_SinhVien;
+grant select on DANGKY to rl_SinhVien;
 
 create or replace function pc5_SinhVien_HOCPHAN
     (p_schema varchar2, p_obj varchar2)
