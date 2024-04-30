@@ -228,10 +228,10 @@ begin
     select count(*) into flag
     from DBA_PRIV_AUDIT_OPTS;
     
-    if (flag = 12000) then
-        p_result := 0;
-    elsif (flag != 12000) then
+    if (flag > 0) then
         p_result := 1;
+    elsif (flag <= 0) then
+        p_result := 0;
     end if;
 end;
 /

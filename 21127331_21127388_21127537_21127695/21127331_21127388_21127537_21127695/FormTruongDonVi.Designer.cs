@@ -1742,7 +1742,7 @@
             this.gb_TTDangky.Controls.Add(this.lb_magv_dk);
             this.gb_TTDangky.Controls.Add(this.lb_masv_dk);
             this.gb_TTDangky.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_TTDangky.Location = new System.Drawing.Point(719, 91);
+            this.gb_TTDangky.Location = new System.Drawing.Point(718, 83);
             this.gb_TTDangky.Name = "gb_TTDangky";
             this.gb_TTDangky.Size = new System.Drawing.Size(531, 471);
             this.gb_TTDangky.TabIndex = 92;
@@ -1990,7 +1990,7 @@
             // 
             this.lb_timkiem_dk.AutoSize = true;
             this.lb_timkiem_dk.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_timkiem_dk.Location = new System.Drawing.Point(8, 58);
+            this.lb_timkiem_dk.Location = new System.Drawing.Point(6, 53);
             this.lb_timkiem_dk.Name = "lb_timkiem_dk";
             this.lb_timkiem_dk.Size = new System.Drawing.Size(74, 20);
             this.lb_timkiem_dk.TabIndex = 90;
@@ -1999,7 +1999,7 @@
             // txt_timkiem_dk
             // 
             this.txt_timkiem_dk.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_timkiem_dk.Location = new System.Drawing.Point(88, 58);
+            this.txt_timkiem_dk.Location = new System.Drawing.Point(86, 50);
             this.txt_timkiem_dk.Name = "txt_timkiem_dk";
             this.txt_timkiem_dk.Size = new System.Drawing.Size(244, 27);
             this.txt_timkiem_dk.TabIndex = 88;
@@ -2012,7 +2012,7 @@
             this.dtgv_dangky.AllowUserToOrderColumns = true;
             this.dtgv_dangky.BackgroundColor = System.Drawing.Color.White;
             this.dtgv_dangky.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_dangky.Location = new System.Drawing.Point(8, 91);
+            this.dtgv_dangky.Location = new System.Drawing.Point(6, 83);
             this.dtgv_dangky.Name = "dtgv_dangky";
             this.dtgv_dangky.ReadOnly = true;
             this.dtgv_dangky.RowHeadersVisible = false;
@@ -2034,7 +2034,7 @@
             // 
             this.btn_quayve_dk.AccessibleDescription = "btn_QuayVe";
             this.btn_quayve_dk.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_quayve_dk.Location = new System.Drawing.Point(985, 570);
+            this.btn_quayve_dk.Location = new System.Drawing.Point(984, 562);
             this.btn_quayve_dk.Name = "btn_quayve_dk";
             this.btn_quayve_dk.Size = new System.Drawing.Size(150, 50);
             this.btn_quayve_dk.TabIndex = 84;
@@ -2047,7 +2047,7 @@
             // btn_chinhsua_dk
             // 
             this.btn_chinhsua_dk.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_chinhsua_dk.Location = new System.Drawing.Point(899, 570);
+            this.btn_chinhsua_dk.Location = new System.Drawing.Point(898, 562);
             this.btn_chinhsua_dk.Name = "btn_chinhsua_dk";
             this.btn_chinhsua_dk.Size = new System.Drawing.Size(150, 50);
             this.btn_chinhsua_dk.TabIndex = 86;
@@ -2059,7 +2059,7 @@
             // btn_luudiem_dk
             // 
             this.btn_luudiem_dk.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_luudiem_dk.Location = new System.Drawing.Point(829, 570);
+            this.btn_luudiem_dk.Location = new System.Drawing.Point(828, 562);
             this.btn_luudiem_dk.Name = "btn_luudiem_dk";
             this.btn_luudiem_dk.Size = new System.Drawing.Size(150, 50);
             this.btn_luudiem_dk.TabIndex = 85;

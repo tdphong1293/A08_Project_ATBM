@@ -16,7 +16,7 @@ namespace _21127331_21127388_21127537_21127695
         private OracleConnection conn = FormDangNhap.conn;
         private Timer searchSTDAUD, searchFGAAUD;
         private bool flag_audit;
-        private bool flag_fgaaudit;
+        private bool flag_fga_audit;
         private FormDangNhap fDN;
 
 
@@ -34,7 +34,7 @@ namespace _21127331_21127388_21127537_21127695
             SearchAndFillFGAAUD("");
 
             this.flag_audit = flag_audit;
-            this.flag_fgaaudit = flag_fga_audit;
+            this.flag_fga_audit = flag_fga_audit;
             State_Audit();
             
             dtgv_stdaud.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -43,19 +43,17 @@ namespace _21127331_21127388_21127537_21127695
         
         private void State_Audit()
         {
-            if (flag_audit == false)
+            if (flag_audit)
             {
-                btn_audit.Text = "Kích hoạt";
+                btn_audit.Text = "Đang kích hoạt";
                 btn_audit.BackColor = Color.Lime;
                 btn_audit.ForeColor = Color.Black;
-                flag_audit = true;
             }
-            else if (flag_audit == true)
+            else
             {
-                btn_audit.Text = "Tắt";
+                btn_audit.Text = "Đang tắt";
                 btn_audit.BackColor = Color.Red;
                 btn_audit.ForeColor = Color.White;
-                flag_audit = false;
             }    
         }
 
@@ -221,9 +219,9 @@ namespace _21127331_21127388_21127537_21127695
         {
             if(flag_audit)
             {
-                ExecuteProcedure("sp_Enable_Audit_UserNV");
-                //ExecuteProcedure("sp_Enable_Audit_UserSV");
-                btn_audit.Text = "Tắt";
+                ExecuteProcedure("sp_Disable_Audit_UserNV");
+                //ExecuteProcedure("sp_Disable_Audit_UserSV");
+                btn_audit.Text = "Đang tắt";
                 btn_audit.BackColor = Color.Red;
                 btn_audit.ForeColor = Color.White;
                 flag_audit = false;
@@ -231,9 +229,9 @@ namespace _21127331_21127388_21127537_21127695
             }
             else
             {
-                ExecuteProcedure("sp_Disable_Audit_UserNV");
-                //ExecuteProcedure("sp_Disable_Audit_UserSV");
-                btn_audit.Text = "Kích hoạt";
+                ExecuteProcedure("sp_Enable_Audit_UserNV");
+                //ExecuteProcedure("sp_Enable_Audit_UserSV");
+                btn_audit.Text = "Đang kích hoạt";
                 btn_audit.BackColor = Color.Lime;
                 btn_audit.ForeColor = Color.Black;
                 flag_audit = true;
@@ -242,19 +240,19 @@ namespace _21127331_21127388_21127537_21127695
 
         private void btn_fgaaudit_Click(object sender, EventArgs e)
         {
-            if (flag_fgaaudit)
+            if (flag_fga_audit)
             {
-                btn_audit.Text = "Tắt";
+                btn_audit.Text = "Đang tắt";
                 btn_audit.BackColor = Color.Red;
                 btn_audit.ForeColor = Color.White;
-                flag_fgaaudit = false;
+                flag_fga_audit = false;
             }
             else
             {
-                btn_audit.Text = "Kích hoạt";
+                btn_audit.Text = "Đang kích hoạt";
                 btn_audit.BackColor = Color.Lime;
                 btn_audit.ForeColor = Color.Black;
-                flag_fgaaudit = true;
+                flag_fga_audit = true;
             }
         }
 

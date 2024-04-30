@@ -342,6 +342,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAuditAdmin.resx">
       <DependentUpon>FormAuditAdmin.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCapQuyen.resx">
       <DependentUpon>FormCapQuyen.cs</DependentUpon>
