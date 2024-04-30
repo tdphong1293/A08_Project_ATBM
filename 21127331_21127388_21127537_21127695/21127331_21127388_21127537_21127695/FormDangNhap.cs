@@ -59,7 +59,7 @@ namespace _21127331_21127388_21127537_21127695
                     conn.ConnectionString = @"DATA SOURCE = localhost:1521/XE;DBA Privilege=SYSDBA; USER ID=" + usernameUser + ";PASSWORD=" + passUser;
                 else if (cb_dangnhap_vaitro.Text == "ADMIN")
                 {
-                    conn.ConnectionString = @"DATA SOURCE = localhost:1521/XE; USER ID=" + usernameUser + ";PASSWORD=" + passUser;
+                    conn.ConnectionString = @"DATA SOURCE = localhost:1521/XE;DBA Privilege=SYSDBA; USER ID=" + usernameUser + ";PASSWORD=" + passUser;
                     conn.Open();
                     FormQuanLy formQuanLy = new FormQuanLy();
                     this.Hide();
