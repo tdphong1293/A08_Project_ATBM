@@ -38,6 +38,7 @@ namespace _21127331_21127388_21127537_21127695
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -186,7 +187,7 @@ namespace _21127331_21127388_21127537_21127695
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(883, 36);
             this.panel1.TabIndex = 4;
@@ -212,7 +213,7 @@ namespace _21127331_21127388_21127537_21127695
             this.tabPage10.Controls.Add(this.label19);
             this.tabPage10.Controls.Add(this.comboBox8);
             this.tabPage10.Location = new System.Drawing.Point(4, 60);
-            this.tabPage10.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPage10.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Size = new System.Drawing.Size(863, 423);
             this.tabPage10.TabIndex = 3;
@@ -223,7 +224,7 @@ namespace _21127331_21127388_21127537_21127695
             // 
             this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView8.Location = new System.Drawing.Point(-4, 35);
-            this.dataGridView8.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dataGridView8.Margin = new System.Windows.Forms.Padding(1);
             this.dataGridView8.Name = "dataGridView8";
             this.dataGridView8.RowHeadersWidth = 82;
             this.dataGridView8.Size = new System.Drawing.Size(866, 404);
@@ -244,7 +245,7 @@ namespace _21127331_21127388_21127537_21127695
             // 
             this.comboBox8.FormattingEnabled = true;
             this.comboBox8.Location = new System.Drawing.Point(65, 4);
-            this.comboBox8.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.comboBox8.Margin = new System.Windows.Forms.Padding(1);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(114, 25);
             this.comboBox8.TabIndex = 0;
@@ -254,9 +255,9 @@ namespace _21127331_21127388_21127537_21127695
             // 
             this.tabPage2.Controls.Add(this.tabControl3);
             this.tabPage2.Location = new System.Drawing.Point(4, 60);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(1);
             this.tabPage2.Size = new System.Drawing.Size(863, 423);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "QUẢN LÝ GIẢNG DẠY";
@@ -269,7 +270,7 @@ namespace _21127331_21127388_21127537_21127695
             this.tabControl3.Controls.Add(this.tabPage8);
             this.tabControl3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl3.Location = new System.Drawing.Point(-4, 0);
-            this.tabControl3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl3.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
             this.tabControl3.Size = new System.Drawing.Size(870, 439);
@@ -281,9 +282,9 @@ namespace _21127331_21127388_21127537_21127695
             this.tabPage7.Controls.Add(this.label6);
             this.tabPage7.Controls.Add(this.textBox5);
             this.tabPage7.Location = new System.Drawing.Point(4, 27);
-            this.tabPage7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage7.Size = new System.Drawing.Size(862, 408);
             this.tabPage7.TabIndex = 0;
             this.tabPage7.Text = "LỊCH PHÂN CÔNG";
@@ -294,7 +295,7 @@ namespace _21127331_21127388_21127537_21127695
             this.dataGridView5.AllowUserToDeleteRows = false;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Location = new System.Drawing.Point(0, 34);
-            this.dataGridView5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView5.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.RowHeadersWidth = 62;
             this.dataGridView5.Size = new System.Drawing.Size(863, 376);
@@ -314,7 +315,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(102, 7);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(92, 23);
             this.textBox5.TabIndex = 0;
@@ -341,9 +342,9 @@ namespace _21127331_21127388_21127537_21127695
             this.tabPage8.Controls.Add(this.label12);
             this.tabPage8.Controls.Add(this.comboBox2);
             this.tabPage8.Location = new System.Drawing.Point(4, 27);
-            this.tabPage8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage8.Size = new System.Drawing.Size(862, 408);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "QUẢN LÝ LỚP HỌC PHẦN";
@@ -353,7 +354,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox18
             // 
             this.textBox18.Location = new System.Drawing.Point(683, 276);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox18.Margin = new System.Windows.Forms.Padding(2);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(128, 23);
             this.textBox18.TabIndex = 69;
@@ -361,7 +362,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox17
             // 
             this.textBox17.Location = new System.Drawing.Point(683, 218);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox17.Margin = new System.Windows.Forms.Padding(2);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(128, 23);
             this.textBox17.TabIndex = 68;
@@ -369,7 +370,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox16
             // 
             this.textBox16.Location = new System.Drawing.Point(683, 155);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox16.Margin = new System.Windows.Forms.Padding(2);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(128, 23);
             this.textBox16.TabIndex = 67;
@@ -377,7 +378,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox14
             // 
             this.textBox14.Location = new System.Drawing.Point(683, 100);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox14.Margin = new System.Windows.Forms.Padding(2);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(128, 23);
             this.textBox14.TabIndex = 66;
@@ -471,7 +472,7 @@ namespace _21127331_21127388_21127537_21127695
             this.dataGridView6.AllowUserToDeleteRows = false;
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView6.Location = new System.Drawing.Point(-2, 32);
-            this.dataGridView6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView6.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView6.Name = "dataGridView6";
             this.dataGridView6.RowHeadersWidth = 62;
             this.dataGridView6.Size = new System.Drawing.Size(506, 384);
@@ -482,7 +483,7 @@ namespace _21127331_21127388_21127537_21127695
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(395, 8);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(111, 23);
             this.comboBox1.TabIndex = 25;
@@ -491,7 +492,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(49, 8);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(92, 23);
             this.textBox6.TabIndex = 21;
@@ -521,7 +522,7 @@ namespace _21127331_21127388_21127537_21127695
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(205, 8);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(111, 23);
             this.comboBox2.TabIndex = 23;
@@ -544,7 +545,7 @@ namespace _21127331_21127388_21127537_21127695
             this.tabPage9.Controls.Add(this.comboBox6);
             this.tabPage9.Controls.Add(this.dataGridView7);
             this.tabPage9.Location = new System.Drawing.Point(4, 60);
-            this.tabPage9.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Size = new System.Drawing.Size(863, 423);
             this.tabPage9.TabIndex = 2;
@@ -555,7 +556,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(744, 121);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(111, 25);
             this.textBox9.TabIndex = 40;
@@ -565,7 +566,7 @@ namespace _21127331_21127388_21127537_21127695
             this.button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button4.Location = new System.Drawing.Point(682, 207);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(44, 43);
             this.button4.TabIndex = 39;
@@ -578,7 +579,7 @@ namespace _21127331_21127388_21127537_21127695
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button2.Location = new System.Drawing.Point(746, 207);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(44, 43);
             this.button2.TabIndex = 38;
@@ -591,7 +592,7 @@ namespace _21127331_21127388_21127537_21127695
             this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.Color.Red;
             this.button3.Location = new System.Drawing.Point(808, 207);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(44, 43);
             this.button3.TabIndex = 37;
@@ -614,7 +615,7 @@ namespace _21127331_21127388_21127537_21127695
             // 
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Location = new System.Drawing.Point(744, 155);
-            this.comboBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox7.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(111, 25);
             this.comboBox7.TabIndex = 35;
@@ -622,7 +623,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(744, 15);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(111, 25);
             this.textBox8.TabIndex = 33;
@@ -630,7 +631,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(744, 47);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(111, 25);
             this.textBox7.TabIndex = 27;
@@ -683,7 +684,7 @@ namespace _21127331_21127388_21127537_21127695
             // 
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(744, 84);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox6.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(111, 25);
             this.comboBox6.TabIndex = 29;
@@ -692,7 +693,7 @@ namespace _21127331_21127388_21127537_21127695
             // 
             this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView7.Location = new System.Drawing.Point(-4, 0);
-            this.dataGridView7.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dataGridView7.Margin = new System.Windows.Forms.Padding(1);
             this.dataGridView7.Name = "dataGridView7";
             this.dataGridView7.RowHeadersWidth = 82;
             this.dataGridView7.Size = new System.Drawing.Size(668, 438);
@@ -708,7 +709,7 @@ namespace _21127331_21127388_21127537_21127695
             this.tabControl1.Controls.Add(this.tabPage11);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(4, 40);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(20, 20);
             this.tabControl1.SelectedIndex = 0;
@@ -719,9 +720,9 @@ namespace _21127331_21127388_21127537_21127695
             // 
             this.tabPage1.Controls.Add(this.tabControl2);
             this.tabPage1.Location = new System.Drawing.Point(4, 60);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(1);
             this.tabPage1.Size = new System.Drawing.Size(863, 423);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "TRA CỨU THÔNG TIN";
@@ -736,7 +737,7 @@ namespace _21127331_21127388_21127537_21127695
             this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl2.Location = new System.Drawing.Point(-4, 0);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(870, 443);
@@ -748,9 +749,9 @@ namespace _21127331_21127388_21127537_21127695
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.textBox1);
             this.tabPage3.Location = new System.Drawing.Point(4, 27);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage3.Size = new System.Drawing.Size(862, 412);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "SINH VIÊN";
@@ -761,7 +762,7 @@ namespace _21127331_21127388_21127537_21127695
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 34);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(864, 383);
@@ -781,7 +782,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(44, 6);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(92, 23);
             this.textBox1.TabIndex = 0;
@@ -793,9 +794,9 @@ namespace _21127331_21127388_21127537_21127695
             this.tabPage4.Controls.Add(this.label4);
             this.tabPage4.Controls.Add(this.textBox2);
             this.tabPage4.Location = new System.Drawing.Point(4, 27);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage4.Size = new System.Drawing.Size(862, 412);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "ĐƠN VỊ";
@@ -806,7 +807,7 @@ namespace _21127331_21127388_21127537_21127695
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(-2, 32);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.Size = new System.Drawing.Size(864, 384);
@@ -825,7 +826,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(75, 2);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(92, 23);
             this.textBox2.TabIndex = 4;
@@ -837,7 +838,7 @@ namespace _21127331_21127388_21127537_21127695
             this.tabPage5.Controls.Add(this.label5);
             this.tabPage5.Controls.Add(this.textBox3);
             this.tabPage5.Location = new System.Drawing.Point(4, 27);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(862, 412);
             this.tabPage5.TabIndex = 2;
@@ -849,7 +850,7 @@ namespace _21127331_21127388_21127537_21127695
             this.dataGridView3.AllowUserToDeleteRows = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(0, 31);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 62;
             this.dataGridView3.Size = new System.Drawing.Size(862, 382);
@@ -868,7 +869,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(46, 4);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(92, 23);
             this.textBox3.TabIndex = 7;
@@ -880,7 +881,7 @@ namespace _21127331_21127388_21127537_21127695
             this.tabPage6.Controls.Add(this.label10);
             this.tabPage6.Controls.Add(this.textBox4);
             this.tabPage6.Location = new System.Drawing.Point(4, 27);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Size = new System.Drawing.Size(862, 412);
             this.tabPage6.TabIndex = 3;
@@ -892,7 +893,7 @@ namespace _21127331_21127388_21127537_21127695
             this.dataGridView4.AllowUserToDeleteRows = false;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(-2, 30);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 62;
             this.dataGridView4.Size = new System.Drawing.Size(871, 391);
@@ -911,7 +912,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(53, 5);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(92, 23);
             this.textBox4.TabIndex = 14;
@@ -940,9 +941,9 @@ namespace _21127331_21127388_21127537_21127695
             this.tabPage11.Controls.Add(this.comboBox4);
             this.tabPage11.Controls.Add(this.dataGridView9);
             this.tabPage11.Location = new System.Drawing.Point(4, 60);
-            this.tabPage11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage11.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage11.Size = new System.Drawing.Size(863, 423);
             this.tabPage11.TabIndex = 4;
             this.tabPage11.Text = "QUẢN LÝ NHÂN SỰ";
@@ -952,7 +953,7 @@ namespace _21127331_21127388_21127537_21127695
             // sdt
             // 
             this.sdt.Location = new System.Drawing.Point(752, 246);
-            this.sdt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sdt.Margin = new System.Windows.Forms.Padding(2);
             this.sdt.Name = "sdt";
             this.sdt.Size = new System.Drawing.Size(111, 25);
             this.sdt.TabIndex = 61;
@@ -960,7 +961,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox15
             // 
             this.textBox15.Location = new System.Drawing.Point(752, 284);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox15.Margin = new System.Windows.Forms.Padding(2);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(111, 25);
             this.textBox15.TabIndex = 60;
@@ -990,7 +991,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox13
             // 
             this.textBox13.Location = new System.Drawing.Point(752, 157);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox13.Margin = new System.Windows.Forms.Padding(2);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(111, 25);
             this.textBox13.TabIndex = 56;
@@ -1009,7 +1010,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox10
             // 
             this.textBox10.Location = new System.Drawing.Point(752, 121);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(111, 25);
             this.textBox10.TabIndex = 54;
@@ -1019,7 +1020,7 @@ namespace _21127331_21127388_21127537_21127695
             this.button5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button5.Location = new System.Drawing.Point(684, 332);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(44, 43);
             this.button5.TabIndex = 53;
@@ -1032,7 +1033,7 @@ namespace _21127331_21127388_21127537_21127695
             this.button6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.button6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button6.Location = new System.Drawing.Point(748, 332);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(44, 43);
             this.button6.TabIndex = 52;
@@ -1045,7 +1046,7 @@ namespace _21127331_21127388_21127537_21127695
             this.button7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.button7.ForeColor = System.Drawing.Color.Red;
             this.button7.Location = new System.Drawing.Point(810, 332);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(44, 43);
             this.button7.TabIndex = 51;
@@ -1068,7 +1069,7 @@ namespace _21127331_21127388_21127537_21127695
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(752, 193);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(111, 25);
             this.comboBox3.TabIndex = 49;
@@ -1076,7 +1077,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox11
             // 
             this.textBox11.Location = new System.Drawing.Point(752, 15);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(2);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(111, 25);
             this.textBox11.TabIndex = 47;
@@ -1084,7 +1085,7 @@ namespace _21127331_21127388_21127537_21127695
             // textBox12
             // 
             this.textBox12.Location = new System.Drawing.Point(752, 47);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(2);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(111, 25);
             this.textBox12.TabIndex = 42;
@@ -1137,7 +1138,7 @@ namespace _21127331_21127388_21127537_21127695
             // 
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(752, 84);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(111, 25);
             this.comboBox4.TabIndex = 44;
@@ -1146,7 +1147,7 @@ namespace _21127331_21127388_21127537_21127695
             // 
             this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView9.Location = new System.Drawing.Point(3, 1);
-            this.dataGridView9.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dataGridView9.Margin = new System.Windows.Forms.Padding(1);
             this.dataGridView9.Name = "dataGridView9";
             this.dataGridView9.RowHeadersWidth = 82;
             this.dataGridView9.Size = new System.Drawing.Size(668, 438);
@@ -1157,9 +1158,18 @@ namespace _21127331_21127388_21127537_21127695
             // 
             this.dataGridView10.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView10.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView10.Location = new System.Drawing.Point(567, 40);
-            this.dataGridView10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView10.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView10.Name = "dataGridView10";
+            this.dataGridView10.RowHeadersVisible = false;
             this.dataGridView10.RowHeadersWidth = 82;
             this.dataGridView10.RowTemplate.Height = 33;
             this.dataGridView10.Size = new System.Drawing.Size(304, 180);
@@ -1175,7 +1185,7 @@ namespace _21127331_21127388_21127537_21127695
             this.Controls.Add(this.dataGridView10);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TRUONGKHOA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ROLE TRUONG KHOA";

@@ -113,7 +113,7 @@ exec sp_Insert_ThongBao(N'Thông báo đến các sinh viên thuộc ngành HTTT
 exec sp_Insert_ThongBao(N'Thông báo đến các trưởng đơn vị thuộc bộ môn KHMT ở cơ sở 1', 'TDV:KHMT:CS1');
 
 --g) data label t4: 'TDV:KHMT'
-exec sp_Insert_ThongBao(N'Thông báo đến các trưởng đơn vị thuộc bộ môn KHMT ở cơ sở 1 và 2', 'TDV:KHMT:CS1,CS2');
+exec sp_Insert_ThongBao(N'Thông báo đến các trưởng đơn vị thuộc bộ môn KHMT ở cơ sở 1 và 2', 'TDV:KHMT');
 
 --h1) dữ liệu được phát tán đến mỗi giảng viên thuộc bộ môn HTTT ở cả 2 cơ sở, data label t5: 'GV:HTTT'
 exec sp_Insert_ThongBao(N'Thông báo đến các giảng viên thuộc bộ môn HTTT ở cả 2 cơ sở', 'GV:HTTT');

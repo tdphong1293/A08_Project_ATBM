@@ -25,6 +25,7 @@ namespace _21127331_21127388_21127537_21127695
             label2.Text = ID;
             this.ID = ID;
             dataGridView10.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView10.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             SearchAndFill_SinhVien("");
             SearchAndFill_DonVi("");
             SearchAndFill_HocPhan("");
@@ -586,7 +587,8 @@ namespace _21127331_21127388_21127537_21127695
 
         private void dataGridView9_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (e.RowIndex >= 0)
+            {
                 DataGridViewRow row = dataGridView9.Rows[e.RowIndex];
                 textBox11.Text = row.Cells["MANV"].Value.ToString();
                 textBox12.Text = row.Cells["HOTEN"].Value.ToString();
@@ -596,7 +598,7 @@ namespace _21127331_21127388_21127537_21127695
                 sdt.Text = row.Cells["DT"].Value.ToString();
                 comboBox3.Text = row.Cells["VAITRO"].Value.ToString();
                 textBox15.Text = row.Cells["MADV"].Value.ToString();
-            
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)

@@ -116,10 +116,8 @@ namespace _21127331_21127388_21127537_21127695
                     {
                         using (OracleCommand command = conn.CreateCommand())
                         {
-                            // Thiết lập loại command là stored procedure
                             try
                             {
-
                                 command.CommandText = "sp_GetStateAudit";
                                 command.CommandType = System.Data.CommandType.StoredProcedure;
 
@@ -130,21 +128,46 @@ namespace _21127331_21127388_21127537_21127695
                                 p_result.Direction = System.Data.ParameterDirection.Output;
                                 command.Parameters.Add(p_result);
 
-
                                 // Thực thi command
                                 command.ExecuteNonQuery();
-
 
                                 // Lấy giá trị trả về từ parameter
                                 if (p_result.Value.ToString() == "1")
                                     flag_audit = true;
                                 else if (p_result.Value.ToString() == "0")
                                     flag_audit = false;
-
                             }
                             catch (OracleException ex)
                             {
-                                // Xử lý các ngoại lệ nếu có
+                                MessageBox.Show("Error executing stored procedure: " + ex.Message);
+                            }
+                        }
+
+                        using (OracleCommand command = conn.CreateCommand())
+                        {
+                            try
+                            {
+                                command.CommandText = "sp_GetStateFGAAudit";
+                                command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                                // Tạo parameter cho stored procedure
+                                OracleParameter p_result = new OracleParameter();
+                                p_result.ParameterName = "p_result";
+                                p_result.OracleDbType = OracleDbType.Int32;
+                                p_result.Direction = System.Data.ParameterDirection.Output;
+                                command.Parameters.Add(p_result);
+
+                                // Thực thi command
+                                command.ExecuteNonQuery();
+
+                                // Lấy giá trị trả về từ parameter
+                                if (p_result.Value.ToString() == "1")
+                                    flag_fga_audit = true;
+                                else if (p_result.Value.ToString() == "0")
+                                    flag_fga_audit = false;
+                            }
+                            catch (OracleException ex)
+                            {
                                 MessageBox.Show("Error executing stored procedure: " + ex.Message);
                             }
                         }

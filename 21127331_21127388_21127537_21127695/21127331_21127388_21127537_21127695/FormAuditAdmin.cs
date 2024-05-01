@@ -1,5 +1,6 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,7 +37,7 @@ namespace _21127331_21127388_21127537_21127695
             this.flag_audit = flag_audit;
             this.flag_fga_audit = flag_fga_audit;
             State_Audit();
-            MessageBox.Show(flag_audit.ToString());
+            State_FGA_Audit();
             
             dtgv_stdaud.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtgv_fgaaud.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -56,6 +57,22 @@ namespace _21127331_21127388_21127537_21127695
                 btn_audit.BackColor = Color.Lime;
                 btn_audit.ForeColor = Color.Black;
             }    
+        }
+
+        private void State_FGA_Audit()
+        {
+            if (flag_fga_audit)
+            {
+                btn_fgaaudit.Text = "Tắt";
+                btn_fgaaudit.BackColor = Color.Red;
+                btn_fgaaudit.ForeColor = Color.White;
+            }
+            else
+            {
+                btn_fgaaudit.Text = "Kích hoạt";
+                btn_fgaaudit.BackColor = Color.Lime;
+                btn_fgaaudit.ForeColor = Color.Black;
+            }
         }
 
         private void ExecuteProcedure(string procedureName)
@@ -244,17 +261,71 @@ namespace _21127331_21127388_21127537_21127695
         {
             if (flag_fga_audit)
             {
-                btn_audit.Text = "Đang tắt";
-                btn_audit.BackColor = Color.Red;
-                btn_audit.ForeColor = Color.White;
-                flag_fga_audit = false;
+                string plsqlCode = @"
+                begin
+                    dbms_fga.disable_policy(
+                        object_schema => 'OLS_ADMIN',
+                        object_name   => 'DANGKY',
+                        policy_name   => 'FGA_POLICY_DIEM'
+                    );
+                    dbms_fga.disable_policy(
+                        object_schema => 'OLS_ADMIN',
+                        object_name   => 'NHANSU',
+                        policy_name   => 'FGA_POLICY_PHUCAP'
+                    );
+                end;";
+                try
+                {
+                    using (OracleCommand cmd = new OracleCommand(plsqlCode, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (OracleException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                btn_fgaaudit.Text = "Kích hoạt";
+                btn_fgaaudit.BackColor = Color.Lime;
+                btn_fgaaudit.ForeColor = Color.Black;
+                flag_fga_audit = true;
             }
             else
             {
-                btn_audit.Text = "Đang kích hoạt";
-                btn_audit.BackColor = Color.Lime;
-                btn_audit.ForeColor = Color.Black;
-                flag_fga_audit = true;
+                string plsqlCode = @"
+                begin
+                    dbms_fga.enable_policy(
+                        object_schema => 'OLS_ADMIN',
+                        object_name   => 'DANGKY',
+                        policy_name   => 'FGA_POLICY_DIEM',
+                        enable        => true
+                    );
+                    dbms_fga.enable_policy(
+                        object_schema => 'OLS_ADMIN',
+                        object_name   => 'NHANSU',
+                        policy_name   => 'FGA_POLICY_PHUCAP',
+                        enable        => true
+                    );
+                end;";
+                try
+                {
+                    using (OracleCommand cmd = new OracleCommand(plsqlCode, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (OracleException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                btn_fgaaudit.Text = "Tắt";
+                btn_fgaaudit.BackColor = Color.Red;
+                btn_fgaaudit.ForeColor = Color.White;
+                flag_fga_audit = false;
             }
         }
 

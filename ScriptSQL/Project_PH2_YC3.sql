@@ -192,7 +192,6 @@ begin
         policy_name   => 'FGA_POLICY_DIEM',
         enable        => true
     );
-
     dbms_fga.enable_policy(
         object_schema => 'OLS_ADMIN',
         object_name   => 'NHANSU',
@@ -207,20 +206,19 @@ end;
 --     dbms_fga.disable_policy(
 --         object_schema => 'OLS_ADMIN',
 --         object_name   => 'DANGKY',
---         policy_name   => 'FGA_POLICY_DIEM',
---         enable        => false
+--         policy_name   => 'FGA_POLICY_DIEM'
 --     );
 
 --     dbms_fga.disable_policy(
 --         object_schema => 'OLS_ADMIN',
 --         object_name   => 'NHANSU',
---         policy_name   => 'FGA_POLICY_PHUCAP',
---         enable        => false
+--         policy_name   => 'FGA_POLICY_PHUCAP'
 --     );
 -- END;
 -- /
 
 
+---============ LẤY TRẠNG THÁI AUDIT ĐỂ BIẾT KHI NÀO NÊN KÍCH HOAT HAY TẮT
 create or replace procedure sp_GetStateAudit(p_result OUT number)
 as
     flag NUMBER;
@@ -236,12 +234,35 @@ begin
 end;
 /
 
+create or replace procedure sp_GetStateFGAAudit(p_result OUT number)
+as
+    flag1 NUMBER;
+    flag2 NUMBER;
+begin
+    select count(*) into flag1
+    from DBA_AUDIT_POLICIES
+    where OBJECT_SCHEMA = 'OLS_ADMIN' 
+    and POLICY_OWNER = 'OLS_ADMIN'
+    and OBJECT_NAME = 'DANGKY'
+    and POLICY_NAME = 'FGA_POLICY_DIEM'
+    and ENABLED = 'YES';
 
-select count(*)
-from DBA_PRIV_AUDIT_OPTS;
+    select count(*) into flag2
+    from DBA_AUDIT_POLICIES
+    where OBJECT_SCHEMA = 'OLS_ADMIN' 
+    and POLICY_OWNER = 'OLS_ADMIN'
+    and OBJECT_NAME = 'NHANSU'
+    and POLICY_NAME = 'FGA_POLICY_PHUCAP'
+    and ENABLED = 'YES';
+
+    IF flag1 > 0 AND flag2 > 0 THEN
+        p_result := 1;
+    ELSE
+        p_result := 0;
+    END IF;
+end;
+/   
 
 -- ======== LỆNH XÓA LỊCH SỬ AUDIT ========
 -- TRUNCATE table sys.Aud$;
 -- TRUNCATE table sys.FGA_LOG$;
-
-
