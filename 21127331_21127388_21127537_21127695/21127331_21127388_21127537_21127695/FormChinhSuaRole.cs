@@ -33,12 +33,6 @@ namespace _21127331_21127388_21127537_21127695
                 MessageBox.Show("Vui lòng điền TÊN ROLE !");
                 return;
             }
-            if (tb_chinhsuarole_password.Text.Length == 0)
-            {
-                MessageBox.Show("Vui lòng nhập MẬT KHẨU MỚI !");
-                return;
-            }
-
 
             try
             {
