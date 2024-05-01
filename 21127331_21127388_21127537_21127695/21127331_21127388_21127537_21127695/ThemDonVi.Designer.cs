@@ -40,20 +40,18 @@
             // txt_tendv
             // 
             this.txt_tendv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tendv.Location = new System.Drawing.Point(358, 162);
-            this.txt_tendv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_tendv.Location = new System.Drawing.Point(239, 105);
             this.txt_tendv.Name = "txt_tendv";
-            this.txt_tendv.Size = new System.Drawing.Size(310, 37);
+            this.txt_tendv.Size = new System.Drawing.Size(208, 27);
             this.txt_tendv.TabIndex = 111;
             this.txt_tendv.TabStop = false;
             // 
             // txt_madv
             // 
             this.txt_madv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_madv.Location = new System.Drawing.Point(358, 114);
-            this.txt_madv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_madv.Location = new System.Drawing.Point(239, 74);
             this.txt_madv.Name = "txt_madv";
-            this.txt_madv.Size = new System.Drawing.Size(310, 37);
+            this.txt_madv.Size = new System.Drawing.Size(208, 27);
             this.txt_madv.TabIndex = 110;
             this.txt_madv.TabStop = false;
             // 
@@ -61,10 +59,9 @@
             // 
             this.lb_gioitinh_sv.AutoSize = true;
             this.lb_gioitinh_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_gioitinh_sv.Location = new System.Drawing.Point(145, 220);
-            this.lb_gioitinh_sv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_gioitinh_sv.Location = new System.Drawing.Point(97, 143);
             this.lb_gioitinh_sv.Name = "lb_gioitinh_sv";
-            this.lb_gioitinh_sv.Size = new System.Drawing.Size(157, 31);
+            this.lb_gioitinh_sv.Size = new System.Drawing.Size(101, 20);
             this.lb_gioitinh_sv.TabIndex = 109;
             this.lb_gioitinh_sv.Text = "Trưởng đơn vị";
             // 
@@ -72,10 +69,9 @@
             // 
             this.lb_hoten_sv.AutoSize = true;
             this.lb_hoten_sv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_hoten_sv.Location = new System.Drawing.Point(145, 162);
-            this.lb_hoten_sv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_hoten_sv.Location = new System.Drawing.Point(97, 105);
             this.lb_hoten_sv.Name = "lb_hoten_sv";
-            this.lb_hoten_sv.Size = new System.Drawing.Size(119, 31);
+            this.lb_hoten_sv.Size = new System.Drawing.Size(77, 20);
             this.lb_hoten_sv.TabIndex = 108;
             this.lb_hoten_sv.Text = "Tên đơn vị";
             // 
@@ -83,10 +79,9 @@
             // 
             this.lb_masv.AutoSize = true;
             this.lb_masv.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_masv.Location = new System.Drawing.Point(145, 114);
-            this.lb_masv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_masv.Location = new System.Drawing.Point(97, 74);
             this.lb_masv.Name = "lb_masv";
-            this.lb_masv.Size = new System.Drawing.Size(117, 31);
+            this.lb_masv.Size = new System.Drawing.Size(75, 20);
             this.lb_masv.TabIndex = 107;
             this.lb_masv.Text = "Mã đơn vị";
             // 
@@ -94,9 +89,10 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(340, 334);
+            this.button1.Location = new System.Drawing.Point(227, 217);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 52);
+            this.button1.Size = new System.Drawing.Size(93, 34);
             this.button1.TabIndex = 106;
             this.button1.Text = "Xác nhận";
             this.button1.UseVisualStyleBackColor = true;
@@ -194,16 +190,17 @@
             "GV0000078",
             "GV0000079",
             "GV0000080"});
-            this.txt_truongdv.Location = new System.Drawing.Point(358, 223);
+            this.txt_truongdv.Location = new System.Drawing.Point(239, 145);
+            this.txt_truongdv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_truongdv.Name = "txt_truongdv";
-            this.txt_truongdv.Size = new System.Drawing.Size(310, 28);
+            this.txt_truongdv.Size = new System.Drawing.Size(208, 21);
             this.txt_truongdv.TabIndex = 112;
             // 
             // ThemDonVi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.txt_truongdv);
             this.Controls.Add(this.txt_tendv);
             this.Controls.Add(this.txt_madv);
@@ -211,7 +208,9 @@
             this.Controls.Add(this.lb_hoten_sv);
             this.Controls.Add(this.lb_masv);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ThemDonVi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemDonVi";
             this.ResumeLayout(false);
             this.PerformLayout();

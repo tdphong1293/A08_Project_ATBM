@@ -125,11 +125,11 @@
             this.btn_audit.BackColor = System.Drawing.Color.Red;
             this.btn_audit.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_audit.ForeColor = System.Drawing.Color.White;
-            this.btn_audit.Location = new System.Drawing.Point(561, 47);
+            this.btn_audit.Location = new System.Drawing.Point(607, 47);
             this.btn_audit.Name = "btn_audit";
-            this.btn_audit.Size = new System.Drawing.Size(156, 31);
+            this.btn_audit.Size = new System.Drawing.Size(110, 31);
             this.btn_audit.TabIndex = 32;
-            this.btn_audit.Text = "Đang tắt";
+            this.btn_audit.Text = "Kích hoạt";
             this.btn_audit.UseVisualStyleBackColor = false;
             this.btn_audit.Click += new System.EventHandler(this.btn_audit_Click);
             // 
@@ -375,9 +375,9 @@
             this.btn_fgaaudit.BackColor = System.Drawing.Color.Red;
             this.btn_fgaaudit.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_fgaaudit.ForeColor = System.Drawing.Color.White;
-            this.btn_fgaaudit.Location = new System.Drawing.Point(546, 47);
+            this.btn_fgaaudit.Location = new System.Drawing.Point(592, 50);
             this.btn_fgaaudit.Name = "btn_fgaaudit";
-            this.btn_fgaaudit.Size = new System.Drawing.Size(156, 31);
+            this.btn_fgaaudit.Size = new System.Drawing.Size(110, 31);
             this.btn_fgaaudit.TabIndex = 63;
             this.btn_fgaaudit.Text = "Đang tắt";
             this.btn_fgaaudit.UseVisualStyleBackColor = false;
@@ -658,6 +658,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormAuditAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAuditAdmin";
             this.tc_audit.ResumeLayout(false);
             this.tp_stdaud.ResumeLayout(false);

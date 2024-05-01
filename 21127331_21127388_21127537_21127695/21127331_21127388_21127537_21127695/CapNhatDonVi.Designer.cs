@@ -136,7 +136,7 @@
             "GV0000079",
             "GV0000080"});
             this.new_txt_truongdv.Location = new System.Drawing.Point(612, 105);
-            this.new_txt_truongdv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.new_txt_truongdv.Margin = new System.Windows.Forms.Padding(2);
             this.new_txt_truongdv.Name = "new_txt_truongdv";
             this.new_txt_truongdv.Size = new System.Drawing.Size(208, 21);
             this.new_txt_truongdv.TabIndex = 99;
@@ -146,7 +146,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Location = new System.Drawing.Point(371, 166);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 34);
             this.button1.TabIndex = 97;
@@ -284,8 +284,9 @@
             this.Controls.Add(this.lb_mact_sv);
             this.Controls.Add(this.lb_dienthoai_sv);
             this.Controls.Add(this.lb_diachi_sv);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CapNhatDonVi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CapNhatDonVi";
             this.ResumeLayout(false);
             this.PerformLayout();

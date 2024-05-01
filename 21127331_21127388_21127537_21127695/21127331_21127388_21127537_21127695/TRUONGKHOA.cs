@@ -361,7 +361,7 @@ namespace _21127331_21127388_21127537_21127695
                     table = "uv_giaovu_dangky";
                     break;
                 case "DONVI":
-                    table = "uv_truongdonvi_donvi";
+                    table = "uv_nhanviencoban_donvi";
                     break;
                 case "HOCPHAN":
                     table = "uv_nhanviencoban_hocphan";
