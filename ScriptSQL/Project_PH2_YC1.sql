@@ -290,7 +290,14 @@ begin
     where :new.MAHP = HP.MAHP
     and HP.MADV = DV.MADV
     and DV.TENDV = N'Văn phòng khoa';
-
+    if (deleting) then
+        delete from PHANCONG 
+        where MAGV = :old.MAGV 
+        and MAHP = :old.MAHP
+        and HK = :old.HK
+        and NAM = :old.NAM
+        and MACT = :old.MACT;
+    end if;
     if (v_count > 0) then
         if (inserting) then
             insert into PHANCONG values (:new.MAGV, :new.MAHP, :new.HK, :new.NAM, :new.MACT);
@@ -306,14 +313,7 @@ begin
             and HK = :old.HK
             and NAM = :old.NAM
             and MACT = :old.MACT;
-        elsif (deleting) then
-            delete from PHANCONG 
-            where MAGV = :old.MAGV 
-            and MAHP = :old.MAHP
-            and HK = :old.HK
-            and NAM = :old.NAM
-            and MACT = :old.MACT;
-        end if;
+            end if;
     end if;
 end;
 /
