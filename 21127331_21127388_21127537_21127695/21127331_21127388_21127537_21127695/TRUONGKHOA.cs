@@ -20,18 +20,17 @@ namespace _21127331_21127388_21127537_21127695
         bool show;
         public TRUONGKHOA(string ID)
         {
-     
-        InitializeComponent();
+
+            InitializeComponent();
             label2.Text = ID;
             this.ID = ID;
             dataGridView10.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView10.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             SearchAndFill_SinhVien("");
             SearchAndFill_DonVi("");
             SearchAndFill_HocPhan("");
             SearchAndFill_KHMO("");
             SearchAndFill_PhanCong("");
-            SearchAndFill_DangKy("","","");
+            SearchAndFill_DangKy("", "", "");
             SearchAndFill_PhanCong_TK("");
             SearchAndFill_NhanSu("");
             comboBox8.Items.Add("DANGKY");
@@ -58,10 +57,10 @@ namespace _21127331_21127388_21127537_21127695
             dataGridView7.CellContentClick += dataGridView7_CellContentClick;
             dataGridView9.CellContentClick += dataGridView9_CellContentClick;
             dataGridView6.CellContentClick += dataGridView6_CellContentClick;
-          
+
         }
 
-       
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -278,10 +277,10 @@ namespace _21127331_21127388_21127537_21127695
             try
             {
                 string query;
-               // if (string.IsNullOrEmpty(searchtext))
-                    query = "select * from OLS_ADMIN.uv_TRUONGKHOA_PHANCONG";
-               // else
-               // query = "select * from OLS_ADMIN.uv_TRUONGKHOA_PHANCONG where \"MA HOC PHAN\" = :searchtext";
+                // if (string.IsNullOrEmpty(searchtext))
+                query = "select * from OLS_ADMIN.uv_TRUONGKHOA_PHANCONG";
+                // else
+                // query = "select * from OLS_ADMIN.uv_TRUONGKHOA_PHANCONG where \"MA HOC PHAN\" = :searchtext";
                 using (OracleCommand cmd = new OracleCommand(query, conn))
                 {
                     cmd.Parameters.Add(":searchtext", searchtext);
@@ -355,7 +354,7 @@ namespace _21127331_21127388_21127537_21127695
 
         private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string table="";
+            string table = "";
             switch (comboBox8.Text)
             {
                 case "DANGKY":
@@ -379,7 +378,7 @@ namespace _21127331_21127388_21127537_21127695
                 case "SINHVIEN":
                     table = "uv_nhanviencoban_sinhvien";
                     break;
-              
+
             }
             string query = "select * from OLS_ADMIN." + table;
             using (OracleCommand cmd = new OracleCommand(query, conn))
@@ -398,13 +397,13 @@ namespace _21127331_21127388_21127537_21127695
             SearchAndFill_DangKy(textBox6.Text, comboBox2.Text, comboBox1.Text);
         }
 
-       
 
-       
+
+
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string query = "insert into OLS_ADMIN.uv_TRUONGKHOA_PHANCONG values ('"+textBox7.Text+"', '"+textBox8.Text+"', '"+comboBox6.Text+"', "+textBox9.Text+", '"+comboBox7.Text+"')";
+            string query = "insert into OLS_ADMIN.uv_TRUONGKHOA_PHANCONG values ('" + textBox7.Text + "', '" + textBox8.Text + "', '" + comboBox6.Text + "', " + textBox9.Text + ", '" + comboBox7.Text + "')";
             OracleTransaction transaction = null;
             try
             {
@@ -425,7 +424,7 @@ namespace _21127331_21127388_21127537_21127695
                     MessageBox.Show($"{rowsAffected} row(s) updated.");
                 }
                 transaction.Commit();
-                
+
 
             }
             catch (OracleException ex)
@@ -443,10 +442,10 @@ namespace _21127331_21127388_21127537_21127695
 
         }
 
-        private void button2_Click_1(object sender, EventArgs e) 
+        private void button2_Click_1(object sender, EventArgs e)
         {
-            
-            string query = "update OLS_ADMIN.uv_TRUONGKHOA_PHANCONG set HK="+comboBox6.Text+" , NAM="+textBox9.Text+" , MACT='"+comboBox7.Text+"' where MAGV='"+oldmanv+"' and MAHP='"+oldmahp+"' and HK="+oldhk+" and NAM ='"+oldnam+"' and MACT='"+oldmact+"'";
+
+            string query = "update OLS_ADMIN.uv_TRUONGKHOA_PHANCONG set HK=" + comboBox6.Text + " , NAM=" + textBox9.Text + " , MACT='" + comboBox7.Text + "' where MAGV='" + oldmanv + "' and MAHP='" + oldmahp + "' and HK=" + oldhk + " and NAM ='" + oldnam + "' and MACT='" + oldmact + "'";
             OracleTransaction transaction = null;
             try
             {
@@ -455,7 +454,7 @@ namespace _21127331_21127388_21127537_21127695
                 cmd.Transaction = transaction;
                 cmd.ExecuteNonQuery();
                 transaction.Commit();
-                
+
             }
             catch (OracleException ex)
             {
@@ -468,9 +467,9 @@ namespace _21127331_21127388_21127537_21127695
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string query = "delete from OLS_ADMIN.uv_TRUONGKHOA_PHANCONG where MAGV='"+textBox7.Text+"' and MAHP='"+textBox8.Text+"' and HK="+comboBox6.Text+" and NAM="+textBox9.Text+" and MACT='"+comboBox7.Text+"'";
+            string query = "delete from OLS_ADMIN.uv_TRUONGKHOA_PHANCONG where MAGV='" + textBox7.Text + "' and MAHP='" + textBox8.Text + "' and HK=" + comboBox6.Text + " and NAM=" + textBox9.Text + " and MACT='" + comboBox7.Text + "'";
             OracleTransaction transaction = null;
-            MessageBox.Show(query);
+
             try
             {
 
@@ -479,10 +478,10 @@ namespace _21127331_21127388_21127537_21127695
                 OracleCommand cmd = new OracleCommand(query, conn);
                 cmd.Transaction = transaction;
 
-                
+
                 cmd.ExecuteNonQuery();
                 transaction.Commit();
-                
+
             }
             catch (OracleException ex)
             {
@@ -577,7 +576,7 @@ namespace _21127331_21127388_21127537_21127695
                 mahp = row.Cells["MAHP"].Value.ToString();
                 hk = row.Cells["HK"].Value.ToString();
                 nam = row.Cells["NAM"].Value.ToString();
-                mact= row.Cells["MACT"].Value.ToString();
+                mact = row.Cells["MACT"].Value.ToString();
                 textBox14.Text = row.Cells["DIEMTH"].Value.ToString();
                 textBox17.Text = row.Cells["DIEMQT"].Value.ToString();
                 textBox16.Text = row.Cells["DIEMCK"].Value.ToString();
@@ -587,49 +586,64 @@ namespace _21127331_21127388_21127537_21127695
 
         private void dataGridView9_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dataGridView9.Rows[e.RowIndex];
-                textBox11.Text = row.Cells["MANV"].Value.ToString();
-                textBox12.Text = row.Cells["HOTEN"].Value.ToString();
-                comboBox4.Text = row.Cells["PHAI"].Value.ToString();
-                textBox10.Text = row.Cells["NGSINH"].Value.ToString();
-                textBox13.Text = row.Cells["PHUCAP"].Value.ToString();
-                sdt.Text = row.Cells["DT"].Value.ToString();
-                comboBox3.Text = row.Cells["VAITRO"].Value.ToString();
-                textBox15.Text = row.Cells["MADV"].Value.ToString();
-            }
+
+            DataGridViewRow row = dataGridView9.Rows[e.RowIndex];
+            textBox11.Text = row.Cells["MANV"].Value.ToString();
+            textBox12.Text = row.Cells["HOTEN"].Value.ToString();
+            comboBox4.Text = row.Cells["PHAI"].Value.ToString();
+            DateTime dateValue = (DateTime)row.Cells["NGSINH"].Value;
+            textBox10.Text = dateValue.ToShortDateString();
+            textBox13.Text = row.Cells["PHUCAP"].Value.ToString();
+            sdt.Text = row.Cells["DT"].Value.ToString();
+            comboBox3.Text = row.Cells["VAITRO"].Value.ToString();
+            textBox15.Text = row.Cells["MADV"].Value.ToString();
+
         }
+
+
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string query = "insert into  OLS_ADMIN.uv_TRUONGKHOA_NHANSU VALUES (:MANV, :HOTEN, :PHAI, to_date(:NGAYSINH,'DD.MM.YYYY'), :PHUCAP, '"+ sdt.Text +"', :VAITRO, :DV)";
-            using (OracleCommand cmd = new OracleCommand(query, conn))
-                try
+            string query = "insert into  OLS_ADMIN.uv_TRUONGKHOA_NHANSU VALUES (:MANV, :HOTEN, :PHAI, to_date(:NGAYSINH,'DD.MM.YYYY'), :PHUCAP, '" + sdt.Text + "', :VAITRO, :DV)";
+            OracleTransaction transaction = null;
+
+            try
             {
+
+                transaction = conn.BeginTransaction();
+
+                OracleCommand cmd = new OracleCommand(query, conn);
+                cmd.Transaction = transaction;
+
                 cmd.Parameters.Add(":MANV", textBox11.Text);
                 cmd.Parameters.Add(":HOTEN", textBox12.Text);
                 cmd.Parameters.Add(":PHAI", comboBox4.Text);
                 cmd.Parameters.Add(":NGAYSINH", textBox10.Text);
                 cmd.Parameters.Add(":PHUCAP", textBox13.Text);
                 cmd.Parameters.Add(":VAITRO", comboBox3.Text);
-               
+
                 cmd.Parameters.Add(":DV", textBox15.Text);
                 cmd.ExecuteNonQuery();
-                }
-                catch (OracleException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                transaction.Commit();
+
+
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+
+            }
+            transaction.Dispose();
+            SearchAndFill_NhanSu("");
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string query = "update OLS_ADMIN.uv_TRUONGKHOA_NHANSU set HOTEN='"+textBox12.Text+"' , PHAI='"+comboBox4.Text+"', NGSINH=to_date('"+textBox10.Text+"','DD.MM.YYYY') , PHUCAP='"+textBox13.Text+"' , VAITRO='"+comboBox3.Text+"' , MADV='"+textBox15.Text+"' , DT='"+sdt.Text+"' where MANV='"+textBox11.Text+"'";
+            string query = "update OLS_ADMIN.uv_TRUONGKHOA_NHANSU set HOTEN='" + textBox12.Text + "' , PHAI='" + comboBox4.Text + "', NGSINH=to_date('" + textBox10.Text + "','DD.MM.YYYY') , PHUCAP='" + textBox13.Text + "' , VAITRO='" + comboBox3.Text + "' , MADV='" + textBox15.Text + "' , DT='" + sdt.Text + "' where MANV='" + textBox11.Text + "'";
             OracleTransaction transaction = null;
             try
             {
-          
+
                 transaction = conn.BeginTransaction();
 
                 OracleCommand cmd = new OracleCommand(query, conn);
@@ -652,15 +666,15 @@ namespace _21127331_21127388_21127537_21127695
             catch (OracleException ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-             
+
             }
-            
-         
+
+
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            string query = "delete from OLS_ADMIN.uv_TRUONGKHOA_NHANSU where manv='"+textBox11.Text+"'";
+            string query = "delete from OLS_ADMIN.uv_TRUONGKHOA_NHANSU where manv='" + textBox11.Text + "'";
             OracleTransaction transaction = null;
             try
             {
@@ -668,7 +682,7 @@ namespace _21127331_21127388_21127537_21127695
                 transaction = conn.BeginTransaction();
 
                 OracleCommand cmd = new OracleCommand(query, conn);
-                cmd.Transaction = transaction;   
+                cmd.Transaction = transaction;
                 cmd.ExecuteNonQuery();
                 transaction.Commit();
                 transaction.Dispose();
@@ -691,7 +705,7 @@ namespace _21127331_21127388_21127537_21127695
         {
 
         }
-       // string query = "update OLS_ADMIN.uv_GiangVien_DANGKY set DIEMTH = "+textBox14.Text+" , DIEMQT = "+textBox17.Text+" , DIEMCK = "+textBox16.Text+" , DIEMTK = "+textBox18.Text+" where MASV = '"+txt_masv_dk.Text+"' , MAHP = '"+mahp+"' , HK="+hk+"  , NAM="+nam+"  , MACT='"+mact+"'";
+        // string query = "update OLS_ADMIN.uv_GiangVien_DANGKY set DIEMTH = "+textBox14.Text+" , DIEMQT = "+textBox17.Text+" , DIEMCK = "+textBox16.Text+" , DIEMTK = "+textBox18.Text+" where MASV = '"+txt_masv_dk.Text+"' , MAHP = '"+mahp+"' , HK="+hk+"  , NAM="+nam+"  , MACT='"+mact+"'";
         private void btn_luudiem_dk_Click(object sender, EventArgs e)
         {
             string query = "update OLS_ADMIN.uv_GiangVien_DANGKY set DIEMTH = " + textBox14.Text + " , DIEMQT = " + textBox17.Text + " , DIEMCK = " + textBox16.Text + " , DIEMTK = " + textBox18.Text + " where MASV = '" + txt_masv_dk.Text + "' and MAHP = '" + mahp + "' and HK=" + hk + "  and NAM=" + nam + "  and MACT='" + mact + "'";
@@ -704,9 +718,9 @@ namespace _21127331_21127388_21127537_21127695
 
                 OracleCommand cmd = new OracleCommand(query, conn);
                 cmd.Transaction = transaction;
-                MessageBox.Show(query);
+
                 cmd.ExecuteNonQuery();
-                
+
                 transaction.Commit();
                 transaction.Dispose();
 
