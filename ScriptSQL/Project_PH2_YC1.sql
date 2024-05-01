@@ -174,6 +174,7 @@ begin
 end;
 /
 
+
 grant select, update on uv_GiaoVu_PHANCONG to rl_GiaoVu;
 grant select, insert, delete on uv_GiaoVu_DANGKY to rl_GiaoVu;
 
@@ -438,6 +439,7 @@ as
     usr varchar2(10);
     v_hk number;
     v_start_date date;
+    v_end_date date;
     strsql varchar2(1000);
 begin
     if (sys_context('userenv', 'session_user') = 'OLS_ADMIN') then
@@ -457,7 +459,8 @@ begin
         v_start_date := trunc(add_months(trunc(sysdate, 'YYYY'), 8), 'MM');
     end if;
     
-    
+    v_end_date := v_start_date + interval '14' day;
+
     if usr like 'SV%' then
     strsql := 'MASV = ''' || usr || ''' and HK = ' || v_hk || ' 
     and NAM = ' || extract(year from sysdate) || ' 
@@ -465,7 +468,7 @@ begin
     and DIEMQT is null 
     and DIEMCK is null 
     and DIEMTK is null
-    and trunc(sysdate) between ''' || v_start_date || ''' and ''' || v_start_date + interval '14' day || '''';
+    and trunc(sysdate) between ''' || v_start_date || ''' and ''' || v_end_date || '''';
     elsif usr like 'GIAOVU%' then
     strsql := '';
     end if;

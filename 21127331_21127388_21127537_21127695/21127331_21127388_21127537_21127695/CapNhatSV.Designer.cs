@@ -459,7 +459,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Location = new System.Drawing.Point(441, 376);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 34);
             this.button1.TabIndex = 54;
@@ -477,7 +477,7 @@
             "CTTT",
             "VP"});
             this.new_txt_mact_sv.Location = new System.Drawing.Point(705, 208);
-            this.new_txt_mact_sv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.new_txt_mact_sv.Margin = new System.Windows.Forms.Padding(2);
             this.new_txt_mact_sv.Name = "new_txt_mact_sv";
             this.new_txt_mact_sv.Size = new System.Drawing.Size(208, 21);
             this.new_txt_mact_sv.TabIndex = 55;
@@ -494,7 +494,7 @@
             "TGMT",
             "MMT"});
             this.new_txt_manganh_sv.Location = new System.Drawing.Point(705, 240);
-            this.new_txt_manganh_sv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.new_txt_manganh_sv.Margin = new System.Windows.Forms.Padding(2);
             this.new_txt_manganh_sv.Name = "new_txt_manganh_sv";
             this.new_txt_manganh_sv.Size = new System.Drawing.Size(208, 21);
             this.new_txt_manganh_sv.TabIndex = 56;
@@ -545,8 +545,9 @@
             this.Controls.Add(this.lb_hoten_sv);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lb_masv);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CapNhatSV";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CapNhatSV";
             this.ResumeLayout(false);
             this.PerformLayout();
