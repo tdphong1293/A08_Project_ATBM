@@ -149,6 +149,7 @@ instead of insert or delete on uv_GiaoVu_DANGKY
 for each row
 declare 
     v_start_date date;
+    v_end_date date;
 begin
     if (:new.HK = 1) then
         v_start_date := trunc(add_months(trunc(sysdate, 'YYYY'), 0), 'MM');
@@ -157,8 +158,18 @@ begin
     elsif (:new.HK = 3) then
         v_start_date := trunc(add_months(trunc(sysdate, 'YYYY'), 8), 'MM');
     end if;
-    
-    if (trunc(sysdate) between v_start_date and v_start_date + interval '14' day) then
+
+    if (:old.HK = 1) then
+        v_start_date := trunc(add_months(trunc(sysdate, 'YYYY'), 0), 'MM');
+    elsif (:old.HK = 2) then
+        v_start_date := trunc(add_months(trunc(sysdate, 'YYYY'), 4), 'MM');
+    elsif (:old.HK = 3) then
+        v_start_date := trunc(add_months(trunc(sysdate, 'YYYY'), 8), 'MM');
+    end if;
+
+    v_end_date := v_start_date + interval '14' day;
+
+    if (trunc(sysdate) between v_start_date and v_end_date) then
         if (inserting) then
             insert into DANGKY values (:new.MASV, :new.MAGV, :new.MAHP, :new.HK, :new.NAM, :new.MACT, :new.DIEMTH, :new.DIEMQT, :new.DIEMCK, :new.DIEMTK);
         elsif (deleting) then
@@ -173,6 +184,7 @@ begin
     end if;
 end;
 /
+
 
 grant select, update on uv_GiaoVu_PHANCONG to rl_GiaoVu;
 grant select, insert, delete on uv_GiaoVu_DANGKY to rl_GiaoVu;
@@ -290,7 +302,14 @@ begin
     where :new.MAHP = HP.MAHP
     and HP.MADV = DV.MADV
     and DV.TENDV = N'Văn phòng khoa';
-
+    if (deleting) then
+        delete from PHANCONG 
+        where MAGV = :old.MAGV 
+        and MAHP = :old.MAHP
+        and HK = :old.HK
+        and NAM = :old.NAM
+        and MACT = :old.MACT;
+    end if;
     if (v_count > 0) then
         if (inserting) then
             insert into PHANCONG values (:new.MAGV, :new.MAHP, :new.HK, :new.NAM, :new.MACT);
@@ -306,14 +325,7 @@ begin
             and HK = :old.HK
             and NAM = :old.NAM
             and MACT = :old.MACT;
-        elsif (deleting) then
-            delete from PHANCONG 
-            where MAGV = :old.MAGV 
-            and MAHP = :old.MAHP
-            and HK = :old.HK
-            and NAM = :old.NAM
-            and MACT = :old.MACT;
-        end if;
+            end if;
     end if;
 end;
 /
@@ -438,6 +450,8 @@ as
     usr varchar2(10);
     v_hk number;
     v_start_date date;
+    v_end_date date;
+    v_end_date date;
     strsql varchar2(1000);
 begin
     if (sys_context('userenv', 'session_user') = 'OLS_ADMIN') then
@@ -457,7 +471,8 @@ begin
         v_start_date := trunc(add_months(trunc(sysdate, 'YYYY'), 8), 'MM');
     end if;
     
-    
+    v_end_date := v_start_date + interval '14' day;
+
     if usr like 'SV%' then
     strsql := 'MASV = ''' || usr || ''' and HK = ' || v_hk || ' 
     and NAM = ' || extract(year from sysdate) || ' 
@@ -465,7 +480,7 @@ begin
     and DIEMQT is null 
     and DIEMCK is null 
     and DIEMTK is null
-    and trunc(sysdate) between ''' || v_start_date || ''' and ''' || v_start_date + interval '14' day || '''';
+    and trunc(sysdate) between ''' || v_start_date || ''' and ''' || v_end_date || '''';
     elsif usr like 'GIAOVU%' then
     strsql := '';
     end if;

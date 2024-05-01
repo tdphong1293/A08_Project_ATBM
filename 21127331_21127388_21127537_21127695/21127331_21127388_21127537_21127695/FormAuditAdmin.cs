@@ -36,6 +36,7 @@ namespace _21127331_21127388_21127537_21127695
             this.flag_audit = flag_audit;
             this.flag_fga_audit = flag_fga_audit;
             State_Audit();
+            MessageBox.Show(flag_audit.ToString());
             
             dtgv_stdaud.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtgv_fgaaud.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -45,15 +46,15 @@ namespace _21127331_21127388_21127537_21127695
         {
             if (flag_audit)
             {
-                btn_audit.Text = "Đang kích hoạt";
-                btn_audit.BackColor = Color.Lime;
-                btn_audit.ForeColor = Color.Black;
+                btn_audit.Text = "Tắt";
+                btn_audit.BackColor = Color.Red;
+                btn_audit.ForeColor = Color.White;
             }
             else
             {
-                btn_audit.Text = "Đang tắt";
-                btn_audit.BackColor = Color.Red;
-                btn_audit.ForeColor = Color.White;
+                btn_audit.Text = "Kích hoạt";
+                btn_audit.BackColor = Color.Lime;
+                btn_audit.ForeColor = Color.Black;
             }    
         }
 
@@ -221,20 +222,21 @@ namespace _21127331_21127388_21127537_21127695
             {
                 ExecuteProcedure("sp_Disable_Audit_UserNV");
                 //ExecuteProcedure("sp_Disable_Audit_UserSV");
-                btn_audit.Text = "Đang tắt";
-                btn_audit.BackColor = Color.Red;
-                btn_audit.ForeColor = Color.White;
-                flag_audit = false;
+                
+                btn_audit.Text = "Kích hoạt";
+                btn_audit.BackColor = Color.Lime;
+                btn_audit.ForeColor = Color.Black;
+                flag_audit = true;
                 
             }
             else
             {
                 ExecuteProcedure("sp_Enable_Audit_UserNV");
                 //ExecuteProcedure("sp_Enable_Audit_UserSV");
-                btn_audit.Text = "Đang kích hoạt";
-                btn_audit.BackColor = Color.Lime;
-                btn_audit.ForeColor = Color.Black;
-                flag_audit = true;
+                btn_audit.Text = "Tắt";
+                btn_audit.BackColor = Color.Red;
+                btn_audit.ForeColor = Color.White;
+                flag_audit = false;
             }    
         }
 

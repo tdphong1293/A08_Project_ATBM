@@ -1766,6 +1766,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormGiangVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGiangVien";
             this.tc_FormNhanVienCoBan.ResumeLayout(false);
             this.tb_canhan.ResumeLayout(false);
